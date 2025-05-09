@@ -42,7 +42,7 @@ Next Point has been developed with the following tools:
 Special thanks to my son *David*, who provided the umpire's voice; to my son Diego, who contributed ideas and some in-game player sounds; and to my wife, whose input helped shape the music and the upcoming sounds for female players.
 
 This game would not have been possible without the great tools used in its development. I’d especially like to thank:
-- *Dominic Morris* for his great work on [z88dk](https://github.com/z88dk/z88dk/wiki) and his prompt support on the forums — along with all contributors to this excellent project.
+- *DOM* for his great work on [z88dk](https://github.com/z88dk/z88dk/wiki) and his prompt support on the forums — along with all contributors to this excellent project.
 - [Maziac](https://github.com/maziac) for his fantastic [DeZog](https://github.com/maziac/DeZog) debugger, which now supports some basic debugging capabilities of [C programs](https://github.com/maziac/DeZog/releases/tag/v3.6.0), to which I have proudly contributed.
 - Tomaˇz Kragelj for his [ZX Spectrum Next Assembly Developer Guide](https://github.com/tomaz/zx-next-dev-guide), the most comprehensive resource for Next developers.
 - Mike Dailly for [CSpect](https://mdf200.itch.io/cspect), the emulator used throughout the whole development process.
