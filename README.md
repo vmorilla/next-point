@@ -30,6 +30,7 @@ Players can perform serves, volleys, smashes, lobs, and other tennis moves. Ball
 </div>
 <br/>
 Next Point has been developed with the following tools:
+
 - *Z88DK* as the main development environment
 - *Aseprite* with AI support (*PixelLab plugin*) for sprites and graphic design
 - *CSpect* + *DeZog* for simulation and debugging 
@@ -50,3 +51,4 @@ This game is dedicated to the *memory of my father* who bought my first computer
 
 ## Known issues
 - Tie breaks are not yet implemented
+- Only one opponent implemented... these pretty sprites don't come for free ;)
