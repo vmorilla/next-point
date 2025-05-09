@@ -7,6 +7,7 @@
 <div style="display: flex; gap: 10px;">
   <img src="docs/grass.png" alt="Court" width="300"/>
   <img src="docs/opponents.png" alt="Opponents" width="300"/>
+  <img src="docs/menu-intro.png" alt="Intro menu" width="300"/>
 </div>
 <br/>
 
