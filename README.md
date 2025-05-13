@@ -23,7 +23,7 @@ Next Point aims to bring a fast-paced, fun tennis simulation to the Next, with a
 Players can perform serves, volleys, smashes, lobs, and other tennis moves. Ball physics and pacing are tuned to deliver exciting rallies without overwhelming complexity. If the action feels too fast, you can adjust the speed in the options menu. 
 
 ## Design and tools 
-*Next Point* is developed in *C* and *Assembler* to maximize the capabilities of the Next Hardware. Several custom tools and scripts were created in the process to streamline graphics production and sound preparation. Player animations are based on motion captures of real players, enhanced with AI-based landmark detection.
+*Next Point* is developed in *C* and *Assembler* to maximize the capabilities of the Next hardware. Several custom tools and scripts were created in the process to streamline graphics production and sound preparation. Player animations are based on motion captures of real players, enhanced with AI-based landmark detection.
 
 <div style="display: flex; gap: 10px;">
   <img src="docs/backhand.png" alt="Backhand" width="300"/>
