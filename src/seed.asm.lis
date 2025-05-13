@@ -1,0 +1,18 @@
+/tmp/tmpki2o3OWq.asm:
+     1                          MODULE seed_asm
+     2                          LINE 0, "seed.asm"
+seed.asm:
+                                
+     1                          SECTION code_user
+     2                          
+     3                          PUBLIC _random_seed
+     4                          
+     5                              ; uint16_t random_seed(void) __z88dk_fastcall;
+     6                          _random_seed:
+     7  0000  ed5f                  ld a,r
+     8  0002  6f                    ld l,a
+     9  0003  76                    halt
+    10  0004  ed5f                  ld a,r
+    11  0006  67                    ld h,a
+    12  0007  c9                    ret
+    13                          

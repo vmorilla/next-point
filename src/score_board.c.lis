@@ -1,0 +1,640 @@
+/tmp/tmpF7FQVRVJ.asm:
+     1                          MODULE score_board_c
+     2                          LINE 0, "score_board.c"
+score_board.c:
+                                
+     1                          ;--------------------------------------------------------
+     2                          ; File Created by SDCC : free open source ISO C Compiler
+     3                          ; Version 4.3.0 #14210 (Mac OS X ppc)
+     4                          ;--------------------------------------------------------
+     5                          	.zxn
+     6                          ; Processed by Z88DK
+     7                          ;--------------------------------------------------------
+     8                          
+     9                          	EXTERN __divschar
+    10                          	EXTERN __divschar_callee
+    11                          	EXTERN __divsint
+    12                          	EXTERN __divsint_callee
+    13                          	EXTERN __divslong
+    14                          	EXTERN __divslong_callee
+    15                          	EXTERN __divslonglong
+    16                          	EXTERN __divslonglong_callee
+    17                          	EXTERN __divsuchar
+    18                          	EXTERN __divsuchar_callee
+    19                          	EXTERN __divuchar
+    20                          	EXTERN __divuchar_callee
+    21                          	EXTERN __divuint
+    22                          	EXTERN __divuint_callee
+    23                          	EXTERN __divulong
+    24                          	EXTERN __divulong_callee
+    25                          	EXTERN __divulonglong
+    26                          	EXTERN __divulonglong_callee
+    27                          	EXTERN __divuschar
+    28                          	EXTERN __divuschar_callee
+    29                          	EXTERN __modschar
+    30                          	EXTERN __modschar_callee
+    31                          	EXTERN __modsint
+    32                          	EXTERN __modsint_callee
+    33                          	EXTERN __modslong
+    34                          	EXTERN __modslong_callee
+    35                          	EXTERN __modslonglong
+    36                          	EXTERN __modslonglong_callee
+    37                          	EXTERN __modsuchar
+    38                          	EXTERN __modsuchar_callee
+    39                          	EXTERN __moduchar
+    40                          	EXTERN __moduchar_callee
+    41                          	EXTERN __moduint
+    42                          	EXTERN __moduint_callee
+    43                          	EXTERN __modulong
+    44                          	EXTERN __modulong_callee
+    45                          	EXTERN __modulonglong
+    46                          	EXTERN __modulonglong_callee
+    47                          	EXTERN __moduschar
+    48                          	EXTERN __moduschar_callee
+    49                          	EXTERN __mulint
+    50                          	EXTERN __mulint_callee
+    51                          	EXTERN __mullong
+    52                          	EXTERN __mullong_callee
+    53                          	EXTERN __mullonglong
+    54                          	EXTERN __mullonglong_callee
+    55                          	EXTERN __mulschar
+    56                          	EXTERN __mulschar_callee
+    57                          	EXTERN __mulsuchar
+    58                          	EXTERN __mulsuchar_callee
+    59                          	EXTERN __muluchar
+    60                          	EXTERN __muluchar_callee
+    61                          	EXTERN __muluschar
+    62                          	EXTERN __muluschar_callee
+    63                          	EXTERN __rlslonglong
+    64                          	EXTERN __rlslonglong_callee
+    65                          	EXTERN __rlulonglong
+    66                          	EXTERN __rlulonglong_callee
+    67                          	EXTERN __rrslonglong
+    68                          	EXTERN __rrslonglong_callee
+    69                          	EXTERN __rrulonglong
+    70                          	EXTERN __rrulonglong_callee
+    71                          	EXTERN ___mulsint2slong
+    72                          	EXTERN ___mulsint2slong_callee
+    73                          	EXTERN ___muluint2ulong
+    74                          	EXTERN ___muluint2ulong_callee
+    75                          	EXTERN ___sdcc_call_hl
+    76                          	EXTERN ___sdcc_call_iy
+    77                          	EXTERN ___sdcc_enter_ix
+    78                          	EXTERN banked_call
+    79                          	EXTERN _banked_ret
+    80                          	EXTERN ___fs2schar
+    81                          	EXTERN ___fs2schar_callee
+    82                          	EXTERN ___fs2sint
+    83                          	EXTERN ___fs2sint_callee
+    84                          	EXTERN ___fs2slong
+    85                          	EXTERN ___fs2slong_callee
+    86                          	EXTERN ___fs2slonglong
+    87                          	EXTERN ___fs2slonglong_callee
+    88                          	EXTERN ___fs2uchar
+    89                          	EXTERN ___fs2uchar_callee
+    90                          	EXTERN ___fs2uint
+    91                          	EXTERN ___fs2uint_callee
+    92                          	EXTERN ___fs2ulong
+    93                          	EXTERN ___fs2ulong_callee
+    94                          	EXTERN ___fs2ulonglong
+    95                          	EXTERN ___fs2ulonglong_callee
+    96                          	EXTERN ___fsadd
+    97                          	EXTERN ___fsadd_callee
+    98                          	EXTERN ___fsdiv
+    99                          	EXTERN ___fsdiv_callee
+   100                          	EXTERN ___fseq
+   101                          	EXTERN ___fseq_callee
+   102                          	EXTERN ___fsgt
+   103                          	EXTERN ___fsgt_callee
+   104                          	EXTERN ___fslt
+   105                          	EXTERN ___fslt_callee
+   106                          	EXTERN ___fsmul
+   107                          	EXTERN ___fsmul_callee
+   108                          	EXTERN ___fsneq
+   109                          	EXTERN ___fsneq_callee
+   110                          	EXTERN ___fssub
+   111                          	EXTERN ___fssub_callee
+   112                          	EXTERN ___schar2fs
+   113                          	EXTERN ___schar2fs_callee
+   114                          	EXTERN ___sint2fs
+   115                          	EXTERN ___sint2fs_callee
+   116                          	EXTERN ___slong2fs
+   117                          	EXTERN ___slong2fs_callee
+   118                          	EXTERN ___slonglong2fs
+   119                          	EXTERN ___slonglong2fs_callee
+   120                          	EXTERN ___uchar2fs
+   121                          	EXTERN ___uchar2fs_callee
+   122                          	EXTERN ___uint2fs
+   123                          	EXTERN ___uint2fs_callee
+   124                          	EXTERN ___ulong2fs
+   125                          	EXTERN ___ulong2fs_callee
+   126                          	EXTERN ___ulonglong2fs
+   127                          	EXTERN ___ulonglong2fs_callee
+   128                          	EXTERN ____sdcc_2_copy_src_mhl_dst_deix
+   129                          	EXTERN ____sdcc_2_copy_src_mhl_dst_bcix
+   130                          	EXTERN ____sdcc_4_copy_src_mhl_dst_deix
+   131                          	EXTERN ____sdcc_4_copy_src_mhl_dst_bcix
+   132                          	EXTERN ____sdcc_4_copy_src_mhl_dst_mbc
+   133                          	EXTERN ____sdcc_4_ldi_nosave_bc
+   134                          	EXTERN ____sdcc_4_ldi_save_bc
+   135                          	EXTERN ____sdcc_4_push_hlix
+   136                          	EXTERN ____sdcc_4_push_mhl
+   137                          	EXTERN ____sdcc_lib_setmem_hl
+   138                          	EXTERN ____sdcc_ll_add_de_bc_hl
+   139                          	EXTERN ____sdcc_ll_add_de_bc_hlix
+   140                          	EXTERN ____sdcc_ll_add_de_hlix_bc
+   141                          	EXTERN ____sdcc_ll_add_de_hlix_bcix
+   142                          	EXTERN ____sdcc_ll_add_deix_bc_hl
+   143                          	EXTERN ____sdcc_ll_add_deix_hlix
+   144                          	EXTERN ____sdcc_ll_add_hlix_bc_deix
+   145                          	EXTERN ____sdcc_ll_add_hlix_deix_bc
+   146                          	EXTERN ____sdcc_ll_add_hlix_deix_bcix
+   147                          	EXTERN ____sdcc_ll_asr_hlix_a
+   148                          	EXTERN ____sdcc_ll_asr_mbc_a
+   149                          	EXTERN ____sdcc_ll_copy_src_de_dst_hlix
+   150                          	EXTERN ____sdcc_ll_copy_src_de_dst_hlsp
+   151                          	EXTERN ____sdcc_ll_copy_src_deix_dst_hl
+   152                          	EXTERN ____sdcc_ll_copy_src_deix_dst_hlix
+   153                          	EXTERN ____sdcc_ll_copy_src_deixm_dst_hlsp
+   154                          	EXTERN ____sdcc_ll_copy_src_desp_dst_hlsp
+   155                          	EXTERN ____sdcc_ll_copy_src_hl_dst_de
+   156                          	EXTERN ____sdcc_ll_copy_src_hlsp_dst_de
+   157                          	EXTERN ____sdcc_ll_copy_src_hlsp_dst_deixm
+   158                          	EXTERN ____sdcc_ll_lsl_hlix_a
+   159                          	EXTERN ____sdcc_ll_lsl_mbc_a
+   160                          	EXTERN ____sdcc_ll_lsr_hlix_a
+   161                          	EXTERN ____sdcc_ll_lsr_mbc_a
+   162                          	EXTERN ____sdcc_ll_push_hlix
+   163                          	EXTERN ____sdcc_ll_push_mhl
+   164                          	EXTERN ____sdcc_ll_sub_de_bc_hl
+   165                          	EXTERN ____sdcc_ll_sub_de_bc_hlix
+   166                          	EXTERN ____sdcc_ll_sub_de_hlix_bc
+   167                          	EXTERN ____sdcc_ll_sub_de_hlix_bcix
+   168                          	EXTERN ____sdcc_ll_sub_deix_bc_hl
+   169                          	EXTERN ____sdcc_ll_sub_deix_hlix
+   170                          	EXTERN ____sdcc_ll_sub_hlix_bc_deix
+   171                          	EXTERN ____sdcc_ll_sub_hlix_deix_bc
+   172                          	EXTERN ____sdcc_ll_sub_hlix_deix_bcix
+   173                          	EXTERN ____sdcc_load_debc_deix
+   174                          	EXTERN ____sdcc_load_dehl_deix
+   175                          	EXTERN ____sdcc_load_debc_mhl
+   176                          	EXTERN ____sdcc_load_hlde_mhl
+   177                          	EXTERN ____sdcc_store_dehl_bcix
+   178                          	EXTERN ____sdcc_store_debc_hlix
+   179                          	EXTERN ____sdcc_store_debc_mhl
+   180                          	EXTERN ____sdcc_cpu_pop_ei
+   181                          	EXTERN ____sdcc_cpu_pop_ei_jp
+   182                          	EXTERN ____sdcc_cpu_push_di
+   183                          	EXTERN ____sdcc_outi
+   184                          	EXTERN ____sdcc_outi_128
+   185                          	EXTERN ____sdcc_outi_256
+   186                          	EXTERN ____sdcc_ldi
+   187                          	EXTERN ____sdcc_ldi_128
+   188                          	EXTERN ____sdcc_ldi_256
+   189                          	EXTERN ____sdcc_4_copy_srcd_hlix_dst_deix
+   190                          	EXTERN ____sdcc_4_and_src_mbc_mhl_dst_deix
+   191                          	EXTERN ____sdcc_4_or_src_mbc_mhl_dst_deix
+   192                          	EXTERN ____sdcc_4_xor_src_mbc_mhl_dst_deix
+   193                          	EXTERN ____sdcc_4_or_src_dehl_dst_bcix
+   194                          	EXTERN ____sdcc_4_xor_src_dehl_dst_bcix
+   195                          	EXTERN ____sdcc_4_and_src_dehl_dst_bcix
+   196                          	EXTERN ____sdcc_4_xor_src_mbc_mhl_dst_debc
+   197                          	EXTERN ____sdcc_4_or_src_mbc_mhl_dst_debc
+   198                          	EXTERN ____sdcc_4_and_src_mbc_mhl_dst_debc
+   199                          	EXTERN ____sdcc_4_cpl_src_mhl_dst_debc
+   200                          	EXTERN ____sdcc_4_xor_src_debc_mhl_dst_debc
+   201                          	EXTERN ____sdcc_4_or_src_debc_mhl_dst_debc
+   202                          	EXTERN ____sdcc_4_and_src_debc_mhl_dst_debc
+   203                          	EXTERN ____sdcc_4_and_src_debc_hlix_dst_debc
+   204                          	EXTERN ____sdcc_4_or_src_debc_hlix_dst_debc
+   205                          	EXTERN ____sdcc_4_xor_src_debc_hlix_dst_debc
+   206                          
+   207                          ;--------------------------------------------------------
+   208                          ; Public variables in this module
+   209                          ;--------------------------------------------------------
+   210                          	GLOBAL _db_digit
+   211                          	GLOBAL _db_score
+   212                          	GLOBAL _score_board_2
+   213                          	GLOBAL _score_board_1
+   214                          	GLOBAL _init_score_board
+   215                          	GLOBAL _show_score_board
+   216                          	GLOBAL _hide_score_board
+   217                          ;--------------------------------------------------------
+   218                          ; Externals used
+   219                          ;--------------------------------------------------------
+   220                          	GLOBAL _clear_tilemap
+   221                          	GLOBAL _select_tilemap
+   222                          	GLOBAL _valid_area
+   223                          	GLOBAL _service_area
+   224                          	GLOBAL _get_serving_player
+   225                          	GLOBAL _is_ad_service
+   226                          	GLOBAL _start_match
+   227                          	GLOBAL _event_player_touch
+   228                          	GLOBAL _event_net_touched
+   229                          	GLOBAL _event_player_hit
+   230                          	GLOBAL _event_ball_bounced
+   231                          	GLOBAL _update_entities
+   232                          	GLOBAL _xy_in_boundary
+   233                          	GLOBAL _point_in_boundary
+   234                          	GLOBAL _x_projection
+   235                          	GLOBAL _closest_type_of_hit
+   236                          	GLOBAL _ball_at_reach
+   237                          	GLOBAL _set_player_status
+   238                          	GLOBAL _get_player
+   239                          	GLOBAL _update_players
+   240                          	GLOBAL _init_controls
+   241                          	GLOBAL _diplay_profile
+   242                          	GLOBAL _in_mouse_kempston_wheel_delta
+   243                          	GLOBAL _in_mouse_kempston_wheel
+   244                          	GLOBAL _in_mouse_kempston_callee
+   245                          	GLOBAL _in_mouse_kempston
+   246                          	GLOBAL _in_mouse_kempston_setpos_callee
+   247                          	GLOBAL _in_mouse_kempston_setpos
+   248                          	GLOBAL _in_mouse_kempston_reset
+   249                          	GLOBAL _in_mouse_kempston_init
+   250                          	GLOBAL _in_mouse_amx_wheel_delta
+   251                          	GLOBAL _in_mouse_amx_wheel
+   252                          	GLOBAL _in_mouse_amx_callee
+   253                          	GLOBAL _in_mouse_amx
+   254                          	GLOBAL _in_mouse_amx_setpos_callee
+   255                          	GLOBAL _in_mouse_amx_setpos
+   256                          	GLOBAL _in_mouse_amx_reset
+   257                          	GLOBAL _in_mouse_amx_init_callee
+   258                          	GLOBAL _in_mouse_amx_init
+   259                          	GLOBAL _in_stick_sinclair2
+   260                          	GLOBAL _in_stick_sinclair1
+   261                          	GLOBAL _in_stick_kempston
+   262                          	GLOBAL _in_stick_fuller
+   263                          	GLOBAL _in_stick_cursor
+   264                          	GLOBAL _in_stick_keyboard_fastcall
+   265                          	GLOBAL _in_stick_keyboard
+   266                          	GLOBAL _in_wait_nokey
+   267                          	GLOBAL _in_wait_key
+   268                          	GLOBAL _in_test_key
+   269                          	GLOBAL _in_pause_fastcall
+   270                          	GLOBAL _in_pause
+   271                          	GLOBAL _in_key_scancode_fastcall
+   272                          	GLOBAL _in_key_scancode
+   273                          	GLOBAL _in_key_pressed_fastcall
+   274                          	GLOBAL _in_key_pressed
+   275                          	GLOBAL _in_inkey
+   276                          	GLOBAL _tilemap
+   277                          	GLOBAL _balloon_tilemap
+   278                          	GLOBAL _menu_palette_end
+   279                          	GLOBAL _menu_palette
+   280                          	GLOBAL _menu_patterns
+   281                          	GLOBAL _game_palette_end
+   282                          	GLOBAL _game_palette
+   283                          	GLOBAL _game_patterns
+   284                          	GLOBAL _tiles
+   285                          	GLOBAL _game_state
+   286                          	GLOBAL _match_type
+   287                          	GLOBAL _score
+   288                          	GLOBAL _player_bottom
+   289                          	GLOBAL _player_top
+   290                          	GLOBAL _game_settings
+   291                          	GLOBAL _ppponent_profile
+   292                          	GLOBAL _court_boundaries
+   293                          ;--------------------------------------------------------
+   294                          ; special function registers
+   295                          ;--------------------------------------------------------
+   296                          ;--------------------------------------------------------
+   297                          ; ram data
+   298                          ;--------------------------------------------------------
+   299                          	SECTION bss_compiler
+   300                          _score_board_1:
+   301  0000  0000000000000000  	DEFS 24
+              0000000000000000  
+              0000000000000000  
+   302                          _score_board_2:
+   303  0018  0000000000000000  	DEFS 24
+              0000000000000000  
+              0000000000000000  
+   304                          ;--------------------------------------------------------
+   305                          ; ram data
+   306                          ;--------------------------------------------------------
+   307                          
+   308                          IF 0
+   309                          
+   310                          ; .area _INITIALIZED removed by z88dk
+   311                          
+   312                          _db_score:
+   313                          	DEFS 1
+   314                          _db_digit:
+   315                          	DEFS 1
+   316                          
+   317                          ENDIF
+   318                          
+   319                          ;--------------------------------------------------------
+   320                          ; absolute external ram data
+   321                          ;--------------------------------------------------------
+   322                          	SECTION IGNORE
+   323                          ;--------------------------------------------------------
+   324                          ; global & static initialisations
+   325                          ;--------------------------------------------------------
+   326                          	SECTION code_crt_init
+   327                          ;--------------------------------------------------------
+   328                          ; Home
+   329                          ;--------------------------------------------------------
+   330                          	SECTION IGNORE
+   331                          ;--------------------------------------------------------
+   332                          ; code
+   333                          ;--------------------------------------------------------
+   334                          	SECTION BANK_8
+   335                          ;score_board.c:37: for (uint8_t i = 0; i < SCORE_LENGTH; i++)
+   336                          ;	---------------------------------
+   337                          ; Function init_score_board
+   338                          ; ---------------------------------
+   339                          _init_score_board:
+   340                          ;score_board.c:39: score_board_1[i] = ' ';
+   341  0000  110000            	ld	de,_score_board_1+0
+   342  0003  0e00              	ld	c,0x00
+   343                          l_init_score_board_00105:
+   344  0005  79                	ld	a, c
+   345  0006  d600              	sub	a,0x18
+   346  0008  3000              	jr	NC,l_init_score_board_00101
+   347                          ;score_board.c:41: }
+   348  000a  69                	ld	l, c
+   349  000b  2600              	ld	h,0x00
+   350  000d  19                	add	hl, de
+   351  000e  3620              	ld	(hl),0x20
+   352                          ;score_board.c:42:
+   353  0010  0600              	ld	b,0x00
+   354  0012  211800            	ld	hl,_score_board_2
+   355  0015  09                	add	hl, bc
+   356  0016  3620              	ld	(hl),0x20
+   357                          ;score_board.c:39: score_board_1[i] = ' ';
+   358  0018  0c                	inc	c
+   359  0019  18ea              	jr	l_init_score_board_00105
+   360                          l_init_score_board_00101:
+   361                          ;score_board.c:45: score_board_2[0] = 0x02;
+   362  001b  4b                	ld	c, e
+   363  001c  42                	ld	b, d
+   364  001d  3e01              	ld	a,0x01
+   365  001f  12                	ld	(de), a
+   366                          ;score_board.c:46: score_board_2[SCORE_LENGTH - 1] = 0x0;
+   367  0020  211700            	ld	hl, +(_score_board_1 + 23)
+   368  0023  3604              	ld	(hl),0x04
+   369                          ;score_board.c:47: score_board_2[SCORE_LENGTH - 2] = 0x03;
+   370  0025  211800            	ld	hl,_score_board_2
+   371  0028  3602              	ld	(hl),0x02
+   372                          ;score_board.c:48:
+   373  002a  212f00            	ld	hl, +(_score_board_2 + 23)
+   374  002d  3600              	ld	(hl),0x00
+   375                          ;score_board.c:49: for (uint8_t i = 0; (player_top.name)[i] != 0; i++)
+   376  002f  212e00            	ld	hl, +(_score_board_2 + 22)
+   377  0032  3603              	ld	(hl),0x03
+   378                          ;score_board.c:51:
+   379  0034  1e00              	ld	e,0x00
+   380                          l_init_score_board_00108:
+   381  0036  2a1200            	ld	hl,(_player_top + 18)
+   382  0039  1600              	ld	d,0x00
+   383  003b  19                	add	hl, de
+   384  003c  7e                	ld	a,(hl)
+   385  003d  57                	ld	d,a
+   386  003e  b7                	or	a, a
+   387  003f  280c              	jr	Z,l_init_score_board_00102
+   388                          ;score_board.c:52: for (uint8_t i = 0; (player_bottom.name)[i] != 0; i++)
+   389  0041  7b                	ld	a, e
+   390  0042  c602              	add	a,0x02
+   391  0044  6f                	ld	l, a
+   392  0045  07                	rlca
+   393  0046  9f                	sbc	a, a
+   394  0047  67                	ld	h, a
+   395  0048  09                	add	hl, bc
+   396  0049  72                	ld	(hl), d
+   397                          ;score_board.c:51:
+   398  004a  1c                	inc	e
+   399  004b  18e9              	jr	l_init_score_board_00108
+   400                          l_init_score_board_00102:
+   401                          ;score_board.c:54: }
+   402  004d  0e00              	ld	c,0x00
+   403                          l_init_score_board_00111:
+   404  004f  2a1200            	ld	hl,(_player_bottom + 18)
+   405  0052  59                	ld	e, c
+   406  0053  1600              	ld	d,0x00
+   407  0055  19                	add	hl, de
+   408  0056  7e                	ld	a,(hl)
+   409  0057  47                	ld	b,a
+   410  0058  b7                	or	a, a
+   411  0059  c8                	ret	Z
+   412                          ;score_board.c:55:
+   413  005a  79                	ld	a, c
+   414  005b  c602              	add	a,0x02
+   415  005d  5f                	ld	e, a
+   416  005e  07                	rlca
+   417  005f  9f                	sbc	a, a
+   418  0060  57                	ld	d, a
+   419  0061  211800            	ld	hl,_score_board_2
+   420  0064  19                	add	hl, de
+   421  0065  70                	ld	(hl), b
+   422                          ;score_board.c:54: }
+   423  0066  0c                	inc	c
+   424                          ;score_board.c:56: char db_score = 0xFF;
+   425  0067  18e6              	jr	l_init_score_board_00111
+   426                          	SECTION rodata_compiler
+   427                          _score_points_digits:
+   428  0000  2526              	DEFM "%&"
+   429  0002  00                	DEFB 0x00
+   430  0003  3100              	DEFM "15"
+   431  0005  00                	DEFB 0x00
+   432  0006  3318              	DEFM "30"
+   433  0008  00                	DEFB 0x00
+   434  0009  1130              	DEFM "40"
+   435  000b  00                	DEFB 0x00
+   436  000c  0044              	DEFM "AD"
+   437  000e  00                	DEFB 0x00
+   438                          	SECTION BANK_8
+   439                          ;score_board.c:64: score_board_1[SCORE_SERVICE_POSITION] = game_state.service_owner == PLAYER_TOP ? CHAR_SERVICE_BALL : ' ';
+   440                          ;	---------------------------------
+   441                          ; Function show_score_board
+   442                          ; ---------------------------------
+   443                          _show_score_board:
+   444  0069  cd0000            	call	___sdcc_enter_ix
+   445  006c  f5                	push	af
+   446                          ;score_board.c:66: score_board_1[SCORE_SETS_POSITION] = '0' + score.sets[0];
+   447  006d  010200            	ld	bc,_game_state+2
+   448  0070  0a                	ld	a, (bc)
+   449  0071  cb47              	bit	0,a
+   450  0073  2005              	jr	NZ,l_show_score_board_00107
+   451  0075  110500            	ld	de,0x0005
+   452  0078  1803              	jr	l_show_score_board_00108
+   453                          l_show_score_board_00107:
+   454  007a  112000            	ld	de,0x0020
+   455                          l_show_score_board_00108:
+   456  007d  210e00            	ld	hl, +(_score_board_1 + 14)
+   457  0080  73                	ld	(hl), e
+   458                          ;score_board.c:67: score_board_2[SCORE_SETS_POSITION] = '0' + score.sets[1];
+   459  0081  0a                	ld	a,(bc)
+   460  0082  212600            	ld	hl,_score_board_2 + 14
+   461  0085  cb47              	bit	0,a
+   462  0087  2805              	jr	Z,l_show_score_board_00109
+   463  0089  010500            	ld	bc,0x0005
+   464  008c  1803              	jr	l_show_score_board_00110
+   465                          l_show_score_board_00109:
+   466  008e  012000            	ld	bc,0x0020
+   467                          l_show_score_board_00110:
+   468  0091  71                	ld	(hl), c
+   469                          ;score_board.c:68: score_board_1[SCORE_GAMES_POSITION] = '0' + score.games[0];
+   470  0092  011000            	ld	bc,_score_board_1 + 16
+   471  0095  3a0000            	ld	a,(_score)
+   472  0098  c630              	add	a,0x30
+   473  009a  02                	ld	(bc), a
+   474                          ;score_board.c:69: score_board_2[SCORE_GAMES_POSITION] = '0' + score.games[1];
+   475  009b  012800            	ld	bc,_score_board_2 + 16
+   476  009e  3a0100            	ld	a,(_score + 1)
+   477  00a1  c630              	add	a,0x30
+   478  00a3  02                	ld	(bc), a
+   479                          ;score_board.c:70:
+   480  00a4  011200            	ld	bc,_score_board_1 + 18
+   481  00a7  3a0200            	ld	a, (_score + 2)
+   482  00aa  c630              	add	a,0x30
+   483  00ac  02                	ld	(bc), a
+   484                          ;score_board.c:71: tilemap[SCORE_COORD_Y][SCORE_COORD_X + SCORE_POINTS_POSITION].palette = TILEMAP_GAMES_PALETTE;
+   485  00ad  012a00            	ld	bc,_score_board_2 + 18
+   486  00b0  3a0300            	ld	a, (_score + 3)
+   487  00b3  c630              	add	a,0x30
+   488  00b5  02                	ld	(bc), a
+   489                          ;score_board.c:73: tilemap[SCORE_COORD_Y + 1][SCORE_COORD_X + SCORE_POINTS_POSITION].palette = TILEMAP_GAMES_PALETTE;
+   490  00b6  214d12            	ld	hl, +(_tilemap + 4685)
+   491  00b9  7e                	ld	a, (hl)
+   492  00ba  e60f              	and	a,0x0f
+   493  00bc  f610              	or	a,0x10
+   494  00be  77                	ld	(hl), a
+   495                          ;score_board.c:74: tilemap[SCORE_COORD_Y + 1][SCORE_COORD_X + SCORE_POINTS_POSITION + 1].palette = TILEMAP_GAMES_PALETTE;
+   496  00bf  214f12            	ld	hl, +(_tilemap + 4687)
+   497  00c2  7e                	ld	a, (hl)
+   498  00c3  e60f              	and	a,0x0f
+   499  00c5  f610              	or	a,0x10
+   500  00c7  77                	ld	(hl), a
+   501                          ;score_board.c:75:
+   502  00c8  21ed12            	ld	hl, +(_tilemap + 4845)
+   503  00cb  7e                	ld	a, (hl)
+   504  00cc  e60f              	and	a,0x0f
+   505  00ce  f610              	or	a,0x10
+   506  00d0  77                	ld	(hl), a
+   507                          ;score_board.c:76: // TODO: consider tie break
+   508  00d1  21ef12            	ld	hl, +(_tilemap + 4847)
+   509  00d4  7e                	ld	a, (hl)
+   510  00d5  e60f              	and	a,0x0f
+   511  00d7  f610              	or	a,0x10
+   512  00d9  77                	ld	(hl), a
+   513                          ;score_board.c:79: db_digit = score1[0];
+   514  00da  210400            	ld	hl,_score + 4
+   515  00dd  4e                	ld	c, (hl)
+   516  00de  59                	ld	e, c
+   517  00df  1603              	ld	d,0x03
+   518  00e1  ed30              	mlt	de
+   519  00e3  210000            	ld	hl,_score_points_digits
+   520  00e6  19                	add	hl, de
+   521  00e7  eb                	ex	de, hl
+   522                          ;score_board.c:80: score_board_1[SCORE_POINTS_POSITION] = score1[0];
+   523  00e8  210000            	ld	hl,_db_score
+   524  00eb  71                	ld	(hl), c
+   525                          ;score_board.c:81: score_board_1[SCORE_POINTS_POSITION + 1] = score1[1];
+   526  00ec  1a                	ld	a, (de)
+   527  00ed  320100            	ld	(_db_digit),a
+   528                          ;score_board.c:82: const char *score2 = score_points_digits[score.points[1]];
+   529  00f0  011400            	ld	bc,_score_board_1 + 20
+   530  00f3  1a                	ld	a, (de)
+   531  00f4  02                	ld	(bc), a
+   532                          ;score_board.c:83: score_board_2[SCORE_POINTS_POSITION] = score2[0];
+   533  00f5  011500            	ld	bc,_score_board_1 + 21
+   534  00f8  13                	inc	de
+   535  00f9  1a                	ld	a, (de)
+   536  00fa  02                	ld	(bc), a
+   537                          ;score_board.c:84: score_board_2[SCORE_POINTS_POSITION + 1] = score2[1];
+   538  00fb  3a0500            	ld	a, (_score + 5)
+   539  00fe  5f                	ld	e, a
+   540  00ff  1603              	ld	d,0x03
+   541  0101  ed30              	mlt	de
+   542  0103  210000            	ld	hl,_score_points_digits
+   543  0106  19                	add	hl, de
+   544  0107  eb                	ex	de, hl
+   545                          ;score_board.c:85:
+   546  0108  012c00            	ld	bc,_score_board_2 + 20
+   547  010b  1a                	ld	a, (de)
+   548  010c  02                	ld	(bc), a
+   549                          ;score_board.c:86: for (uint8_t i = 0; i < SCORE_LENGTH; i++)
+   550  010d  012d00            	ld	bc,_score_board_2 + 21
+   551  0110  13                	inc	de
+   552  0111  1a                	ld	a, (de)
+   553  0112  02                	ld	(bc), a
+   554                          ;score_board.c:88: tilemap[SCORE_COORD_Y][i + SCORE_COORD_X].character = score_board_1[i];
+   555  0113  0e00              	ld	c,0x00
+   556                          l_show_score_board_00103:
+   557  0115  79                	ld	a, c
+   558  0116  d618              	sub	a,0x18
+   559  0118  3027              	jr	NC,l_show_score_board_00105
+   560                          ;score_board.c:90: }
+   561  011a  59                	ld	e, c
+   562  011b  1600              	ld	d,0x00
+   563  011d  eb                	ex	de,hl
+   564  011e  23                	inc	hl
+   565  011f  23                	inc	hl
+   566  0120  29                	add	hl, hl
+   567  0121  eb                	ex	de, hl
+   568  0122  212012            	ld	hl, +(_tilemap + 4640)
+   569  0125  19                	add	hl, de
+   570  0126  e3                	ex	(sp), hl
+   571  0127  0600              	ld	b,0x00
+   572  0129  210000            	ld	hl,_score_board_1
+   573  012c  09                	add	hl, bc
+   574  012d  7e                	ld	a, (hl)
+   575  012e  e1                	pop	hl
+   576  012f  e5                	push	hl
+   577  0130  77                	ld	(hl), a
+   578                          ;score_board.c:91: }
+   579  0131  21c012            	ld	hl, +(_tilemap + 4800)
+   580  0134  19                	add	hl, de
+   581  0135  eb                	ex	de, hl
+   582  0136  0600              	ld	b,0x00
+   583  0138  211800            	ld	hl,_score_board_2
+   584  013b  09                	add	hl, bc
+   585  013c  7e                	ld	a, (hl)
+   586  013d  12                	ld	(de), a
+   587                          ;score_board.c:88: tilemap[SCORE_COORD_Y][i + SCORE_COORD_X].character = score_board_1[i];
+   588  013e  0c                	inc	c
+   589  013f  18d4              	jr	l_show_score_board_00103
+   590                          l_show_score_board_00105:
+   591                          ;score_board.c:93: /**
+   592  0141  f1                	pop	af
+   593  0142  dde1              	pop	ix
+   594  0144  c9                	ret
+   595                          ;score_board.c:98: for (uint8_t i = 0; i < SCORE_LENGTH; i++)
+   596                          ;	---------------------------------
+   597                          ; Function hide_score_board
+   598                          ; ---------------------------------
+   599                          _hide_score_board:
+   600                          ;score_board.c:100: tilemap[SCORE_COORD_Y][i + SCORE_COORD_X].character = 0;
+   601  0145  0e00              	ld	c,0x00
+   602                          l_hide_score_board_00103:
+   603  0147  79                	ld	a, c
+   604  0148  d618              	sub	a,0x18
+   605  014a  d0                	ret	NC
+   606                          ;score_board.c:102: }
+   607  014b  59                	ld	e, c
+   608  014c  1600              	ld	d,0x00
+   609  014e  eb                	ex	de,hl
+   610  014f  23                	inc	hl
+   611  0150  23                	inc	hl
+   612  0151  29                	add	hl, hl
+   613  0152  eb                	ex	de, hl
+   614  0153  212012            	ld	hl, +(_tilemap + 4640)
+   615  0156  19                	add	hl, de
+   616  0157  3600              	ld	(hl),0x00
+   617                          ;score_board.c:103: }
+   618  0159  21c012            	ld	hl, +(_tilemap + 4800)
+   619  015c  19                	add	hl, de
+   620  015d  3600              	ld	(hl),0x00
+   621                          ;score_board.c:100: tilemap[SCORE_COORD_Y][i + SCORE_COORD_X].character = 0;
+   622  015f  0c                	inc	c
+   623                          ;score_board.c:105: ERROR: no line number 105 in file score_board.c
+   624  0160  18e5              	jr	l_hide_score_board_00103
+   625                          	SECTION data_compiler
+   626                          _db_score:
+   627  0000  ff                	DEFB +0xff
+   628                          _db_digit:
+   629  0001  ff                	DEFB +0xff
+   630                          	SECTION IGNORE
+   631                          

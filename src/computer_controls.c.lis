@@ -1,0 +1,1933 @@
+/tmp/tmp8FPROV75.asm:
+     1                          MODULE computer_controls_c
+     2                          LINE 0, "computer_controls.c"
+computer_controls.c:
+                                
+     1                          ;--------------------------------------------------------
+     2                          ; File Created by SDCC : free open source ISO C Compiler
+     3                          ; Version 4.3.0 #14210 (Mac OS X ppc)
+     4                          ;--------------------------------------------------------
+     5                          	.zxn
+     6                          ; Processed by Z88DK
+     7                          ;--------------------------------------------------------
+     8                          
+     9                          	EXTERN __divschar
+    10                          	EXTERN __divschar_callee
+    11                          	EXTERN __divsint
+    12                          	EXTERN __divsint_callee
+    13                          	EXTERN __divslong
+    14                          	EXTERN __divslong_callee
+    15                          	EXTERN __divslonglong
+    16                          	EXTERN __divslonglong_callee
+    17                          	EXTERN __divsuchar
+    18                          	EXTERN __divsuchar_callee
+    19                          	EXTERN __divuchar
+    20                          	EXTERN __divuchar_callee
+    21                          	EXTERN __divuint
+    22                          	EXTERN __divuint_callee
+    23                          	EXTERN __divulong
+    24                          	EXTERN __divulong_callee
+    25                          	EXTERN __divulonglong
+    26                          	EXTERN __divulonglong_callee
+    27                          	EXTERN __divuschar
+    28                          	EXTERN __divuschar_callee
+    29                          	EXTERN __modschar
+    30                          	EXTERN __modschar_callee
+    31                          	EXTERN __modsint
+    32                          	EXTERN __modsint_callee
+    33                          	EXTERN __modslong
+    34                          	EXTERN __modslong_callee
+    35                          	EXTERN __modslonglong
+    36                          	EXTERN __modslonglong_callee
+    37                          	EXTERN __modsuchar
+    38                          	EXTERN __modsuchar_callee
+    39                          	EXTERN __moduchar
+    40                          	EXTERN __moduchar_callee
+    41                          	EXTERN __moduint
+    42                          	EXTERN __moduint_callee
+    43                          	EXTERN __modulong
+    44                          	EXTERN __modulong_callee
+    45                          	EXTERN __modulonglong
+    46                          	EXTERN __modulonglong_callee
+    47                          	EXTERN __moduschar
+    48                          	EXTERN __moduschar_callee
+    49                          	EXTERN __mulint
+    50                          	EXTERN __mulint_callee
+    51                          	EXTERN __mullong
+    52                          	EXTERN __mullong_callee
+    53                          	EXTERN __mullonglong
+    54                          	EXTERN __mullonglong_callee
+    55                          	EXTERN __mulschar
+    56                          	EXTERN __mulschar_callee
+    57                          	EXTERN __mulsuchar
+    58                          	EXTERN __mulsuchar_callee
+    59                          	EXTERN __muluchar
+    60                          	EXTERN __muluchar_callee
+    61                          	EXTERN __muluschar
+    62                          	EXTERN __muluschar_callee
+    63                          	EXTERN __rlslonglong
+    64                          	EXTERN __rlslonglong_callee
+    65                          	EXTERN __rlulonglong
+    66                          	EXTERN __rlulonglong_callee
+    67                          	EXTERN __rrslonglong
+    68                          	EXTERN __rrslonglong_callee
+    69                          	EXTERN __rrulonglong
+    70                          	EXTERN __rrulonglong_callee
+    71                          	EXTERN ___mulsint2slong
+    72                          	EXTERN ___mulsint2slong_callee
+    73                          	EXTERN ___muluint2ulong
+    74                          	EXTERN ___muluint2ulong_callee
+    75                          	EXTERN ___sdcc_call_hl
+    76                          	EXTERN ___sdcc_call_iy
+    77                          	EXTERN ___sdcc_enter_ix
+    78                          	EXTERN banked_call
+    79                          	EXTERN _banked_ret
+    80                          	EXTERN ___fs2schar
+    81                          	EXTERN ___fs2schar_callee
+    82                          	EXTERN ___fs2sint
+    83                          	EXTERN ___fs2sint_callee
+    84                          	EXTERN ___fs2slong
+    85                          	EXTERN ___fs2slong_callee
+    86                          	EXTERN ___fs2slonglong
+    87                          	EXTERN ___fs2slonglong_callee
+    88                          	EXTERN ___fs2uchar
+    89                          	EXTERN ___fs2uchar_callee
+    90                          	EXTERN ___fs2uint
+    91                          	EXTERN ___fs2uint_callee
+    92                          	EXTERN ___fs2ulong
+    93                          	EXTERN ___fs2ulong_callee
+    94                          	EXTERN ___fs2ulonglong
+    95                          	EXTERN ___fs2ulonglong_callee
+    96                          	EXTERN ___fsadd
+    97                          	EXTERN ___fsadd_callee
+    98                          	EXTERN ___fsdiv
+    99                          	EXTERN ___fsdiv_callee
+   100                          	EXTERN ___fseq
+   101                          	EXTERN ___fseq_callee
+   102                          	EXTERN ___fsgt
+   103                          	EXTERN ___fsgt_callee
+   104                          	EXTERN ___fslt
+   105                          	EXTERN ___fslt_callee
+   106                          	EXTERN ___fsmul
+   107                          	EXTERN ___fsmul_callee
+   108                          	EXTERN ___fsneq
+   109                          	EXTERN ___fsneq_callee
+   110                          	EXTERN ___fssub
+   111                          	EXTERN ___fssub_callee
+   112                          	EXTERN ___schar2fs
+   113                          	EXTERN ___schar2fs_callee
+   114                          	EXTERN ___sint2fs
+   115                          	EXTERN ___sint2fs_callee
+   116                          	EXTERN ___slong2fs
+   117                          	EXTERN ___slong2fs_callee
+   118                          	EXTERN ___slonglong2fs
+   119                          	EXTERN ___slonglong2fs_callee
+   120                          	EXTERN ___uchar2fs
+   121                          	EXTERN ___uchar2fs_callee
+   122                          	EXTERN ___uint2fs
+   123                          	EXTERN ___uint2fs_callee
+   124                          	EXTERN ___ulong2fs
+   125                          	EXTERN ___ulong2fs_callee
+   126                          	EXTERN ___ulonglong2fs
+   127                          	EXTERN ___ulonglong2fs_callee
+   128                          	EXTERN ____sdcc_2_copy_src_mhl_dst_deix
+   129                          	EXTERN ____sdcc_2_copy_src_mhl_dst_bcix
+   130                          	EXTERN ____sdcc_4_copy_src_mhl_dst_deix
+   131                          	EXTERN ____sdcc_4_copy_src_mhl_dst_bcix
+   132                          	EXTERN ____sdcc_4_copy_src_mhl_dst_mbc
+   133                          	EXTERN ____sdcc_4_ldi_nosave_bc
+   134                          	EXTERN ____sdcc_4_ldi_save_bc
+   135                          	EXTERN ____sdcc_4_push_hlix
+   136                          	EXTERN ____sdcc_4_push_mhl
+   137                          	EXTERN ____sdcc_lib_setmem_hl
+   138                          	EXTERN ____sdcc_ll_add_de_bc_hl
+   139                          	EXTERN ____sdcc_ll_add_de_bc_hlix
+   140                          	EXTERN ____sdcc_ll_add_de_hlix_bc
+   141                          	EXTERN ____sdcc_ll_add_de_hlix_bcix
+   142                          	EXTERN ____sdcc_ll_add_deix_bc_hl
+   143                          	EXTERN ____sdcc_ll_add_deix_hlix
+   144                          	EXTERN ____sdcc_ll_add_hlix_bc_deix
+   145                          	EXTERN ____sdcc_ll_add_hlix_deix_bc
+   146                          	EXTERN ____sdcc_ll_add_hlix_deix_bcix
+   147                          	EXTERN ____sdcc_ll_asr_hlix_a
+   148                          	EXTERN ____sdcc_ll_asr_mbc_a
+   149                          	EXTERN ____sdcc_ll_copy_src_de_dst_hlix
+   150                          	EXTERN ____sdcc_ll_copy_src_de_dst_hlsp
+   151                          	EXTERN ____sdcc_ll_copy_src_deix_dst_hl
+   152                          	EXTERN ____sdcc_ll_copy_src_deix_dst_hlix
+   153                          	EXTERN ____sdcc_ll_copy_src_deixm_dst_hlsp
+   154                          	EXTERN ____sdcc_ll_copy_src_desp_dst_hlsp
+   155                          	EXTERN ____sdcc_ll_copy_src_hl_dst_de
+   156                          	EXTERN ____sdcc_ll_copy_src_hlsp_dst_de
+   157                          	EXTERN ____sdcc_ll_copy_src_hlsp_dst_deixm
+   158                          	EXTERN ____sdcc_ll_lsl_hlix_a
+   159                          	EXTERN ____sdcc_ll_lsl_mbc_a
+   160                          	EXTERN ____sdcc_ll_lsr_hlix_a
+   161                          	EXTERN ____sdcc_ll_lsr_mbc_a
+   162                          	EXTERN ____sdcc_ll_push_hlix
+   163                          	EXTERN ____sdcc_ll_push_mhl
+   164                          	EXTERN ____sdcc_ll_sub_de_bc_hl
+   165                          	EXTERN ____sdcc_ll_sub_de_bc_hlix
+   166                          	EXTERN ____sdcc_ll_sub_de_hlix_bc
+   167                          	EXTERN ____sdcc_ll_sub_de_hlix_bcix
+   168                          	EXTERN ____sdcc_ll_sub_deix_bc_hl
+   169                          	EXTERN ____sdcc_ll_sub_deix_hlix
+   170                          	EXTERN ____sdcc_ll_sub_hlix_bc_deix
+   171                          	EXTERN ____sdcc_ll_sub_hlix_deix_bc
+   172                          	EXTERN ____sdcc_ll_sub_hlix_deix_bcix
+   173                          	EXTERN ____sdcc_load_debc_deix
+   174                          	EXTERN ____sdcc_load_dehl_deix
+   175                          	EXTERN ____sdcc_load_debc_mhl
+   176                          	EXTERN ____sdcc_load_hlde_mhl
+   177                          	EXTERN ____sdcc_store_dehl_bcix
+   178                          	EXTERN ____sdcc_store_debc_hlix
+   179                          	EXTERN ____sdcc_store_debc_mhl
+   180                          	EXTERN ____sdcc_cpu_pop_ei
+   181                          	EXTERN ____sdcc_cpu_pop_ei_jp
+   182                          	EXTERN ____sdcc_cpu_push_di
+   183                          	EXTERN ____sdcc_outi
+   184                          	EXTERN ____sdcc_outi_128
+   185                          	EXTERN ____sdcc_outi_256
+   186                          	EXTERN ____sdcc_ldi
+   187                          	EXTERN ____sdcc_ldi_128
+   188                          	EXTERN ____sdcc_ldi_256
+   189                          	EXTERN ____sdcc_4_copy_srcd_hlix_dst_deix
+   190                          	EXTERN ____sdcc_4_and_src_mbc_mhl_dst_deix
+   191                          	EXTERN ____sdcc_4_or_src_mbc_mhl_dst_deix
+   192                          	EXTERN ____sdcc_4_xor_src_mbc_mhl_dst_deix
+   193                          	EXTERN ____sdcc_4_or_src_dehl_dst_bcix
+   194                          	EXTERN ____sdcc_4_xor_src_dehl_dst_bcix
+   195                          	EXTERN ____sdcc_4_and_src_dehl_dst_bcix
+   196                          	EXTERN ____sdcc_4_xor_src_mbc_mhl_dst_debc
+   197                          	EXTERN ____sdcc_4_or_src_mbc_mhl_dst_debc
+   198                          	EXTERN ____sdcc_4_and_src_mbc_mhl_dst_debc
+   199                          	EXTERN ____sdcc_4_cpl_src_mhl_dst_debc
+   200                          	EXTERN ____sdcc_4_xor_src_debc_mhl_dst_debc
+   201                          	EXTERN ____sdcc_4_or_src_debc_mhl_dst_debc
+   202                          	EXTERN ____sdcc_4_and_src_debc_mhl_dst_debc
+   203                          	EXTERN ____sdcc_4_and_src_debc_hlix_dst_debc
+   204                          	EXTERN ____sdcc_4_or_src_debc_hlix_dst_debc
+   205                          	EXTERN ____sdcc_4_xor_src_debc_hlix_dst_debc
+   206                          
+   207                          ;--------------------------------------------------------
+   208                          ; Public variables in this module
+   209                          ;--------------------------------------------------------
+   210                          	GLOBAL _calculate_position_to_receive_ball
+   211                          	GLOBAL _move_to_target
+   212                          	GLOBAL _calculate_player_positioning
+   213                          	GLOBAL _computer_state
+   214                          	GLOBAL _read_computer_control
+   215                          	GLOBAL _computer_transition_idle
+   216                          	GLOBAL _computer_state_idle
+   217                          	GLOBAL _computer_transition_wait_to_serve
+   218                          	GLOBAL _computer_state_wait_to_serve
+   219                          	GLOBAL _computer_transition_serve
+   220                          	GLOBAL _computer_state_serve
+   221                          	GLOBAL _computer_transition_position
+   222                          	GLOBAL _computer_state_position
+   223                          	GLOBAL _computer_transition_approach_ball
+   224                          	GLOBAL _computer_state_approach_ball
+   225                          	GLOBAL _computer_transition_wait_for_serve
+   226                          	GLOBAL _computer_state_wait_for_serve
+   227                          	GLOBAL _computer_transition_receive_serve
+   228                          	GLOBAL _computer_state_receive_serve
+   229                          	GLOBAL _restart_computer_controls
+   230                          ;--------------------------------------------------------
+   231                          ; Externals used
+   232                          ;--------------------------------------------------------
+   233                          	GLOBAL _float_to_string
+   234                          	GLOBAL _ball_trajectory_points_at_service
+   235                          	GLOBAL _ball_trajectory_points
+   236                          	GLOBAL _set_ball_speed_at_drive
+   237                          	GLOBAL _ball_future_x_and_height
+   238                          	GLOBAL _set_ball_velocity_net_height
+   239                          	GLOBAL _set_lob_ball_velocity
+   240                          	GLOBAL _update_ball
+   241                          	GLOBAL _valid_area
+   242                          	GLOBAL _service_area
+   243                          	GLOBAL _get_serving_player
+   244                          	GLOBAL _is_ad_service
+   245                          	GLOBAL _start_match
+   246                          	GLOBAL _event_player_touch
+   247                          	GLOBAL _event_net_touched
+   248                          	GLOBAL _event_player_hit
+   249                          	GLOBAL _event_ball_bounced
+   250                          	GLOBAL _update_entities
+   251                          	GLOBAL _xy_in_boundary
+   252                          	GLOBAL _point_in_boundary
+   253                          	GLOBAL _x_projection
+   254                          	GLOBAL _closest_type_of_hit
+   255                          	GLOBAL _ball_at_reach
+   256                          	GLOBAL _set_player_status
+   257                          	GLOBAL _get_player
+   258                          	GLOBAL _update_players
+   259                          	GLOBAL _init_controls
+   260                          	GLOBAL _diplay_profile
+   261                          	GLOBAL _in_mouse_kempston_wheel_delta
+   262                          	GLOBAL _in_mouse_kempston_wheel
+   263                          	GLOBAL _in_mouse_kempston_callee
+   264                          	GLOBAL _in_mouse_kempston
+   265                          	GLOBAL _in_mouse_kempston_setpos_callee
+   266                          	GLOBAL _in_mouse_kempston_setpos
+   267                          	GLOBAL _in_mouse_kempston_reset
+   268                          	GLOBAL _in_mouse_kempston_init
+   269                          	GLOBAL _in_mouse_amx_wheel_delta
+   270                          	GLOBAL _in_mouse_amx_wheel
+   271                          	GLOBAL _in_mouse_amx_callee
+   272                          	GLOBAL _in_mouse_amx
+   273                          	GLOBAL _in_mouse_amx_setpos_callee
+   274                          	GLOBAL _in_mouse_amx_setpos
+   275                          	GLOBAL _in_mouse_amx_reset
+   276                          	GLOBAL _in_mouse_amx_init_callee
+   277                          	GLOBAL _in_mouse_amx_init
+   278                          	GLOBAL _in_stick_sinclair2
+   279                          	GLOBAL _in_stick_sinclair1
+   280                          	GLOBAL _in_stick_kempston
+   281                          	GLOBAL _in_stick_fuller
+   282                          	GLOBAL _in_stick_cursor
+   283                          	GLOBAL _in_stick_keyboard_fastcall
+   284                          	GLOBAL _in_stick_keyboard
+   285                          	GLOBAL _in_wait_nokey
+   286                          	GLOBAL _in_wait_key
+   287                          	GLOBAL _in_test_key
+   288                          	GLOBAL _in_pause_fastcall
+   289                          	GLOBAL _in_pause
+   290                          	GLOBAL _in_key_scancode_fastcall
+   291                          	GLOBAL _in_key_scancode
+   292                          	GLOBAL _in_key_pressed_fastcall
+   293                          	GLOBAL _in_key_pressed
+   294                          	GLOBAL _in_inkey
+   295                          	GLOBAL _poly_callee
+   296                          	GLOBAL _poly
+   297                          	GLOBAL _exp10_fastcall
+   298                          	GLOBAL _exp10
+   299                          	GLOBAL _mul10u_fastcall
+   300                          	GLOBAL _mul10u
+   301                          	GLOBAL _mul2_fastcall
+   302                          	GLOBAL _mul2
+   303                          	GLOBAL _div2_fastcall
+   304                          	GLOBAL _div2
+   305                          	GLOBAL _invsqrt_fastcall
+   306                          	GLOBAL _invsqrt
+   307                          	GLOBAL _inv_fastcall
+   308                          	GLOBAL _inv
+   309                          	GLOBAL _sqr_fastcall
+   310                          	GLOBAL _sqr
+   311                          	GLOBAL _neg_fastcall
+   312                          	GLOBAL _neg
+   313                          	GLOBAL _isunordered_callee
+   314                          	GLOBAL _isunordered
+   315                          	GLOBAL _islessgreater_callee
+   316                          	GLOBAL _islessgreater
+   317                          	GLOBAL _islessequal_callee
+   318                          	GLOBAL _islessequal
+   319                          	GLOBAL _isless_callee
+   320                          	GLOBAL _isless
+   321                          	GLOBAL _isgreaterequal_callee
+   322                          	GLOBAL _isgreaterequal
+   323                          	GLOBAL _isgreater_callee
+   324                          	GLOBAL _isgreater
+   325                          	GLOBAL _fma_callee
+   326                          	GLOBAL _fma
+   327                          	GLOBAL _fmin_callee
+   328                          	GLOBAL _fmin
+   329                          	GLOBAL _fmax_callee
+   330                          	GLOBAL _fmax
+   331                          	GLOBAL _fdim_callee
+   332                          	GLOBAL _fdim
+   333                          	GLOBAL _nexttoward_callee
+   334                          	GLOBAL _nexttoward
+   335                          	GLOBAL _nextafter_callee
+   336                          	GLOBAL _nextafter
+   337                          	GLOBAL _nan_fastcall
+   338                          	GLOBAL _nan
+   339                          	GLOBAL _copysign_callee
+   340                          	GLOBAL _copysign
+   341                          	GLOBAL _remquo_callee
+   342                          	GLOBAL _remquo
+   343                          	GLOBAL _remainder_callee
+   344                          	GLOBAL _remainder
+   345                          	GLOBAL _fmod_callee
+   346                          	GLOBAL _fmod
+   347                          	GLOBAL _modf_callee
+   348                          	GLOBAL _modf
+   349                          	GLOBAL _trunc_fastcall
+   350                          	GLOBAL _trunc
+   351                          	GLOBAL _lround_fastcall
+   352                          	GLOBAL _lround
+   353                          	GLOBAL _round_fastcall
+   354                          	GLOBAL _round
+   355                          	GLOBAL _lrint_fastcall
+   356                          	GLOBAL _lrint
+   357                          	GLOBAL _rint_fastcall
+   358                          	GLOBAL _rint
+   359                          	GLOBAL _nearbyint_fastcall
+   360                          	GLOBAL _nearbyint
+   361                          	GLOBAL _floor_fastcall
+   362                          	GLOBAL _floor
+   363                          	GLOBAL _ceil_fastcall
+   364                          	GLOBAL _ceil
+   365                          	GLOBAL _tgamma_fastcall
+   366                          	GLOBAL _tgamma
+   367                          	GLOBAL _lgamma_fastcall
+   368                          	GLOBAL _lgamma
+   369                          	GLOBAL _erfc_fastcall
+   370                          	GLOBAL _erfc
+   371                          	GLOBAL _erf_fastcall
+   372                          	GLOBAL _erf
+   373                          	GLOBAL _cbrt_fastcall
+   374                          	GLOBAL _cbrt
+   375                          	GLOBAL _sqrt_fastcall
+   376                          	GLOBAL _sqrt
+   377                          	GLOBAL _pow_callee
+   378                          	GLOBAL _pow
+   379                          	GLOBAL _hypot_callee
+   380                          	GLOBAL _hypot
+   381                          	GLOBAL _fabs_fastcall
+   382                          	GLOBAL _fabs
+   383                          	GLOBAL _logb_fastcall
+   384                          	GLOBAL _logb
+   385                          	GLOBAL _log2_fastcall
+   386                          	GLOBAL _log2
+   387                          	GLOBAL _log1p_fastcall
+   388                          	GLOBAL _log1p
+   389                          	GLOBAL _log10_fastcall
+   390                          	GLOBAL _log10
+   391                          	GLOBAL _log_fastcall
+   392                          	GLOBAL _log
+   393                          	GLOBAL _ilogb_fastcall
+   394                          	GLOBAL _ilogb
+   395                          	GLOBAL _scalbln_callee
+   396                          	GLOBAL _scalbln
+   397                          	GLOBAL _scalbn_callee
+   398                          	GLOBAL _scalbn
+   399                          	GLOBAL _ldexp_callee
+   400                          	GLOBAL _ldexp
+   401                          	GLOBAL _frexp_callee
+   402                          	GLOBAL _frexp
+   403                          	GLOBAL _expm1_fastcall
+   404                          	GLOBAL _expm1
+   405                          	GLOBAL _exp2_fastcall
+   406                          	GLOBAL _exp2
+   407                          	GLOBAL _exp_fastcall
+   408                          	GLOBAL _exp
+   409                          	GLOBAL _tanh_fastcall
+   410                          	GLOBAL _tanh
+   411                          	GLOBAL _sinh_fastcall
+   412                          	GLOBAL _sinh
+   413                          	GLOBAL _cosh_fastcall
+   414                          	GLOBAL _cosh
+   415                          	GLOBAL _atanh_fastcall
+   416                          	GLOBAL _atanh
+   417                          	GLOBAL _asinh_fastcall
+   418                          	GLOBAL _asinh
+   419                          	GLOBAL _acosh_fastcall
+   420                          	GLOBAL _acosh
+   421                          	GLOBAL _tan_fastcall
+   422                          	GLOBAL _tan
+   423                          	GLOBAL _sin_fastcall
+   424                          	GLOBAL _sin
+   425                          	GLOBAL _cos_fastcall
+   426                          	GLOBAL _cos
+   427                          	GLOBAL _atan2_callee
+   428                          	GLOBAL _atan2
+   429                          	GLOBAL _atan_fastcall
+   430                          	GLOBAL _atan
+   431                          	GLOBAL _asin_fastcall
+   432                          	GLOBAL _asin
+   433                          	GLOBAL _acos_fastcall
+   434                          	GLOBAL _acos
+   435                          	GLOBAL _env_getenv_callee
+   436                          	GLOBAL _env_getenv
+   437                          	GLOBAL _getenv_ex_callee
+   438                          	GLOBAL _getenv_ex
+   439                          	GLOBAL _getenv_fastcall
+   440                          	GLOBAL _getenv
+   441                          	GLOBAL _mkstemp_ex_fastcall
+   442                          	GLOBAL _mkstemp_ex
+   443                          	GLOBAL _ulltoa_callee
+   444                          	GLOBAL _ulltoa
+   445                          	GLOBAL _strtoull_callee
+   446                          	GLOBAL _strtoull
+   447                          	GLOBAL _strtoll_callee
+   448                          	GLOBAL _strtoll
+   449                          	GLOBAL _lltoa_callee
+   450                          	GLOBAL _lltoa
+   451                          	GLOBAL _llabs_callee
+   452                          	GLOBAL _llabs
+   453                          	GLOBAL __lldivu__callee
+   454                          	GLOBAL __lldivu_
+   455                          	GLOBAL __lldiv__callee
+   456                          	GLOBAL __lldiv_
+   457                          	GLOBAL _atoll_callee
+   458                          	GLOBAL _atoll
+   459                          	GLOBAL _realloc_unlocked_callee
+   460                          	GLOBAL _realloc_unlocked
+   461                          	GLOBAL _malloc_unlocked_fastcall
+   462                          	GLOBAL _malloc_unlocked
+   463                          	GLOBAL _free_unlocked_fastcall
+   464                          	GLOBAL _free_unlocked
+   465                          	GLOBAL _calloc_unlocked_callee
+   466                          	GLOBAL _calloc_unlocked
+   467                          	GLOBAL _aligned_alloc_unlocked_callee
+   468                          	GLOBAL _aligned_alloc_unlocked
+   469                          	GLOBAL _realloc_callee
+   470                          	GLOBAL _realloc
+   471                          	GLOBAL _malloc_fastcall
+   472                          	GLOBAL _malloc
+   473                          	GLOBAL _free_fastcall
+   474                          	GLOBAL _free
+   475                          	GLOBAL _calloc_callee
+   476                          	GLOBAL _calloc
+   477                          	GLOBAL _aligned_alloc_callee
+   478                          	GLOBAL _aligned_alloc
+   479                          	GLOBAL _utoa_callee
+   480                          	GLOBAL _utoa
+   481                          	GLOBAL _ultoa_callee
+   482                          	GLOBAL _ultoa
+   483                          	GLOBAL _system_fastcall
+   484                          	GLOBAL _system
+   485                          	GLOBAL _strtoul_callee
+   486                          	GLOBAL _strtoul
+   487                          	GLOBAL _strtol_callee
+   488                          	GLOBAL _strtol
+   489                          	GLOBAL _strtof_callee
+   490                          	GLOBAL _strtof
+   491                          	GLOBAL _strtod_callee
+   492                          	GLOBAL _strtod
+   493                          	GLOBAL _srand_fastcall
+   494                          	GLOBAL _srand
+   495                          	GLOBAL _rand
+   496                          	GLOBAL _quick_exit_fastcall
+   497                          	GLOBAL _quick_exit
+   498                          	GLOBAL _qsort_callee
+   499                          	GLOBAL _qsort
+   500                          	GLOBAL _ltoa_callee
+   501                          	GLOBAL _ltoa
+   502                          	GLOBAL _labs_fastcall
+   503                          	GLOBAL _labs
+   504                          	GLOBAL _itoa_callee
+   505                          	GLOBAL _itoa
+   506                          	GLOBAL _ftoh_callee
+   507                          	GLOBAL _ftoh
+   508                          	GLOBAL _ftog_callee
+   509                          	GLOBAL _ftog
+   510                          	GLOBAL _ftoe_callee
+   511                          	GLOBAL _ftoe
+   512                          	GLOBAL _ftoa_callee
+   513                          	GLOBAL _ftoa
+   514                          	GLOBAL _exit_fastcall
+   515                          	GLOBAL _exit
+   516                          	GLOBAL _dtoh_callee
+   517                          	GLOBAL _dtoh
+   518                          	GLOBAL _dtog_callee
+   519                          	GLOBAL _dtog
+   520                          	GLOBAL _dtoe_callee
+   521                          	GLOBAL _dtoe
+   522                          	GLOBAL _dtoa_callee
+   523                          	GLOBAL _dtoa
+   524                          	GLOBAL _bsearch_callee
+   525                          	GLOBAL _bsearch
+   526                          	GLOBAL _atol_fastcall
+   527                          	GLOBAL _atol
+   528                          	GLOBAL _atoi_fastcall
+   529                          	GLOBAL _atoi
+   530                          	GLOBAL _atof_fastcall
+   531                          	GLOBAL _atof
+   532                          	GLOBAL _atexit_fastcall
+   533                          	GLOBAL _atexit
+   534                          	GLOBAL _at_quick_exit_fastcall
+   535                          	GLOBAL _at_quick_exit
+   536                          	GLOBAL _abs_fastcall
+   537                          	GLOBAL _abs
+   538                          	GLOBAL _abort
+   539                          	GLOBAL __strtou__callee
+   540                          	GLOBAL __strtou_
+   541                          	GLOBAL __strtoi__callee
+   542                          	GLOBAL __strtoi_
+   543                          	GLOBAL __random_uniform_xor_8__fastcall
+   544                          	GLOBAL __random_uniform_xor_8_
+   545                          	GLOBAL __random_uniform_xor_32__fastcall
+   546                          	GLOBAL __random_uniform_xor_32_
+   547                          	GLOBAL __random_uniform_cmwc_8__fastcall
+   548                          	GLOBAL __random_uniform_cmwc_8_
+   549                          	GLOBAL __shellsort__callee
+   550                          	GLOBAL __shellsort_
+   551                          	GLOBAL __quicksort__callee
+   552                          	GLOBAL __quicksort_
+   553                          	GLOBAL __insertion_sort__callee
+   554                          	GLOBAL __insertion_sort_
+   555                          	GLOBAL __ldivu__callee
+   556                          	GLOBAL __ldivu_
+   557                          	GLOBAL __ldiv__callee
+   558                          	GLOBAL __ldiv_
+   559                          	GLOBAL __divu__callee
+   560                          	GLOBAL __divu_
+   561                          	GLOBAL __div__callee
+   562                          	GLOBAL __div_
+   563                          	GLOBAL _ref_points
+   564                          	GLOBAL _ball
+   565                          	GLOBAL _game_state
+   566                          	GLOBAL _match_type
+   567                          	GLOBAL _score
+   568                          	GLOBAL _player_bottom
+   569                          	GLOBAL _player_top
+   570                          	GLOBAL _game_settings
+   571                          	GLOBAL _ppponent_profile
+   572                          	GLOBAL _court_boundaries
+   573                          ;--------------------------------------------------------
+   574                          ; special function registers
+   575                          ;--------------------------------------------------------
+   576                          ;--------------------------------------------------------
+   577                          ; ram data
+   578                          ;--------------------------------------------------------
+   579                          	SECTION bss_compiler
+   580                          ;--------------------------------------------------------
+   581                          ; ram data
+   582                          ;--------------------------------------------------------
+   583                          
+   584                          IF 0
+   585                          
+   586                          ; .area _INITIALIZED removed by z88dk
+   587                          
+   588                          _computer_state:
+   589                          	DEFS 16
+   590                          
+   591                          ENDIF
+   592                          
+   593                          ;--------------------------------------------------------
+   594                          ; absolute external ram data
+   595                          ;--------------------------------------------------------
+   596                          	SECTION IGNORE
+   597                          ;--------------------------------------------------------
+   598                          ; global & static initialisations
+   599                          ;--------------------------------------------------------
+   600                          	SECTION code_crt_init
+   601                          ;--------------------------------------------------------
+   602                          ; Home
+   603                          ;--------------------------------------------------------
+   604                          	SECTION IGNORE
+   605                          ;--------------------------------------------------------
+   606                          ; code
+   607                          ;--------------------------------------------------------
+   608                          	SECTION code_compiler
+   609                          ;computer_controls.c:102: ControlInput read_computer_control(uint8_t player_id)
+   610                          ;	---------------------------------
+   611                          ; Function read_computer_control
+   612                          ; ---------------------------------
+   613                          _read_computer_control:
+   614  0000  cd0000            	call	___sdcc_enter_ix
+   615                          ;computer_controls.c:104: ComputerPlayer *computer = &computer_state[player_id];
+   616  0003  dd6e00            	ld	l,(ix+4)
+   617  0006  2600              	ld	h,0x00
+   618  0008  29                	add	hl, hl
+   619  0009  29                	add	hl, hl
+   620  000a  29                	add	hl, hl
+   621  000b  110000            	ld	de,_computer_state
+   622  000e  19                	add	hl, de
+   623                          ;computer_controls.c:105: return computer->stateFn(player_id);
+   624  000f  5e                	ld	e, (hl)
+   625  0010  23                	inc	hl
+   626  0011  56                	ld	d, (hl)
+   627  0012  af                	xor	a, a
+   628  0013  ddbe04            	cp	a,(ix+4)
+   629  0016  17                	rla
+   630  0017  f5                	push	af
+   631  0018  33                	inc	sp
+   632  0019  eb                	ex	de, hl
+   633  001a  cd0000            	call	___sdcc_call_hl
+   634  001d  33                	inc	sp
+   635                          ;computer_controls.c:106: }
+   636  001e  dde1              	pop	ix
+   637  0020  c9                	ret
+   638                          	SECTION code_compiler
+   639                          ;computer_controls.c:112: void computer_transition_idle(PlayerId player_id)
+   640                          ;	---------------------------------
+   641                          ; Function computer_transition_idle
+   642                          ; ---------------------------------
+   643                          _computer_transition_idle:
+   644  0021  cd0000            	call	___sdcc_enter_ix
+   645                          ;computer_controls.c:115: ComputerPlayer *computer = &computer_state[player_id];
+   646  0024  010000            	ld	bc,_computer_state+0
+   647  0027  dd6e04            	ld	l,(ix+4)
+   648  002a  1e00              	ld	e,0x00
+   649  002c  63                	ld	h, e
+   650  002d  29                	add	hl, hl
+   651  002e  29                	add	hl, hl
+   652  002f  29                	add	hl, hl
+   653  0030  09                	add	hl, bc
+   654                          ;computer_controls.c:116: computer->stateFn = computer_state_idle;
+   655  0031  363b              	ld	(hl), +((_computer_state_idle) & 0xFF)
+   656  0033  eb                	ex	de,hl
+   657  0034  13                	inc	de
+   658  0035  3e00              	ld	a, +((_computer_state_idle) / 256)
+   659  0037  12                	ld	(de), a
+   660                          ;computer_controls.c:117: }
+   661  0038  dde1              	pop	ix
+   662  003a  c9                	ret
+   663                          ;computer_controls.c:119: ControlInput computer_state_idle(PlayerId playerId)
+   664                          ;	---------------------------------
+   665                          ; Function computer_state_idle
+   666                          ; ---------------------------------
+   667                          _computer_state_idle:
+   668  003b  cd0000            	call	___sdcc_enter_ix
+   669                          ;computer_controls.c:121: Player *player = get_player(playerId);
+   670  003e  dd7e04            	ld	a,(ix+4)
+   671  0041  f5                	push	af
+   672  0042  33                	inc	sp
+   673  0043  cd0000            	call	_get_player
+   674  0046  33                	inc	sp
+   675                          ;computer_controls.c:122: Player *opponent = get_player(playerId ^ 1);
+   676  0047  dd7e04            	ld	a,(ix+4)
+   677  004a  ee01              	xor	a,0x01
+   678  004c  e5                	push	hl
+   679  004d  f5                	push	af
+   680  004e  33                	inc	sp
+   681  004f  cd0000            	call	_get_player
+   682  0052  33                	inc	sp
+   683  0053  eb                	ex	de, hl
+   684  0054  c1                	pop	bc
+   685                          ;computer_controls.c:124: if (game_state.point_status == POS_SERVICE_START)
+   686  0055  3a0000            	ld	a,(_game_state)
+   687  0058  b7                	or	a, a
+   688  0059  2024              	jr	NZ,l_computer_state_idle_00107
+   689                          ;computer_controls.c:127: if (player->state == PS_SERVICE_READY)
+   690  005b  210300            	ld	hl,3
+   691  005e  09                	add	hl, bc
+   692  005f  7e                	ld	a, (hl)
+   693  0060  3d                	dec	a
+   694  0061  200b              	jr	NZ,l_computer_state_idle_00104
+   695                          ;computer_controls.c:130: computer_transition_wait_to_serve(playerId);
+   696  0063  dd7e04            	ld	a,(ix+4)
+   697  0066  f5                	push	af
+   698  0067  33                	inc	sp
+   699  0068  cd8400            	call	_computer_transition_wait_to_serve
+   700  006b  33                	inc	sp
+   701  006c  1811              	jr	l_computer_state_idle_00107
+   702                          l_computer_state_idle_00104:
+   703                          ;computer_controls.c:132: else if (opponent->state == PS_SERVICE_READY)
+   704  006e  210300            	ld	hl,3
+   705  0071  19                	add	hl, de
+   706  0072  7e                	ld	a, (hl)
+   707  0073  3d                	dec	a
+   708  0074  2009              	jr	NZ,l_computer_state_idle_00107
+   709                          ;computer_controls.c:135: computer_transition_wait_for_serve(playerId);
+   710  0076  dd7e04            	ld	a,(ix+4)
+   711  0079  f5                	push	af
+   712  007a  33                	inc	sp
+   713  007b  cd1006            	call	_computer_transition_wait_for_serve
+   714  007e  33                	inc	sp
+   715                          l_computer_state_idle_00107:
+   716                          ;computer_controls.c:138: return 0;
+   717  007f  2e00              	ld	l,0x00
+   718                          ;computer_controls.c:139: }
+   719  0081  dde1              	pop	ix
+   720  0083  c9                	ret
+   721                          ;computer_controls.c:145: void computer_transition_wait_to_serve(PlayerId player_id)
+   722                          ;	---------------------------------
+   723                          ; Function computer_transition_wait_to_serve
+   724                          ; ---------------------------------
+   725                          _computer_transition_wait_to_serve:
+   726  0084  cd0000            	call	___sdcc_enter_ix
+   727                          ;computer_controls.c:148: ComputerPlayer *computer = &computer_state[player_id];
+   728  0087  010000            	ld	bc,_computer_state+0
+   729  008a  dd6e04            	ld	l,(ix+4)
+   730  008d  1e00              	ld	e,0x00
+   731  008f  63                	ld	h, e
+   732  0090  29                	add	hl, hl
+   733  0091  29                	add	hl, hl
+   734  0092  29                	add	hl, hl
+   735  0093  09                	add	hl, bc
+   736  0094  eb                	ex	de, hl
+   737                          ;computer_controls.c:150: computer->wait_to_serve.countdown = rand() % 50 + 50;
+   738  0095  4b                	ld	c, e
+   739  0096  42                	ld	b, d
+   740  0097  03                	inc	bc
+   741  0098  03                	inc	bc
+   742  0099  c5                	push	bc
+   743  009a  d5                	push	de
+   744  009b  cd0000            	call	_rand
+   745  009e  ed8a0032          	push	+0x0032
+   746  00a2  e5                	push	hl
+   747  00a3  cd0000            	call	__modsint_callee
+   748  00a6  d1                	pop	de
+   749  00a7  c1                	pop	bc
+   750  00a8  7d                	ld	a, l
+   751  00a9  c632              	add	a,0x32
+   752  00ab  02                	ld	(bc), a
+   753                          ;computer_controls.c:151: computer->stateFn = computer_state_wait_to_serve;
+   754  00ac  3eb6              	ld	a, +((_computer_state_wait_to_serve) & 0xFF)
+   755  00ae  12                	ld	(de), a
+   756  00af  13                	inc	de
+   757  00b0  3e00              	ld	a, +((_computer_state_wait_to_serve) / 256)
+   758  00b2  12                	ld	(de), a
+   759                          ;computer_controls.c:152: }
+   760  00b3  dde1              	pop	ix
+   761  00b5  c9                	ret
+   762                          ;computer_controls.c:154: ControlInput computer_state_wait_to_serve(PlayerId playerId)
+   763                          ;	---------------------------------
+   764                          ; Function computer_state_wait_to_serve
+   765                          ; ---------------------------------
+   766                          _computer_state_wait_to_serve:
+   767  00b6  cd0000            	call	___sdcc_enter_ix
+   768                          ;computer_controls.c:156: ComputerPlayer *computer = &computer_state[playerId];
+   769  00b9  dd6e04            	ld	l,(ix+4)
+   770  00bc  2600              	ld	h,0x00
+   771  00be  29                	add	hl, hl
+   772  00bf  29                	add	hl, hl
+   773  00c0  29                	add	hl, hl
+   774  00c1  110000            	ld	de,_computer_state
+   775  00c4  19                	add	hl, de
+   776                          ;computer_controls.c:157: if (--computer->wait_to_serve.countdown > 0)
+   777  00c5  23                	inc	hl
+   778  00c6  23                	inc	hl
+   779  00c7  7e                	ld	a, (hl)
+   780  00c8  3d                	dec	a
+   781  00c9  77                	ld	(hl), a
+   782  00ca  b7                	or	a, a
+   783  00cb  2804              	jr	Z,l_computer_state_wait_to_serve_00102
+   784                          ;computer_controls.c:159: return 0;
+   785  00cd  2e00              	ld	l,0x00
+   786  00cf  180b              	jr	l_computer_state_wait_to_serve_00104
+   787                          l_computer_state_wait_to_serve_00102:
+   788                          ;computer_controls.c:164: computer_transition_serve(playerId);
+   789  00d1  dd7e04            	ld	a,(ix+4)
+   790  00d4  f5                	push	af
+   791  00d5  33                	inc	sp
+   792  00d6  cddf00            	call	_computer_transition_serve
+   793  00d9  33                	inc	sp
+   794                          ;computer_controls.c:165: return CONTROL_A;
+   795  00da  2e80              	ld	l,0x80
+   796                          l_computer_state_wait_to_serve_00104:
+   797                          ;computer_controls.c:167: }
+   798  00dc  dde1              	pop	ix
+   799  00de  c9                	ret
+   800                          ;computer_controls.c:173: void computer_transition_serve(PlayerId player_id)
+   801                          ;	---------------------------------
+   802                          ; Function computer_transition_serve
+   803                          ; ---------------------------------
+   804                          _computer_transition_serve:
+   805  00df  cd0000            	call	___sdcc_enter_ix
+   806                          ;computer_controls.c:176: ComputerPlayer *computer = &computer_state[player_id];
+   807  00e2  010000            	ld	bc,_computer_state+0
+   808  00e5  dd7e04            	ld	a,(ix+4)
+   809  00e8  1e00              	ld	e,0x00
+   810  00ea  6f                	ld	l, a
+   811  00eb  63                	ld	h, e
+   812  00ec  29                	add	hl, hl
+   813  00ed  29                	add	hl, hl
+   814  00ee  29                	add	hl, hl
+   815  00ef  09                	add	hl, bc
+   816                          ;computer_controls.c:177: computer->stateFn = computer_state_serve;
+   817  00f0  5d                	ld	e,l
+   818  00f1  54                	ld	d,h
+   819  00f2  360d              	ld	(hl), +((_computer_state_serve) & 0xFF)
+   820  00f4  23                	inc	hl
+   821  00f5  3601              	ld	(hl), +((_computer_state_serve) / 256)
+   822                          ;computer_controls.c:179: computer->serve.target_height = ref_points[REF_POINT_SERVICE][player_id].height + 14;
+   823  00f7  13                	inc	de
+   824  00f8  13                	inc	de
+   825  00f9  dd7e04            	ld	a,(ix+4)
+   826  00fc  4f                	ld	c, a
+   827  00fd  87                	add	a, a
+   828  00fe  81                	add	a, c
+   829  00ff  4f                	ld	c, a
+   830  0100  0600              	ld	b,0x00
+   831  0102  210200            	ld	hl,_ref_points+1+1
+   832  0105  09                	add	hl,bc
+   833  0106  7e                	ld	a, (hl)
+   834  0107  c60e              	add	a,0x0e
+   835  0109  12                	ld	(de), a
+   836                          ;computer_controls.c:180: }
+   837  010a  dde1              	pop	ix
+   838  010c  c9                	ret
+   839                          ;computer_controls.c:182: ControlInput computer_state_serve(PlayerId player_id)
+   840                          ;	---------------------------------
+   841                          ; Function computer_state_serve
+   842                          ; ---------------------------------
+   843                          _computer_state_serve:
+   844  010d  cd0000            	call	___sdcc_enter_ix
+   845  0110  f5                	push	af
+   846  0111  f5                	push	af
+   847                          ;computer_controls.c:184: ComputerPlayer *computer = &computer_state[player_id];
+   848  0112  010000            	ld	bc,_computer_state+0
+   849  0115  dd6e04            	ld	l,(ix+4)
+   850  0118  1e00              	ld	e,0x00
+   851  011a  63                	ld	h, e
+   852  011b  29                	add	hl, hl
+   853  011c  29                	add	hl, hl
+   854  011d  29                	add	hl, hl
+   855  011e  09                	add	hl, bc
+   856  011f  eb                	ex	de, hl
+   857                          ;computer_controls.c:187: if (ball.hidden)
+   858  0120  211800            	ld	hl,_ball + 24
+   859  0123  cb46              	bit	0,(hl)
+   860  0125  2804              	jr	Z,l_computer_state_serve_00102
+   861                          ;computer_controls.c:188: return 0;
+   862  0127  2e00              	ld	l,0x00
+   863  0129  1852              	jr	l_computer_state_serve_00107
+   864                          l_computer_state_serve_00102:
+   865                          ;computer_controls.c:191: if (ball.v_h > 0 && ball.height <= computer->serve.target_height)
+   866  012b  ed4b0c00          	ld	bc, (_ball + 12)
+   867  012f  2a0e00            	ld	hl, (_ball + 14)
+   868  0132  d5                	push	de
+   869  0133  e5                	push	hl
+   870  0134  c5                	push	bc
+   871  0135  210000            	ld	hl,0x0000
+   872  0138  e5                	push	hl
+   873  0139  e5                	push	hl
+   874  013a  cd0000            	call	___fslt_callee
+   875  013d  7d                	ld	a, l
+   876  013e  d1                	pop	de
+   877  013f  b7                	or	a, a
+   878  0140  2839              	jr	Z,l_computer_state_serve_00104
+   879  0142  d5                	push	de
+   880  0143  110800            	ld	de,_ball + 8
+   881  0146  210200            	ld	hl,2
+   882  0149  39                	add	hl, sp
+   883  014a  eb                	ex	de, hl
+   884  014b  cd0000            	call	____sdcc_4_ldi_nosave_bc
+   885  014e  d1                	pop	de
+   886  014f  13                	inc	de
+   887  0150  13                	inc	de
+   888  0151  1a                	ld	a, (de)
+   889  0152  f5                	push	af
+   890  0153  33                	inc	sp
+   891  0154  cd0000            	call	___uchar2fs_callee
+   892  0157  dd4efe            	ld	c,(ix-2)
+   893  015a  dd46ff            	ld	b,(ix-1)
+   894  015d  c5                	push	bc
+   895  015e  dd4efc            	ld	c,(ix-4)
+   896  0161  dd46fd            	ld	b,(ix-3)
+   897  0164  c5                	push	bc
+   898  0165  d5                	push	de
+   899  0166  e5                	push	hl
+   900  0167  cd0000            	call	___fslt_callee
+   901  016a  cb45              	bit	0, l
+   902  016c  200d              	jr	NZ,l_computer_state_serve_00104
+   903                          ;computer_controls.c:193: computer_transition_position(player_id);
+   904  016e  dd7e04            	ld	a,(ix+4)
+   905  0171  f5                	push	af
+   906  0172  33                	inc	sp
+   907  0173  cd8201            	call	_computer_transition_position
+   908  0176  33                	inc	sp
+   909                          ;computer_controls.c:194: return CONTROL_A;
+   910  0177  2e80              	ld	l,0x80
+   911  0179  1802              	jr	l_computer_state_serve_00107
+   912                          l_computer_state_serve_00104:
+   913                          ;computer_controls.c:197: return 0;
+   914  017b  2e00              	ld	l,0x00
+   915                          l_computer_state_serve_00107:
+   916                          ;computer_controls.c:198: }
+   917  017d  ddf9              	ld	sp, ix
+   918  017f  dde1              	pop	ix
+   919  0181  c9                	ret
+   920                          ;computer_controls.c:204: void computer_transition_position(PlayerId player_id)
+   921                          ;	---------------------------------
+   922                          ; Function computer_transition_position
+   923                          ; ---------------------------------
+   924                          _computer_transition_position:
+   925  0182  cd0000            	call	___sdcc_enter_ix
+   926                          ;computer_controls.c:207: ComputerPlayer *computer = &computer_state[player_id];
+   927  0185  010000            	ld	bc,_computer_state+0
+   928  0188  dd7e04            	ld	a,(ix+4)
+   929  018b  1e00              	ld	e,0x00
+   930  018d  6f                	ld	l, a
+   931  018e  63                	ld	h, e
+   932  018f  29                	add	hl, hl
+   933  0190  29                	add	hl, hl
+   934  0191  29                	add	hl, hl
+   935  0192  09                	add	hl, bc
+   936                          ;computer_controls.c:208: computer->stateFn = computer_state_position;
+   937  0193  5d                	ld	e,l
+   938  0194  54                	ld	d,h
+   939  0195  366e              	ld	(hl), +((_computer_state_position) & 0xFF)
+   940  0197  23                	inc	hl
+   941  0198  3603              	ld	(hl), +((_computer_state_position) / 256)
+   942                          ;computer_controls.c:210: computer->position.reaction_countdown = COMPUTER_REACTION_TIME;
+   943  019a  210700            	ld	hl,0x0007
+   944  019d  19                	add	hl, de
+   945  019e  3614              	ld	(hl),0x14
+   946                          ;computer_controls.c:211: computer->position.n_moves = POSITIONING_NUMBER_OF_MOVES;
+   947  01a0  210600            	ld	hl,0x0006
+   948  01a3  19                	add	hl, de
+   949  01a4  3602              	ld	(hl),0x02
+   950                          ;computer_controls.c:212: }
+   951  01a6  dde1              	pop	ix
+   952  01a8  c9                	ret
+   953                          ;computer_controls.c:217: void calculate_player_positioning(PlayerId player_id)
+   954                          ;	---------------------------------
+   955                          ; Function calculate_player_positioning
+   956                          ; ---------------------------------
+   957                          _calculate_player_positioning:
+   958  01a9  cd0000            	call	___sdcc_enter_ix
+   959  01ac  21faff            	ld	hl, -6
+   960  01af  39                	add	hl, sp
+   961  01b0  f9                	ld	sp, hl
+   962                          ;computer_controls.c:219: ComputerPlayer *computer = &computer_state[player_id];
+   963  01b1  010000            	ld	bc,_computer_state+0
+   964  01b4  dd6e04            	ld	l,(ix+4)
+   965  01b7  2600              	ld	h,0x00
+   966  01b9  29                	add	hl, hl
+   967  01ba  29                	add	hl, hl
+   968  01bb  29                	add	hl, hl
+   969  01bc  09                	add	hl, bc
+   970                          ;computer_controls.c:220: Player *opponent = get_player(player_id ^ 1);
+   971  01bd  dd7e04            	ld	a,(ix+4)
+   972  01c0  ee01              	xor	a,0x01
+   973  01c2  e5                	push	hl
+   974  01c3  f5                	push	af
+   975  01c4  33                	inc	sp
+   976  01c5  cd0000            	call	_get_player
+   977  01c8  33                	inc	sp
+   978  01c9  c1                	pop	bc
+   979  01ca  dd75fe            	ld	(ix-2),l
+   980  01cd  dd74ff            	ld	(ix-1),h
+   981                          ;computer_controls.c:221: computer->position.target_x = (opponent->x - CENTER_LINE) / 1.5 + CENTER_LINE;
+   982  01d0  210200            	ld	hl,0x0002
+   983  01d3  09                	add	hl, bc
+   984  01d4  e3                	ex	(sp), hl
+   985  01d5  dd5efe            	ld	e,(ix-2)
+   986  01d8  dd56ff            	ld	d,(ix-1)
+   987  01db  210a00            	ld	hl,10
+   988  01de  19                	add	hl, de
+   989  01df  cd0000            	call	____sdcc_load_hlde_mhl
+   990  01e2  c5                	push	bc
+   991  01e3  ed8a4321          	push	+0x4321
+   992  01e7  ed8a0000          	push	+0x0000
+   993  01eb  e5                	push	hl
+   994  01ec  d5                	push	de
+   995  01ed  cd0000            	call	___fssub_callee
+   996  01f0  c1                	pop	bc
+   997  01f1  c5                	push	bc
+   998  01f2  ed8a3fc0          	push	+0x3fc0
+   999  01f6  ed8a0000          	push	+0x0000
+  1000  01fa  d5                	push	de
+  1001  01fb  e5                	push	hl
+  1002  01fc  cd0000            	call	___fsdiv_callee
+  1003  01ff  ed8a4321          	push	+0x4321
+  1004  0203  ed8a0000          	push	+0x0000
+  1005  0207  d5                	push	de
+  1006  0208  e5                	push	hl
+  1007  0209  cd0000            	call	___fsadd_callee
+  1008  020c  d5                	push	de
+  1009  020d  e5                	push	hl
+  1010  020e  cd0000            	call	___fs2sint_callee
+  1011  0211  eb                	ex	de, hl
+  1012  0212  c1                	pop	bc
+  1013  0213  e1                	pop	hl
+  1014  0214  e5                	push	hl
+  1015  0215  73                	ld	(hl), e
+  1016  0216  23                	inc	hl
+  1017  0217  72                	ld	(hl), d
+  1018                          ;computer_controls.c:222: computer->position.target_y = +opponent->y + (player_id == PLAYER_TOP ? -POSITIONING_OPPONENT_DISTANCE : POSITIONING_OPPONENT_DISTANCE);
+  1019  0218  3e04              	ld	a,0x04
+  1020  021a  ed33              	add	bc, a
+  1021  021c  dd5efe            	ld	e,(ix-2)
+  1022  021f  dd56ff            	ld	d,(ix-1)
+  1023  0222  c5                	push	bc
+  1024  0223  210400            	ld	hl,4
+  1025  0226  39                	add	hl, sp
+  1026  0227  eb                	ex	de, hl
+  1027  0228  010e00            	ld	bc,0x000e
+  1028  022b  09                	add	hl, bc
+  1029  022c  cd0000            	call	____sdcc_4_ldi_nosave_bc
+  1030  022f  c1                	pop	bc
+  1031  0230  ddcb0446          	bit	0,(ix+4)
+  1032  0234  2008              	jr	NZ,l_calculate_player_positioning_00103
+  1033  0236  110000            	ld	de,0x0000
+  1034  0239  21c8c2            	ld	hl,0xc2c8
+  1035  023c  1806              	jr	l_calculate_player_positioning_00104
+  1036                          l_calculate_player_positioning_00103:
+  1037  023e  110000            	ld	de,0x0000
+  1038  0241  21c842            	ld	hl,0x42c8
+  1039                          l_calculate_player_positioning_00104:
+  1040  0244  c5                	push	bc
+  1041  0245  e5                	push	hl
+  1042  0246  d5                	push	de
+  1043  0247  21fcff            	ld	hl,-4
+  1044  024a  cd0000            	call	____sdcc_4_push_hlix
+  1045  024d  cd0000            	call	___fsadd_callee
+  1046  0250  d5                	push	de
+  1047  0251  e5                	push	hl
+  1048  0252  cd0000            	call	___fs2sint_callee
+  1049  0255  eb                	ex	de, hl
+  1050  0256  c1                	pop	bc
+  1051  0257  7b                	ld	a, e
+  1052  0258  02                	ld	(bc), a
+  1053  0259  03                	inc	bc
+  1054  025a  7a                	ld	a, d
+  1055  025b  02                	ld	(bc), a
+  1056                          ;computer_controls.c:223: computer->position.n_moves--;
+  1057  025c  e1                	pop	hl
+  1058  025d  e5                	push	hl
+  1059  025e  110400            	ld	de,0x0004
+  1060  0261  19                	add	hl, de
+  1061  0262  7e                	ld	a, (hl)
+  1062  0263  3d                	dec	a
+  1063  0264  77                	ld	(hl), a
+  1064                          ;computer_controls.c:226: }
+  1065  0265  ddf9              	ld	sp, ix
+  1066  0267  dde1              	pop	ix
+  1067  0269  c9                	ret
+  1068                          ;computer_controls.c:232: ControlInput move_to_target(PlayerId player_id)
+  1069                          ;	---------------------------------
+  1070                          ; Function move_to_target
+  1071                          ; ---------------------------------
+  1072                          _move_to_target:
+  1073  026a  cd0000            	call	___sdcc_enter_ix
+  1074  026d  21f6ff            	ld	hl, -10
+  1075  0270  39                	add	hl, sp
+  1076  0271  f9                	ld	sp, hl
+  1077                          ;computer_controls.c:234: ComputerPlayer *computer = &computer_state[player_id];
+  1078  0272  010000            	ld	bc,_computer_state+0
+  1079  0275  dd6e04            	ld	l,(ix+4)
+  1080  0278  2600              	ld	h,0x00
+  1081  027a  29                	add	hl, hl
+  1082  027b  29                	add	hl, hl
+  1083  027c  29                	add	hl, hl
+  1084  027d  09                	add	hl, bc
+  1085  027e  dd75fa            	ld	(ix-6),l
+  1086  0281  dd74fb            	ld	(ix-5),h
+  1087                          ;computer_controls.c:235: Player *player = get_player(player_id);
+  1088  0284  dd7e04            	ld	a,(ix+4)
+  1089  0287  f5                	push	af
+  1090  0288  33                	inc	sp
+  1091  0289  cd0000            	call	_get_player
+  1092  028c  33                	inc	sp
+  1093  028d  dd75fc            	ld	(ix-4),l
+  1094  0290  dd74fd            	ld	(ix-3),h
+  1095                          ;computer_controls.c:236: uint8_t control = 0;
+  1096  0293  0e00              	ld	c,0x00
+  1097                          ;computer_controls.c:237: int diff_x = computer->position.target_x - player->x;
+  1098  0295  dd6efa            	ld	l,(ix-6)
+  1099  0298  dd66fb            	ld	h,(ix-5)
+  1100  029b  23                	inc	hl
+  1101  029c  23                	inc	hl
+  1102  029d  5e                	ld	e, (hl)
+  1103  029e  23                	inc	hl
+  1104  029f  56                	ld	d, (hl)
+  1105  02a0  dd6efc            	ld	l,(ix-4)
+  1106  02a3  dd66fd            	ld	h,(ix-3)
+  1107  02a6  d5                	push	de
+  1108  02a7  c5                	push	bc
+  1109  02a8  eb                	ex	de, hl
+  1110  02a9  210400            	ld	hl,4
+  1111  02ac  39                	add	hl, sp
+  1112  02ad  eb                	ex	de, hl
+  1113  02ae  010a00            	ld	bc,0x000a
+  1114  02b1  09                	add	hl, bc
+  1115  02b2  cd0000            	call	____sdcc_4_ldi_nosave_bc
+  1116  02b5  c1                	pop	bc
+  1117  02b6  d1                	pop	de
+  1118  02b7  c5                	push	bc
+  1119  02b8  d5                	push	de
+  1120  02b9  cd0000            	call	___sint2fs_callee
+  1121  02bc  e5                	push	hl
+  1122  02bd  dd6ef8            	ld	l,(ix-8)
+  1123  02c0  dd66f9            	ld	h,(ix-7)
+  1124  02c3  e3                	ex	(sp), hl
+  1125  02c4  e5                	push	hl
+  1126  02c5  dd6ef6            	ld	l,(ix-10)
+  1127  02c8  dd66f7            	ld	h,(ix-9)
+  1128  02cb  e3                	ex	(sp), hl
+  1129  02cc  d5                	push	de
+  1130  02cd  e5                	push	hl
+  1131  02ce  cd0000            	call	___fssub_callee
+  1132  02d1  d5                	push	de
+  1133  02d2  e5                	push	hl
+  1134  02d3  cd0000            	call	___fs2sint_callee
+  1135  02d6  c1                	pop	bc
+  1136  02d7  dd75fe            	ld	(ix-2),l
+  1137  02da  dd74ff            	ld	(ix-1),h
+  1138                          ;computer_controls.c:238: int diff_y = computer->position.target_y - player->y;
+  1139  02dd  dd5efa            	ld	e,(ix-6)
+  1140  02e0  dd56fb            	ld	d,(ix-5)
+  1141  02e3  210400            	ld	hl,4
+  1142  02e6  19                	add	hl, de
+  1143  02e7  5e                	ld	e, (hl)
+  1144  02e8  23                	inc	hl
+  1145  02e9  56                	ld	d, (hl)
+  1146  02ea  dd6efc            	ld	l,(ix-4)
+  1147  02ed  dd66fd            	ld	h,(ix-3)
+  1148  02f0  d5                	push	de
+  1149  02f1  c5                	push	bc
+  1150  02f2  eb                	ex	de, hl
+  1151  02f3  210800            	ld	hl,8
+  1152  02f6  39                	add	hl, sp
+  1153  02f7  eb                	ex	de, hl
+  1154  02f8  010e00            	ld	bc,0x000e
+  1155  02fb  09                	add	hl, bc
+  1156  02fc  cd0000            	call	____sdcc_4_ldi_nosave_bc
+  1157  02ff  c1                	pop	bc
+  1158  0300  d1                	pop	de
+  1159  0301  c5                	push	bc
+  1160  0302  d5                	push	de
+  1161  0303  cd0000            	call	___sint2fs_callee
+  1162  0306  e5                	push	hl
+  1163  0307  dd6efc            	ld	l,(ix-4)
+  1164  030a  dd66fd            	ld	h,(ix-3)
+  1165  030d  e3                	ex	(sp), hl
+  1166  030e  e5                	push	hl
+  1167  030f  dd6efa            	ld	l,(ix-6)
+  1168  0312  dd66fb            	ld	h,(ix-5)
+  1169  0315  e3                	ex	(sp), hl
+  1170  0316  d5                	push	de
+  1171  0317  e5                	push	hl
+  1172  0318  cd0000            	call	___fssub_callee
+  1173  031b  d5                	push	de
+  1174  031c  e5                	push	hl
+  1175  031d  cd0000            	call	___fs2sint_callee
+  1176  0320  eb                	ex	de, hl
+  1177  0321  c1                	pop	bc
+  1178                          ;computer_controls.c:241: if (diff_x >= 2)
+  1179  0322  dd7efe            	ld	a,(ix-2)
+  1180  0325  d602              	sub	a,0x02
+  1181  0327  dd7eff            	ld	a,(ix-1)
+  1182  032a  17                	rla
+  1183  032b  3f                	ccf
+  1184  032c  1f                	rra
+  1185  032d  de80              	sbc	a,0x80
+  1186  032f  3804              	jr	C,l_move_to_target_00104
+  1187                          ;computer_controls.c:242: control = CONTROL_RIGHT;
+  1188  0331  0e08              	ld	c,0x08
+  1189  0333  1814              	jr	l_move_to_target_00105
+  1190                          l_move_to_target_00104:
+  1191                          ;computer_controls.c:243: else if (diff_x <= -2)
+  1192  0335  3efe              	ld	a,0xfe
+  1193  0337  ddbefe            	cp	a,(ix-2)
+  1194  033a  3eff              	ld	a,0xff
+  1195  033c  dd9eff            	sbc	a,(ix-1)
+  1196  033f  e24403            	jp	PO, l_move_to_target_00133
+  1197  0342  ee80              	xor	a,0x80
+  1198                          l_move_to_target_00133:
+  1199  0344  fa4903            	jp	M, l_move_to_target_00105
+  1200                          ;computer_controls.c:244: control = CONTROL_LEFT;
+  1201  0347  0e04              	ld	c,0x04
+  1202                          l_move_to_target_00105:
+  1203                          ;computer_controls.c:245: if (diff_y >= 2)
+  1204  0349  7b                	ld	a, e
+  1205  034a  d602              	sub	a,0x02
+  1206  034c  7a                	ld	a, d
+  1207  034d  17                	rla
+  1208  034e  3f                	ccf
+  1209  034f  1f                	rra
+  1210  0350  de80              	sbc	a,0x80
+  1211  0352  3804              	jr	C,l_move_to_target_00109
+  1212                          ;computer_controls.c:246: control = control |= CONTROL_DOWN;
+  1213  0354  cbc9              	set	1, c
+  1214  0356  1810              	jr	l_move_to_target_00110
+  1215                          l_move_to_target_00109:
+  1216                          ;computer_controls.c:247: else if (diff_y <= -2)
+  1217  0358  3efe              	ld	a,0xfe
+  1218  035a  bb                	cp	a, e
+  1219  035b  3eff              	ld	a,0xff
+  1220  035d  9a                	sbc	a, d
+  1221  035e  e26303            	jp	PO, l_move_to_target_00134
+  1222  0361  ee80              	xor	a,0x80
+  1223                          l_move_to_target_00134:
+  1224  0363  fa6803            	jp	M, l_move_to_target_00110
+  1225                          ;computer_controls.c:248: control = control |= CONTROL_UP;
+  1226  0366  cbc1              	set	0, c
+  1227                          l_move_to_target_00110:
+  1228                          ;computer_controls.c:250: return control;
+  1229  0368  69                	ld	l, c
+  1230                          ;computer_controls.c:251: }
+  1231  0369  ddf9              	ld	sp, ix
+  1232  036b  dde1              	pop	ix
+  1233  036d  c9                	ret
+  1234                          ;computer_controls.c:253: ControlInput computer_state_position(PlayerId player_id)
+  1235                          ;	---------------------------------
+  1236                          ; Function computer_state_position
+  1237                          ; ---------------------------------
+  1238                          _computer_state_position:
+  1239  036e  cd0000            	call	___sdcc_enter_ix
+  1240  0371  3b                	dec	sp
+  1241                          ;computer_controls.c:255: ComputerPlayer *computer = &computer_state[player_id];
+  1242  0372  010000            	ld	bc,_computer_state+0
+  1243  0375  dd6e04            	ld	l,(ix+4)
+  1244  0378  1e00              	ld	e,0x00
+  1245  037a  63                	ld	h, e
+  1246  037b  29                	add	hl, hl
+  1247  037c  29                	add	hl, hl
+  1248  037d  29                	add	hl, hl
+  1249  037e  09                	add	hl, bc
+  1250  037f  eb                	ex	de, hl
+  1251                          ;computer_controls.c:256: if (computer->position.reaction_countdown > 0)
+  1252  0380  210700            	ld	hl,0x0007
+  1253  0383  19                	add	hl, de
+  1254  0384  7e                	ld	a, (hl)
+  1255  0385  b7                	or	a, a
+  1256  0386  2812              	jr	Z,l_computer_state_position_00104
+  1257                          ;computer_controls.c:258: computer->position.reaction_countdown--;
+  1258  0388  3d                	dec	a
+  1259  0389  77                	ld	(hl), a
+  1260                          ;computer_controls.c:259: if (computer->position.reaction_countdown == 0)
+  1261  038a  b7                	or	a, a
+  1262  038b  2009              	jr	NZ,l_computer_state_position_00102
+  1263                          ;computer_controls.c:260: calculate_player_positioning(player_id);
+  1264  038d  dd7e04            	ld	a,(ix+4)
+  1265  0390  f5                	push	af
+  1266  0391  33                	inc	sp
+  1267  0392  cda901            	call	_calculate_player_positioning
+  1268  0395  33                	inc	sp
+  1269                          l_computer_state_position_00102:
+  1270                          ;computer_controls.c:261: return 0;
+  1271  0396  2e00              	ld	l,0x00
+  1272  0398  1838              	jr	l_computer_state_position_00110
+  1273                          l_computer_state_position_00104:
+  1274                          ;computer_controls.c:264: ControlInput control = move_to_target(player_id);
+  1275  039a  d5                	push	de
+  1276  039b  dd7e04            	ld	a,(ix+4)
+  1277  039e  f5                	push	af
+  1278  039f  33                	inc	sp
+  1279  03a0  cd6a02            	call	_move_to_target
+  1280  03a3  33                	inc	sp
+  1281  03a4  7d                	ld	a, l
+  1282  03a5  d1                	pop	de
+  1283  03a6  dd77ff            	ld	(ix-1),a
+  1284                          ;computer_controls.c:267: if (control == 0 && computer->position.n_moves > 0)
+  1285  03a9  b7                	or	a, a
+  1286  03aa  2011              	jr	NZ,l_computer_state_position_00106
+  1287  03ac  210600            	ld	hl,6
+  1288  03af  19                	add	hl, de
+  1289  03b0  7e                	ld	a, (hl)
+  1290  03b1  b7                	or	a, a
+  1291  03b2  2809              	jr	Z,l_computer_state_position_00106
+  1292                          ;computer_controls.c:268: calculate_player_positioning(player_id);
+  1293  03b4  dd7e04            	ld	a,(ix+4)
+  1294  03b7  f5                	push	af
+  1295  03b8  33                	inc	sp
+  1296  03b9  cda901            	call	_calculate_player_positioning
+  1297  03bc  33                	inc	sp
+  1298                          l_computer_state_position_00106:
+  1299                          ;computer_controls.c:271: if (game_state.ball_owner != player_id)
+  1300  03bd  210100            	ld	hl,+(_game_state + 1)
+  1301  03c0  dd7e04            	ld	a,(ix+4)
+  1302  03c3  96                	sub	a,(hl)
+  1303  03c4  2809              	jr	Z,l_computer_state_position_00109
+  1304                          ;computer_controls.c:273: computer_transition_approach_ball(player_id);
+  1305  03c6  dd7e04            	ld	a,(ix+4)
+  1306  03c9  f5                	push	af
+  1307  03ca  33                	inc	sp
+  1308  03cb  cd4b05            	call	_computer_transition_approach_ball
+  1309  03ce  33                	inc	sp
+  1310                          l_computer_state_position_00109:
+  1311                          ;computer_controls.c:275: return control;
+  1312  03cf  dd6eff            	ld	l,(ix-1)
+  1313                          l_computer_state_position_00110:
+  1314                          ;computer_controls.c:276: }
+  1315  03d2  33                	inc	sp
+  1316  03d3  dde1              	pop	ix
+  1317  03d5  c9                	ret
+  1318                          ;computer_controls.c:291: bool calculate_position_to_receive_ball(PlayerId player_id, bool is_serve)
+  1319                          ;	---------------------------------
+  1320                          ; Function calculate_position_to_receive_ball
+  1321                          ; ---------------------------------
+  1322                          _calculate_position_to_receive_ball:
+  1323  03d6  cd0000            	call	___sdcc_enter_ix
+  1324  03d9  21eeff            	ld	hl, -18
+  1325  03dc  39                	add	hl, sp
+  1326  03dd  f9                	ld	sp, hl
+  1327                          ;computer_controls.c:293: ComputerPlayer *computer = &computer_state[player_id];
+  1328  03de  010000            	ld	bc,_computer_state+0
+  1329  03e1  dd6e04            	ld	l,(ix+4)
+  1330  03e4  2600              	ld	h,0x00
+  1331  03e6  29                	add	hl, hl
+  1332  03e7  29                	add	hl, hl
+  1333  03e8  29                	add	hl, hl
+  1334  03e9  09                	add	hl, bc
+  1335  03ea  e3                	ex	(sp), hl
+  1336                          ;computer_controls.c:294: Player *player = get_player(player_id);
+  1337  03eb  dd7e04            	ld	a,(ix+4)
+  1338  03ee  f5                	push	af
+  1339  03ef  33                	inc	sp
+  1340  03f0  cd0000            	call	_get_player
+  1341  03f3  33                	inc	sp
+  1342  03f4  dd75fe            	ld	(ix-2),l
+  1343  03f7  dd74ff            	ld	(ix-1),h
+  1344                          ;computer_controls.c:296: BallTrajectory *trajectory = is_serve ? ball_trajectory_points_at_service(TARGET_BALL_HEIGHT_FOR_SERVICE_HIT)
+  1345  03fa  ddcb0546          	bit	0,(ix+5)
+  1346  03fe  280a              	jr	Z,l_calculate_position_to_receive_ball_00111
+  1347  0400  3e14              	ld	a,0x14
+  1348  0402  f5                	push	af
+  1349  0403  33                	inc	sp
+  1350  0404  cd0000            	call	_ball_trajectory_points_at_service
+  1351  0407  33                	inc	sp
+  1352  0408  1808              	jr	l_calculate_position_to_receive_ball_00112
+  1353                          l_calculate_position_to_receive_ball_00111:
+  1354  040a  3e10              	ld	a,0x10
+  1355  040c  f5                	push	af
+  1356  040d  33                	inc	sp
+  1357  040e  cd0000            	call	_ball_trajectory_points
+  1358  0411  33                	inc	sp
+  1359                          l_calculate_position_to_receive_ball_00112:
+  1360                          ;computer_controls.c:300: if (trajectory->n_points == 0)
+  1361  0412  7e                	ld	a,(hl)
+  1362  0413  eb                	ex	de,hl
+  1363  0414  dd77f0            	ld	(ix-16),a
+  1364  0417  13                	inc	de
+  1365  0418  1a                	ld	a, (de)
+  1366  0419  dd77f1            	ld	(ix-15),a
+  1367  041c  1b                	dec	de
+  1368  041d  dd7ef1            	ld	a,(ix-15)
+  1369  0420  ddb6f0            	or	a,(ix-16)
+  1370  0423  2005              	jr	NZ,l_calculate_position_to_receive_ball_00102
+  1371                          ;computer_controls.c:301: return false;
+  1372  0425  2e00              	ld	l,0x00
+  1373  0427  c34605            	jp	l_calculate_position_to_receive_ball_00109
+  1374                          l_calculate_position_to_receive_ball_00102:
+  1375                          ;computer_controls.c:303: int8_t point_selected = -1;
+  1376                          ;computer_controls.c:304: uint16_t point_selected_distance = 0xFFFF;
+  1377  042a  3eff              	ld	a,0xff
+  1378  042c  dd77f2            	ld	(ix-14),a
+  1379  042f  dd77f3            	ld	(ix-13),a
+  1380  0432  dd77f4            	ld	(ix-12),a
+  1381                          ;computer_controls.c:306: for (uint8_t point = 0; point < trajectory->n_points; point++)
+  1382  0435  13                	inc	de
+  1383  0436  13                	inc	de
+  1384  0437  dd73f5            	ld	(ix-11),e
+  1385  043a  dd72f6            	ld	(ix-10),d
+  1386  043d  dd5efe            	ld	e,(ix-2)
+  1387  0440  dd56ff            	ld	d,(ix-1)
+  1388  0443  210900            	ld	hl,9
+  1389  0446  39                	add	hl, sp
+  1390  0447  eb                	ex	de, hl
+  1391  0448  010a00            	ld	bc,0x000a
+  1392  044b  09                	add	hl, bc
+  1393  044c  cd0000            	call	____sdcc_4_ldi_nosave_bc
+  1394  044f  dd5efe            	ld	e,(ix-2)
+  1395  0452  dd56ff            	ld	d,(ix-1)
+  1396  0455  210d00            	ld	hl,13
+  1397  0458  39                	add	hl, sp
+  1398  0459  eb                	ex	de, hl
+  1399  045a  010e00            	ld	bc,0x000e
+  1400  045d  09                	add	hl, bc
+  1401  045e  cd0000            	call	____sdcc_4_ldi_nosave_bc
+  1402  0461  dd36ff00          	ld	(ix-1),0x00
+  1403                          l_calculate_position_to_receive_ball_00107:
+  1404  0465  dd7eff            	ld	a,(ix-1)
+  1405  0468  0600              	ld	b,0x00
+  1406  046a  dd96f0            	sub	a,(ix-16)
+  1407  046d  78                	ld	a, b
+  1408  046e  dd9ef1            	sbc	a,(ix-15)
+  1409  0471  e27604            	jp	PO, l_calculate_position_to_receive_ball_00139
+  1410  0474  ee80              	xor	a,0x80
+  1411                          l_calculate_position_to_receive_ball_00139:
+  1412  0476  f2fc04            	jp	P, l_calculate_position_to_receive_ball_00105
+  1413                          ;computer_controls.c:308: int x_distance = trajectory->points[point].x - player->x;
+  1414  0479  dd7eff            	ld	a,(ix-1)
+  1415  047c  87                	add	a, a
+  1416  047d  87                	add	a, a
+  1417  047e  87                	add	a, a
+  1418  047f  dd86f5            	add	a,(ix-11)
+  1419  0482  6f                	ld	l, a
+  1420  0483  3e00              	ld	a,0x00
+  1421  0485  dd8ef6            	adc	a,(ix-10)
+  1422  0488  67                	ld	h, a
+  1423  0489  e5                	push	hl
+  1424  048a  cd0000            	call	____sdcc_load_debc_mhl
+  1425  048d  e1                	pop	hl
+  1426  048e  e5                	push	hl
+  1427  048f  e5                	push	hl
+  1428  0490  dd6ef9            	ld	l,(ix-7)
+  1429  0493  dd66fa            	ld	h,(ix-6)
+  1430  0496  e3                	ex	(sp), hl
+  1431  0497  e5                	push	hl
+  1432  0498  dd6ef7            	ld	l,(ix-9)
+  1433  049b  dd66f8            	ld	h,(ix-8)
+  1434  049e  e3                	ex	(sp), hl
+  1435  049f  d5                	push	de
+  1436  04a0  c5                	push	bc
+  1437  04a1  cd0000            	call	___fssub_callee
+  1438  04a4  d5                	push	de
+  1439  04a5  e5                	push	hl
+  1440  04a6  cd0000            	call	___fs2sint_callee
+  1441  04a9  4d                	ld	c, l
+  1442  04aa  44                	ld	b, h
+  1443  04ab  e1                	pop	hl
+  1444                          ;computer_controls.c:309: int y_distance = trajectory->points[point].y - player->y;
+  1445  04ac  110400            	ld	de,0x0004
+  1446  04af  19                	add	hl, de
+  1447  04b0  cd0000            	call	____sdcc_load_hlde_mhl
+  1448  04b3  c5                	push	bc
+  1449  04b4  e5                	push	hl
+  1450  04b5  dd6efd            	ld	l,(ix-3)
+  1451  04b8  dd66fe            	ld	h,(ix-2)
+  1452  04bb  e3                	ex	(sp), hl
+  1453  04bc  e5                	push	hl
+  1454  04bd  dd6efb            	ld	l,(ix-5)
+  1455  04c0  dd66fc            	ld	h,(ix-4)
+  1456  04c3  e3                	ex	(sp), hl
+  1457  04c4  e5                	push	hl
+  1458  04c5  d5                	push	de
+  1459  04c6  cd0000            	call	___fssub_callee
+  1460  04c9  d5                	push	de
+  1461  04ca  e5                	push	hl
+  1462  04cb  cd0000            	call	___fs2sint_callee
+  1463  04ce  c1                	pop	bc
+  1464                          ;computer_controls.c:311: uint16_t distance = x_distance * x_distance + y_distance * y_distance;
+  1465  04cf  e5                	push	hl
+  1466  04d0  c5                	push	bc
+  1467  04d1  c5                	push	bc
+  1468  04d2  cd0000            	call	__mulint_callee
+  1469  04d5  eb                	ex	de, hl
+  1470  04d6  e1                	pop	hl
+  1471  04d7  d5                	push	de
+  1472  04d8  e5                	push	hl
+  1473  04d9  e5                	push	hl
+  1474  04da  cd0000            	call	__mulint_callee
+  1475  04dd  d1                	pop	de
+  1476  04de  19                	add	hl, de
+  1477  04df  eb                	ex	de, hl
+  1478                          ;computer_controls.c:312: if (distance < point_selected_distance)
+  1479  04e0  7b                	ld	a, e
+  1480  04e1  dd96f3            	sub	a,(ix-13)
+  1481  04e4  7a                	ld	a, d
+  1482  04e5  dd9ef4            	sbc	a,(ix-12)
+  1483  04e8  300c              	jr	NC,l_calculate_position_to_receive_ball_00108
+  1484                          ;computer_controls.c:314: point_selected = point;
+  1485  04ea  dd7eff            	ld	a,(ix-1)
+  1486  04ed  dd77f2            	ld	(ix-14),a
+  1487                          ;computer_controls.c:315: point_selected_distance = distance;
+  1488  04f0  dd73f3            	ld	(ix-13),e
+  1489  04f3  dd72f4            	ld	(ix-12),d
+  1490                          l_calculate_position_to_receive_ball_00108:
+  1491                          ;computer_controls.c:306: for (uint8_t point = 0; point < trajectory->n_points; point++)
+  1492  04f6  dd34ff            	inc	(ix-1)
+  1493  04f9  c36504            	jp	l_calculate_position_to_receive_ball_00107
+  1494                          l_calculate_position_to_receive_ball_00105:
+  1495                          ;computer_controls.c:319: computer->position.target_x = trajectory->points[point_selected].x;
+  1496  04fc  c1                	pop	bc
+  1497  04fd  c5                	push	bc
+  1498  04fe  03                	inc	bc
+  1499  04ff  03                	inc	bc
+  1500  0500  dd7ef2            	ld	a,(ix-14)
+  1501  0503  87                	add	a, a
+  1502  0504  87                	add	a, a
+  1503  0505  87                	add	a, a
+  1504  0506  dd86f5            	add	a,(ix-11)
+  1505  0509  dd77fe            	ld	(ix-2),a
+  1506  050c  3e00              	ld	a,0x00
+  1507  050e  dd8ef6            	adc	a,(ix-10)
+  1508  0511  dd6efe            	ld	l,(ix-2)
+  1509  0514  dd77ff            	ld	(ix-1),a
+  1510  0517  67                	ld	h,a
+  1511  0518  cd0000            	call	____sdcc_load_hlde_mhl
+  1512  051b  c5                	push	bc
+  1513  051c  e5                	push	hl
+  1514  051d  d5                	push	de
+  1515  051e  cd0000            	call	___fs2sint_callee
+  1516  0521  eb                	ex	de, hl
+  1517  0522  e1                	pop	hl
+  1518  0523  4d                	ld	c,l
+  1519  0524  44                	ld	b,h
+  1520  0525  73                	ld	(hl), e
+  1521  0526  23                	inc	hl
+  1522  0527  72                	ld	(hl), d
+  1523                          ;computer_controls.c:320: computer->position.target_y = trajectory->points[point_selected].y;
+  1524  0528  03                	inc	bc
+  1525  0529  03                	inc	bc
+  1526  052a  dd5efe            	ld	e,(ix-2)
+  1527  052d  dd56ff            	ld	d,(ix-1)
+  1528  0530  210400            	ld	hl,4
+  1529  0533  19                	add	hl, de
+  1530  0534  cd0000            	call	____sdcc_load_hlde_mhl
+  1531  0537  c5                	push	bc
+  1532  0538  e5                	push	hl
+  1533  0539  d5                	push	de
+  1534  053a  cd0000            	call	___fs2sint_callee
+  1535  053d  eb                	ex	de, hl
+  1536  053e  c1                	pop	bc
+  1537  053f  7b                	ld	a, e
+  1538  0540  02                	ld	(bc), a
+  1539  0541  03                	inc	bc
+  1540  0542  7a                	ld	a, d
+  1541  0543  02                	ld	(bc), a
+  1542                          ;computer_controls.c:324: return true;
+  1543  0544  2e01              	ld	l,0x01
+  1544                          l_calculate_position_to_receive_ball_00109:
+  1545                          ;computer_controls.c:325: }
+  1546  0546  ddf9              	ld	sp, ix
+  1547  0548  dde1              	pop	ix
+  1548  054a  c9                	ret
+  1549                          ;computer_controls.c:327: void computer_transition_approach_ball(PlayerId playerId)
+  1550                          ;	---------------------------------
+  1551                          ; Function computer_transition_approach_ball
+  1552                          ; ---------------------------------
+  1553                          _computer_transition_approach_ball:
+  1554  054b  cd0000            	call	___sdcc_enter_ix
+  1555                          ;computer_controls.c:331: ComputerPlayer *computer = &computer_state[playerId];
+  1556  054e  010000            	ld	bc,_computer_state+0
+  1557  0551  dd7e04            	ld	a,(ix+4)
+  1558  0554  1e00              	ld	e,0x00
+  1559  0556  6f                	ld	l, a
+  1560  0557  63                	ld	h, e
+  1561  0558  29                	add	hl, hl
+  1562  0559  29                	add	hl, hl
+  1563  055a  29                	add	hl, hl
+  1564  055b  09                	add	hl, bc
+  1565                          ;computer_controls.c:332: computer->stateFn = computer_state_approach_ball;
+  1566  055c  5d                	ld	e,l
+  1567  055d  54                	ld	d,h
+  1568  055e  366c              	ld	(hl), +((_computer_state_approach_ball) & 0xFF)
+  1569  0560  23                	inc	hl
+  1570  0561  3605              	ld	(hl), +((_computer_state_approach_ball) / 256)
+  1571                          ;computer_controls.c:334: computer->position.reaction_countdown = 5; // COMPUTER_REACTION_TIME;
+  1572  0563  210700            	ld	hl,0x0007
+  1573  0566  19                	add	hl, de
+  1574  0567  3605              	ld	(hl),0x05
+  1575                          ;computer_controls.c:335: }
+  1576  0569  dde1              	pop	ix
+  1577  056b  c9                	ret
+  1578                          ;computer_controls.c:337: ControlInput computer_state_approach_ball(PlayerId playerId)
+  1579                          ;	---------------------------------
+  1580                          ; Function computer_state_approach_ball
+  1581                          ; ---------------------------------
+  1582                          _computer_state_approach_ball:
+  1583  056c  cd0000            	call	___sdcc_enter_ix
+  1584  056f  f5                	push	af
+  1585  0570  f5                	push	af
+  1586                          ;computer_controls.c:339: ComputerPlayer *computer = &computer_state[playerId];
+  1587  0571  010000            	ld	bc,_computer_state+0
+  1588  0574  dd6e04            	ld	l,(ix+4)
+  1589  0577  2600              	ld	h,0x00
+  1590  0579  29                	add	hl, hl
+  1591  057a  29                	add	hl, hl
+  1592  057b  29                	add	hl, hl
+  1593  057c  09                	add	hl, bc
+  1594                          ;computer_controls.c:341: if (computer->position.reaction_countdown > 0)
+  1595  057d  110700            	ld	de,0x0007
+  1596  0580  19                	add	hl, de
+  1597  0581  dd75fe            	ld	(ix-2),l
+  1598  0584  dd74ff            	ld	(ix-1),h
+  1599                          ;computer_controls.c:343: computer->position.reaction_countdown--;
+  1600  0587  7e                	ld	a,(hl)
+  1601  0588  b7                	or	a, a
+  1602  0589  2826              	jr	Z,l_computer_state_approach_ball_00106
+  1603  058b  3d                	dec	a
+  1604  058c  c1                	pop	bc
+  1605  058d  e1                	pop	hl
+  1606  058e  e5                	push	hl
+  1607  058f  c5                	push	bc
+  1608  0590  77                	ld	(hl), a
+  1609                          ;computer_controls.c:344: if (computer->position.reaction_countdown == 0)
+  1610  0591  b7                	or	a, a
+  1611  0592  2019              	jr	NZ,l_computer_state_approach_ball_00104
+  1612                          ;computer_controls.c:346: if (!calculate_position_to_receive_ball(playerId, false))
+  1613  0594  af                	xor	a, a
+  1614  0595  f5                	push	af
+  1615  0596  33                	inc	sp
+  1616  0597  dd7e04            	ld	a,(ix+4)
+  1617  059a  f5                	push	af
+  1618  059b  33                	inc	sp
+  1619  059c  cdd603            	call	_calculate_position_to_receive_ball
+  1620  059f  f1                	pop	af
+  1621  05a0  cb45              	bit	0, l
+  1622  05a2  2009              	jr	NZ,l_computer_state_approach_ball_00104
+  1623                          ;computer_controls.c:347: computer_transition_idle(playerId);
+  1624  05a4  dd7e04            	ld	a,(ix+4)
+  1625  05a7  f5                	push	af
+  1626  05a8  33                	inc	sp
+  1627  05a9  cd2100            	call	_computer_transition_idle
+  1628  05ac  33                	inc	sp
+  1629                          l_computer_state_approach_ball_00104:
+  1630                          ;computer_controls.c:349: return 0;
+  1631  05ad  2e00              	ld	l,0x00
+  1632  05af  185a              	jr	l_computer_state_approach_ball_00112
+  1633                          l_computer_state_approach_ball_00106:
+  1634                          ;computer_controls.c:352: Player *player = get_player(playerId);
+  1635  05b1  dd7e04            	ld	a,(ix+4)
+  1636  05b4  f5                	push	af
+  1637  05b5  33                	inc	sp
+  1638  05b6  cd0000            	call	_get_player
+  1639  05b9  33                	inc	sp
+  1640  05ba  eb                	ex	de, hl
+  1641                          ;computer_controls.c:355: int distance_to_ball_y = player->y - ball.y;
+  1642  05bb  210000            	ld	hl,0
+  1643  05be  39                	add	hl, sp
+  1644  05bf  eb                	ex	de, hl
+  1645  05c0  010e00            	ld	bc,0x000e
+  1646  05c3  09                	add	hl, bc
+  1647  05c4  cd0000            	call	____sdcc_4_ldi_nosave_bc
+  1648  05c7  ed4b0400          	ld	bc,(_ball + 4)
+  1649  05cb  2a0600            	ld	hl,(_ball + 4 + 2)
+  1650  05ce  e5                	push	hl
+  1651  05cf  c5                	push	bc
+  1652  05d0  21fcff            	ld	hl,-4
+  1653  05d3  cd0000            	call	____sdcc_4_push_hlix
+  1654  05d6  cd0000            	call	___fssub_callee
+  1655  05d9  d5                	push	de
+  1656  05da  e5                	push	hl
+  1657  05db  cd0000            	call	___fs2sint_callee
+  1658                          ;computer_controls.c:356: if (distance_to_ball_y < 0)
+  1659  05de  cb7c              	bit	7,h
+  1660  05e0  4d                	ld	c,l
+  1661  05e1  44                	ld	b,h
+  1662  05e2  2806              	jr	Z,l_computer_state_approach_ball_00108
+  1663                          ;computer_controls.c:357: distance_to_ball_y = -distance_to_ball_y;
+  1664  05e4  af                	xor	a, a
+  1665  05e5  91                	sub	a, c
+  1666  05e6  4f                	ld	c, a
+  1667  05e7  9f                	sbc	a, a
+  1668  05e8  90                	sub	a, b
+  1669  05e9  47                	ld	b, a
+  1670                          l_computer_state_approach_ball_00108:
+  1671                          ;computer_controls.c:359: if (distance_to_ball_y < 15)
+  1672  05ea  79                	ld	a, c
+  1673  05eb  d60f              	sub	a,0x0f
+  1674  05ed  78                	ld	a, b
+  1675  05ee  17                	rla
+  1676  05ef  3f                	ccf
+  1677  05f0  1f                	rra
+  1678  05f1  de80              	sbc	a,0x80
+  1679  05f3  300d              	jr	NC,l_computer_state_approach_ball_00110
+  1680                          ;computer_controls.c:362: computer_transition_position(playerId);
+  1681  05f5  dd7e04            	ld	a,(ix+4)
+  1682  05f8  f5                	push	af
+  1683  05f9  33                	inc	sp
+  1684  05fa  cd8201            	call	_computer_transition_position
+  1685  05fd  33                	inc	sp
+  1686                          ;computer_controls.c:363: return CONTROL_A;
+  1687  05fe  2e80              	ld	l,0x80
+  1688  0600  1809              	jr	l_computer_state_approach_ball_00112
+  1689                          l_computer_state_approach_ball_00110:
+  1690                          ;computer_controls.c:366: return move_to_target(playerId);
+  1691  0602  dd7e04            	ld	a,(ix+4)
+  1692  0605  f5                	push	af
+  1693  0606  33                	inc	sp
+  1694  0607  cd6a02            	call	_move_to_target
+  1695  060a  33                	inc	sp
+  1696                          l_computer_state_approach_ball_00112:
+  1697                          ;computer_controls.c:367: }
+  1698  060b  ddf9              	ld	sp, ix
+  1699  060d  dde1              	pop	ix
+  1700  060f  c9                	ret
+  1701                          ;computer_controls.c:373: void computer_transition_wait_for_serve(PlayerId player_id)
+  1702                          ;	---------------------------------
+  1703                          ; Function computer_transition_wait_for_serve
+  1704                          ; ---------------------------------
+  1705                          _computer_transition_wait_for_serve:
+  1706  0610  cd0000            	call	___sdcc_enter_ix
+  1707                          ;computer_controls.c:377: ComputerPlayer *computer = &computer_state[player_id];
+  1708  0613  010000            	ld	bc,_computer_state+0
+  1709  0616  dd6e04            	ld	l,(ix+4)
+  1710  0619  1e00              	ld	e,0x00
+  1711  061b  63                	ld	h, e
+  1712  061c  29                	add	hl, hl
+  1713  061d  29                	add	hl, hl
+  1714  061e  29                	add	hl, hl
+  1715  061f  09                	add	hl, bc
+  1716                          ;computer_controls.c:378: computer->stateFn = computer_state_wait_for_serve;
+  1717  0620  362a              	ld	(hl), +((_computer_state_wait_for_serve) & 0xFF)
+  1718  0622  eb                	ex	de,hl
+  1719  0623  13                	inc	de
+  1720  0624  3e06              	ld	a, +((_computer_state_wait_for_serve) / 256)
+  1721  0626  12                	ld	(de), a
+  1722                          ;computer_controls.c:379: }
+  1723  0627  dde1              	pop	ix
+  1724  0629  c9                	ret
+  1725                          ;computer_controls.c:381: ControlInput computer_state_wait_for_serve(PlayerId player_id)
+  1726                          ;	---------------------------------
+  1727                          ; Function computer_state_wait_for_serve
+  1728                          ; ---------------------------------
+  1729                          _computer_state_wait_for_serve:
+  1730  062a  cd0000            	call	___sdcc_enter_ix
+  1731                          ;computer_controls.c:384: if (game_state.point_status == POS_SERVICE_HIT)
+  1732  062d  3a0000            	ld	a,(_game_state)
+  1733  0630  d602              	sub	a,0x02
+  1734  0632  2009              	jr	NZ,l_computer_state_wait_for_serve_00102
+  1735                          ;computer_controls.c:387: computer_transition_receive_serve(player_id);
+  1736  0634  dd7e04            	ld	a,(ix+4)
+  1737  0637  f5                	push	af
+  1738  0638  33                	inc	sp
+  1739  0639  cd4206            	call	_computer_transition_receive_serve
+  1740  063c  33                	inc	sp
+  1741                          l_computer_state_wait_for_serve_00102:
+  1742                          ;computer_controls.c:389: return 0;
+  1743  063d  2e00              	ld	l,0x00
+  1744                          ;computer_controls.c:390: }
+  1745  063f  dde1              	pop	ix
+  1746  0641  c9                	ret
+  1747                          ;computer_controls.c:396: void computer_transition_receive_serve(PlayerId player_id)
+  1748                          ;	---------------------------------
+  1749                          ; Function computer_transition_receive_serve
+  1750                          ; ---------------------------------
+  1751                          _computer_transition_receive_serve:
+  1752  0642  cd0000            	call	___sdcc_enter_ix
+  1753                          ;computer_controls.c:399: ComputerPlayer *computer = &computer_state[player_id];
+  1754  0645  010000            	ld	bc,_computer_state+0
+  1755  0648  dd7e04            	ld	a,(ix+4)
+  1756  064b  1e00              	ld	e,0x00
+  1757  064d  6f                	ld	l, a
+  1758  064e  63                	ld	h, e
+  1759  064f  29                	add	hl, hl
+  1760  0650  29                	add	hl, hl
+  1761  0651  29                	add	hl, hl
+  1762  0652  09                	add	hl, bc
+  1763                          ;computer_controls.c:400: computer->stateFn = computer_state_receive_serve;
+  1764  0653  5d                	ld	e,l
+  1765  0654  54                	ld	d,h
+  1766  0655  3663              	ld	(hl), +((_computer_state_receive_serve) & 0xFF)
+  1767  0657  23                	inc	hl
+  1768  0658  3606              	ld	(hl), +((_computer_state_receive_serve) / 256)
+  1769                          ;computer_controls.c:402: computer->position.reaction_countdown = 5; // COMPUTER_REACTION_TIME;
+  1770  065a  210700            	ld	hl,0x0007
+  1771  065d  19                	add	hl, de
+  1772  065e  3605              	ld	(hl),0x05
+  1773                          ;computer_controls.c:403: }
+  1774  0660  dde1              	pop	ix
+  1775  0662  c9                	ret
+  1776                          ;computer_controls.c:405: ControlInput computer_state_receive_serve(PlayerId player_id)
+  1777                          ;	---------------------------------
+  1778                          ; Function computer_state_receive_serve
+  1779                          ; ---------------------------------
+  1780                          _computer_state_receive_serve:
+  1781  0663  cd0000            	call	___sdcc_enter_ix
+  1782  0666  f5                	push	af
+  1783  0667  f5                	push	af
+  1784                          ;computer_controls.c:407: ComputerPlayer *computer = &computer_state[player_id];
+  1785  0668  010000            	ld	bc,_computer_state+0
+  1786  066b  dd6e04            	ld	l,(ix+4)
+  1787  066e  2600              	ld	h,0x00
+  1788  0670  29                	add	hl, hl
+  1789  0671  29                	add	hl, hl
+  1790  0672  29                	add	hl, hl
+  1791  0673  09                	add	hl, bc
+  1792                          ;computer_controls.c:408: if (computer->position.reaction_countdown > 0)
+  1793  0674  110700            	ld	de,0x0007
+  1794  0677  19                	add	hl, de
+  1795  0678  dd75fe            	ld	(ix-2),l
+  1796  067b  dd74ff            	ld	(ix-1),h
+  1797                          ;computer_controls.c:410: computer->position.reaction_countdown--;
+  1798  067e  7e                	ld	a,(hl)
+  1799  067f  b7                	or	a, a
+  1800  0680  2824              	jr	Z,l_computer_state_receive_serve_00106
+  1801  0682  3d                	dec	a
+  1802  0683  c1                	pop	bc
+  1803  0684  e1                	pop	hl
+  1804  0685  e5                	push	hl
+  1805  0686  c5                	push	bc
+  1806  0687  77                	ld	(hl), a
+  1807                          ;computer_controls.c:411: if (computer->position.reaction_countdown == 0)
+  1808  0688  b7                	or	a, a
+  1809  0689  2017              	jr	NZ,l_computer_state_receive_serve_00104
+  1810                          ;computer_controls.c:413: if (!calculate_position_to_receive_ball(player_id, true))
+  1811  068b  2601              	ld	h,0x01
+  1812  068d  dd6e04            	ld	l,(ix+4)
+  1813  0690  e5                	push	hl
+  1814  0691  cdd603            	call	_calculate_position_to_receive_ball
+  1815  0694  f1                	pop	af
+  1816  0695  cb45              	bit	0, l
+  1817  0697  2009              	jr	NZ,l_computer_state_receive_serve_00104
+  1818                          ;computer_controls.c:416: computer_transition_idle(player_id);
+  1819  0699  dd7e04            	ld	a,(ix+4)
+  1820  069c  f5                	push	af
+  1821  069d  33                	inc	sp
+  1822  069e  cd2100            	call	_computer_transition_idle
+  1823  06a1  33                	inc	sp
+  1824                          l_computer_state_receive_serve_00104:
+  1825                          ;computer_controls.c:419: return 0;
+  1826  06a2  2e00              	ld	l,0x00
+  1827  06a4  185a              	jr	l_computer_state_receive_serve_00112
+  1828                          l_computer_state_receive_serve_00106:
+  1829                          ;computer_controls.c:422: Player *player = get_player(player_id);
+  1830  06a6  dd7e04            	ld	a,(ix+4)
+  1831  06a9  f5                	push	af
+  1832  06aa  33                	inc	sp
+  1833  06ab  cd0000            	call	_get_player
+  1834  06ae  33                	inc	sp
+  1835  06af  eb                	ex	de, hl
+  1836                          ;computer_controls.c:425: int distance_to_ball_y = player->y - ball.y;
+  1837  06b0  210000            	ld	hl,0
+  1838  06b3  39                	add	hl, sp
+  1839  06b4  eb                	ex	de, hl
+  1840  06b5  010e00            	ld	bc,0x000e
+  1841  06b8  09                	add	hl, bc
+  1842  06b9  cd0000            	call	____sdcc_4_ldi_nosave_bc
+  1843  06bc  ed4b0400          	ld	bc,(_ball + 4)
+  1844  06c0  2a0600            	ld	hl,(_ball + 4 + 2)
+  1845  06c3  e5                	push	hl
+  1846  06c4  c5                	push	bc
+  1847  06c5  21fcff            	ld	hl,-4
+  1848  06c8  cd0000            	call	____sdcc_4_push_hlix
+  1849  06cb  cd0000            	call	___fssub_callee
+  1850  06ce  d5                	push	de
+  1851  06cf  e5                	push	hl
+  1852  06d0  cd0000            	call	___fs2sint_callee
+  1853                          ;computer_controls.c:426: if (distance_to_ball_y < 0)
+  1854  06d3  cb7c              	bit	7,h
+  1855  06d5  4d                	ld	c,l
+  1856  06d6  44                	ld	b,h
+  1857  06d7  2806              	jr	Z,l_computer_state_receive_serve_00108
+  1858                          ;computer_controls.c:427: distance_to_ball_y = -distance_to_ball_y;
+  1859  06d9  af                	xor	a, a
+  1860  06da  91                	sub	a, c
+  1861  06db  4f                	ld	c, a
+  1862  06dc  9f                	sbc	a, a
+  1863  06dd  90                	sub	a, b
+  1864  06de  47                	ld	b, a
+  1865                          l_computer_state_receive_serve_00108:
+  1866                          ;computer_controls.c:429: if (distance_to_ball_y < 15)
+  1867  06df  79                	ld	a, c
+  1868  06e0  d60f              	sub	a,0x0f
+  1869  06e2  78                	ld	a, b
+  1870  06e3  17                	rla
+  1871  06e4  3f                	ccf
+  1872  06e5  1f                	rra
+  1873  06e6  de80              	sbc	a,0x80
+  1874  06e8  300d              	jr	NC,l_computer_state_receive_serve_00110
+  1875                          ;computer_controls.c:432: computer_transition_position(player_id);
+  1876  06ea  dd7e04            	ld	a,(ix+4)
+  1877  06ed  f5                	push	af
+  1878  06ee  33                	inc	sp
+  1879  06ef  cd8201            	call	_computer_transition_position
+  1880  06f2  33                	inc	sp
+  1881                          ;computer_controls.c:433: return CONTROL_A;
+  1882  06f3  2e80              	ld	l,0x80
+  1883  06f5  1809              	jr	l_computer_state_receive_serve_00112
+  1884                          l_computer_state_receive_serve_00110:
+  1885                          ;computer_controls.c:436: return move_to_target(player_id);
+  1886  06f7  dd7e04            	ld	a,(ix+4)
+  1887  06fa  f5                	push	af
+  1888  06fb  33                	inc	sp
+  1889  06fc  cd6a02            	call	_move_to_target
+  1890  06ff  33                	inc	sp
+  1891                          l_computer_state_receive_serve_00112:
+  1892                          ;computer_controls.c:437: }
+  1893  0700  ddf9              	ld	sp, ix
+  1894  0702  dde1              	pop	ix
+  1895  0704  c9                	ret
+  1896                          ;computer_controls.c:443: void restart_computer_controls(void)
+  1897                          ;	---------------------------------
+  1898                          ; Function restart_computer_controls
+  1899                          ; ---------------------------------
+  1900                          _restart_computer_controls:
+  1901                          ;computer_controls.c:445: computer_transition_idle(PLAYER_TOP);
+  1902  0705  af                	xor	a, a
+  1903  0706  f5                	push	af
+  1904  0707  33                	inc	sp
+  1905  0708  cd2100            	call	_computer_transition_idle
+  1906  070b  33                	inc	sp
+  1907                          ;computer_controls.c:446: computer_transition_idle(PLAYER_BOTTOM);
+  1908  070c  3e01              	ld	a,0x01
+  1909  070e  f5                	push	af
+  1910  070f  33                	inc	sp
+  1911  0710  cd2100            	call	_computer_transition_idle
+  1912  0713  33                	inc	sp
+  1913                          ;computer_controls.c:449: }
+  1914  0714  c9                	ret
+  1915                          	SECTION data_compiler
+  1916                          _computer_state:
+  1917  0000  3b00              	DEFW _computer_state_idle
+  1918  0002  0000              	DEFB +0x00,0x00
+  1919  0004  0000              	DEFB +0x00,0x00
+  1920  0006  00                	DEFB +0x00
+  1921  0007  00                	DEFB +0x00
+  1922  0008  3b00              	DEFW _computer_state_idle
+  1923  000a  0000              	DEFB +0x00,0x00
+  1924  000c  0000              	DEFB +0x00,0x00
+  1925  000e  00                	DEFB +0x00
+  1926  000f  00                	DEFB +0x00
+  1927                          	SECTION IGNORE
+  1928                          

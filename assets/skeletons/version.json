@@ -1,0 +1,287 @@
+{
+    "chibi": {
+        "direction": [
+            "north",
+            "east",
+            "south",
+            "west"
+        ],
+        "reference_direction": [
+            "automatic",
+            "north",
+            "east",
+            "south",
+            "west"
+        ],
+        "templates": {
+            "base": {
+                "index": 1,
+                "option_text": "base",
+                "path": "base.json"
+            },
+            "crouch": {
+                "index": 10,
+                "option_text": "crouch",
+                "path": "crouch.json"
+            },
+            "dead": {
+                "index": 11,
+                "option_text": "dead",
+                "path": "dead.json"
+            },
+            "dodge": {
+                "index": 12,
+                "option_text": "dodge",
+                "path": "dodge.json"
+            },
+            "hurt": {
+                "index": 17,
+                "option_text": "hurt",
+                "path": "hurt.json"
+            },
+            "jump": {
+                "index": 13,
+                "option_text": "jump",
+                "path": "jump.json"
+            },
+            "lunge": {
+                "index": 14,
+                "option_text": "lunge",
+                "path": "lunge.json"
+            },
+            "ninja_throw": {
+                "index": 16,
+                "option_text": "ninja throw",
+                "path": "ninja_throw.json"
+            },
+            "parry": {
+                "index": 18,
+                "option_text": "parry",
+                "path": "parry.json"
+            },
+            "run": {
+                "index": 3,
+                "option_text": "run",
+                "path": "run.json"
+            },
+            "shoot_straight": {
+                "index": 15,
+                "option_text": "shoot",
+                "path": "shoot_straight.json"
+            },
+            "slash": {
+                "index": 4,
+                "option_text": "slash",
+                "path": "slash.json"
+            },
+            "slash_1": {
+                "index": 5,
+                "option_text": "slash 1",
+                "path": "slash_1.json"
+            },
+            "slash_2": {
+                "index": 6,
+                "option_text": "slash 2",
+                "path": "slash_2.json"
+            },
+            "thrust": {
+                "index": 7,
+                "option_text": "thrust",
+                "path": "thrust.json"
+            },
+            "thrust_1": {
+                "index": 8,
+                "option_text": "thrust 1",
+                "path": "thrust_1.json"
+            },
+            "thrust_2": {
+                "index": 9,
+                "option_text": "thrust 2",
+                "path": "thrust_2.json"
+            },
+            "walk": {
+                "index": 2,
+                "option_text": "walk",
+                "path": "walk.json"
+            }
+        },
+        "type": "chibi",
+        "view": [
+            "high top-down"
+        ]
+    },
+    "large head": {
+        "direction": [
+            "north",
+            "east",
+            "south",
+            "west",
+            "south-east",
+            "south-west",
+            "north-east",
+            "north-west"
+        ],
+        "reference_direction": [
+            "automatic",
+            "north",
+            "north-north-east",
+            "north-east",
+            "east-north-east",
+            "east",
+            "east-south-east",
+            "south-east",
+            "south-south-east",
+            "south",
+            "south-south-west",
+            "south_west",
+            "west-south-west",
+            "west",
+            "west-north_west",
+            "north-west",
+            "north-north-west"
+        ],
+        "templates": {
+            "base": {
+                "index": 1,
+                "option_text": "base",
+                "path": "base.json"
+            },
+            "heavy_punch": {
+                "index": 7,
+                "option_text": "heavy punch",
+                "path": "heavy_punch.json"
+            },
+            "light_punch": {
+                "index": 8,
+                "option_text": "light punch",
+                "path": "light_punch.json"
+            },
+            "running": {
+                "index": 5,
+                "option_text": "running",
+                "path": "running.json"
+            },
+            "stabbing": {
+                "index": 6,
+                "option_text": "stabbing",
+                "path": "stabbing.json"
+            },
+            "walk_4_frames": {
+                "index": 2,
+                "option_text": "walk, 4 frames",
+                "path": "walk_4_frames.json"
+            },
+            "walk_6_frames": {
+                "index": 3,
+                "option_text": "walk, 6 frames",
+                "path": "walk_6_frames.json"
+            },
+            "walk_8_frames": {
+                "index": 4,
+                "option_text": "walk, 8 frames",
+                "path": "walk_8_frames.json"
+            }
+        },
+        "type": "large head",
+        "view": [
+            "side",
+            "low top-down",
+            "high top-down"
+        ]
+    },
+    "normal": {
+        "direction": [
+            "north",
+            "east",
+            "south",
+            "west",
+            "south-east",
+            "south-west",
+            "north-east",
+            "north-west"
+        ],
+        "reference_direction": [
+            "automatic",
+            "north",
+            "north-north-east",
+            "north-east",
+            "east-north-east",
+            "east",
+            "east-south-east",
+            "south-east",
+            "south-south-east",
+            "south",
+            "south-south-west",
+            "south_west",
+            "west-south-west",
+            "west",
+            "west-north_west",
+            "north-west",
+            "north-north-west"
+        ],
+        "templates": {
+            "base": {
+                "index": 1,
+                "option_text": "base",
+                "path": "base.json"
+            },
+            "heavy_punch": {
+                "index": 7,
+                "option_text": "heavy punch",
+                "path": "heavy_punch.json"
+            },
+            "light_punch": {
+                "index": 8,
+                "option_text": "light punch",
+                "path": "light_punch.json"
+            },
+            "running": {
+                "index": 5,
+                "option_text": "running",
+                "path": "running.json"
+            },
+            "stabbing": {
+                "index": 6,
+                "option_text": "stabbing",
+                "path": "stabbing.json"
+            },
+            "walk_4_frames": {
+                "index": 2,
+                "option_text": "walk, 4 frames",
+                "path": "walk_4_frames.json"
+            },
+            "walk_6_frames": {
+                "index": 3,
+                "option_text": "walk, 6 frames",
+                "path": "walk_6_frames.json"
+            },
+            "walk_8_frames": {
+                "index": 4,
+                "option_text": "walk, 8 frames",
+                "path": "walk_8_frames.json"
+            },
+            "service": {
+                "index": 9,
+                "option_text": "serving",
+                "path": "service.json"
+            },
+            "drive": {
+                "index": 10,
+                "option_text": "drive",
+                "path": "drive.json"
+            },
+            "backhand": {
+                "index": 12,
+                "option_text": "backhand",
+                "path": "backhand.json"
+            }
+        },
+        "type": "normal",
+        "view": [
+            "side",
+            "low top-down",
+            "high top-down"
+        ]
+    },
+    "version": "0.3.7"
+}

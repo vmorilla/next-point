@@ -1,0 +1,10 @@
+SECTION BANK_9
+    binary "../build/layer2/intro-screen.bank_0.ly2"
+SECTION BANK_10
+    binary "../build/layer2/intro-screen.bank_1.ly2"
+SECTION BANK_11
+    binary "../build/layer2/intro-screen.bank_2.ly2"
+SECTION BANK_12
+    binary "../build/layer2/intro-screen.bank_3.ly2"
+SECTION BANK_13
+    binary "../build/layer2/intro-screen.bank_4.ly2"

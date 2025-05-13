@@ -1,0 +1,25 @@
+/tmp/tmpJnkqtiVp.asm:
+     1                          MODULE zxn_asm_asm
+     2                          LINE 0, "zxn_asm.asm"
+zxn_asm.asm:
+                                
+     1                              SECTION code_user
+     2                          
+     3                              PUBLIC _ZXN_NEXTREG_UPDATE
+     4                          
+     5                              ; void ZXN_NEXTREG_UPDATE(uint8_t reg, uint8_t val, uint8_t mask);
+     6                          _ZXN_NEXTREG_UPDATE:
+     7  0000  dde5                  push ix
+     8  0002  dd210200              ld ix, 2
+     9  0006  dd39                  add ix, sp
+    10  0008  013b24                ld bc, $243b ; Port for next registers
+    11  000b  dd7e00                ld a, (ix + 0) ; register
+    12  000e  ed79                  out (c), a
+    13  0010  04                    inc b
+    14  0011  ed78                  in a, (c)    ; Value of register in A
+    15  0013  dda602                and a, (ix + 2) ; Mask
+    16  0016  ddb601                or a, (ix + 1) ; register
+    17  0019  ed79                  out (c), a
+    18  001b  dde1                  pop ix
+    19  001d  c9                    ret
+    20                          

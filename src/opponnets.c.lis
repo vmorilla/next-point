@@ -1,0 +1,1655 @@
+/tmp/tmpAxvJ526I.asm:
+     1                          MODULE opponnets_c
+     2                          LINE 0, "opponnets.c"
+opponnets.c:
+                                
+     1                          ;--------------------------------------------------------
+     2                          ; File Created by SDCC : free open source ISO C Compiler
+     3                          ; Version 4.3.0 #14210 (Mac OS X ppc)
+     4                          ;--------------------------------------------------------
+     5                          	.zxn
+     6                          ; Processed by Z88DK
+     7                          ;--------------------------------------------------------
+     8                          
+     9                          	EXTERN __divschar
+    10                          	EXTERN __divschar_callee
+    11                          	EXTERN __divsint
+    12                          	EXTERN __divsint_callee
+    13                          	EXTERN __divslong
+    14                          	EXTERN __divslong_callee
+    15                          	EXTERN __divslonglong
+    16                          	EXTERN __divslonglong_callee
+    17                          	EXTERN __divsuchar
+    18                          	EXTERN __divsuchar_callee
+    19                          	EXTERN __divuchar
+    20                          	EXTERN __divuchar_callee
+    21                          	EXTERN __divuint
+    22                          	EXTERN __divuint_callee
+    23                          	EXTERN __divulong
+    24                          	EXTERN __divulong_callee
+    25                          	EXTERN __divulonglong
+    26                          	EXTERN __divulonglong_callee
+    27                          	EXTERN __divuschar
+    28                          	EXTERN __divuschar_callee
+    29                          	EXTERN __modschar
+    30                          	EXTERN __modschar_callee
+    31                          	EXTERN __modsint
+    32                          	EXTERN __modsint_callee
+    33                          	EXTERN __modslong
+    34                          	EXTERN __modslong_callee
+    35                          	EXTERN __modslonglong
+    36                          	EXTERN __modslonglong_callee
+    37                          	EXTERN __modsuchar
+    38                          	EXTERN __modsuchar_callee
+    39                          	EXTERN __moduchar
+    40                          	EXTERN __moduchar_callee
+    41                          	EXTERN __moduint
+    42                          	EXTERN __moduint_callee
+    43                          	EXTERN __modulong
+    44                          	EXTERN __modulong_callee
+    45                          	EXTERN __modulonglong
+    46                          	EXTERN __modulonglong_callee
+    47                          	EXTERN __moduschar
+    48                          	EXTERN __moduschar_callee
+    49                          	EXTERN __mulint
+    50                          	EXTERN __mulint_callee
+    51                          	EXTERN __mullong
+    52                          	EXTERN __mullong_callee
+    53                          	EXTERN __mullonglong
+    54                          	EXTERN __mullonglong_callee
+    55                          	EXTERN __mulschar
+    56                          	EXTERN __mulschar_callee
+    57                          	EXTERN __mulsuchar
+    58                          	EXTERN __mulsuchar_callee
+    59                          	EXTERN __muluchar
+    60                          	EXTERN __muluchar_callee
+    61                          	EXTERN __muluschar
+    62                          	EXTERN __muluschar_callee
+    63                          	EXTERN __rlslonglong
+    64                          	EXTERN __rlslonglong_callee
+    65                          	EXTERN __rlulonglong
+    66                          	EXTERN __rlulonglong_callee
+    67                          	EXTERN __rrslonglong
+    68                          	EXTERN __rrslonglong_callee
+    69                          	EXTERN __rrulonglong
+    70                          	EXTERN __rrulonglong_callee
+    71                          	EXTERN ___mulsint2slong
+    72                          	EXTERN ___mulsint2slong_callee
+    73                          	EXTERN ___muluint2ulong
+    74                          	EXTERN ___muluint2ulong_callee
+    75                          	EXTERN ___sdcc_call_hl
+    76                          	EXTERN ___sdcc_call_iy
+    77                          	EXTERN ___sdcc_enter_ix
+    78                          	EXTERN banked_call
+    79                          	EXTERN _banked_ret
+    80                          	EXTERN ___fs2schar
+    81                          	EXTERN ___fs2schar_callee
+    82                          	EXTERN ___fs2sint
+    83                          	EXTERN ___fs2sint_callee
+    84                          	EXTERN ___fs2slong
+    85                          	EXTERN ___fs2slong_callee
+    86                          	EXTERN ___fs2slonglong
+    87                          	EXTERN ___fs2slonglong_callee
+    88                          	EXTERN ___fs2uchar
+    89                          	EXTERN ___fs2uchar_callee
+    90                          	EXTERN ___fs2uint
+    91                          	EXTERN ___fs2uint_callee
+    92                          	EXTERN ___fs2ulong
+    93                          	EXTERN ___fs2ulong_callee
+    94                          	EXTERN ___fs2ulonglong
+    95                          	EXTERN ___fs2ulonglong_callee
+    96                          	EXTERN ___fsadd
+    97                          	EXTERN ___fsadd_callee
+    98                          	EXTERN ___fsdiv
+    99                          	EXTERN ___fsdiv_callee
+   100                          	EXTERN ___fseq
+   101                          	EXTERN ___fseq_callee
+   102                          	EXTERN ___fsgt
+   103                          	EXTERN ___fsgt_callee
+   104                          	EXTERN ___fslt
+   105                          	EXTERN ___fslt_callee
+   106                          	EXTERN ___fsmul
+   107                          	EXTERN ___fsmul_callee
+   108                          	EXTERN ___fsneq
+   109                          	EXTERN ___fsneq_callee
+   110                          	EXTERN ___fssub
+   111                          	EXTERN ___fssub_callee
+   112                          	EXTERN ___schar2fs
+   113                          	EXTERN ___schar2fs_callee
+   114                          	EXTERN ___sint2fs
+   115                          	EXTERN ___sint2fs_callee
+   116                          	EXTERN ___slong2fs
+   117                          	EXTERN ___slong2fs_callee
+   118                          	EXTERN ___slonglong2fs
+   119                          	EXTERN ___slonglong2fs_callee
+   120                          	EXTERN ___uchar2fs
+   121                          	EXTERN ___uchar2fs_callee
+   122                          	EXTERN ___uint2fs
+   123                          	EXTERN ___uint2fs_callee
+   124                          	EXTERN ___ulong2fs
+   125                          	EXTERN ___ulong2fs_callee
+   126                          	EXTERN ___ulonglong2fs
+   127                          	EXTERN ___ulonglong2fs_callee
+   128                          	EXTERN ____sdcc_2_copy_src_mhl_dst_deix
+   129                          	EXTERN ____sdcc_2_copy_src_mhl_dst_bcix
+   130                          	EXTERN ____sdcc_4_copy_src_mhl_dst_deix
+   131                          	EXTERN ____sdcc_4_copy_src_mhl_dst_bcix
+   132                          	EXTERN ____sdcc_4_copy_src_mhl_dst_mbc
+   133                          	EXTERN ____sdcc_4_ldi_nosave_bc
+   134                          	EXTERN ____sdcc_4_ldi_save_bc
+   135                          	EXTERN ____sdcc_4_push_hlix
+   136                          	EXTERN ____sdcc_4_push_mhl
+   137                          	EXTERN ____sdcc_lib_setmem_hl
+   138                          	EXTERN ____sdcc_ll_add_de_bc_hl
+   139                          	EXTERN ____sdcc_ll_add_de_bc_hlix
+   140                          	EXTERN ____sdcc_ll_add_de_hlix_bc
+   141                          	EXTERN ____sdcc_ll_add_de_hlix_bcix
+   142                          	EXTERN ____sdcc_ll_add_deix_bc_hl
+   143                          	EXTERN ____sdcc_ll_add_deix_hlix
+   144                          	EXTERN ____sdcc_ll_add_hlix_bc_deix
+   145                          	EXTERN ____sdcc_ll_add_hlix_deix_bc
+   146                          	EXTERN ____sdcc_ll_add_hlix_deix_bcix
+   147                          	EXTERN ____sdcc_ll_asr_hlix_a
+   148                          	EXTERN ____sdcc_ll_asr_mbc_a
+   149                          	EXTERN ____sdcc_ll_copy_src_de_dst_hlix
+   150                          	EXTERN ____sdcc_ll_copy_src_de_dst_hlsp
+   151                          	EXTERN ____sdcc_ll_copy_src_deix_dst_hl
+   152                          	EXTERN ____sdcc_ll_copy_src_deix_dst_hlix
+   153                          	EXTERN ____sdcc_ll_copy_src_deixm_dst_hlsp
+   154                          	EXTERN ____sdcc_ll_copy_src_desp_dst_hlsp
+   155                          	EXTERN ____sdcc_ll_copy_src_hl_dst_de
+   156                          	EXTERN ____sdcc_ll_copy_src_hlsp_dst_de
+   157                          	EXTERN ____sdcc_ll_copy_src_hlsp_dst_deixm
+   158                          	EXTERN ____sdcc_ll_lsl_hlix_a
+   159                          	EXTERN ____sdcc_ll_lsl_mbc_a
+   160                          	EXTERN ____sdcc_ll_lsr_hlix_a
+   161                          	EXTERN ____sdcc_ll_lsr_mbc_a
+   162                          	EXTERN ____sdcc_ll_push_hlix
+   163                          	EXTERN ____sdcc_ll_push_mhl
+   164                          	EXTERN ____sdcc_ll_sub_de_bc_hl
+   165                          	EXTERN ____sdcc_ll_sub_de_bc_hlix
+   166                          	EXTERN ____sdcc_ll_sub_de_hlix_bc
+   167                          	EXTERN ____sdcc_ll_sub_de_hlix_bcix
+   168                          	EXTERN ____sdcc_ll_sub_deix_bc_hl
+   169                          	EXTERN ____sdcc_ll_sub_deix_hlix
+   170                          	EXTERN ____sdcc_ll_sub_hlix_bc_deix
+   171                          	EXTERN ____sdcc_ll_sub_hlix_deix_bc
+   172                          	EXTERN ____sdcc_ll_sub_hlix_deix_bcix
+   173                          	EXTERN ____sdcc_load_debc_deix
+   174                          	EXTERN ____sdcc_load_dehl_deix
+   175                          	EXTERN ____sdcc_load_debc_mhl
+   176                          	EXTERN ____sdcc_load_hlde_mhl
+   177                          	EXTERN ____sdcc_store_dehl_bcix
+   178                          	EXTERN ____sdcc_store_debc_hlix
+   179                          	EXTERN ____sdcc_store_debc_mhl
+   180                          	EXTERN ____sdcc_cpu_pop_ei
+   181                          	EXTERN ____sdcc_cpu_pop_ei_jp
+   182                          	EXTERN ____sdcc_cpu_push_di
+   183                          	EXTERN ____sdcc_outi
+   184                          	EXTERN ____sdcc_outi_128
+   185                          	EXTERN ____sdcc_outi_256
+   186                          	EXTERN ____sdcc_ldi
+   187                          	EXTERN ____sdcc_ldi_128
+   188                          	EXTERN ____sdcc_ldi_256
+   189                          	EXTERN ____sdcc_4_copy_srcd_hlix_dst_deix
+   190                          	EXTERN ____sdcc_4_and_src_mbc_mhl_dst_deix
+   191                          	EXTERN ____sdcc_4_or_src_mbc_mhl_dst_deix
+   192                          	EXTERN ____sdcc_4_xor_src_mbc_mhl_dst_deix
+   193                          	EXTERN ____sdcc_4_or_src_dehl_dst_bcix
+   194                          	EXTERN ____sdcc_4_xor_src_dehl_dst_bcix
+   195                          	EXTERN ____sdcc_4_and_src_dehl_dst_bcix
+   196                          	EXTERN ____sdcc_4_xor_src_mbc_mhl_dst_debc
+   197                          	EXTERN ____sdcc_4_or_src_mbc_mhl_dst_debc
+   198                          	EXTERN ____sdcc_4_and_src_mbc_mhl_dst_debc
+   199                          	EXTERN ____sdcc_4_cpl_src_mhl_dst_debc
+   200                          	EXTERN ____sdcc_4_xor_src_debc_mhl_dst_debc
+   201                          	EXTERN ____sdcc_4_or_src_debc_mhl_dst_debc
+   202                          	EXTERN ____sdcc_4_and_src_debc_mhl_dst_debc
+   203                          	EXTERN ____sdcc_4_and_src_debc_hlix_dst_debc
+   204                          	EXTERN ____sdcc_4_or_src_debc_hlix_dst_debc
+   205                          	EXTERN ____sdcc_4_xor_src_debc_hlix_dst_debc
+   206                          
+   207                          ;--------------------------------------------------------
+   208                          ; Public variables in this module
+   209                          ;--------------------------------------------------------
+   210                          	GLOBAL __diplay_profile
+   211                          ;--------------------------------------------------------
+   212                          ; Externals used
+   213                          ;--------------------------------------------------------
+   214                          	GLOBAL _ffsll_callee
+   215                          	GLOBAL _ffsll
+   216                          	GLOBAL _strxfrm_callee
+   217                          	GLOBAL _strxfrm
+   218                          	GLOBAL _strupr_fastcall
+   219                          	GLOBAL _strupr
+   220                          	GLOBAL _strtok_r_callee
+   221                          	GLOBAL _strtok_r
+   222                          	GLOBAL _strtok_callee
+   223                          	GLOBAL _strtok
+   224                          	GLOBAL _strstrip_fastcall
+   225                          	GLOBAL _strstrip
+   226                          	GLOBAL _strstr_callee
+   227                          	GLOBAL _strstr
+   228                          	GLOBAL _strspn_callee
+   229                          	GLOBAL _strspn
+   230                          	GLOBAL _strsep_callee
+   231                          	GLOBAL _strsep
+   232                          	GLOBAL _strrstrip_fastcall
+   233                          	GLOBAL _strrstrip
+   234                          	GLOBAL _strrstr_callee
+   235                          	GLOBAL _strrstr
+   236                          	GLOBAL _strrspn_callee
+   237                          	GLOBAL _strrspn
+   238                          	GLOBAL _strrev_fastcall
+   239                          	GLOBAL _strrev
+   240                          	GLOBAL _strrcspn_callee
+   241                          	GLOBAL _strrcspn
+   242                          	GLOBAL _strrchr_callee
+   243                          	GLOBAL _strrchr
+   244                          	GLOBAL _strpbrk_callee
+   245                          	GLOBAL _strpbrk
+   246                          	GLOBAL _strnlen_callee
+   247                          	GLOBAL _strnlen
+   248                          	GLOBAL _strnicmp_callee
+   249                          	GLOBAL _strnicmp
+   250                          	GLOBAL _strndup_callee
+   251                          	GLOBAL _strndup
+   252                          	GLOBAL _strncpy_callee
+   253                          	GLOBAL _strncpy
+   254                          	GLOBAL _strncmp_callee
+   255                          	GLOBAL _strncmp
+   256                          	GLOBAL _strnchr_callee
+   257                          	GLOBAL _strnchr
+   258                          	GLOBAL _strncat_callee
+   259                          	GLOBAL _strncat
+   260                          	GLOBAL _strncasecmp_callee
+   261                          	GLOBAL _strncasecmp
+   262                          	GLOBAL _strlwr_fastcall
+   263                          	GLOBAL _strlwr
+   264                          	GLOBAL _strlen_fastcall
+   265                          	GLOBAL _strlen
+   266                          	GLOBAL _strlcpy_callee
+   267                          	GLOBAL _strlcpy
+   268                          	GLOBAL _strlcat_callee
+   269                          	GLOBAL _strlcat
+   270                          	GLOBAL _stricmp_callee
+   271                          	GLOBAL _stricmp
+   272                          	GLOBAL _strerror_fastcall
+   273                          	GLOBAL _strerror
+   274                          	GLOBAL _strdup_fastcall
+   275                          	GLOBAL _strdup
+   276                          	GLOBAL _strcspn_callee
+   277                          	GLOBAL _strcspn
+   278                          	GLOBAL _strcpy_callee
+   279                          	GLOBAL _strcpy
+   280                          	GLOBAL _strcoll_callee
+   281                          	GLOBAL _strcoll
+   282                          	GLOBAL _strcmp_callee
+   283                          	GLOBAL _strcmp
+   284                          	GLOBAL _strchrnul_callee
+   285                          	GLOBAL _strchrnul
+   286                          	GLOBAL _strchr_callee
+   287                          	GLOBAL _strchr
+   288                          	GLOBAL _strcat_callee
+   289                          	GLOBAL _strcat
+   290                          	GLOBAL _strcasecmp_callee
+   291                          	GLOBAL _strcasecmp
+   292                          	GLOBAL _stpncpy_callee
+   293                          	GLOBAL _stpncpy
+   294                          	GLOBAL _stpcpy_callee
+   295                          	GLOBAL _stpcpy
+   296                          	GLOBAL _memswap_callee
+   297                          	GLOBAL _memswap
+   298                          	GLOBAL _memset_wr_callee
+   299                          	GLOBAL _memset_wr
+   300                          	GLOBAL _memset_callee
+   301                          	GLOBAL _memset
+   302                          	GLOBAL _memrchr_callee
+   303                          	GLOBAL _memrchr
+   304                          	GLOBAL _memmove_callee
+   305                          	GLOBAL _memmove
+   306                          	GLOBAL _memmem_callee
+   307                          	GLOBAL _memmem
+   308                          	GLOBAL _memcpy_callee
+   309                          	GLOBAL _memcpy
+   310                          	GLOBAL _memcmp_callee
+   311                          	GLOBAL _memcmp
+   312                          	GLOBAL _memchr_callee
+   313                          	GLOBAL _memchr
+   314                          	GLOBAL _memccpy_callee
+   315                          	GLOBAL _memccpy
+   316                          	GLOBAL _ffsl_fastcall
+   317                          	GLOBAL _ffsl
+   318                          	GLOBAL _ffs_fastcall
+   319                          	GLOBAL _ffs
+   320                          	GLOBAL __strrstrip__fastcall
+   321                          	GLOBAL __strrstrip_
+   322                          	GLOBAL __memupr__callee
+   323                          	GLOBAL __memupr_
+   324                          	GLOBAL __memstrcpy__callee
+   325                          	GLOBAL __memstrcpy_
+   326                          	GLOBAL __memlwr__callee
+   327                          	GLOBAL __memlwr_
+   328                          	GLOBAL _rawmemchr_callee
+   329                          	GLOBAL _rawmemchr
+   330                          	GLOBAL _strnset_callee
+   331                          	GLOBAL _strnset
+   332                          	GLOBAL _strset_callee
+   333                          	GLOBAL _strset
+   334                          	GLOBAL _rindex_callee
+   335                          	GLOBAL _rindex
+   336                          	GLOBAL _index_callee
+   337                          	GLOBAL _index
+   338                          	GLOBAL _bzero_callee
+   339                          	GLOBAL _bzero
+   340                          	GLOBAL _bcopy_callee
+   341                          	GLOBAL _bcopy
+   342                          	GLOBAL _bcmp_callee
+   343                          	GLOBAL _bcmp
+   344                          	GLOBAL _clear_tilemap
+   345                          	GLOBAL _select_tilemap
+   346                          	GLOBAL _diplay_profile
+   347                          	GLOBAL _tilemap
+   348                          	GLOBAL _balloon_tilemap
+   349                          	GLOBAL _menu_palette_end
+   350                          	GLOBAL _menu_palette
+   351                          	GLOBAL _menu_patterns
+   352                          	GLOBAL _game_palette_end
+   353                          	GLOBAL _game_palette
+   354                          	GLOBAL _game_patterns
+   355                          	GLOBAL _tiles
+   356                          	GLOBAL _ppponent_profile
+   357                          ;--------------------------------------------------------
+   358                          ; special function registers
+   359                          ;--------------------------------------------------------
+   360                          ;--------------------------------------------------------
+   361                          ; ram data
+   362                          ;--------------------------------------------------------
+   363                          	SECTION bss_compiler
+   364                          ;--------------------------------------------------------
+   365                          ; ram data
+   366                          ;--------------------------------------------------------
+   367                          
+   368                          IF 0
+   369                          
+   370                          ; .area _INITIALIZED removed by z88dk
+   371                          
+   372                          
+   373                          ENDIF
+   374                          
+   375                          ;--------------------------------------------------------
+   376                          ; absolute external ram data
+   377                          ;--------------------------------------------------------
+   378                          	SECTION IGNORE
+   379                          ;--------------------------------------------------------
+   380                          ; global & static initialisations
+   381                          ;--------------------------------------------------------
+   382                          	SECTION code_crt_init
+   383                          ;--------------------------------------------------------
+   384                          ; Home
+   385                          ;--------------------------------------------------------
+   386                          	SECTION IGNORE
+   387                          ;--------------------------------------------------------
+   388                          ; code
+   389                          ;--------------------------------------------------------
+   390                          	SECTION PAGE_97
+   391                          ;opponnets.c:149: {
+   392                          ;	---------------------------------
+   393                          ; Function clear_profile
+   394                          ; ---------------------------------
+   395                          _clear_profile:
+   396                          ;opponnets.c:151: tentry->character = ' ';
+   397  0000  0e00              	ld	c,0x00
+   398                          l_clear_profile_00107:
+   399  0002  79                	ld	a, c
+   400  0003  d61a              	sub	a,0x1a
+   401  0005  3035              	jr	NC,l_clear_profile_00109
+   402                          ;opponnets.c:152: tentry->palette = 3;
+   403  0007  0600              	ld	b,0x00
+   404                          l_clear_profile_00104:
+   405  0009  78                	ld	a, b
+   406  000a  d614              	sub	a,0x14
+   407  000c  302b              	jr	NC,l_clear_profile_00108
+   408                          ;opponnets.c:154: }
+   409  000e  58                	ld	e, b
+   410  000f  1600              	ld	d,0x00
+   411  0011  3e09              	ld	a,0x09
+   412  0013  ed32              	add	de, a
+   413  0015  6b                	ld	l, e
+   414  0016  62                	ld	h, d
+   415  0017  29                	add	hl, hl
+   416  0018  29                	add	hl, hl
+   417  0019  19                	add	hl, de
+   418  001a  29                	add	hl, hl
+   419  001b  29                	add	hl, hl
+   420  001c  29                	add	hl, hl
+   421  001d  29                	add	hl, hl
+   422  001e  29                	add	hl, hl
+   423  001f  110000            	ld	de,_tilemap
+   424  0022  19                	add	hl,de
+   425  0023  59                	ld	e,c
+   426  0024  1600              	ld	d,0x00
+   427  0026  3e2e              	ld	a,0x2e
+   428  0028  eb                	ex	de,hl
+   429  0029  ed31              	add	hl, a
+   430  002b  29                	add	hl, hl
+   431  002c  19                	add	hl, de
+   432                          ;opponnets.c:155:
+   433  002d  3620              	ld	(hl),0x20
+   434                          ;opponnets.c:156: static uint8_t write_text(uint8_t x, uint8_t y, uint8_t palette, const char *text)
+   435  002f  23                	inc	hl
+   436  0030  7e                	ld	a, (hl)
+   437  0031  e60f              	and	a,0x0f
+   438  0033  f630              	or	a,0x30
+   439  0035  77                	ld	(hl), a
+   440                          ;opponnets.c:152: tentry->palette = 3;
+   441  0036  04                	inc	b
+   442  0037  18d0              	jr	l_clear_profile_00104
+   443                          l_clear_profile_00108:
+   444                          ;opponnets.c:151: tentry->character = ' ';
+   445  0039  0c                	inc	c
+   446  003a  18c6              	jr	l_clear_profile_00107
+   447                          l_clear_profile_00109:
+   448                          ;opponnets.c:158: for (uint8_t i = 0; text[i] != '\0'; i++)
+   449  003c  c9                	ret
+   450                          	SECTION PAGE_97
+   451                          _opponent_profile:
+   452  003d  f100              	DEFW __str_0
+   453  003f  0201              	DEFW __str_1
+   454  0041  00                	DEFB +0x00
+   455  0042  0801              	DEFW __str_2
+   456  0044  1c01              	DEFW __str_3
+   457  0046  04                	DEFB +0x04
+   458  0047  04                	DEFB +0x04
+   459  0048  05                	DEFB +0x05
+   460  0049  04                	DEFB +0x04
+   461  004a  05                	DEFB +0x05
+   462  004b  00                	DEFB +0x00
+   463  004c  d901              	DEFW __str_4
+   464  004e  e501              	DEFW __str_5
+   465  0050  00                	DEFB +0x00
+   466  0051  ed01              	DEFW __str_6
+   467  0053  fd01              	DEFW __str_7
+   468  0055  04                	DEFB +0x04
+   469  0056  03                	DEFB +0x03
+   470  0057  04                	DEFB +0x04
+   471  0058  03                	DEFB +0x03
+   472  0059  05                	DEFB +0x05
+   473  005a  01                	DEFB +0x01
+   474  005b  c702              	DEFW __str_8
+   475  005d  d502              	DEFW __str_9
+   476  005f  01                	DEFB +0x01
+   477  0060  de02              	DEFW __str_10
+   478  0062  ef02              	DEFW __str_11
+   479  0064  03                	DEFB +0x03
+   480  0065  04                	DEFB +0x04
+   481  0066  05                	DEFB +0x05
+   482  0067  03                	DEFB +0x03
+   483  0068  05                	DEFB +0x05
+   484  0069  01                	DEFB +0x01
+   485  006a  a903              	DEFW __str_12
+   486  006c  b803              	DEFW __str_13
+   487  006e  00                	DEFB +0x00
+   488  006f  ed01              	DEFW __str_6
+   489  0071  be03              	DEFW __str_14
+   490  0073  05                	DEFB +0x05
+   491  0074  03                	DEFB +0x03
+   492  0075  04                	DEFB +0x04
+   493  0076  04                	DEFB +0x04
+   494  0077  04                	DEFB +0x04
+   495  0078  01                	DEFB +0x01
+   496  0079  6104              	DEFW __str_15
+   497  007b  6d04              	DEFW __str_16
+   498  007d  00                	DEFB +0x00
+   499  007e  de02              	DEFW __str_10
+   500  0080  7404              	DEFW __str_17
+   501  0082  05                	DEFB +0x05
+   502  0083  04                	DEFB +0x04
+   503  0084  03                	DEFB +0x03
+   504  0085  03                	DEFB +0x03
+   505  0086  05                	DEFB +0x05
+   506  0087  01                	DEFB +0x01
+   507  0088  3e05              	DEFW __str_18
+   508  008a  4c05              	DEFW __str_19
+   509  008c  00                	DEFB +0x00
+   510  008d  5805              	DEFW __str_20
+   511  008f  6205              	DEFW __str_21
+   512  0091  03                	DEFB +0x03
+   513  0092  04                	DEFB +0x04
+   514  0093  04                	DEFB +0x04
+   515  0094  03                	DEFB +0x03
+   516  0095  04                	DEFB +0x04
+   517  0096  01                	DEFB +0x01
+   518  0097  2b06              	DEFW __str_22
+   519  0099  6d04              	DEFW __str_16
+   520  009b  00                	DEFB +0x00
+   521  009c  0801              	DEFW __str_2
+   522  009e  3706              	DEFW __str_23
+   523  00a0  04                	DEFB +0x04
+   524  00a1  05                	DEFB +0x05
+   525  00a2  04                	DEFB +0x04
+   526  00a3  04                	DEFB +0x04
+   527  00a4  05                	DEFB +0x05
+   528  00a5  01                	DEFB +0x01
+   529  00a6  fc06              	DEFW __str_24
+   530  00a8  d502              	DEFW __str_9
+   531  00aa  00                	DEFB +0x00
+   532  00ab  0e07              	DEFW __str_25
+   533  00ad  2207              	DEFW __str_26
+   534  00af  05                	DEFB +0x05
+   535  00b0  04                	DEFB +0x04
+   536  00b1  05                	DEFB +0x05
+   537  00b2  03                	DEFB +0x03
+   538  00b3  05                	DEFB +0x05
+   539  00b4  01                	DEFB +0x01
+   540  00b5  ee07              	DEFW __str_27
+   541  00b7  d502              	DEFW __str_9
+   542  00b9  00                	DEFB +0x00
+   543  00ba  de02              	DEFW __str_10
+   544  00bc  fa07              	DEFW __str_28
+   545  00be  04                	DEFB +0x04
+   546  00bf  04                	DEFB +0x04
+   547  00c0  04                	DEFB +0x04
+   548  00c1  03                	DEFB +0x03
+   549  00c2  05                	DEFB +0x05
+   550  00c3  01                	DEFB +0x01
+   551  00c4  c008              	DEFW __str_29
+   552  00c6  ce08              	DEFW __str_30
+   553  00c8  00                	DEFB +0x00
+   554  00c9  0801              	DEFW __str_2
+   555  00cb  d608              	DEFW __str_31
+   556  00cd  04                	DEFB +0x04
+   557  00ce  05                	DEFB +0x05
+   558  00cf  04                	DEFB +0x04
+   559  00d0  05                	DEFB +0x05
+   560  00d1  04                	DEFB +0x04
+   561  00d2  01                	DEFB +0x01
+   562  00d3  9b09              	DEFW __str_32
+   563  00d5  ac09              	DEFW __str_33
+   564  00d7  00                	DEFB +0x00
+   565  00d8  b409              	DEFW __str_34
+   566  00da  c809              	DEFW __str_35
+   567  00dc  04                	DEFB +0x04
+   568  00dd  05                	DEFB +0x05
+   569  00de  05                	DEFB +0x05
+   570  00df  05                	DEFB +0x05
+   571  00e0  04                	DEFB +0x04
+   572  00e1  01                	DEFB +0x01
+   573  00e2  830a              	DEFW __str_36
+   574  00e4  8f0a              	DEFW __str_37
+   575  00e6  01                	DEFB +0x01
+   576  00e7  0e07              	DEFW __str_25
+   577  00e9  970a              	DEFW __str_38
+   578  00eb  05                	DEFB +0x05
+   579  00ec  05                	DEFB +0x05
+   580  00ed  04                	DEFB +0x04
+   581  00ee  05                	DEFB +0x05
+   582  00ef  05                	DEFB +0x05
+   583  00f0  01                	DEFB +0x01
+   584                          	SECTION PAGE_97
+   585                          __str_0:
+   586  00f1  524f474552204645  	DEFM "ROGER FEDEXPRESS"
+              4445585052455353  
+   587  0101  00                	DEFB 0x00
+   588                          	SECTION PAGE_97
+   589                          __str_1:
+   590  0102  5377697373        	DEFM "Swiss"
+   591  0107  00                	DEFB 0x00
+   592                          	SECTION PAGE_97
+   593                          __str_2:
+   594  0108  416c6c2d436f7572  	DEFM "All-Court,Attacking"
+              742c41747461636b  
+              696e67            
+   595  011b  00                	DEFB 0x00
+   596                          	SECTION PAGE_97
+   597                          __str_3:
+   598  011c  4661636520612074  	DEFM "Face a tennis king"
+              656e6e6973206b69  
+              6e67              
+   599  012e  0a                	DEFB 0x0a
+   600  012f  616e64206d617962  	DEFM "and maybe live to tell."
+              65206c6976652074  
+              6f2074656c6c2e    
+   601  0146  0a                	DEFB 0x0a
+   602  0147  5468697320697320  	DEFM "This is the Swiss artist"
+              7468652053776973  
+              7320617274697374  
+   603  015f  0a                	DEFB 0x0a
+   604  0160  77686f20666c6f61  	DEFM "who floats on the court,"
+              7473206f6e207468  
+              6520636f7572742c  
+   605  0178  0a                	DEFB 0x0a
+   606  0179  6e65766572207365  	DEFM "never seeming to sweat,"
+              656d696e6720746f  
+              2073776561742c    
+   607  0190  0a                	DEFB 0x0a
+   608  0191  6d616b696e672074  	DEFM "making tough shots look"
+              6f7567682073686f  
+              7473206c6f6f6b    
+   609  01a8  0a                	DEFB 0x0a
+   610  01a9  6173206561737920  	DEFM "as easy as sipping hot"
+              6173207369707069  
+              6e6720686f74      
+   611  01bf  0a                	DEFB 0x0a
+   612  01c0  636f666665652061  	DEFM "coffee at the mountains."
+              7420746865206d6f  
+              756e7461696e732e  
+   613  01d8  00                	DEFB 0x00
+   614                          	SECTION PAGE_97
+   615                          __str_4:
+   616  01d9  534152414820574f  	DEFM "SARAH WOWVA"
+              575641            
+   617  01e4  00                	DEFB 0x00
+   618                          	SECTION PAGE_97
+   619                          __str_5:
+   620  01e5  5275737369616e    	DEFM "Russian"
+   621  01ec  00                	DEFB 0x00
+   622                          	SECTION PAGE_97
+   623                          __str_6:
+   624  01ed  426173656c696e65  	DEFM "Baseline, Power"
+              2c20506f776572    
+   625  01fc  00                	DEFB 0x00
+   626                          	SECTION PAGE_97
+   627                          __str_7:
+   628  01fd  436f76657220796f  	DEFM "Cover your ears but keep"
+              7572206561727320  
+              627574206b656570  
+   629  0215  0a                	DEFB 0x0a
+   630  0216  65796573206f6e20  	DEFM "eyes on court. Prepare to"
+              636f7572742e2050  
+              7265706172652074  
+              6f                
+   631  022f  0a                	DEFB 0x0a
+   632  0230  6661636520746865  	DEFM "face the Siberian machine"
+              2053696265726961  
+              6e206d616368696e  
+              65                
+   633  0249  0a                	DEFB 0x0a
+   634  024a  77686f7365207363  	DEFM "whose screams register on"
+              7265616d73207265  
+              676973746572206f  
+              6e                
+   635  0263  0a                	DEFB 0x0a
+   636  0264  736569736d696320  	DEFM "seismic scales while her"
+              7363616c65732077  
+              68696c6520686572  
+   637  027c  0a                	DEFB 0x0a
+   638  027d  67726f756e647374  	DEFM "groundstrokes deliver"
+              726f6b6573206465  
+              6c69766572        
+   639  0292  0a                	DEFB 0x0a
+   640  0293  7769746820746f70  	DEFM "with top-model precision"
+              2d6d6f64656c2070  
+              7265636973696f6e  
+   641  02ab  0a                	DEFB 0x0a
+   642  02ac  616e6420636f6c64  	DEFM "and cold-blooded intensity"
+              2d626c6f6f646564  
+              20696e74656e7369  
+              7479              
+   643  02c6  00                	DEFB 0x00
+   644                          	SECTION PAGE_97
+   645                          __str_8:
+   646  02c7  4a4f484e204d4345  	DEFM "JOHN MCENRAGE"
+              4e52414745        
+   647  02d4  00                	DEFB 0x00
+   648                          	SECTION PAGE_97
+   649                          __str_9:
+   650  02d5  416d65726963616e  	DEFM "American"
+   651  02dd  00                	DEFB 0x00
+   652                          	SECTION PAGE_97
+   653                          __str_10:
+   654  02de  536572766520616e  	DEFM "Serve and Volley"
+              6420566f6c6c6579  
+   655  02ee  00                	DEFB 0x00
+   656                          	SECTION PAGE_97
+   657                          __str_11:
+   658  02ef  596f752063616e27  	DEFM "You can't be serious!"
+              7420626520736572  
+              696f757321        
+   659  0304  0a                	DEFB 0x0a
+   660  0305  43726f7764732077  	DEFM "Crowds will be thrilled"
+              696c6c2062652074  
+              6872696c6c6564    
+   661  031c  0a                	DEFB 0x0a
+   662  031d  6173207468652076  	DEFM "as the volcanic American"
+              6f6c63616e696320  
+              416d65726963616e  
+   663  0335  0a                	DEFB 0x0a
+   664  0336  6172677565732077  	DEFM "argues with molecules"
+              697468206d6f6c65  
+              63756c6573        
+   665  034b  0a                	DEFB 0x0a
+   666  034c  7768696c65207765  	DEFM "while weaving net magic"
+              6176696e67206e65  
+              74206d61676963    
+   667  0363  0a                	DEFB 0x0a
+   668  0364  7468617420646566  	DEFM "that defies physics and"
+              6965732070687973  
+              69637320616e64    
+   669  037b  0a                	DEFB 0x0a
+   670  037c  746573747320756d  	DEFM "tests umpire patience"
+              7069726520706174  
+              69656e6365        
+   671  0391  0a                	DEFB 0x0a
+   672  0392  7769746820657665  	DEFM "with every loud burst."
+              7279206c6f756420  
+              62757273742e      
+   673  03a8  00                	DEFB 0x00
+   674                          	SECTION PAGE_97
+   675                          __str_12:
+   676  03a9  4956414e20544552  	DEFM "IVAN TERRIBALL"
+              524942414c4c      
+   677  03b7  00                	DEFB 0x00
+   678                          	SECTION PAGE_97
+   679                          __str_13:
+   680  03b8  437a656368        	DEFM "Czech"
+   681  03bd  00                	DEFB 0x00
+   682                          	SECTION PAGE_97
+   683                          __str_14:
+   684  03be  54686520437a6563  	DEFM "The Czech machine is a"
+              68206d616368696e  
+              652069732061      
+   685  03d4  0a                	DEFB 0x0a
+   686  03d5  74656e6e69732063  	DEFM "tennis cyborg with a"
+              79626f7267207769  
+              74682061          
+   687  03e9  0a                	DEFB 0x0a
+   688  03ea  6d656368616e6963  	DEFM "mechanical serve and a"
+              616c207365727665  
+              20616e642061      
+   689  0400  0a                	DEFB 0x0a
+   690  0401  726f626f74696320  	DEFM "robotic backhand. He will"
+              6261636b68616e64  
+              2e2048652077696c  
+              6c                
+   691  041a  0a                	DEFB 0x0a
+   692  041b  756e6c6561736820  	DEFM "unleash a barrage of shots"
+              6120626172726167  
+              65206f662073686f  
+              7473              
+   693  0435  0a                	DEFB 0x0a
+   694  0436  746861742077696c  	DEFM "that will make you wonder"
+              6c206d616b652079  
+              6f7520776f6e6465  
+              72                
+   695  044f  0a                	DEFB 0x0a
+   696  0450  796f7572206f776e  	DEFM "your own sanity."
+              2073616e6974792e  
+   697  0460  00                	DEFB 0x00
+   698                          	SECTION PAGE_97
+   699                          __str_15:
+   700  0461  4b494e4b5920424f  	DEFM "KINKY BORIS"
+              524953            
+   701  046c  00                	DEFB 0x00
+   702                          	SECTION PAGE_97
+   703                          __str_16:
+   704  046d  4765726d616e      	DEFM "German"
+   705  0473  00                	DEFB 0x00
+   706                          	SECTION PAGE_97
+   707                          __str_17:
+   708  0474  446976696e672069  	DEFM "Diving is your new skill"
+              7320796f7572206e  
+              657720736b696c6c  
+   709  048c  0a                	DEFB 0x0a
+   710  048d  626f7468206f6e20  	DEFM "both on and off the court."
+              616e64206f666620  
+              74686520636f7572  
+              742e              
+   711  04a7  0a                	DEFB 0x0a
+   712  04a8  43726f7764732072  	DEFM "Crowds roar as you face"
+              6f61722061732079  
+              6f752066616365    
+   713  04bf  0a                	DEFB 0x0a
+   714  04c0  4b696e6b7920426f  	DEFM "Kinky Boris, whose serve"
+              7269732c2077686f  
+              7365207365727665  
+   715  04d8  0a                	DEFB 0x0a
+   716  04d9  646f646765732072  	DEFM "dodges racquets like he"
+              6163717565747320  
+              6c696b65206865    
+   717  04f0  0a                	DEFB 0x0a
+   718  04f1  646f646765732074  	DEFM "dodges tax collectors."
+              617820636f6c6c65  
+              63746f72732e      
+   719  0507  0a                	DEFB 0x0a
+   720  0508  486973206e657420  	DEFM "His net charges were pure,"
+              6368617267657320  
+              7765726520707572  
+              652c              
+   721  0522  0a                	DEFB 0x0a
+   722  0523  6869732066696e61  	DEFM "his finance... not so much"
+              6e63652e2e2e206e  
+              6f7420736f206d75  
+              6368              
+   723  053d  00                	DEFB 0x00
+   724                          	SECTION PAGE_97
+   725                          __str_18:
+   726  053e  474142492053504c  	DEFM "GABI SPLATINI"
+              4154494e49        
+   727  054b  00                	DEFB 0x00
+   728                          	SECTION PAGE_97
+   729                          __str_19:
+   730  054c  417267656e74696e  	DEFM "Argentinian"
+              69616e            
+   731  0557  00                	DEFB 0x00
+   732                          	SECTION PAGE_97
+   733                          __str_20:
+   734  0558  416c6c2d436f7572  	DEFM "All-Court"
+              74                
+   735  0561  00                	DEFB 0x00
+   736                          	SECTION PAGE_97
+   737                          __str_21:
+   738  0562  4265617574792077  	DEFM "Beauty with a backhand"
+              6974682061206261  
+              636b68616e64      
+   739  0578  0a                	DEFB 0x0a
+   740  0579  736f20646561646c  	DEFM "so deadly, cameras turn."
+              792c2063616d6572  
+              6173207475726e2e  
+   741  0591  0a                	DEFB 0x0a
+   742  0592  596f752074726164  	DEFM "You trade shots with the"
+              652073686f747320  
+              7769746820746865  
+   743  05aa  0a                	DEFB 0x0a
+   744  05ab  417267656e74696e  	DEFM "Argentine rose whose grace"
+              6520726f73652077  
+              686f736520677261  
+              6365              
+   745  05c5  0a                	DEFB 0x0a
+   746  05c6  6879706e6f74697a  	DEFM "hypnotizes opponents as"
+              6573206f70706f6e  
+              656e7473206173    
+   747  05dd  0a                	DEFB 0x0a
+   748  05de  6865722070657266  	DEFM "her perfume lingers much"
+              756d65206c696e67  
+              657273206d756368  
+   749  05f6  0a                	DEFB 0x0a
+   750  05f7  6c6f6e6765722074  	DEFM "longer than your returns"
+              68616e20796f7572  
+              2072657475726e73  
+   751  060f  0a                	DEFB 0x0a
+   752  0610  7374617920616c69  	DEFM "stay alive in her rallies."
+              766520696e206865  
+              722072616c6c6965  
+              732e              
+   753  062a  00                	DEFB 0x00
+   754                          	SECTION PAGE_97
+   755                          __str_22:
+   756  062b  5354454646494e41  	DEFM "STEFFINATOR"
+              544f52            
+   757  0636  00                	DEFB 0x00
+   758                          	SECTION PAGE_97
+   759                          __str_23:
+   760  0637  48657220666f7265  	DEFM "Her forehand needs its own"
+              68616e64206e6565  
+              647320697473206f  
+              776e              
+   761  0651  0a                	DEFB 0x0a
+   762  0652  7a697020636f6465  	DEFM "zip code and insurance."
+              20616e6420696e73  
+              7572616e63652e    
+   763  0669  0a                	DEFB 0x0a
+   764  066a  54686520776f726c  	DEFM "The world stops to watch"
+              642073746f707320  
+              746f207761746368  
+   765  0682  0a                	DEFB 0x0a
+   766  0683  796f75206368616c  	DEFM "you challenge Fraulein"
+              6c656e6765204672  
+              61756c65696e      
+   767  0699  0a                	DEFB 0x0a
+   768  069a  466f726568616e64  	DEFM "Forehand, whose slice cuts"
+              2c2077686f736520  
+              736c696365206375  
+              7473              
+   769  06b4  0a                	DEFB 0x0a
+   770  06b5  6469616d6f6e6473  	DEFM "diamonds and whose speed"
+              20616e642077686f  
+              7365207370656564  
+   771  06cd  0a                	DEFB 0x0a
+   772  06ce  636f76657273206d  	DEFM "covers more court than"
+              6f726520636f7572  
+              74207468616e      
+   773  06e4  0a                	DEFB 0x0a
+   774  06e5  616972706f727420  	DEFM "airport runway lights."
+              72756e776179206c  
+              69676874732e      
+   775  06fb  00                	DEFB 0x00
+   776                          	SECTION PAGE_97
+   777                          __str_24:
+   778  06fc  5348524544204845  	DEFM "SHRED HEAD AGASSI"
+              4144204147415353  
+              49                
+   779  070d  00                	DEFB 0x00
+   780                          	SECTION PAGE_97
+   781                          __str_25:
+   782  070e  426173656c696e65  	DEFM "Baseline/Aggressive"
+              2f41676772657373  
+              697665            
+   783  0721  00                	DEFB 0x00
+   784                          	SECTION PAGE_97
+   785                          __str_26:
+   786  0722  496d616765206973  	DEFM "Image is everything when"
+              2065766572797468  
+              696e67207768656e  
+   787  073a  0a                	DEFB 0x0a
+   788  073b  796f752077616c6b  	DEFM "you walk onto the court."
+              206f6e746f207468  
+              6520636f7572742e  
+   789  0753  0a                	DEFB 0x0a
+   790  0754  43616d6572617320  	DEFM "Cameras will flash bright"
+              77696c6c20666c61  
+              7368206272696768  
+              74                
+   791  076d  0a                	DEFB 0x0a
+   792  076e  617320796f752072  	DEFM "as you rally with the bald"
+              616c6c7920776974  
+              6820746865206261  
+              6c64              
+   793  0788  0a                	DEFB 0x0a
+   794  0789  70726f7068657420  	DEFM "prophet of baseline play,"
+              6f6620626173656c  
+              696e6520706c6179  
+              2c                
+   795  07a2  0a                	DEFB 0x0a
+   796  07a3  72657475726e696e  	DEFM "returning serves before"
+              6720736572766573  
+              206265666f7265    
+   797  07ba  0a                	DEFB 0x0a
+   798  07bb  7468657920657665  	DEFM "they even cross the net."
+              6e2063726f737320  
+              746865206e65742e  
+   799  07d3  0a                	DEFB 0x0a
+   800  07d4  4865207265616473  	DEFM "He reads you like a sign."
+              20796f75206c696b  
+              652061207369676e  
+              2e                
+   801  07ed  00                	DEFB 0x00
+   802                          	SECTION PAGE_97
+   803                          __str_27:
+   804  07ee  534e45414b592050  	DEFM "SNEAKY PETE"
+              455445            
+   805  07f9  00                	DEFB 0x00
+   806                          	SECTION PAGE_97
+   807                          __str_28:
+   808  07fa  596f757220726574  	DEFM "Your return game? No hope."
+              75726e2067616d65  
+              3f204e6f20686f70  
+              652e              
+   809  0814  0a                	DEFB 0x0a
+   810  0815  486973746f727920  	DEFM "History will remember you"
+              77696c6c2072656d  
+              656d62657220796f  
+              75                
+   811  082e  0a                	DEFB 0x0a
+   812  082f  7374616e64696e67  	DEFM "standing before Sneaky"
+              206265666f726520  
+              536e65616b79      
+   813  0845  0a                	DEFB 0x0a
+   814  0846  506574652c207768  	DEFM "Pete, whose deadly serve"
+              6f73652064656164  
+              6c79207365727665  
+   815  085e  0a                	DEFB 0x0a
+   816  085f  73686f756c64206e  	DEFM "should need a permit to"
+              6565642061207065  
+              726d697420746f    
+   817  0876  0a                	DEFB 0x0a
+   818  0877  65786973742e2048  	DEFM "exist. His fast volleys"
+              6973206661737420  
+              766f6c6c657973    
+   819  088e  0a                	DEFB 0x0a
+   820  088f  656e64656420706f  	DEFM "ended points in a blink,"
+              696e747320696e20  
+              6120626c696e6b2c  
+   821  08a7  0a                	DEFB 0x0a
+   822  08a8  6265666f72652079  	DEFM "before you could react."
+              6f7520636f756c64  
+              2072656163742e    
+   823  08bf  00                	DEFB 0x00
+   824                          	SECTION PAGE_97
+   825                          __str_29:
+   826  08c0  424a4f524e204943  	DEFM "BJORN ICEBORG"
+              45424f5247        
+   827  08cd  00                	DEFB 0x00
+   828                          	SECTION PAGE_97
+   829                          __str_30:
+   830  08ce  53776564697368    	DEFM "Swedish"
+   831  08d5  00                	DEFB 0x00
+   832                          	SECTION PAGE_97
+   833                          __str_31:
+   834  08d6  49636520696e2068  	DEFM "Ice in his veins, band on"
+              6973207665696e73  
+              2c2062616e64206f  
+              6e                
+   835  08ef  0a                	DEFB 0x0a
+   836  08f0  68697320666c6f77  	DEFM "his flowing Swedish hair."
+              696e672053776564  
+              6973682068616972  
+              2e                
+   837  0909  0a                	DEFB 0x0a
+   838  090a  4675747572652066  	DEFM "Future fans will worship"
+              616e732077696c6c  
+              20776f7273686970  
+   839  0922  0a                	DEFB 0x0a
+   840  0923  686f7720796f7520  	DEFM "how you faced the Zen man"
+              6661636564207468  
+              65205a656e206d61  
+              6e                
+   841  093c  0a                	DEFB 0x0a
+   842  093d  77686f7365206261  	DEFM "whose baseline mastery"
+              73656c696e65206d  
+              617374657279      
+   843  0953  0a                	DEFB 0x0a
+   844  0954  6372757368656420  	DEFM "crushed foes while his"
+              666f657320776869  
+              6c6520686973      
+   845  096a  0a                	DEFB 0x0a
+   846  096b  70756c7365207374  	DEFM "pulse stayed lower than"
+              61796564206c6f77  
+              6572207468616e    
+   847  0982  0a                	DEFB 0x0a
+   848  0983  6120706f6c617220  	DEFM "a polar bear in winter."
+              6265617220696e20  
+              77696e7465722e    
+   849  099a  00                	DEFB 0x00
+   850                          	SECTION PAGE_97
+   851                          __str_32:
+   852  099b  4e4f56415820444a  	DEFM "NOVAX DJOKOBRICK"
+              4f4b4f425249434b  
+   853  09ab  00                	DEFB 0x00
+   854                          	SECTION PAGE_97
+   855                          __str_33:
+   856  09ac  5365726269616e    	DEFM "Serbian"
+   857  09b3  00                	DEFB 0x00
+   858                          	SECTION PAGE_97
+   859                          __str_34:
+   860  09b4  416c6c2d436f7572  	DEFM "All-Court,Defensive"
+              742c446566656e73  
+              697665            
+   861  09c7  00                	DEFB 0x00
+   862                          	SECTION PAGE_97
+   863                          __str_35:
+   864  09c8  4e6f207661636369  	DEFM "No vaccine can stop his"
+              6e652063616e2073  
+              746f7020686973    
+   865  09df  0a                	DEFB 0x0a
+   866  09e0  656c61737469632c  	DEFM "elastic, endless defense."
+              20656e646c657373  
+              20646566656e7365  
+              2e                
+   867  09f9  0a                	DEFB 0x0a
+   868  09fa  486973746f727920  	DEFM "History will recall how"
+              77696c6c20726563  
+              616c6c20686f77    
+   869  0a11  0a                	DEFB 0x0a
+   870  0a12  796f752073757276  	DEFM "you survived the Serb"
+              6976656420746865  
+              2053657262        
+   871  0a27  0a                	DEFB 0x0a
+   872  0a28  77686f2072657475  	DEFM "who returned missiles"
+              726e6564206d6973  
+              73696c6573        
+   873  0a3d  0a                	DEFB 0x0a
+   874  0a3e  66726f6d206e6569  	DEFM "from neighboring lands,"
+              6768626f72696e67  
+              206c616e64732c    
+   875  0a55  0a                	DEFB 0x0a
+   876  0a56  646f696e67207370  	DEFM "doing splits that made"
+              6c69747320746861  
+              74206d616465      
+   877  0a6c  0a                	DEFB 0x0a
+   878  0a6d  67796d6e61737473  	DEFM "gymnasts just retire."
+              206a757374207265  
+              746972652e        
+   879  0a82  00                	DEFB 0x00
+   880                          	SECTION PAGE_97
+   881                          __str_36:
+   882  0a83  52414641204e4f44  	DEFM "RAFA NODEAL"
+              45414c            
+   883  0a8e  00                	DEFB 0x00
+   884                          	SECTION PAGE_97
+   885                          __str_37:
+   886  0a8f  5370616e697368    	DEFM "Spanish"
+   887  0a96  00                	DEFB 0x00
+   888                          	SECTION PAGE_97
+   889                          __str_38:
+   890  0a97  4e6f20686f706520  	DEFM "No hope vs him, but you'll"
+              76732068696d2c20  
+              62757420796f7527  
+              6c6c              
+   891  0ab1  0a                	DEFB 0x0a
+   892  0ab2  686176652061206c  	DEFM "have a legendary story to"
+              6567656e64617279  
+              2073746f72792074  
+              6f                
+   893  0acb  0a                	DEFB 0x0a
+   894  0acc  7368617265207769  	DEFM "share with your grandkids:"
+              746820796f757220  
+              6772616e646b6964  
+              733a              
+   895  0ae6  0a                	DEFB 0x0a
+   896  0ae7  2749206661636564  	DEFM "'I faced the GOAT himself,"
+              2074686520474f41  
+              542068696d73656c  
+              662c              
+   897  0b01  0a                	DEFB 0x0a
+   898  0b02  7361772074686174  	DEFM "saw that fierce backhand,"
+              2066696572636520  
+              6261636b68616e64  
+              2c                
+   899  0b1b  0a                	DEFB 0x0a
+   900  0b1c  66656c742074686f  	DEFM "felt those brutal serves,"
+              7365206272757461  
+              6c20736572766573  
+              2c                
+   901  0b35  0a                	DEFB 0x0a
+   902  0b36  7769746e65737365  	DEFM "witnessed that footwork,"
+              6420746861742066  
+              6f6f74776f726b2c  
+   903  0b4e  0a                	DEFB 0x0a
+   904  0b4f  707572652074656e  	DEFM "pure tennis perfection.'"
+              6e69732070657266  
+              656374696f6e2e27  
+   905  0b67  00                	DEFB 0x00
+   906                          	SECTION PAGE_97
+   907                          ;opponnets.c:160: if (text[i] == '\n')
+   908                          ;	---------------------------------
+   909                          ; Function write_text
+   910                          ; ---------------------------------
+   911                          _write_text:
+   912  0b68  cd0000            	call	___sdcc_enter_ix
+   913  0b6b  f5                	push	af
+   914                          ;opponnets.c:162: y++;
+   915  0b6c  dd4e05            	ld	c,(ix+5)
+   916  0b6f  dd36ff00          	ld	(ix-1),0x00
+   917                          l_write_text_00106:
+   918  0b73  dd7e07            	ld	a,(ix+7)
+   919  0b76  dd86ff            	add	a,(ix-1)
+   920  0b79  6f                	ld	l, a
+   921  0b7a  dd7e08            	ld	a,(ix+8)
+   922  0b7d  ce00              	adc	a,0x00
+   923  0b7f  67                	ld	h, a
+   924                          ;opponnets.c:164: }
+   925  0b80  7e                	ld	a,(hl)
+   926  0b81  47                	ld	b,a
+   927  0b82  b7                	or	a, a
+   928  0b83  2844              	jr	Z,l_write_text_00104
+   929  0b85  d60a              	sub	a,0x0a
+   930  0b87  2007              	jr	NZ,l_write_text_00102
+   931                          ;opponnets.c:166: {
+   932  0b89  0c                	inc	c
+   933                          ;opponnets.c:167: TileMapEntry *tentry = &tilemap[y + PROFILE_Y][PROFILE_X + x++];
+   934  0b8a  dd360400          	ld	(ix+4),0x00
+   935  0b8e  1834              	jr	l_write_text_00107
+   936                          l_write_text_00102:
+   937                          ;opponnets.c:171: }
+   938  0b90  59                	ld	e, c
+   939  0b91  1600              	ld	d,0x00
+   940  0b93  3e09              	ld	a,0x09
+   941  0b95  ed32              	add	de, a
+   942  0b97  6b                	ld	l, e
+   943  0b98  62                	ld	h, d
+   944  0b99  29                	add	hl, hl
+   945  0b9a  29                	add	hl, hl
+   946  0b9b  19                	add	hl, de
+   947  0b9c  29                	add	hl, hl
+   948  0b9d  29                	add	hl, hl
+   949  0b9e  29                	add	hl, hl
+   950  0b9f  29                	add	hl, hl
+   951  0ba0  29                	add	hl, hl
+   952  0ba1  110000            	ld	de,_tilemap
+   953  0ba4  19                	add	hl,de
+   954  0ba5  eb                	ex	de,hl
+   955  0ba6  dd7e04            	ld	a,(ix+4)
+   956  0ba9  dd77fe            	ld	(ix-2),a
+   957  0bac  3c                	inc	a
+   958  0bad  dd7704            	ld	(ix+4),a
+   959  0bb0  dd6efe            	ld	l,(ix-2)
+   960  0bb3  2600              	ld	h,0x00
+   961  0bb5  3e2e              	ld	a,0x2e
+   962  0bb7  ed31              	add	hl, a
+   963  0bb9  29                	add	hl, hl
+   964  0bba  19                	add	hl, de
+   965                          ;opponnets.c:172:
+   966  0bbb  70                	ld	(hl), b
+   967                          ;opponnets.c:173: return x;
+   968  0bbc  23                	inc	hl
+   969  0bbd  ed6f              	rld
+   970  0bbf  dd7e06            	ld	a,(ix+6)
+   971  0bc2  ed67              	rrd
+   972                          l_write_text_00107:
+   973                          ;opponnets.c:162: y++;
+   974  0bc4  dd34ff            	inc	(ix-1)
+   975  0bc7  18aa              	jr	l_write_text_00106
+   976                          l_write_text_00104:
+   977                          ;opponnets.c:177: {
+   978  0bc9  dd6e04            	ld	l,(ix+4)
+   979                          ;opponnets.c:178: uint8_t x = (PROFILE_WIDTH - strlen(text)) / 2;
+   980  0bcc  f1                	pop	af
+   981  0bcd  dde1              	pop	ix
+   982  0bcf  c9                	ret
+   983                          ;opponnets.c:180: }
+   984                          ;	---------------------------------
+   985                          ; Function center_text
+   986                          ; ---------------------------------
+   987                          _center_text:
+   988  0bd0  cd0000            	call	___sdcc_enter_ix
+   989                          ;opponnets.c:182: static void write_key_value(uint8_t x, uint8_t y, const char *key, const char *value)
+   990  0bd3  dd6e05            	ld	l,(ix+5)
+   991  0bd6  dd6606            	ld	h,(ix+6)
+   992  0bd9  cd0000            	call	_strlen_fastcall
+   993  0bdc  3e1a              	ld	a,0x1a
+   994  0bde  95                	sub	a, l
+   995  0bdf  47                	ld	b, a
+   996  0be0  9f                	sbc	a, a
+   997  0be1  94                	sub	a, h
+   998  0be2  4f                	ld	c, a
+   999  0be3  cb39              	srl	c
+  1000  0be5  cb18              	rr	b
+  1001                          ;opponnets.c:183: {
+  1002  0be7  dd6e05            	ld	l,(ix+5)
+  1003  0bea  dd6606            	ld	h,(ix+6)
+  1004  0bed  e5                	push	hl
+  1005  0bee  3e04              	ld	a,0x04
+  1006  0bf0  f5                	push	af
+  1007  0bf1  33                	inc	sp
+  1008  0bf2  dd7e04            	ld	a,(ix+4)
+  1009  0bf5  48                	ld	c,b
+  1010  0bf6  47                	ld	b,a
+  1011  0bf7  c5                	push	bc
+  1012  0bf8  cd680b            	call	_write_text
+  1013  0bfb  f1                	pop	af
+  1014  0bfc  f1                	pop	af
+  1015  0bfd  33                	inc	sp
+  1016                          ;opponnets.c:184: x = write_text(x, y, 4, key);
+  1017  0bfe  dde1              	pop	ix
+  1018  0c00  c9                	ret
+  1019                          ;opponnets.c:186: }
+  1020                          ;	---------------------------------
+  1021                          ; Function write_key_value
+  1022                          ; ---------------------------------
+  1023                          _write_key_value:
+  1024  0c01  cd0000            	call	___sdcc_enter_ix
+  1025                          ;opponnets.c:188: static void write_skill(uint8_t y, const char *skill, uint8_t value)
+  1026  0c04  dd6e06            	ld	l,(ix+6)
+  1027  0c07  dd6607            	ld	h,(ix+7)
+  1028  0c0a  e5                	push	hl
+  1029  0c0b  3e04              	ld	a,0x04
+  1030  0c0d  f5                	push	af
+  1031  0c0e  33                	inc	sp
+  1032  0c0f  dd6605            	ld	h,(ix+5)
+  1033  0c12  dd6e04            	ld	l,(ix+4)
+  1034  0c15  e5                	push	hl
+  1035  0c16  cd680b            	call	_write_text
+  1036  0c19  f1                	pop	af
+  1037  0c1a  f1                	pop	af
+  1038  0c1b  33                	inc	sp
+  1039  0c1c  dd7504            	ld	(ix+4),l
+  1040  0c1f  7d                	ld	a,l
+  1041                          ;opponnets.c:189: {
+  1042  0c20  dd6e08            	ld	l,(ix+8)
+  1043  0c23  dd6609            	ld	h,(ix+9)
+  1044  0c26  e5                	push	hl
+  1045  0c27  2603              	ld	h,0x03
+  1046  0c29  e5                	push	hl
+  1047  0c2a  33                	inc	sp
+  1048  0c2b  dd6605            	ld	h,(ix+5)
+  1049  0c2e  6f                	ld	l,a
+  1050  0c2f  e5                	push	hl
+  1051  0c30  cd680b            	call	_write_text
+  1052  0c33  f1                	pop	af
+  1053  0c34  f1                	pop	af
+  1054  0c35  33                	inc	sp
+  1055                          ;opponnets.c:190: uint8_t x = write_text(SKILLS_COLUMN, y, 4, skill);
+  1056  0c36  dde1              	pop	ix
+  1057  0c38  c9                	ret
+  1058                          ;opponnets.c:192: {
+  1059                          ;	---------------------------------
+  1060                          ; Function write_skill
+  1061                          ; ---------------------------------
+  1062                          _write_skill:
+  1063  0c39  cd0000            	call	___sdcc_enter_ix
+  1064  0c3c  f5                	push	af
+  1065                          ;opponnets.c:194: tentry->character = '*';
+  1066  0c3d  dd6e05            	ld	l,(ix+5)
+  1067  0c40  dd6606            	ld	h,(ix+6)
+  1068  0c43  e5                	push	hl
+  1069  0c44  3e04              	ld	a,0x04
+  1070  0c46  f5                	push	af
+  1071  0c47  33                	inc	sp
+  1072  0c48  dd5604            	ld	d,(ix+4)
+  1073  0c4b  1e05              	ld	e,0x05
+  1074  0c4d  d5                	push	de
+  1075  0c4e  cd680b            	call	_write_text
+  1076  0c51  f1                	pop	af
+  1077  0c52  f1                	pop	af
+  1078  0c53  33                	inc	sp
+  1079  0c54  4d                	ld	c, l
+  1080                          ;opponnets.c:195: tentry->palette = 3;
+  1081  0c55  0600              	ld	b,0x00
+  1082                          l_write_skill_00103:
+  1083  0c57  78                	ld	a, b
+  1084  0c58  dd9607            	sub	a,(ix+7)
+  1085  0c5b  3035              	jr	NC,l_write_skill_00105
+  1086                          ;opponnets.c:197: }
+  1087  0c5d  dd5e04            	ld	e,(ix+4)
+  1088  0c60  1600              	ld	d,0x00
+  1089  0c62  3e09              	ld	a,0x09
+  1090  0c64  ed32              	add	de, a
+  1091  0c66  6b                	ld	l, e
+  1092  0c67  62                	ld	h, d
+  1093  0c68  29                	add	hl, hl
+  1094  0c69  29                	add	hl, hl
+  1095  0c6a  19                	add	hl, de
+  1096  0c6b  29                	add	hl, hl
+  1097  0c6c  29                	add	hl, hl
+  1098  0c6d  29                	add	hl, hl
+  1099  0c6e  29                	add	hl, hl
+  1100  0c6f  29                	add	hl, hl
+  1101  0c70  110000            	ld	de,_tilemap
+  1102  0c73  19                	add	hl, de
+  1103  0c74  e3                	ex	(sp), hl
+  1104  0c75  59                	ld	e, c
+  1105  0c76  1600              	ld	d,0x00
+  1106  0c78  213300            	ld	hl,0x0033
+  1107  0c7b  19                	add	hl, de
+  1108  0c7c  58                	ld	e, b
+  1109  0c7d  1600              	ld	d,0x00
+  1110  0c7f  bf                	cp	a, a
+  1111  0c80  ed52              	sbc	hl, de
+  1112  0c82  29                	add	hl, hl
+  1113  0c83  d1                	pop	de
+  1114  0c84  d5                	push	de
+  1115  0c85  19                	add	hl, de
+  1116                          ;opponnets.c:198:
+  1117  0c86  362a              	ld	(hl),0x2a
+  1118                          ;opponnets.c:199: void _diplay_profile(Opponent opponent)
+  1119  0c88  23                	inc	hl
+  1120  0c89  7e                	ld	a, (hl)
+  1121  0c8a  e60f              	and	a,0x0f
+  1122  0c8c  f630              	or	a,0x30
+  1123  0c8e  77                	ld	(hl), a
+  1124                          ;opponnets.c:195: tentry->palette = 3;
+  1125  0c8f  04                	inc	b
+  1126  0c90  18c5              	jr	l_write_skill_00103
+  1127                          l_write_skill_00105:
+  1128                          ;opponnets.c:201: clear_profile();
+  1129  0c92  f1                	pop	af
+  1130  0c93  dde1              	pop	ix
+  1131  0c95  c9                	ret
+  1132                          ;opponnets.c:203: OpponentProfile *profile = &opponent_profile[opponent];
+  1133                          ;	---------------------------------
+  1134                          ; Function _diplay_profile
+  1135                          ; ---------------------------------
+  1136                          __diplay_profile:
+  1137  0c96  cd0000            	call	___sdcc_enter_ix
+  1138                          ;opponnets.c:205: if (profile->coming_soon)
+  1139  0c99  cd0000            	call	_clear_profile
+  1140                          ;opponnets.c:207: write_key_value(0, 2, "Nationality: ", profile->nationality);
+  1141  0c9c  dd5e04            	ld	e,(ix+4)
+  1142  0c9f  160f              	ld	d,0x0f
+  1143  0ca1  ed30              	mlt	de
+  1144  0ca3  213d00            	ld	hl,_opponent_profile
+  1145  0ca6  19                	add	hl, de
+  1146                          ;opponnets.c:208: write_key_value(0, 3, "Handedness:  ", profile->left_handed ? "Left" : "Right");
+  1147  0ca7  4e                	ld	c,(hl)
+  1148  0ca8  23                	inc	hl
+  1149  0ca9  46                	ld	b,(hl)
+  1150  0caa  2b                	dec	hl
+  1151  0cab  e5                	push	hl
+  1152  0cac  c5                	push	bc
+  1153  0cad  af                	xor	a, a
+  1154  0cae  f5                	push	af
+  1155  0caf  33                	inc	sp
+  1156  0cb0  cdd00b            	call	_center_text
+  1157  0cb3  f1                	pop	af
+  1158  0cb4  33                	inc	sp
+  1159  0cb5  d1                	pop	de
+  1160                          ;opponnets.c:209: write_key_value(0, 4, "Style: ", profile->style);
+  1161  0cb6  210e00            	ld	hl,14
+  1162  0cb9  19                	add	hl,de
+  1163  0cba  cb46              	bit	0,(hl)
+  1164  0cbc  2814              	jr	Z,l__diplay_profile_00102
+  1165                          ;opponnets.c:210: write_text(0, 6, 3, profile->description);
+  1166  0cbe  d5                	push	de
+  1167  0cbf  21b30d            	ld	hl,___str_39
+  1168  0cc2  e5                	push	hl
+  1169  0cc3  110105            	ld	de,0x0501
+  1170  0cc6  d5                	push	de
+  1171  0cc7  3e06              	ld	a,0x06
+  1172  0cc9  f5                	push	af
+  1173  0cca  33                	inc	sp
+  1174  0ccb  cd680b            	call	_write_text
+  1175  0cce  f1                	pop	af
+  1176  0ccf  f1                	pop	af
+  1177  0cd0  33                	inc	sp
+  1178  0cd1  d1                	pop	de
+  1179                          l__diplay_profile_00102:
+  1180                          ;opponnets.c:211:
+  1181  0cd2  6b                	ld	l, e
+  1182  0cd3  62                	ld	h, d
+  1183  0cd4  23                	inc	hl
+  1184  0cd5  23                	inc	hl
+  1185  0cd6  4e                	ld	c, (hl)
+  1186  0cd7  23                	inc	hl
+  1187  0cd8  46                	ld	b, (hl)
+  1188  0cd9  d5                	push	de
+  1189  0cda  c5                	push	bc
+  1190  0cdb  21c20d            	ld	hl,___str_40
+  1191  0cde  e5                	push	hl
+  1192  0cdf  3e02              	ld	a,0x02
+  1193  0ce1  f5                	push	af
+  1194  0ce2  33                	inc	sp
+  1195  0ce3  af                	xor	a, a
+  1196  0ce4  f5                	push	af
+  1197  0ce5  33                	inc	sp
+  1198  0ce6  cd010c            	call	_write_key_value
+  1199  0ce9  f1                	pop	af
+  1200  0cea  f1                	pop	af
+  1201  0ceb  f1                	pop	af
+  1202  0cec  d1                	pop	de
+  1203                          ;opponnets.c:212: write_skill(SKILLS_ROW, "Strength: ", profile->skills[SKILL_STRENGTH]);
+  1204  0ced  210400            	ld	hl,4
+  1205  0cf0  19                	add	hl,de
+  1206  0cf1  cb46              	bit	0,(hl)
+  1207  0cf3  2805              	jr	Z,l__diplay_profile_00105
+  1208  0cf5  01de0d            	ld	bc,___str_42+0
+  1209  0cf8  1803              	jr	l__diplay_profile_00106
+  1210                          l__diplay_profile_00105:
+  1211  0cfa  01e30d            	ld	bc,___str_43+0
+  1212                          l__diplay_profile_00106:
+  1213  0cfd  d5                	push	de
+  1214  0cfe  c5                	push	bc
+  1215  0cff  21d00d            	ld	hl,___str_41
+  1216  0d02  e5                	push	hl
+  1217  0d03  3e03              	ld	a,0x03
+  1218  0d05  f5                	push	af
+  1219  0d06  33                	inc	sp
+  1220  0d07  af                	xor	a, a
+  1221  0d08  f5                	push	af
+  1222  0d09  33                	inc	sp
+  1223  0d0a  cd010c            	call	_write_key_value
+  1224  0d0d  f1                	pop	af
+  1225  0d0e  f1                	pop	af
+  1226  0d0f  f1                	pop	af
+  1227  0d10  d1                	pop	de
+  1228                          ;opponnets.c:213: write_skill(SKILLS_ROW + 1, "Speed:    ", profile->skills[SKILL_SPEED]);
+  1229  0d11  210500            	ld	hl,5
+  1230  0d14  19                	add	hl,de
+  1231  0d15  4e                	ld	c, (hl)
+  1232  0d16  23                	inc	hl
+  1233  0d17  46                	ld	b, (hl)
+  1234  0d18  d5                	push	de
+  1235  0d19  c5                	push	bc
+  1236  0d1a  21e90d            	ld	hl,___str_44
+  1237  0d1d  e5                	push	hl
+  1238  0d1e  3e04              	ld	a,0x04
+  1239  0d20  f5                	push	af
+  1240  0d21  33                	inc	sp
+  1241  0d22  af                	xor	a, a
+  1242  0d23  f5                	push	af
+  1243  0d24  33                	inc	sp
+  1244  0d25  cd010c            	call	_write_key_value
+  1245  0d28  f1                	pop	af
+  1246  0d29  f1                	pop	af
+  1247  0d2a  f1                	pop	af
+  1248  0d2b  d1                	pop	de
+  1249                          ;opponnets.c:214: write_skill(SKILLS_ROW + 2, "Accuracy: ", profile->skills[SKILL_ACCURACY]);
+  1250  0d2c  210700            	ld	hl,7
+  1251  0d2f  19                	add	hl,de
+  1252  0d30  4e                	ld	c, (hl)
+  1253  0d31  23                	inc	hl
+  1254  0d32  46                	ld	b, (hl)
+  1255  0d33  d5                	push	de
+  1256  0d34  c5                	push	bc
+  1257  0d35  110603            	ld	de,0x0306
+  1258  0d38  d5                	push	de
+  1259  0d39  af                	xor	a, a
+  1260  0d3a  f5                	push	af
+  1261  0d3b  33                	inc	sp
+  1262  0d3c  cd680b            	call	_write_text
+  1263  0d3f  f1                	pop	af
+  1264  0d40  f1                	pop	af
+  1265  0d41  33                	inc	sp
+  1266  0d42  d1                	pop	de
+  1267                          ;opponnets.c:216: write_skill(SKILLS_ROW + 4, "Attack:   ", profile->skills[SKILL_ATTACK]);
+  1268  0d43  3e09              	ld	a,0x09
+  1269  0d45  ed32              	add	de, a
+  1270  0d47  1a                	ld	a, (de)
+  1271  0d48  47                	ld	b, a
+  1272  0d49  d5                	push	de
+  1273  0d4a  c5                	push	bc
+  1274  0d4b  33                	inc	sp
+  1275  0d4c  21f10d            	ld	hl,___str_45
+  1276  0d4f  e5                	push	hl
+  1277  0d50  3e0f              	ld	a,0x0f
+  1278  0d52  f5                	push	af
+  1279  0d53  33                	inc	sp
+  1280  0d54  cd390c            	call	_write_skill
+  1281  0d57  f1                	pop	af
+  1282  0d58  f1                	pop	af
+  1283                          ;opponnets.c:217: }
+  1284  0d59  e1                	pop	hl
+  1285  0d5a  5d                	ld	e,l
+  1286  0d5b  54                	ld	d,h
+  1287  0d5c  23                	inc	hl
+  1288  0d5d  46                	ld	b, (hl)
+  1289  0d5e  d5                	push	de
+  1290  0d5f  c5                	push	bc
+  1291  0d60  33                	inc	sp
+  1292  0d61  21fc0d            	ld	hl,___str_46
+  1293  0d64  e5                	push	hl
+  1294  0d65  3e10              	ld	a,0x10
+  1295  0d67  f5                	push	af
+  1296  0d68  33                	inc	sp
+  1297  0d69  cd390c            	call	_write_skill
+  1298  0d6c  f1                	pop	af
+  1299  0d6d  f1                	pop	af
+  1300                          ;opponnets.c:218: ERROR: no line number 218 in file opponnets.c
+  1301  0d6e  e1                	pop	hl
+  1302  0d6f  5d                	ld	e,l
+  1303  0d70  54                	ld	d,h
+  1304  0d71  23                	inc	hl
+  1305  0d72  23                	inc	hl
+  1306  0d73  46                	ld	b, (hl)
+  1307  0d74  d5                	push	de
+  1308  0d75  c5                	push	bc
+  1309  0d76  33                	inc	sp
+  1310  0d77  21070e            	ld	hl,___str_47
+  1311  0d7a  e5                	push	hl
+  1312  0d7b  3e11              	ld	a,0x11
+  1313  0d7d  f5                	push	af
+  1314  0d7e  33                	inc	sp
+  1315  0d7f  cd390c            	call	_write_skill
+  1316  0d82  f1                	pop	af
+  1317  0d83  f1                	pop	af
+  1318                          ;opponnets.c:219: ERROR: no line number 219 in file opponnets.c
+  1319  0d84  e1                	pop	hl
+  1320  0d85  5d                	ld	e,l
+  1321  0d86  54                	ld	d,h
+  1322  0d87  23                	inc	hl
+  1323  0d88  23                	inc	hl
+  1324  0d89  23                	inc	hl
+  1325  0d8a  46                	ld	b, (hl)
+  1326  0d8b  d5                	push	de
+  1327  0d8c  c5                	push	bc
+  1328  0d8d  33                	inc	sp
+  1329  0d8e  21120e            	ld	hl,___str_48
+  1330  0d91  e5                	push	hl
+  1331  0d92  3e12              	ld	a,0x12
+  1332  0d94  f5                	push	af
+  1333  0d95  33                	inc	sp
+  1334  0d96  cd390c            	call	_write_skill
+  1335  0d99  f1                	pop	af
+  1336  0d9a  f1                	pop	af
+  1337  0d9b  d1                	pop	de
+  1338                          ;opponnets.c:220: ERROR: no line number 220 in file opponnets.c
+  1339  0d9c  210400            	ld	hl,4
+  1340  0d9f  19                	add	hl, de
+  1341  0da0  46                	ld	b, (hl)
+  1342  0da1  c5                	push	bc
+  1343  0da2  33                	inc	sp
+  1344  0da3  211d0e            	ld	hl,___str_49
+  1345  0da6  e5                	push	hl
+  1346  0da7  3e13              	ld	a,0x13
+  1347  0da9  f5                	push	af
+  1348  0daa  33                	inc	sp
+  1349  0dab  cd390c            	call	_write_skill
+  1350  0dae  f1                	pop	af
+  1351  0daf  f1                	pop	af
+  1352                          ;opponnets.c:221: ERROR: no line number 221 in file opponnets.c
+  1353  0db0  dde1              	pop	ix
+  1354  0db2  c9                	ret
+  1355                          	SECTION PAGE_97
+  1356                          ___str_39:
+  1357  0db3  436f6d696e672073  	DEFM "Coming soon!!!"
+              6f6f6e212121      
+  1358  0dc1  00                	DEFB 0x00
+  1359                          	SECTION PAGE_97
+  1360                          ___str_40:
+  1361  0dc2  4e6174696f6e616c  	DEFM "Nationality: "
+              6974793a20        
+  1362  0dcf  00                	DEFB 0x00
+  1363                          	SECTION PAGE_97
+  1364                          ___str_41:
+  1365  0dd0  48616e6465646e65  	DEFM "Handedness:  "
+              73733a2020        
+  1366  0ddd  00                	DEFB 0x00
+  1367                          	SECTION PAGE_97
+  1368                          ___str_42:
+  1369  0dde  4c656674          	DEFM "Left"
+  1370  0de2  00                	DEFB 0x00
+  1371                          	SECTION PAGE_97
+  1372                          ___str_43:
+  1373  0de3  5269676874        	DEFM "Right"
+  1374  0de8  00                	DEFB 0x00
+  1375                          	SECTION PAGE_97
+  1376                          ___str_44:
+  1377  0de9  5374796c653a20    	DEFM "Style: "
+  1378  0df0  00                	DEFB 0x00
+  1379                          	SECTION PAGE_97
+  1380                          ___str_45:
+  1381  0df1  537472656e677468  	DEFM "Strength: "
+              3a20              
+  1382  0dfb  00                	DEFB 0x00
+  1383                          	SECTION PAGE_97
+  1384                          ___str_46:
+  1385  0dfc  53706565643a2020  	DEFM "Speed:    "
+              2020              
+  1386  0e06  00                	DEFB 0x00
+  1387                          	SECTION PAGE_97
+  1388                          ___str_47:
+  1389  0e07  4163637572616379  	DEFM "Accuracy: "
+              3a20              
+  1390  0e11  00                	DEFB 0x00
+  1391                          	SECTION PAGE_97
+  1392                          ___str_48:
+  1393  0e12  446566656e73653a  	DEFM "Defense:  "
+              2020              
+  1394  0e1c  00                	DEFB 0x00
+  1395                          	SECTION PAGE_97
+  1396                          ___str_49:
+  1397  0e1d  41747461636b3a20  	DEFM "Attack:   "
+              2020              
+  1398  0e27  00                	DEFB 0x00
+  1399                          	SECTION IGNORE
+  1400                          

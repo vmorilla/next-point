@@ -1,0 +1,3 @@
+TruncateSilence:Action="Truncate Detected Silence" Compress="50" Independent="0" Minimum="0,5" Threshold="-25" Truncate="0,5"
+Reverb:Delay="25" DryGain="-1" HfDamping="25" Reverberance="40" RoomSize="85" StereoWidth="100" ToneHigh="100" ToneLow="100" WetGain="-1" WetOnly="0"
+ExportWav:

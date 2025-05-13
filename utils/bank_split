@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# This scripts splits a file into multiple files with a max size of a bank (16KB)
+# The first and only argument is the file to split
+# The output files will be named <file>_bank_<bank_number>.<file_extension>
+
+# Check if the file exists
+if [ ! -f $1 ]; then
+    echo "File $1 does not exist"
+    exit 1
+fi
+
+# Split the file into banks
+split -d -a 1 -b 16384 $1 $1.bank_
+

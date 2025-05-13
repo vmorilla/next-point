@@ -1,0 +1,730 @@
+/tmp/tmp8lLb9vqU.asm:
+     1                          MODULE menu_redefine_keys_c
+     2                          LINE 0, "menu_redefine_keys.c"
+menu_redefine_keys.c:
+                                
+     1                          ;--------------------------------------------------------
+     2                          ; File Created by SDCC : free open source ISO C Compiler
+     3                          ; Version 4.3.0 #14210 (Mac OS X ppc)
+     4                          ;--------------------------------------------------------
+     5                          	.zxn
+     6                          ; Processed by Z88DK
+     7                          ;--------------------------------------------------------
+     8                          
+     9                          	EXTERN __divschar
+    10                          	EXTERN __divschar_callee
+    11                          	EXTERN __divsint
+    12                          	EXTERN __divsint_callee
+    13                          	EXTERN __divslong
+    14                          	EXTERN __divslong_callee
+    15                          	EXTERN __divslonglong
+    16                          	EXTERN __divslonglong_callee
+    17                          	EXTERN __divsuchar
+    18                          	EXTERN __divsuchar_callee
+    19                          	EXTERN __divuchar
+    20                          	EXTERN __divuchar_callee
+    21                          	EXTERN __divuint
+    22                          	EXTERN __divuint_callee
+    23                          	EXTERN __divulong
+    24                          	EXTERN __divulong_callee
+    25                          	EXTERN __divulonglong
+    26                          	EXTERN __divulonglong_callee
+    27                          	EXTERN __divuschar
+    28                          	EXTERN __divuschar_callee
+    29                          	EXTERN __modschar
+    30                          	EXTERN __modschar_callee
+    31                          	EXTERN __modsint
+    32                          	EXTERN __modsint_callee
+    33                          	EXTERN __modslong
+    34                          	EXTERN __modslong_callee
+    35                          	EXTERN __modslonglong
+    36                          	EXTERN __modslonglong_callee
+    37                          	EXTERN __modsuchar
+    38                          	EXTERN __modsuchar_callee
+    39                          	EXTERN __moduchar
+    40                          	EXTERN __moduchar_callee
+    41                          	EXTERN __moduint
+    42                          	EXTERN __moduint_callee
+    43                          	EXTERN __modulong
+    44                          	EXTERN __modulong_callee
+    45                          	EXTERN __modulonglong
+    46                          	EXTERN __modulonglong_callee
+    47                          	EXTERN __moduschar
+    48                          	EXTERN __moduschar_callee
+    49                          	EXTERN __mulint
+    50                          	EXTERN __mulint_callee
+    51                          	EXTERN __mullong
+    52                          	EXTERN __mullong_callee
+    53                          	EXTERN __mullonglong
+    54                          	EXTERN __mullonglong_callee
+    55                          	EXTERN __mulschar
+    56                          	EXTERN __mulschar_callee
+    57                          	EXTERN __mulsuchar
+    58                          	EXTERN __mulsuchar_callee
+    59                          	EXTERN __muluchar
+    60                          	EXTERN __muluchar_callee
+    61                          	EXTERN __muluschar
+    62                          	EXTERN __muluschar_callee
+    63                          	EXTERN __rlslonglong
+    64                          	EXTERN __rlslonglong_callee
+    65                          	EXTERN __rlulonglong
+    66                          	EXTERN __rlulonglong_callee
+    67                          	EXTERN __rrslonglong
+    68                          	EXTERN __rrslonglong_callee
+    69                          	EXTERN __rrulonglong
+    70                          	EXTERN __rrulonglong_callee
+    71                          	EXTERN ___mulsint2slong
+    72                          	EXTERN ___mulsint2slong_callee
+    73                          	EXTERN ___muluint2ulong
+    74                          	EXTERN ___muluint2ulong_callee
+    75                          	EXTERN ___sdcc_call_hl
+    76                          	EXTERN ___sdcc_call_iy
+    77                          	EXTERN ___sdcc_enter_ix
+    78                          	EXTERN banked_call
+    79                          	EXTERN _banked_ret
+    80                          	EXTERN ___fs2schar
+    81                          	EXTERN ___fs2schar_callee
+    82                          	EXTERN ___fs2sint
+    83                          	EXTERN ___fs2sint_callee
+    84                          	EXTERN ___fs2slong
+    85                          	EXTERN ___fs2slong_callee
+    86                          	EXTERN ___fs2slonglong
+    87                          	EXTERN ___fs2slonglong_callee
+    88                          	EXTERN ___fs2uchar
+    89                          	EXTERN ___fs2uchar_callee
+    90                          	EXTERN ___fs2uint
+    91                          	EXTERN ___fs2uint_callee
+    92                          	EXTERN ___fs2ulong
+    93                          	EXTERN ___fs2ulong_callee
+    94                          	EXTERN ___fs2ulonglong
+    95                          	EXTERN ___fs2ulonglong_callee
+    96                          	EXTERN ___fsadd
+    97                          	EXTERN ___fsadd_callee
+    98                          	EXTERN ___fsdiv
+    99                          	EXTERN ___fsdiv_callee
+   100                          	EXTERN ___fseq
+   101                          	EXTERN ___fseq_callee
+   102                          	EXTERN ___fsgt
+   103                          	EXTERN ___fsgt_callee
+   104                          	EXTERN ___fslt
+   105                          	EXTERN ___fslt_callee
+   106                          	EXTERN ___fsmul
+   107                          	EXTERN ___fsmul_callee
+   108                          	EXTERN ___fsneq
+   109                          	EXTERN ___fsneq_callee
+   110                          	EXTERN ___fssub
+   111                          	EXTERN ___fssub_callee
+   112                          	EXTERN ___schar2fs
+   113                          	EXTERN ___schar2fs_callee
+   114                          	EXTERN ___sint2fs
+   115                          	EXTERN ___sint2fs_callee
+   116                          	EXTERN ___slong2fs
+   117                          	EXTERN ___slong2fs_callee
+   118                          	EXTERN ___slonglong2fs
+   119                          	EXTERN ___slonglong2fs_callee
+   120                          	EXTERN ___uchar2fs
+   121                          	EXTERN ___uchar2fs_callee
+   122                          	EXTERN ___uint2fs
+   123                          	EXTERN ___uint2fs_callee
+   124                          	EXTERN ___ulong2fs
+   125                          	EXTERN ___ulong2fs_callee
+   126                          	EXTERN ___ulonglong2fs
+   127                          	EXTERN ___ulonglong2fs_callee
+   128                          	EXTERN ____sdcc_2_copy_src_mhl_dst_deix
+   129                          	EXTERN ____sdcc_2_copy_src_mhl_dst_bcix
+   130                          	EXTERN ____sdcc_4_copy_src_mhl_dst_deix
+   131                          	EXTERN ____sdcc_4_copy_src_mhl_dst_bcix
+   132                          	EXTERN ____sdcc_4_copy_src_mhl_dst_mbc
+   133                          	EXTERN ____sdcc_4_ldi_nosave_bc
+   134                          	EXTERN ____sdcc_4_ldi_save_bc
+   135                          	EXTERN ____sdcc_4_push_hlix
+   136                          	EXTERN ____sdcc_4_push_mhl
+   137                          	EXTERN ____sdcc_lib_setmem_hl
+   138                          	EXTERN ____sdcc_ll_add_de_bc_hl
+   139                          	EXTERN ____sdcc_ll_add_de_bc_hlix
+   140                          	EXTERN ____sdcc_ll_add_de_hlix_bc
+   141                          	EXTERN ____sdcc_ll_add_de_hlix_bcix
+   142                          	EXTERN ____sdcc_ll_add_deix_bc_hl
+   143                          	EXTERN ____sdcc_ll_add_deix_hlix
+   144                          	EXTERN ____sdcc_ll_add_hlix_bc_deix
+   145                          	EXTERN ____sdcc_ll_add_hlix_deix_bc
+   146                          	EXTERN ____sdcc_ll_add_hlix_deix_bcix
+   147                          	EXTERN ____sdcc_ll_asr_hlix_a
+   148                          	EXTERN ____sdcc_ll_asr_mbc_a
+   149                          	EXTERN ____sdcc_ll_copy_src_de_dst_hlix
+   150                          	EXTERN ____sdcc_ll_copy_src_de_dst_hlsp
+   151                          	EXTERN ____sdcc_ll_copy_src_deix_dst_hl
+   152                          	EXTERN ____sdcc_ll_copy_src_deix_dst_hlix
+   153                          	EXTERN ____sdcc_ll_copy_src_deixm_dst_hlsp
+   154                          	EXTERN ____sdcc_ll_copy_src_desp_dst_hlsp
+   155                          	EXTERN ____sdcc_ll_copy_src_hl_dst_de
+   156                          	EXTERN ____sdcc_ll_copy_src_hlsp_dst_de
+   157                          	EXTERN ____sdcc_ll_copy_src_hlsp_dst_deixm
+   158                          	EXTERN ____sdcc_ll_lsl_hlix_a
+   159                          	EXTERN ____sdcc_ll_lsl_mbc_a
+   160                          	EXTERN ____sdcc_ll_lsr_hlix_a
+   161                          	EXTERN ____sdcc_ll_lsr_mbc_a
+   162                          	EXTERN ____sdcc_ll_push_hlix
+   163                          	EXTERN ____sdcc_ll_push_mhl
+   164                          	EXTERN ____sdcc_ll_sub_de_bc_hl
+   165                          	EXTERN ____sdcc_ll_sub_de_bc_hlix
+   166                          	EXTERN ____sdcc_ll_sub_de_hlix_bc
+   167                          	EXTERN ____sdcc_ll_sub_de_hlix_bcix
+   168                          	EXTERN ____sdcc_ll_sub_deix_bc_hl
+   169                          	EXTERN ____sdcc_ll_sub_deix_hlix
+   170                          	EXTERN ____sdcc_ll_sub_hlix_bc_deix
+   171                          	EXTERN ____sdcc_ll_sub_hlix_deix_bc
+   172                          	EXTERN ____sdcc_ll_sub_hlix_deix_bcix
+   173                          	EXTERN ____sdcc_load_debc_deix
+   174                          	EXTERN ____sdcc_load_dehl_deix
+   175                          	EXTERN ____sdcc_load_debc_mhl
+   176                          	EXTERN ____sdcc_load_hlde_mhl
+   177                          	EXTERN ____sdcc_store_dehl_bcix
+   178                          	EXTERN ____sdcc_store_debc_hlix
+   179                          	EXTERN ____sdcc_store_debc_mhl
+   180                          	EXTERN ____sdcc_cpu_pop_ei
+   181                          	EXTERN ____sdcc_cpu_pop_ei_jp
+   182                          	EXTERN ____sdcc_cpu_push_di
+   183                          	EXTERN ____sdcc_outi
+   184                          	EXTERN ____sdcc_outi_128
+   185                          	EXTERN ____sdcc_outi_256
+   186                          	EXTERN ____sdcc_ldi
+   187                          	EXTERN ____sdcc_ldi_128
+   188                          	EXTERN ____sdcc_ldi_256
+   189                          	EXTERN ____sdcc_4_copy_srcd_hlix_dst_deix
+   190                          	EXTERN ____sdcc_4_and_src_mbc_mhl_dst_deix
+   191                          	EXTERN ____sdcc_4_or_src_mbc_mhl_dst_deix
+   192                          	EXTERN ____sdcc_4_xor_src_mbc_mhl_dst_deix
+   193                          	EXTERN ____sdcc_4_or_src_dehl_dst_bcix
+   194                          	EXTERN ____sdcc_4_xor_src_dehl_dst_bcix
+   195                          	EXTERN ____sdcc_4_and_src_dehl_dst_bcix
+   196                          	EXTERN ____sdcc_4_xor_src_mbc_mhl_dst_debc
+   197                          	EXTERN ____sdcc_4_or_src_mbc_mhl_dst_debc
+   198                          	EXTERN ____sdcc_4_and_src_mbc_mhl_dst_debc
+   199                          	EXTERN ____sdcc_4_cpl_src_mhl_dst_debc
+   200                          	EXTERN ____sdcc_4_xor_src_debc_mhl_dst_debc
+   201                          	EXTERN ____sdcc_4_or_src_debc_mhl_dst_debc
+   202                          	EXTERN ____sdcc_4_and_src_debc_mhl_dst_debc
+   203                          	EXTERN ____sdcc_4_and_src_debc_hlix_dst_debc
+   204                          	EXTERN ____sdcc_4_or_src_debc_hlix_dst_debc
+   205                          	EXTERN ____sdcc_4_xor_src_debc_hlix_dst_debc
+   206                          
+   207                          ;--------------------------------------------------------
+   208                          ; Public variables in this module
+   209                          ;--------------------------------------------------------
+   210                          	GLOBAL _redefine_keys_menu
+   211                          ;--------------------------------------------------------
+   212                          ; Externals used
+   213                          ;--------------------------------------------------------
+   214                          	GLOBAL _sfx_play_sync
+   215                          	GLOBAL _sfx_init
+   216                          	GLOBAL _clear_tilemap
+   217                          	GLOBAL _select_tilemap
+   218                          	GLOBAL _menu_go_back
+   219                          	GLOBAL _handle_std_menu
+   220                          	GLOBAL _read_menu_input
+   221                          	GLOBAL _lfont_set_palette
+   222                          	GLOBAL _lfont_clear_remaining_line
+   223                          	GLOBAL _lfont_write_text
+   224                          	GLOBAL _lfont_write_char
+   225                          	GLOBAL _lfont_set_position
+   226                          	GLOBAL _diplay_profile
+   227                          	GLOBAL _break_key_pressed
+   228                          	GLOBAL _in_mouse_kempston_wheel_delta
+   229                          	GLOBAL _in_mouse_kempston_wheel
+   230                          	GLOBAL _in_mouse_kempston_callee
+   231                          	GLOBAL _in_mouse_kempston
+   232                          	GLOBAL _in_mouse_kempston_setpos_callee
+   233                          	GLOBAL _in_mouse_kempston_setpos
+   234                          	GLOBAL _in_mouse_kempston_reset
+   235                          	GLOBAL _in_mouse_kempston_init
+   236                          	GLOBAL _in_mouse_amx_wheel_delta
+   237                          	GLOBAL _in_mouse_amx_wheel
+   238                          	GLOBAL _in_mouse_amx_callee
+   239                          	GLOBAL _in_mouse_amx
+   240                          	GLOBAL _in_mouse_amx_setpos_callee
+   241                          	GLOBAL _in_mouse_amx_setpos
+   242                          	GLOBAL _in_mouse_amx_reset
+   243                          	GLOBAL _in_mouse_amx_init_callee
+   244                          	GLOBAL _in_mouse_amx_init
+   245                          	GLOBAL _in_stick_sinclair2
+   246                          	GLOBAL _in_stick_sinclair1
+   247                          	GLOBAL _in_stick_kempston
+   248                          	GLOBAL _in_stick_fuller
+   249                          	GLOBAL _in_stick_cursor
+   250                          	GLOBAL _in_stick_keyboard_fastcall
+   251                          	GLOBAL _in_stick_keyboard
+   252                          	GLOBAL _in_wait_nokey
+   253                          	GLOBAL _in_wait_key
+   254                          	GLOBAL _in_test_key
+   255                          	GLOBAL _in_pause_fastcall
+   256                          	GLOBAL _in_pause
+   257                          	GLOBAL _in_key_scancode_fastcall
+   258                          	GLOBAL _in_key_scancode
+   259                          	GLOBAL _in_key_pressed_fastcall
+   260                          	GLOBAL _in_key_pressed
+   261                          	GLOBAL _in_inkey
+   262                          	GLOBAL _tilemap
+   263                          	GLOBAL _balloon_tilemap
+   264                          	GLOBAL _menu_palette_end
+   265                          	GLOBAL _menu_palette
+   266                          	GLOBAL _menu_patterns
+   267                          	GLOBAL _game_palette_end
+   268                          	GLOBAL _game_palette
+   269                          	GLOBAL _game_patterns
+   270                          	GLOBAL _tiles
+   271                          	GLOBAL _game_settings
+   272                          	GLOBAL _ppponent_profile
+   273                          ;--------------------------------------------------------
+   274                          ; special function registers
+   275                          ;--------------------------------------------------------
+   276                          ;--------------------------------------------------------
+   277                          ; ram data
+   278                          ;--------------------------------------------------------
+   279                          	SECTION bss_compiler
+   280                          ;--------------------------------------------------------
+   281                          ; ram data
+   282                          ;--------------------------------------------------------
+   283                          
+   284                          IF 0
+   285                          
+   286                          ; .area _INITIALIZED removed by z88dk
+   287                          
+   288                          _custom_keys:
+   289                          	DEFS 10
+   290                          _control_names:
+   291                          	DEFS 10
+   292                          
+   293                          ENDIF
+   294                          
+   295                          ;--------------------------------------------------------
+   296                          ; absolute external ram data
+   297                          ;--------------------------------------------------------
+   298                          	SECTION IGNORE
+   299                          ;--------------------------------------------------------
+   300                          ; global & static initialisations
+   301                          ;--------------------------------------------------------
+   302                          	SECTION code_crt_init
+   303                          ;--------------------------------------------------------
+   304                          ; Home
+   305                          ;--------------------------------------------------------
+   306                          	SECTION IGNORE
+   307                          ;--------------------------------------------------------
+   308                          ; code
+   309                          ;--------------------------------------------------------
+   310                          	SECTION code_compiler
+   311                          ;menu_redefine_keys.c:26: static void write_key_name(char character)
+   312                          ;	---------------------------------
+   313                          ; Function write_key_name
+   314                          ; ---------------------------------
+   315                          _write_key_name:
+   316  0000  cd0000            	call	___sdcc_enter_ix
+   317                          ;menu_redefine_keys.c:28: switch (character)
+   318  0003  dd7e00            	ld	a,(ix+4)
+   319  0006  d600              	sub	a,0x0d
+   320  0008  2800              	jr	Z,l_write_key_name_00101
+   321  000a  dd7e00            	ld	a,(ix+4)
+   322  000d  d600              	sub	a,0x20
+   323  000f  2800              	jr	Z,l_write_key_name_00102
+   324  0011  1800              	jr	l_write_key_name_00103
+   325                          ;menu_redefine_keys.c:30: case 13:
+   326                          l_write_key_name_00101:
+   327                          ;menu_redefine_keys.c:31: lfont_write_text("ENTER");
+   328  0013  210000            	ld	hl,___str_0
+   329  0016  e5                	push	hl
+   330  0017  cd0000            	call	_lfont_write_text
+   331  001a  f1                	pop	af
+   332                          ;menu_redefine_keys.c:32: break;
+   333  001b  1800              	jr	l_write_key_name_00105
+   334                          ;menu_redefine_keys.c:33: case 32:
+   335                          l_write_key_name_00102:
+   336                          ;menu_redefine_keys.c:34: lfont_write_text("ENTER");
+   337  001d  210000            	ld	hl,___str_0
+   338  0020  e5                	push	hl
+   339  0021  cd0000            	call	_lfont_write_text
+   340  0024  f1                	pop	af
+   341                          ;menu_redefine_keys.c:35: break;
+   342  0025  1800              	jr	l_write_key_name_00105
+   343                          ;menu_redefine_keys.c:36: default:
+   344                          l_write_key_name_00103:
+   345                          ;menu_redefine_keys.c:37: lfont_write_char(character);
+   346  0027  dd7e00            	ld	a,(ix+4)
+   347  002a  f5                	push	af
+   348  002b  33                	inc	sp
+   349  002c  cd0000            	call	_lfont_write_char
+   350  002f  33                	inc	sp
+   351                          ;menu_redefine_keys.c:38: lfont_write_text("    ");
+   352  0030  210000            	ld	hl,___str_1
+   353  0033  e5                	push	hl
+   354  0034  cd0000            	call	_lfont_write_text
+   355  0037  f1                	pop	af
+   356                          ;menu_redefine_keys.c:39: }
+   357                          l_write_key_name_00105:
+   358                          ;menu_redefine_keys.c:40: }
+   359  0038  dde1              	pop	ix
+   360  003a  c9                	ret
+   361                          	SECTION rodata_compiler
+   362                          ___str_0:
+   363  0000  454e544552        	DEFM "ENTER"
+   364  0005  00                	DEFB 0x00
+   365                          	SECTION rodata_compiler
+   366                          ___str_1:
+   367  0006  20202020          	DEFM "    "
+   368  000a  00                	DEFB 0x00
+   369                          	SECTION code_compiler
+   370                          ;menu_redefine_keys.c:42: static void display_keyset(uint8_t selection, uint8_t set)
+   371                          ;	---------------------------------
+   372                          ; Function display_keyset
+   373                          ; ---------------------------------
+   374                          _display_keyset:
+   375  003b  cd0000            	call	___sdcc_enter_ix
+   376  003e  f5                	push	af
+   377  003f  3b                	dec	sp
+   378                          ;menu_redefine_keys.c:45: for (uint8_t i = 0; i < N_CUSTOM_CONTROL_KEYS; i++)
+   379  0040  dd5e00            	ld	e,(ix+5)
+   380  0043  1600              	ld	d,0x05
+   381  0045  ed30              	mlt	de
+   382  0047  210000            	ld	hl,_custom_keys
+   383  004a  19                	add	hl, de
+   384  004b  e3                	ex	(sp), hl
+   385  004c  dd360000          	ld	(ix-1),0x00
+   386                          l_display_keyset_00103:
+   387  0050  dd7e00            	ld	a,(ix-1)
+   388  0053  d600              	sub	a,0x05
+   389  0055  3000              	jr	NC,l_display_keyset_00105
+   390                          ;menu_redefine_keys.c:47: lfont_set_palette(i == selection ? LARGE_FONT_HIGHLIGHT_PALETTE : LARGE_FONT_DEFAULT_PALETTE);
+   391  0057  dd7e00            	ld	a,(ix+4)
+   392  005a  dd9600            	sub	a,(ix-1)
+   393  005d  2000              	jr	NZ,l_display_keyset_00132
+   394  005f  3e00              	ld	a,0x01
+   395  0061  1800              	jr	l_display_keyset_00133
+   396                          l_display_keyset_00132:
+   397  0063  af                	xor	a,a
+   398                          l_display_keyset_00133:
+   399  0064  4f                	ld	c,a
+   400  0065  b7                	or	a, a
+   401  0066  2800              	jr	Z,l_display_keyset_00107
+   402  0068  3e00              	ld	a,0x01
+   403  006a  0600              	ld	b,0x00
+   404  006c  1800              	jr	l_display_keyset_00108
+   405                          l_display_keyset_00107:
+   406  006e  af                	xor	a, a
+   407  006f  47                	ld	b, a
+   408                          l_display_keyset_00108:
+   409  0070  c5                	push	bc
+   410  0071  f5                	push	af
+   411  0072  33                	inc	sp
+   412  0073  cd0000            	call	_lfont_set_palette
+   413  0076  33                	inc	sp
+   414  0077  c1                	pop	bc
+   415                          ;menu_redefine_keys.c:48: lfont_set_palette(i == selection ? LARGE_FONT_HIGHLIGHT_PALETTE : LARGE_FONT_DEFAULT_PALETTE);
+   416  0078  79                	ld	a, c
+   417  0079  b7                	or	a, a
+   418  007a  2800              	jr	Z,l_display_keyset_00109
+   419  007c  3e00              	ld	a,0x01
+   420  007e  1800              	jr	l_display_keyset_00110
+   421                          l_display_keyset_00109:
+   422  0080  af                	xor	a, a
+   423                          l_display_keyset_00110:
+   424  0081  f5                	push	af
+   425  0082  33                	inc	sp
+   426  0083  cd0000            	call	_lfont_set_palette
+   427  0086  33                	inc	sp
+   428                          ;menu_redefine_keys.c:49: lfont_set_position(REFINE_KEYS_MENU_LEFT_COLUMN, MENU_FIRST_ROW + i * MENU_ROW_SEPARATION);
+   429  0087  dd7eff            	ld	a,(ix-1)
+   430  008a  4f                	ld	c, a
+   431  008b  87                	add	a, a
+   432  008c  81                	add	a, c
+   433  008d  c60c              	add	a,0x0c
+   434  008f  57                	ld	d,a
+   435  0090  1e1e              	ld	e,0x1e
+   436  0092  d5                	push	de
+   437  0093  cd0000            	call	_lfont_set_position
+   438  0096  f1                	pop	af
+   439                          ;menu_redefine_keys.c:50: lfont_write_text(control_names[N_CUSTOM_CONTROL_KEYS - 1 - i]);
+   440  0097  dd4eff            	ld	c,(ix-1)
+   441  009a  3e04              	ld	a,0x04
+   442  009c  91                	sub	a, c
+   443  009d  4f                	ld	c,a
+   444  009e  6f                	ld	l, a
+   445  009f  07                	rlca
+   446  00a0  9f                	sbc	a, a
+   447  00a1  67                	ld	h, a
+   448  00a2  29                	add	hl, hl
+   449  00a3  110a00            	ld	de,_control_names
+   450  00a6  19                	add	hl, de
+   451  00a7  5e                	ld	e, (hl)
+   452  00a8  23                	inc	hl
+   453  00a9  56                	ld	d, (hl)
+   454  00aa  c5                	push	bc
+   455  00ab  d5                	push	de
+   456  00ac  cd0000            	call	_lfont_write_text
+   457  00af  f1                	pop	af
+   458  00b0  c1                	pop	bc
+   459                          ;menu_redefine_keys.c:51: write_key_name(custom_keys[set][N_CUSTOM_CONTROL_KEYS - 1 - i]);
+   460  00b1  e1                	pop	hl
+   461  00b2  e5                	push	hl
+   462  00b3  0600              	ld	b,0x00
+   463  00b5  09                	add	hl, bc
+   464  00b6  7e                	ld	a, (hl)
+   465  00b7  f5                	push	af
+   466  00b8  33                	inc	sp
+   467  00b9  cd0000            	call	_write_key_name
+   468  00bc  33                	inc	sp
+   469                          ;menu_redefine_keys.c:45: for (uint8_t i = 0; i < N_CUSTOM_CONTROL_KEYS; i++)
+   470  00bd  dd34ff            	inc	(ix-1)
+   471  00c0  c35000            	jp	l_display_keyset_00103
+   472                          l_display_keyset_00105:
+   473                          ;menu_redefine_keys.c:53: }
+   474  00c3  ddf9              	ld	sp, ix
+   475  00c5  dde1              	pop	ix
+   476  00c7  c9                	ret
+   477                          ;menu_redefine_keys.c:55: int8_t redefine_keys_menu(int8_t keyset)
+   478                          ;	---------------------------------
+   479                          ; Function redefine_keys_menu
+   480                          ; ---------------------------------
+   481                          _redefine_keys_menu:
+   482  00c8  cd0000            	call	___sdcc_enter_ix
+   483  00cb  f5                	push	af
+   484  00cc  f5                	push	af
+   485                          ;menu_redefine_keys.c:57: keyset = keyset % 2;
+   486  00cd  dd7e04            	ld	a,(ix+4)
+   487  00d0  4f                	ld	c, a
+   488  00d1  07                	rlca
+   489  00d2  9f                	sbc	a, a
+   490  00d3  210200            	ld	hl,0x0002
+   491  00d6  e5                	push	hl
+   492  00d7  47                	ld	b, a
+   493  00d8  c5                	push	bc
+   494  00d9  cd0000            	call	__modsint_callee
+   495  00dc  dd7504            	ld	(ix+4),l
+   496                          ;menu_redefine_keys.c:59: clear_tilemap();
+   497  00df  cd0000            	call	_clear_tilemap
+   498                          ;menu_redefine_keys.c:61: while (1)
+   499  00e2  dd4e04            	ld	c,(ix+4)
+   500  00e5  79                	ld	a, c
+   501  00e6  07                	rlca
+   502  00e7  9f                	sbc	a, a
+   503  00e8  47                	ld	b,a
+   504  00e9  69                	ld	l,c
+   505  00ea  67                	ld	h,a
+   506  00eb  29                	add	hl, hl
+   507  00ec  29                	add	hl, hl
+   508  00ed  09                	add	hl, bc
+   509  00ee  110000            	ld	de,_custom_keys
+   510  00f1  19                	add	hl, de
+   511  00f2  e3                	ex	(sp), hl
+   512  00f3  dd7e04            	ld	a,(ix+4)
+   513  00f6  4f                	ld	c, a
+   514  00f7  87                	add	a, a
+   515  00f8  87                	add	a, a
+   516  00f9  81                	add	a, c
+   517  00fa  87                	add	a, a
+   518  00fb  dd77fe            	ld	(ix-2),a
+   519                          l_redefine_keys_menu_00109:
+   520                          ;menu_redefine_keys.c:63: display_keyset(255, keyset);
+   521  00fe  dd5604            	ld	d,(ix+4)
+   522  0101  1eff              	ld	e,0xff
+   523  0103  d5                	push	de
+   524  0104  cd3b00            	call	_display_keyset
+   525  0107  f1                	pop	af
+   526                          ;menu_redefine_keys.c:64: lfont_set_position(5, MENU_NOTES_ROWS);
+   527  0108  11051d            	ld	de,0x1d05
+   528  010b  d5                	push	de
+   529  010c  cd0000            	call	_lfont_set_position
+   530  010f  f1                	pop	af
+   531                          ;menu_redefine_keys.c:65: lfont_set_palette(LARGE_FONT_DEFAULT_PALETTE);
+   532  0110  af                	xor	a, a
+   533  0111  f5                	push	af
+   534  0112  33                	inc	sp
+   535  0113  cd0000            	call	_lfont_set_palette
+   536  0116  33                	inc	sp
+   537                          ;menu_redefine_keys.c:66: lfont_write_text("[ENTER] TO CHANGE / [BREAK] TO EXIT");
+   538  0117  210b00            	ld	hl,___str_2
+   539  011a  e5                	push	hl
+   540  011b  cd0000            	call	_lfont_write_text
+   541  011e  f1                	pop	af
+   542                          ;menu_redefine_keys.c:68: while (in_key_pressed(IN_KEY_SCANCODE_ENTER) == 0)
+   543                          l_redefine_keys_menu_00104:
+   544  011f  21bf01            	ld	hl,0x01bf
+   545  0122  cd0000            	call	_in_key_pressed_fastcall
+   546  0125  eb                	ex	de, hl
+   547  0126  7a                	ld	a, d
+   548  0127  b3                	or	a, e
+   549  0128  2023              	jr	NZ,l_redefine_keys_menu_00106
+   550                          ;menu_redefine_keys.c:71: if (break_key_pressed() || in_key_pressed(IN_KEY_SCANCODE_SPACE))
+   551  012a  cd0000            	call	_break_key_pressed
+   552  012d  cb45              	bit	0, l
+   553  012f  200a              	jr	NZ,l_redefine_keys_menu_00101
+   554  0131  217f01            	ld	hl,0x017f
+   555  0134  cd0000            	call	_in_key_pressed_fastcall
+   556  0137  7c                	ld	a, h
+   557  0138  b5                	or	a, l
+   558  0139  28e4              	jr	Z,l_redefine_keys_menu_00104
+   559                          l_redefine_keys_menu_00101:
+   560                          ;menu_redefine_keys.c:73: sfx_play_sync(SFX_CURSOR_SELECT);
+   561  013b  3e01              	ld	a,0x01
+   562  013d  f5                	push	af
+   563  013e  33                	inc	sp
+   564  013f  cd0000            	call	_sfx_play_sync
+   565  0142  33                	inc	sp
+   566                          ;menu_redefine_keys.c:74: return menu_go_back(0);
+   567  0143  af                	xor	a, a
+   568  0144  f5                	push	af
+   569  0145  33                	inc	sp
+   570  0146  cd0000            	call	_menu_go_back
+   571  0149  33                	inc	sp
+   572  014a  c3d401            	jp	l_redefine_keys_menu_00114
+   573                          l_redefine_keys_menu_00106:
+   574                          ;menu_redefine_keys.c:78: lfont_set_position(5, MENU_NOTES_ROWS);
+   575  014d  11051d            	ld	de,0x1d05
+   576  0150  d5                	push	de
+   577  0151  cd0000            	call	_lfont_set_position
+   578                          ;menu_redefine_keys.c:79: lfont_write_text("       CHOOSE YOUR OWN KEYS        ");
+   579  0154  212f00            	ld	hl,___str_3
+   580  0157  e3                	ex	(sp),hl
+   581  0158  cd0000            	call	_lfont_write_text
+   582  015b  f1                	pop	af
+   583                          ;menu_redefine_keys.c:81: for (uint8_t i = 0; i < N_CUSTOM_CONTROL_KEYS; i++)
+   584  015c  dd36ff00          	ld	(ix-1),0x00
+   585                          l_redefine_keys_menu_00112:
+   586  0160  dd7eff            	ld	a,(ix-1)
+   587  0163  d605              	sub	a,0x05
+   588  0165  3067              	jr	NC,l_redefine_keys_menu_00107
+   589                          ;menu_redefine_keys.c:83: in_wait_nokey();
+   590  0167  cd0000            	call	_in_wait_nokey
+   591                          ;menu_redefine_keys.c:84: display_keyset(i, keyset);
+   592  016a  dd6604            	ld	h,(ix+4)
+   593  016d  dd6eff            	ld	l,(ix-1)
+   594  0170  e5                	push	hl
+   595  0171  cd3b00            	call	_display_keyset
+   596  0174  f1                	pop	af
+   597                          ;menu_redefine_keys.c:85: in_wait_key();
+   598  0175  cd0000            	call	_in_wait_key
+   599                          ;menu_redefine_keys.c:86: int key = in_inkey();
+   600  0178  cd0000            	call	_in_inkey
+   601                          ;menu_redefine_keys.c:87: sfx_play_sync(SFX_CURSOR_SELECT);
+   602  017b  e5                	push	hl
+   603  017c  3e01              	ld	a,0x01
+   604  017e  f5                	push	af
+   605  017f  33                	inc	sp
+   606  0180  cd0000            	call	_sfx_play_sync
+   607  0183  33                	inc	sp
+   608  0184  d1                	pop	de
+   609                          ;menu_redefine_keys.c:88: char key_char = key > 'Z' ? key - 32 : key;
+   610  0185  3e5a              	ld	a,0x5a
+   611  0187  bb                	cp	a, e
+   612  0188  3e00              	ld	a,0x00
+   613  018a  9a                	sbc	a, d
+   614  018b  e29001            	jp	PO, l_redefine_keys_menu_00154
+   615  018e  ee80              	xor	a,0x80
+   616                          l_redefine_keys_menu_00154:
+   617  0190  f29b01            	jp	P, l_redefine_keys_menu_00116
+   618  0193  7b                	ld	a, e
+   619  0194  c6e0              	add	a,0xe0
+   620  0196  47                	ld	b, a
+   621  0197  07                	rlca
+   622  0198  9f                	sbc	a, a
+   623  0199  1801              	jr	l_redefine_keys_menu_00117
+   624                          l_redefine_keys_menu_00116:
+   625  019b  43                	ld	b, e
+   626                          l_redefine_keys_menu_00117:
+   627                          ;menu_redefine_keys.c:89: int scancode = in_key_scancode(key);
+   628  019c  c5                	push	bc
+   629  019d  eb                	ex	de, hl
+   630  019e  cd0000            	call	_in_key_scancode_fastcall
+   631  01a1  eb                	ex	de, hl
+   632  01a2  c1                	pop	bc
+   633                          ;menu_redefine_keys.c:90: custom_keys[keyset][N_CUSTOM_CONTROL_KEYS - i - 1] = key_char;
+   634  01a3  dd4eff            	ld	c,(ix-1)
+   635  01a6  3e04              	ld	a,0x04
+   636  01a8  91                	sub	a, c
+   637  01a9  4f                	ld	c, a
+   638  01aa  dd7efc            	ld	a,(ix-4)
+   639  01ad  81                	add	a, c
+   640  01ae  6f                	ld	l, a
+   641  01af  dd7efd            	ld	a,(ix-3)
+   642  01b2  ce00              	adc	a,0x00
+   643  01b4  67                	ld	h, a
+   644  01b5  70                	ld	(hl), b
+   645                          ;menu_redefine_keys.c:91: game_settings.user_defined_keys[keyset].scancodes[N_CUSTOM_CONTROL_KEYS - i - 1] = scancode;
+   646  01b6  3e03              	ld	a,+((_game_settings+3) & 0xFF)
+   647  01b8  dd86fe            	add	a,(ix-2)
+   648  01bb  6f                	ld	l, a
+   649  01bc  3e00              	ld	a,+((_game_settings+3) / 256)
+   650  01be  ce00              	adc	a,0x00
+   651  01c0  67                	ld	h, a
+   652  01c1  cb21              	sla	c
+   653  01c3  0600              	ld	b,0x00
+   654  01c5  09                	add	hl, bc
+   655  01c6  73                	ld	(hl), e
+   656  01c7  23                	inc	hl
+   657  01c8  72                	ld	(hl), d
+   658                          ;menu_redefine_keys.c:81: for (uint8_t i = 0; i < N_CUSTOM_CONTROL_KEYS; i++)
+   659  01c9  dd34ff            	inc	(ix-1)
+   660  01cc  1892              	jr	l_redefine_keys_menu_00112
+   661                          l_redefine_keys_menu_00107:
+   662                          ;menu_redefine_keys.c:93: in_wait_nokey();
+   663  01ce  cd0000            	call	_in_wait_nokey
+   664  01d1  c3fe00            	jp	l_redefine_keys_menu_00109
+   665                          l_redefine_keys_menu_00114:
+   666                          ;menu_redefine_keys.c:95: }
+   667  01d4  ddf9              	ld	sp, ix
+   668  01d6  dde1              	pop	ix
+   669  01d8  c9                	ret
+   670                          	SECTION rodata_compiler
+   671                          ___str_2:
+   672  000b  5b454e5445525d20  	DEFM "[ENTER] TO CHANGE / [BREAK] TO EXIT"
+              5400004348000047  
+              451b2f0000425200  
+              004b5d11544f0445  
+              584900            
+   673  002e  00                	DEFB 0x00
+   674                          	SECTION rodata_compiler
+   675                          ___str_3:
+   676  002f  2020060020200000  	DEFM "       CHOOSE YOUR OWN KEYS        "
+              484f4f534500004f  
+              555220055705204b  
+              45000020202020ff  
+              002020            
+   677  0052  00                	DEFB 0x00
+   678                          	SECTION rodata_compiler
+   679                          ___str_4:
+   680  0053  4805546c2e2e042e  	DEFM "HIT....."
+   681  005b  00                	DEFB 0x00
+   682                          	SECTION rodata_compiler
+   683                          ___str_5:
+   684  005c  ff490448012e012e  	DEFM "RIGHT..."
+   685  0064  00                	DEFB 0x00
+   686                          	SECTION rodata_compiler
+   687                          ___str_6:
+   688  0065  4c450654012e002e  	DEFM "LEFT...."
+   689  006d  00                	DEFB 0x00
+   690                          	SECTION rodata_compiler
+   691                          ___str_7:
+   692  006e  444f574e2e2e0000  	DEFM "DOWN...."
+   693  0076  00                	DEFB 0x00
+   694                          	SECTION rodata_compiler
+   695                          ___str_8:
+   696  0077  55502e2e042e012e  	DEFM "UP......"
+   697  007f  00                	DEFB 0x00
+   698                          	SECTION data_compiler
+   699                          _custom_keys:
+   700  0000  4d                	DEFB +0x4d
+   701  0001  50                	DEFB +0x50
+   702  0002  4f                	DEFB +0x4f
+   703  0003  41                	DEFB +0x41
+   704  0004  51                	DEFB +0x51
+   705  0005  30                	DEFB +0x30
+   706  0006  38                	DEFB +0x38
+   707  0007  35                	DEFB +0x35
+   708  0008  36                	DEFB +0x36
+   709  0009  37                	DEFB +0x37
+   710                          _control_names:
+   711  000a  5300              	DEFW ___str_4
+   712  000c  5c00              	DEFW ___str_5
+   713  000e  6500              	DEFW ___str_6
+   714  0010  6e00              	DEFW ___str_7
+   715  0012  7700              	DEFW ___str_8
+   716                          	SECTION IGNORE
+   717                          

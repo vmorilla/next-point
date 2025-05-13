@@ -1,0 +1,668 @@
+/tmp/tmpUuPUpyJN.asm:
+     1                          MODULE large_font_c
+     2                          LINE 0, "large_font.c"
+large_font.c:
+                                
+     1                          ;--------------------------------------------------------
+     2                          ; File Created by SDCC : free open source ISO C Compiler
+     3                          ; Version 4.3.0 #14210 (Mac OS X ppc)
+     4                          ;--------------------------------------------------------
+     5                          	.zxn
+     6                          ; Processed by Z88DK
+     7                          ;--------------------------------------------------------
+     8                          
+     9                          	EXTERN __divschar
+    10                          	EXTERN __divschar_callee
+    11                          	EXTERN __divsint
+    12                          	EXTERN __divsint_callee
+    13                          	EXTERN __divslong
+    14                          	EXTERN __divslong_callee
+    15                          	EXTERN __divslonglong
+    16                          	EXTERN __divslonglong_callee
+    17                          	EXTERN __divsuchar
+    18                          	EXTERN __divsuchar_callee
+    19                          	EXTERN __divuchar
+    20                          	EXTERN __divuchar_callee
+    21                          	EXTERN __divuint
+    22                          	EXTERN __divuint_callee
+    23                          	EXTERN __divulong
+    24                          	EXTERN __divulong_callee
+    25                          	EXTERN __divulonglong
+    26                          	EXTERN __divulonglong_callee
+    27                          	EXTERN __divuschar
+    28                          	EXTERN __divuschar_callee
+    29                          	EXTERN __modschar
+    30                          	EXTERN __modschar_callee
+    31                          	EXTERN __modsint
+    32                          	EXTERN __modsint_callee
+    33                          	EXTERN __modslong
+    34                          	EXTERN __modslong_callee
+    35                          	EXTERN __modslonglong
+    36                          	EXTERN __modslonglong_callee
+    37                          	EXTERN __modsuchar
+    38                          	EXTERN __modsuchar_callee
+    39                          	EXTERN __moduchar
+    40                          	EXTERN __moduchar_callee
+    41                          	EXTERN __moduint
+    42                          	EXTERN __moduint_callee
+    43                          	EXTERN __modulong
+    44                          	EXTERN __modulong_callee
+    45                          	EXTERN __modulonglong
+    46                          	EXTERN __modulonglong_callee
+    47                          	EXTERN __moduschar
+    48                          	EXTERN __moduschar_callee
+    49                          	EXTERN __mulint
+    50                          	EXTERN __mulint_callee
+    51                          	EXTERN __mullong
+    52                          	EXTERN __mullong_callee
+    53                          	EXTERN __mullonglong
+    54                          	EXTERN __mullonglong_callee
+    55                          	EXTERN __mulschar
+    56                          	EXTERN __mulschar_callee
+    57                          	EXTERN __mulsuchar
+    58                          	EXTERN __mulsuchar_callee
+    59                          	EXTERN __muluchar
+    60                          	EXTERN __muluchar_callee
+    61                          	EXTERN __muluschar
+    62                          	EXTERN __muluschar_callee
+    63                          	EXTERN __rlslonglong
+    64                          	EXTERN __rlslonglong_callee
+    65                          	EXTERN __rlulonglong
+    66                          	EXTERN __rlulonglong_callee
+    67                          	EXTERN __rrslonglong
+    68                          	EXTERN __rrslonglong_callee
+    69                          	EXTERN __rrulonglong
+    70                          	EXTERN __rrulonglong_callee
+    71                          	EXTERN ___mulsint2slong
+    72                          	EXTERN ___mulsint2slong_callee
+    73                          	EXTERN ___muluint2ulong
+    74                          	EXTERN ___muluint2ulong_callee
+    75                          	EXTERN ___sdcc_call_hl
+    76                          	EXTERN ___sdcc_call_iy
+    77                          	EXTERN ___sdcc_enter_ix
+    78                          	EXTERN banked_call
+    79                          	EXTERN _banked_ret
+    80                          	EXTERN ___fs2schar
+    81                          	EXTERN ___fs2schar_callee
+    82                          	EXTERN ___fs2sint
+    83                          	EXTERN ___fs2sint_callee
+    84                          	EXTERN ___fs2slong
+    85                          	EXTERN ___fs2slong_callee
+    86                          	EXTERN ___fs2slonglong
+    87                          	EXTERN ___fs2slonglong_callee
+    88                          	EXTERN ___fs2uchar
+    89                          	EXTERN ___fs2uchar_callee
+    90                          	EXTERN ___fs2uint
+    91                          	EXTERN ___fs2uint_callee
+    92                          	EXTERN ___fs2ulong
+    93                          	EXTERN ___fs2ulong_callee
+    94                          	EXTERN ___fs2ulonglong
+    95                          	EXTERN ___fs2ulonglong_callee
+    96                          	EXTERN ___fsadd
+    97                          	EXTERN ___fsadd_callee
+    98                          	EXTERN ___fsdiv
+    99                          	EXTERN ___fsdiv_callee
+   100                          	EXTERN ___fseq
+   101                          	EXTERN ___fseq_callee
+   102                          	EXTERN ___fsgt
+   103                          	EXTERN ___fsgt_callee
+   104                          	EXTERN ___fslt
+   105                          	EXTERN ___fslt_callee
+   106                          	EXTERN ___fsmul
+   107                          	EXTERN ___fsmul_callee
+   108                          	EXTERN ___fsneq
+   109                          	EXTERN ___fsneq_callee
+   110                          	EXTERN ___fssub
+   111                          	EXTERN ___fssub_callee
+   112                          	EXTERN ___schar2fs
+   113                          	EXTERN ___schar2fs_callee
+   114                          	EXTERN ___sint2fs
+   115                          	EXTERN ___sint2fs_callee
+   116                          	EXTERN ___slong2fs
+   117                          	EXTERN ___slong2fs_callee
+   118                          	EXTERN ___slonglong2fs
+   119                          	EXTERN ___slonglong2fs_callee
+   120                          	EXTERN ___uchar2fs
+   121                          	EXTERN ___uchar2fs_callee
+   122                          	EXTERN ___uint2fs
+   123                          	EXTERN ___uint2fs_callee
+   124                          	EXTERN ___ulong2fs
+   125                          	EXTERN ___ulong2fs_callee
+   126                          	EXTERN ___ulonglong2fs
+   127                          	EXTERN ___ulonglong2fs_callee
+   128                          	EXTERN ____sdcc_2_copy_src_mhl_dst_deix
+   129                          	EXTERN ____sdcc_2_copy_src_mhl_dst_bcix
+   130                          	EXTERN ____sdcc_4_copy_src_mhl_dst_deix
+   131                          	EXTERN ____sdcc_4_copy_src_mhl_dst_bcix
+   132                          	EXTERN ____sdcc_4_copy_src_mhl_dst_mbc
+   133                          	EXTERN ____sdcc_4_ldi_nosave_bc
+   134                          	EXTERN ____sdcc_4_ldi_save_bc
+   135                          	EXTERN ____sdcc_4_push_hlix
+   136                          	EXTERN ____sdcc_4_push_mhl
+   137                          	EXTERN ____sdcc_lib_setmem_hl
+   138                          	EXTERN ____sdcc_ll_add_de_bc_hl
+   139                          	EXTERN ____sdcc_ll_add_de_bc_hlix
+   140                          	EXTERN ____sdcc_ll_add_de_hlix_bc
+   141                          	EXTERN ____sdcc_ll_add_de_hlix_bcix
+   142                          	EXTERN ____sdcc_ll_add_deix_bc_hl
+   143                          	EXTERN ____sdcc_ll_add_deix_hlix
+   144                          	EXTERN ____sdcc_ll_add_hlix_bc_deix
+   145                          	EXTERN ____sdcc_ll_add_hlix_deix_bc
+   146                          	EXTERN ____sdcc_ll_add_hlix_deix_bcix
+   147                          	EXTERN ____sdcc_ll_asr_hlix_a
+   148                          	EXTERN ____sdcc_ll_asr_mbc_a
+   149                          	EXTERN ____sdcc_ll_copy_src_de_dst_hlix
+   150                          	EXTERN ____sdcc_ll_copy_src_de_dst_hlsp
+   151                          	EXTERN ____sdcc_ll_copy_src_deix_dst_hl
+   152                          	EXTERN ____sdcc_ll_copy_src_deix_dst_hlix
+   153                          	EXTERN ____sdcc_ll_copy_src_deixm_dst_hlsp
+   154                          	EXTERN ____sdcc_ll_copy_src_desp_dst_hlsp
+   155                          	EXTERN ____sdcc_ll_copy_src_hl_dst_de
+   156                          	EXTERN ____sdcc_ll_copy_src_hlsp_dst_de
+   157                          	EXTERN ____sdcc_ll_copy_src_hlsp_dst_deixm
+   158                          	EXTERN ____sdcc_ll_lsl_hlix_a
+   159                          	EXTERN ____sdcc_ll_lsl_mbc_a
+   160                          	EXTERN ____sdcc_ll_lsr_hlix_a
+   161                          	EXTERN ____sdcc_ll_lsr_mbc_a
+   162                          	EXTERN ____sdcc_ll_push_hlix
+   163                          	EXTERN ____sdcc_ll_push_mhl
+   164                          	EXTERN ____sdcc_ll_sub_de_bc_hl
+   165                          	EXTERN ____sdcc_ll_sub_de_bc_hlix
+   166                          	EXTERN ____sdcc_ll_sub_de_hlix_bc
+   167                          	EXTERN ____sdcc_ll_sub_de_hlix_bcix
+   168                          	EXTERN ____sdcc_ll_sub_deix_bc_hl
+   169                          	EXTERN ____sdcc_ll_sub_deix_hlix
+   170                          	EXTERN ____sdcc_ll_sub_hlix_bc_deix
+   171                          	EXTERN ____sdcc_ll_sub_hlix_deix_bc
+   172                          	EXTERN ____sdcc_ll_sub_hlix_deix_bcix
+   173                          	EXTERN ____sdcc_load_debc_deix
+   174                          	EXTERN ____sdcc_load_dehl_deix
+   175                          	EXTERN ____sdcc_load_debc_mhl
+   176                          	EXTERN ____sdcc_load_hlde_mhl
+   177                          	EXTERN ____sdcc_store_dehl_bcix
+   178                          	EXTERN ____sdcc_store_debc_hlix
+   179                          	EXTERN ____sdcc_store_debc_mhl
+   180                          	EXTERN ____sdcc_cpu_pop_ei
+   181                          	EXTERN ____sdcc_cpu_pop_ei_jp
+   182                          	EXTERN ____sdcc_cpu_push_di
+   183                          	EXTERN ____sdcc_outi
+   184                          	EXTERN ____sdcc_outi_128
+   185                          	EXTERN ____sdcc_outi_256
+   186                          	EXTERN ____sdcc_ldi
+   187                          	EXTERN ____sdcc_ldi_128
+   188                          	EXTERN ____sdcc_ldi_256
+   189                          	EXTERN ____sdcc_4_copy_srcd_hlix_dst_deix
+   190                          	EXTERN ____sdcc_4_and_src_mbc_mhl_dst_deix
+   191                          	EXTERN ____sdcc_4_or_src_mbc_mhl_dst_deix
+   192                          	EXTERN ____sdcc_4_xor_src_mbc_mhl_dst_deix
+   193                          	EXTERN ____sdcc_4_or_src_dehl_dst_bcix
+   194                          	EXTERN ____sdcc_4_xor_src_dehl_dst_bcix
+   195                          	EXTERN ____sdcc_4_and_src_dehl_dst_bcix
+   196                          	EXTERN ____sdcc_4_xor_src_mbc_mhl_dst_debc
+   197                          	EXTERN ____sdcc_4_or_src_mbc_mhl_dst_debc
+   198                          	EXTERN ____sdcc_4_and_src_mbc_mhl_dst_debc
+   199                          	EXTERN ____sdcc_4_cpl_src_mhl_dst_debc
+   200                          	EXTERN ____sdcc_4_xor_src_debc_mhl_dst_debc
+   201                          	EXTERN ____sdcc_4_or_src_debc_mhl_dst_debc
+   202                          	EXTERN ____sdcc_4_and_src_debc_mhl_dst_debc
+   203                          	EXTERN ____sdcc_4_and_src_debc_hlix_dst_debc
+   204                          	EXTERN ____sdcc_4_or_src_debc_hlix_dst_debc
+   205                          	EXTERN ____sdcc_4_xor_src_debc_hlix_dst_debc
+   206                          
+   207                          ;--------------------------------------------------------
+   208                          ; Public variables in this module
+   209                          ;--------------------------------------------------------
+   210                          	GLOBAL _lfont_set_position
+   211                          	GLOBAL _lfont_write_char
+   212                          	GLOBAL _lfont_write_text
+   213                          	GLOBAL _lfont_set_palette
+   214                          	GLOBAL _lfont_clear_remaining_line
+   215                          ;--------------------------------------------------------
+   216                          ; Externals used
+   217                          ;--------------------------------------------------------
+   218                          	GLOBAL _clear_tilemap
+   219                          	GLOBAL _select_tilemap
+   220                          	GLOBAL _tilemap
+   221                          	GLOBAL _balloon_tilemap
+   222                          	GLOBAL _menu_palette_end
+   223                          	GLOBAL _menu_palette
+   224                          	GLOBAL _menu_patterns
+   225                          	GLOBAL _game_palette_end
+   226                          	GLOBAL _game_palette
+   227                          	GLOBAL _game_patterns
+   228                          	GLOBAL _tiles
+   229                          ;--------------------------------------------------------
+   230                          ; special function registers
+   231                          ;--------------------------------------------------------
+   232                          ;--------------------------------------------------------
+   233                          ; ram data
+   234                          ;--------------------------------------------------------
+   235                          	SECTION bss_compiler
+   236                          ;--------------------------------------------------------
+   237                          ; ram data
+   238                          ;--------------------------------------------------------
+   239                          
+   240                          IF 0
+   241                          
+   242                          ; .area _INITIALIZED removed by z88dk
+   243                          
+   244                          _lfont_current_x:
+   245                          	DEFS 1
+   246                          _lfont_current_y:
+   247                          	DEFS 1
+   248                          _lfont_current_palette:
+   249                          	DEFS 1
+   250                          
+   251                          ENDIF
+   252                          
+   253                          ;--------------------------------------------------------
+   254                          ; absolute external ram data
+   255                          ;--------------------------------------------------------
+   256                          	SECTION IGNORE
+   257                          ;--------------------------------------------------------
+   258                          ; global & static initialisations
+   259                          ;--------------------------------------------------------
+   260                          	SECTION code_crt_init
+   261                          ;--------------------------------------------------------
+   262                          ; Home
+   263                          ;--------------------------------------------------------
+   264                          	SECTION IGNORE
+   265                          ;--------------------------------------------------------
+   266                          ; code
+   267                          ;--------------------------------------------------------
+   268                          	SECTION BANK_8
+   269                          ;large_font.c:12: lfont_current_x = x;
+   270                          ;	---------------------------------
+   271                          ; Function lfont_set_position
+   272                          ; ---------------------------------
+   273                          _lfont_set_position:
+   274  0000  cd0000            	call	___sdcc_enter_ix
+   275                          ;large_font.c:14: }
+   276  0003  dd7e04            	ld	a,(ix+4)
+   277  0006  320000            	ld	(_lfont_current_x),a
+   278                          ;large_font.c:15:
+   279  0009  dd7e05            	ld	a,(ix+5)
+   280  000c  320100            	ld	(_lfont_current_y),a
+   281                          ;large_font.c:16: void lfont_write_char(const char character)
+   282  000f  dde1              	pop	ix
+   283  0011  c9                	ret
+   284                          ;large_font.c:18: uint8_t char_code = (character - 0x20) * 4; // Convert to tilemap character code
+   285                          ;	---------------------------------
+   286                          ; Function lfont_write_char
+   287                          ; ---------------------------------
+   288                          _lfont_write_char:
+   289  0012  cd0000            	call	___sdcc_enter_ix
+   290                          ;large_font.c:20: tilemap[lfont_current_y][lfont_current_x].palette = lfont_current_palette;
+   291  0015  dd7e04            	ld	a,(ix+4)
+   292  0018  c6e0              	add	a,0xe0
+   293  001a  87                	add	a, a
+   294  001b  87                	add	a, a
+   295  001c  4f                	ld	c, a
+   296                          ;large_font.c:21: tilemap[lfont_current_y][lfont_current_x + 1].character = char_code + 1;
+   297  001d  3a0100            	ld	a,(_lfont_current_y)
+   298  0020  5f                	ld	e,a
+   299  0021  16a0              	ld	d,0xa0
+   300  0023  ed30              	mlt	de
+   301  0025  210000            	ld	hl,_tilemap
+   302  0028  19                	add	hl, de
+   303  0029  3a0000            	ld	a,(_lfont_current_x)
+   304  002c  eb                	ex	de,hl
+   305  002d  87                	add	a, a
+   306  002e  6f                	ld	l, a
+   307  002f  2600              	ld	h,0x00
+   308  0031  19                	add	hl, de
+   309  0032  71                	ld	(hl), c
+   310                          ;large_font.c:22: tilemap[lfont_current_y][lfont_current_x + 1].palette = lfont_current_palette;
+   311  0033  3a0100            	ld	a,(_lfont_current_y)
+   312  0036  5f                	ld	e,a
+   313  0037  16a0              	ld	d,0xa0
+   314  0039  ed30              	mlt	de
+   315  003b  210000            	ld	hl,_tilemap
+   316  003e  19                	add	hl, de
+   317  003f  3a0000            	ld	a,(_lfont_current_x)
+   318  0042  eb                	ex	de,hl
+   319  0043  87                	add	a, a
+   320  0044  6f                	ld	l, a
+   321  0045  2600              	ld	h,0x00
+   322  0047  19                	add	hl, de
+   323  0048  eb                	ex	de, hl
+   324  0049  13                	inc	de
+   325  004a  3a0200            	ld	a,(_lfont_current_palette)
+   326  004d  87                	add	a, a
+   327  004e  87                	add	a, a
+   328  004f  87                	add	a, a
+   329  0050  87                	add	a, a
+   330  0051  6f                	ld	l, a
+   331  0052  1a                	ld	a, (de)
+   332  0053  e60f              	and	a,0x0f
+   333  0055  b5                	or	a, l
+   334  0056  12                	ld	(de), a
+   335                          ;large_font.c:23: tilemap[lfont_current_y + 1][lfont_current_x].character = char_code + 2;
+   336  0057  3a0100            	ld	a,(_lfont_current_y)
+   337  005a  5f                	ld	e,a
+   338  005b  16a0              	ld	d,0xa0
+   339  005d  ed30              	mlt	de
+   340  005f  210000            	ld	hl,_tilemap
+   341  0062  19                	add	hl, de
+   342  0063  eb                	ex	de, hl
+   343  0064  2a0000            	ld	hl,(_lfont_current_x)
+   344  0067  2600              	ld	h,0x00
+   345  0069  23                	inc	hl
+   346  006a  29                	add	hl, hl
+   347  006b  19                	add	hl, de
+   348  006c  79                	ld	a, c
+   349  006d  3c                	inc	a
+   350  006e  77                	ld	(hl), a
+   351                          ;large_font.c:24: tilemap[lfont_current_y + 1][lfont_current_x].palette = lfont_current_palette;
+   352  006f  3a0100            	ld	a,(_lfont_current_y)
+   353  0072  5f                	ld	e,a
+   354  0073  16a0              	ld	d,0xa0
+   355  0075  ed30              	mlt	de
+   356  0077  210000            	ld	hl,_tilemap
+   357  007a  19                	add	hl, de
+   358  007b  eb                	ex	de, hl
+   359  007c  2a0000            	ld	hl,(_lfont_current_x)
+   360  007f  2600              	ld	h,0x00
+   361  0081  23                	inc	hl
+   362  0082  29                	add	hl, hl
+   363  0083  19                	add	hl, de
+   364  0084  eb                	ex	de, hl
+   365  0085  13                	inc	de
+   366  0086  3a0200            	ld	a,(_lfont_current_palette)
+   367  0089  87                	add	a, a
+   368  008a  87                	add	a, a
+   369  008b  87                	add	a, a
+   370  008c  87                	add	a, a
+   371  008d  6f                	ld	l, a
+   372  008e  1a                	ld	a, (de)
+   373  008f  e60f              	and	a,0x0f
+   374  0091  b5                	or	a, l
+   375  0092  12                	ld	(de), a
+   376                          ;large_font.c:25: tilemap[lfont_current_y + 1][lfont_current_x + 1].character = char_code + 3;
+   377  0093  3a0100            	ld	a,(_lfont_current_y)
+   378  0096  5f                	ld	e,a
+   379  0097  1600              	ld	d,0x00
+   380  0099  13                	inc	de
+   381  009a  6b                	ld	l, e
+   382  009b  62                	ld	h, d
+   383  009c  29                	add	hl, hl
+   384  009d  29                	add	hl, hl
+   385  009e  19                	add	hl, de
+   386  009f  29                	add	hl, hl
+   387  00a0  29                	add	hl, hl
+   388  00a1  29                	add	hl, hl
+   389  00a2  29                	add	hl, hl
+   390  00a3  29                	add	hl, hl
+   391  00a4  110000            	ld	de,_tilemap
+   392  00a7  19                	add	hl,de
+   393  00a8  3a0000            	ld	a,(_lfont_current_x)
+   394  00ab  eb                	ex	de,hl
+   395  00ac  87                	add	a, a
+   396  00ad  6f                	ld	l, a
+   397  00ae  2600              	ld	h,0x00
+   398  00b0  19                	add	hl, de
+   399  00b1  79                	ld	a, c
+   400  00b2  c602              	add	a,0x02
+   401  00b4  77                	ld	(hl), a
+   402                          ;large_font.c:26: tilemap[lfont_current_y + 1][lfont_current_x + 1].palette = lfont_current_palette;
+   403  00b5  3a0100            	ld	a,(_lfont_current_y)
+   404  00b8  5f                	ld	e,a
+   405  00b9  1600              	ld	d,0x00
+   406  00bb  13                	inc	de
+   407  00bc  6b                	ld	l, e
+   408  00bd  62                	ld	h, d
+   409  00be  29                	add	hl, hl
+   410  00bf  29                	add	hl, hl
+   411  00c0  19                	add	hl, de
+   412  00c1  29                	add	hl, hl
+   413  00c2  29                	add	hl, hl
+   414  00c3  29                	add	hl, hl
+   415  00c4  29                	add	hl, hl
+   416  00c5  29                	add	hl, hl
+   417  00c6  110000            	ld	de,_tilemap
+   418  00c9  19                	add	hl,de
+   419  00ca  3a0000            	ld	a,(_lfont_current_x)
+   420  00cd  eb                	ex	de,hl
+   421  00ce  87                	add	a, a
+   422  00cf  6f                	ld	l, a
+   423  00d0  2600              	ld	h,0x00
+   424  00d2  19                	add	hl, de
+   425  00d3  eb                	ex	de, hl
+   426  00d4  13                	inc	de
+   427  00d5  3a0200            	ld	a,(_lfont_current_palette)
+   428  00d8  87                	add	a, a
+   429  00d9  87                	add	a, a
+   430  00da  87                	add	a, a
+   431  00db  87                	add	a, a
+   432  00dc  6f                	ld	l, a
+   433  00dd  1a                	ld	a, (de)
+   434  00de  e60f              	and	a,0x0f
+   435  00e0  b5                	or	a, l
+   436  00e1  12                	ld	(de), a
+   437                          ;large_font.c:27:
+   438  00e2  3a0100            	ld	a,(_lfont_current_y)
+   439  00e5  5f                	ld	e,a
+   440  00e6  1600              	ld	d,0x00
+   441  00e8  13                	inc	de
+   442  00e9  6b                	ld	l, e
+   443  00ea  62                	ld	h, d
+   444  00eb  29                	add	hl, hl
+   445  00ec  29                	add	hl, hl
+   446  00ed  19                	add	hl, de
+   447  00ee  29                	add	hl, hl
+   448  00ef  29                	add	hl, hl
+   449  00f0  29                	add	hl, hl
+   450  00f1  29                	add	hl, hl
+   451  00f2  29                	add	hl, hl
+   452  00f3  110000            	ld	de,_tilemap
+   453  00f6  19                	add	hl,de
+   454  00f7  eb                	ex	de,hl
+   455  00f8  2a0000            	ld	hl,(_lfont_current_x)
+   456  00fb  2600              	ld	h,0x00
+   457  00fd  23                	inc	hl
+   458  00fe  29                	add	hl, hl
+   459  00ff  19                	add	hl, de
+   460  0100  0c                	inc	c
+   461  0101  0c                	inc	c
+   462  0102  0c                	inc	c
+   463  0103  71                	ld	(hl), c
+   464                          ;large_font.c:28: lfont_current_x += 2;
+   465  0104  3a0100            	ld	a,(_lfont_current_y)
+   466  0107  4f                	ld	c,a
+   467  0108  0600              	ld	b,0x00
+   468  010a  03                	inc	bc
+   469  010b  69                	ld	l, c
+   470  010c  60                	ld	h, b
+   471  010d  29                	add	hl, hl
+   472  010e  29                	add	hl, hl
+   473  010f  09                	add	hl, bc
+   474  0110  29                	add	hl, hl
+   475  0111  29                	add	hl, hl
+   476  0112  29                	add	hl, hl
+   477  0113  29                	add	hl, hl
+   478  0114  29                	add	hl, hl
+   479  0115  110000            	ld	de,_tilemap
+   480  0118  19                	add	hl,de
+   481  0119  eb                	ex	de,hl
+   482  011a  2a0000            	ld	hl,(_lfont_current_x)
+   483  011d  2600              	ld	h,0x00
+   484  011f  23                	inc	hl
+   485  0120  29                	add	hl, hl
+   486  0121  19                	add	hl, de
+   487  0122  eb                	ex	de, hl
+   488  0123  13                	inc	de
+   489  0124  3a0200            	ld	a,(_lfont_current_palette)
+   490  0127  87                	add	a, a
+   491  0128  87                	add	a, a
+   492  0129  87                	add	a, a
+   493  012a  87                	add	a, a
+   494  012b  4f                	ld	c, a
+   495  012c  1a                	ld	a, (de)
+   496  012d  e60f              	and	a,0x0f
+   497  012f  b1                	or	a, c
+   498  0130  12                	ld	(de), a
+   499                          ;large_font.c:30:
+   500  0131  210000            	ld	hl,_lfont_current_x
+   501  0134  7e                	ld	a, (hl)
+   502  0135  c602              	add	a,0x02
+   503  0137  77                	ld	(hl), a
+   504                          ;large_font.c:31: void lfont_write_text(const char *text)
+   505  0138  dde1              	pop	ix
+   506  013a  c9                	ret
+   507                          ;large_font.c:33: uint8_t i = 0;
+   508                          ;	---------------------------------
+   509                          ; Function lfont_write_text
+   510                          ; ---------------------------------
+   511                          _lfont_write_text:
+   512  013b  cd0000            	call	___sdcc_enter_ix
+   513                          ;large_font.c:36: lfont_write_char(text[i++]);
+   514  013e  0e00              	ld	c,0x00
+   515                          l_lfont_write_text_00101:
+   516  0140  dd7e04            	ld	a,(ix+4)
+   517  0143  81                	add	a, c
+   518  0144  5f                	ld	e, a
+   519  0145  dd7e05            	ld	a,(ix+5)
+   520  0148  ce00              	adc	a,0x00
+   521  014a  57                	ld	d, a
+   522  014b  1a                	ld	a, (de)
+   523  014c  b7                	or	a, a
+   524  014d  280b              	jr	Z,l_lfont_write_text_00104
+   525                          ;large_font.c:38: }
+   526  014f  0c                	inc	c
+   527  0150  c5                	push	bc
+   528  0151  f5                	push	af
+   529  0152  33                	inc	sp
+   530  0153  cd1200            	call	_lfont_write_char
+   531  0156  33                	inc	sp
+   532  0157  c1                	pop	bc
+   533  0158  18e6              	jr	l_lfont_write_text_00101
+   534                          l_lfont_write_text_00104:
+   535                          ;large_font.c:40: void lfont_set_palette(uint8_t palette)
+   536  015a  dde1              	pop	ix
+   537  015c  c9                	ret
+   538                          ;large_font.c:42: lfont_current_palette = palette;
+   539                          ;	---------------------------------
+   540                          ; Function lfont_set_palette
+   541                          ; ---------------------------------
+   542                          _lfont_set_palette:
+   543  015d  cd0000            	call	___sdcc_enter_ix
+   544                          ;large_font.c:44:
+   545  0160  dd7e04            	ld	a,(ix+4)
+   546  0163  320200            	ld	(_lfont_current_palette),a
+   547                          ;large_font.c:45: void lfont_clear_remaining_line(void)
+   548  0166  dde1              	pop	ix
+   549  0168  c9                	ret
+   550                          ;large_font.c:47: for (uint8_t i = lfont_current_x; i < TILEMAP_WIDTH; i++)
+   551                          ;	---------------------------------
+   552                          ; Function lfont_clear_remaining_line
+   553                          ; ---------------------------------
+   554                          _lfont_clear_remaining_line:
+   555                          ;large_font.c:49: tilemap[lfont_current_y][i].character = 0;
+   556  0169  210000            	ld	hl,_lfont_current_x
+   557  016c  4e                	ld	c, (hl)
+   558                          l_lfont_clear_remaining_line_00103:
+   559  016d  79                	ld	a, c
+   560  016e  d650              	sub	a,0x50
+   561  0170  d0                	ret	NC
+   562                          ;large_font.c:51: tilemap[lfont_current_y + 1][i].character = 0;
+   563  0171  3a0100            	ld	a,(_lfont_current_y)
+   564  0174  5f                	ld	e,a
+   565  0175  16a0              	ld	d,0xa0
+   566  0177  ed30              	mlt	de
+   567  0179  210000            	ld	hl,_tilemap
+   568  017c  19                	add	hl, de
+   569  017d  79                	ld	a, c
+   570  017e  87                	add	a, a
+   571  017f  47                	ld	b, a
+   572  0180  58                	ld	e, b
+   573  0181  1600              	ld	d,0x00
+   574  0183  19                	add	hl, de
+   575  0184  3600              	ld	(hl),0x00
+   576                          ;large_font.c:52: tilemap[lfont_current_y + 1][i].palette = lfont_current_palette;
+   577  0186  3a0100            	ld	a,(_lfont_current_y)
+   578  0189  5f                	ld	e,a
+   579  018a  16a0              	ld	d,0xa0
+   580  018c  ed30              	mlt	de
+   581  018e  210000            	ld	hl,_tilemap
+   582  0191  19                	add	hl, de
+   583  0192  58                	ld	e, b
+   584  0193  1600              	ld	d,0x00
+   585  0195  19                	add	hl, de
+   586  0196  eb                	ex	de, hl
+   587  0197  13                	inc	de
+   588  0198  3a0200            	ld	a,(_lfont_current_palette)
+   589  019b  87                	add	a, a
+   590  019c  87                	add	a, a
+   591  019d  87                	add	a, a
+   592  019e  87                	add	a, a
+   593  019f  6f                	ld	l, a
+   594  01a0  1a                	ld	a, (de)
+   595  01a1  e60f              	and	a,0x0f
+   596  01a3  b5                	or	a, l
+   597  01a4  12                	ld	(de), a
+   598                          ;large_font.c:53: }
+   599  01a5  3a0100            	ld	a,(_lfont_current_y)
+   600  01a8  5f                	ld	e,a
+   601  01a9  1600              	ld	d,0x00
+   602  01ab  13                	inc	de
+   603  01ac  6b                	ld	l, e
+   604  01ad  62                	ld	h, d
+   605  01ae  29                	add	hl, hl
+   606  01af  29                	add	hl, hl
+   607  01b0  19                	add	hl, de
+   608  01b1  29                	add	hl, hl
+   609  01b2  29                	add	hl, hl
+   610  01b3  29                	add	hl, hl
+   611  01b4  29                	add	hl, hl
+   612  01b5  29                	add	hl, hl
+   613  01b6  110000            	ld	de,_tilemap
+   614  01b9  19                	add	hl, de
+   615  01ba  58                	ld	e, b
+   616  01bb  1600              	ld	d,0x00
+   617  01bd  19                	add	hl, de
+   618  01be  3600              	ld	(hl),0x00
+   619                          ;large_font.c:54: }
+   620  01c0  3a0100            	ld	a,(_lfont_current_y)
+   621  01c3  5f                	ld	e,a
+   622  01c4  1600              	ld	d,0x00
+   623  01c6  13                	inc	de
+   624  01c7  6b                	ld	l, e
+   625  01c8  62                	ld	h, d
+   626  01c9  29                	add	hl, hl
+   627  01ca  29                	add	hl, hl
+   628  01cb  19                	add	hl, de
+   629  01cc  29                	add	hl, hl
+   630  01cd  29                	add	hl, hl
+   631  01ce  29                	add	hl, hl
+   632  01cf  29                	add	hl, hl
+   633  01d0  29                	add	hl, hl
+   634  01d1  110000            	ld	de,_tilemap
+   635  01d4  19                	add	hl, de
+   636  01d5  58                	ld	e, b
+   637  01d6  1600              	ld	d,0x00
+   638  01d8  19                	add	hl, de
+   639  01d9  eb                	ex	de, hl
+   640  01da  13                	inc	de
+   641  01db  3a0200            	ld	a,(_lfont_current_palette)
+   642  01de  87                	add	a, a
+   643  01df  87                	add	a, a
+   644  01e0  87                	add	a, a
+   645  01e1  87                	add	a, a
+   646  01e2  6f                	ld	l, a
+   647  01e3  1a                	ld	a, (de)
+   648  01e4  e60f              	and	a,0x0f
+   649  01e6  b5                	or	a, l
+   650  01e7  12                	ld	(de), a
+   651                          ;large_font.c:49: tilemap[lfont_current_y][i].character = 0;
+   652  01e8  0c                	inc	c
+   653                          ;large_font.c:56: ERROR: no line number 56 in file large_font.c
+   654  01e9  c36d01            	jp	l_lfont_clear_remaining_line_00103
+   655                          	SECTION data_compiler
+   656                          _lfont_current_x:
+   657  0000  00                	DEFB +0x00
+   658                          _lfont_current_y:
+   659  0001  00                	DEFB +0x00
+   660                          _lfont_current_palette:
+   661  0002  00                	DEFB +0x00
+   662                          	SECTION IGNORE
+   663                          

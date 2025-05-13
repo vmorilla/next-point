@@ -1,0 +1,1571 @@
+/tmp/tmpEUuVE4ve.asm:
+     1                          MODULE physics_c
+     2                          LINE 0, "physics.c"
+physics.c:
+                                
+     1                          ;--------------------------------------------------------
+     2                          ; File Created by SDCC : free open source ISO C Compiler
+     3                          ; Version 4.3.0 #14210 (Mac OS X ppc)
+     4                          ;--------------------------------------------------------
+     5                          	.zxn
+     6                          ; Processed by Z88DK
+     7                          ;--------------------------------------------------------
+     8                          
+     9                          	EXTERN __divschar
+    10                          	EXTERN __divschar_callee
+    11                          	EXTERN __divsint
+    12                          	EXTERN __divsint_callee
+    13                          	EXTERN __divslong
+    14                          	EXTERN __divslong_callee
+    15                          	EXTERN __divslonglong
+    16                          	EXTERN __divslonglong_callee
+    17                          	EXTERN __divsuchar
+    18                          	EXTERN __divsuchar_callee
+    19                          	EXTERN __divuchar
+    20                          	EXTERN __divuchar_callee
+    21                          	EXTERN __divuint
+    22                          	EXTERN __divuint_callee
+    23                          	EXTERN __divulong
+    24                          	EXTERN __divulong_callee
+    25                          	EXTERN __divulonglong
+    26                          	EXTERN __divulonglong_callee
+    27                          	EXTERN __divuschar
+    28                          	EXTERN __divuschar_callee
+    29                          	EXTERN __modschar
+    30                          	EXTERN __modschar_callee
+    31                          	EXTERN __modsint
+    32                          	EXTERN __modsint_callee
+    33                          	EXTERN __modslong
+    34                          	EXTERN __modslong_callee
+    35                          	EXTERN __modslonglong
+    36                          	EXTERN __modslonglong_callee
+    37                          	EXTERN __modsuchar
+    38                          	EXTERN __modsuchar_callee
+    39                          	EXTERN __moduchar
+    40                          	EXTERN __moduchar_callee
+    41                          	EXTERN __moduint
+    42                          	EXTERN __moduint_callee
+    43                          	EXTERN __modulong
+    44                          	EXTERN __modulong_callee
+    45                          	EXTERN __modulonglong
+    46                          	EXTERN __modulonglong_callee
+    47                          	EXTERN __moduschar
+    48                          	EXTERN __moduschar_callee
+    49                          	EXTERN __mulint
+    50                          	EXTERN __mulint_callee
+    51                          	EXTERN __mullong
+    52                          	EXTERN __mullong_callee
+    53                          	EXTERN __mullonglong
+    54                          	EXTERN __mullonglong_callee
+    55                          	EXTERN __mulschar
+    56                          	EXTERN __mulschar_callee
+    57                          	EXTERN __mulsuchar
+    58                          	EXTERN __mulsuchar_callee
+    59                          	EXTERN __muluchar
+    60                          	EXTERN __muluchar_callee
+    61                          	EXTERN __muluschar
+    62                          	EXTERN __muluschar_callee
+    63                          	EXTERN __rlslonglong
+    64                          	EXTERN __rlslonglong_callee
+    65                          	EXTERN __rlulonglong
+    66                          	EXTERN __rlulonglong_callee
+    67                          	EXTERN __rrslonglong
+    68                          	EXTERN __rrslonglong_callee
+    69                          	EXTERN __rrulonglong
+    70                          	EXTERN __rrulonglong_callee
+    71                          	EXTERN ___mulsint2slong
+    72                          	EXTERN ___mulsint2slong_callee
+    73                          	EXTERN ___muluint2ulong
+    74                          	EXTERN ___muluint2ulong_callee
+    75                          	EXTERN ___sdcc_call_hl
+    76                          	EXTERN ___sdcc_call_iy
+    77                          	EXTERN ___sdcc_enter_ix
+    78                          	EXTERN banked_call
+    79                          	EXTERN _banked_ret
+    80                          	EXTERN ___fs2schar
+    81                          	EXTERN ___fs2schar_callee
+    82                          	EXTERN ___fs2sint
+    83                          	EXTERN ___fs2sint_callee
+    84                          	EXTERN ___fs2slong
+    85                          	EXTERN ___fs2slong_callee
+    86                          	EXTERN ___fs2slonglong
+    87                          	EXTERN ___fs2slonglong_callee
+    88                          	EXTERN ___fs2uchar
+    89                          	EXTERN ___fs2uchar_callee
+    90                          	EXTERN ___fs2uint
+    91                          	EXTERN ___fs2uint_callee
+    92                          	EXTERN ___fs2ulong
+    93                          	EXTERN ___fs2ulong_callee
+    94                          	EXTERN ___fs2ulonglong
+    95                          	EXTERN ___fs2ulonglong_callee
+    96                          	EXTERN ___fsadd
+    97                          	EXTERN ___fsadd_callee
+    98                          	EXTERN ___fsdiv
+    99                          	EXTERN ___fsdiv_callee
+   100                          	EXTERN ___fseq
+   101                          	EXTERN ___fseq_callee
+   102                          	EXTERN ___fsgt
+   103                          	EXTERN ___fsgt_callee
+   104                          	EXTERN ___fslt
+   105                          	EXTERN ___fslt_callee
+   106                          	EXTERN ___fsmul
+   107                          	EXTERN ___fsmul_callee
+   108                          	EXTERN ___fsneq
+   109                          	EXTERN ___fsneq_callee
+   110                          	EXTERN ___fssub
+   111                          	EXTERN ___fssub_callee
+   112                          	EXTERN ___schar2fs
+   113                          	EXTERN ___schar2fs_callee
+   114                          	EXTERN ___sint2fs
+   115                          	EXTERN ___sint2fs_callee
+   116                          	EXTERN ___slong2fs
+   117                          	EXTERN ___slong2fs_callee
+   118                          	EXTERN ___slonglong2fs
+   119                          	EXTERN ___slonglong2fs_callee
+   120                          	EXTERN ___uchar2fs
+   121                          	EXTERN ___uchar2fs_callee
+   122                          	EXTERN ___uint2fs
+   123                          	EXTERN ___uint2fs_callee
+   124                          	EXTERN ___ulong2fs
+   125                          	EXTERN ___ulong2fs_callee
+   126                          	EXTERN ___ulonglong2fs
+   127                          	EXTERN ___ulonglong2fs_callee
+   128                          	EXTERN ____sdcc_2_copy_src_mhl_dst_deix
+   129                          	EXTERN ____sdcc_2_copy_src_mhl_dst_bcix
+   130                          	EXTERN ____sdcc_4_copy_src_mhl_dst_deix
+   131                          	EXTERN ____sdcc_4_copy_src_mhl_dst_bcix
+   132                          	EXTERN ____sdcc_4_copy_src_mhl_dst_mbc
+   133                          	EXTERN ____sdcc_4_ldi_nosave_bc
+   134                          	EXTERN ____sdcc_4_ldi_save_bc
+   135                          	EXTERN ____sdcc_4_push_hlix
+   136                          	EXTERN ____sdcc_4_push_mhl
+   137                          	EXTERN ____sdcc_lib_setmem_hl
+   138                          	EXTERN ____sdcc_ll_add_de_bc_hl
+   139                          	EXTERN ____sdcc_ll_add_de_bc_hlix
+   140                          	EXTERN ____sdcc_ll_add_de_hlix_bc
+   141                          	EXTERN ____sdcc_ll_add_de_hlix_bcix
+   142                          	EXTERN ____sdcc_ll_add_deix_bc_hl
+   143                          	EXTERN ____sdcc_ll_add_deix_hlix
+   144                          	EXTERN ____sdcc_ll_add_hlix_bc_deix
+   145                          	EXTERN ____sdcc_ll_add_hlix_deix_bc
+   146                          	EXTERN ____sdcc_ll_add_hlix_deix_bcix
+   147                          	EXTERN ____sdcc_ll_asr_hlix_a
+   148                          	EXTERN ____sdcc_ll_asr_mbc_a
+   149                          	EXTERN ____sdcc_ll_copy_src_de_dst_hlix
+   150                          	EXTERN ____sdcc_ll_copy_src_de_dst_hlsp
+   151                          	EXTERN ____sdcc_ll_copy_src_deix_dst_hl
+   152                          	EXTERN ____sdcc_ll_copy_src_deix_dst_hlix
+   153                          	EXTERN ____sdcc_ll_copy_src_deixm_dst_hlsp
+   154                          	EXTERN ____sdcc_ll_copy_src_desp_dst_hlsp
+   155                          	EXTERN ____sdcc_ll_copy_src_hl_dst_de
+   156                          	EXTERN ____sdcc_ll_copy_src_hlsp_dst_de
+   157                          	EXTERN ____sdcc_ll_copy_src_hlsp_dst_deixm
+   158                          	EXTERN ____sdcc_ll_lsl_hlix_a
+   159                          	EXTERN ____sdcc_ll_lsl_mbc_a
+   160                          	EXTERN ____sdcc_ll_lsr_hlix_a
+   161                          	EXTERN ____sdcc_ll_lsr_mbc_a
+   162                          	EXTERN ____sdcc_ll_push_hlix
+   163                          	EXTERN ____sdcc_ll_push_mhl
+   164                          	EXTERN ____sdcc_ll_sub_de_bc_hl
+   165                          	EXTERN ____sdcc_ll_sub_de_bc_hlix
+   166                          	EXTERN ____sdcc_ll_sub_de_hlix_bc
+   167                          	EXTERN ____sdcc_ll_sub_de_hlix_bcix
+   168                          	EXTERN ____sdcc_ll_sub_deix_bc_hl
+   169                          	EXTERN ____sdcc_ll_sub_deix_hlix
+   170                          	EXTERN ____sdcc_ll_sub_hlix_bc_deix
+   171                          	EXTERN ____sdcc_ll_sub_hlix_deix_bc
+   172                          	EXTERN ____sdcc_ll_sub_hlix_deix_bcix
+   173                          	EXTERN ____sdcc_load_debc_deix
+   174                          	EXTERN ____sdcc_load_dehl_deix
+   175                          	EXTERN ____sdcc_load_debc_mhl
+   176                          	EXTERN ____sdcc_load_hlde_mhl
+   177                          	EXTERN ____sdcc_store_dehl_bcix
+   178                          	EXTERN ____sdcc_store_debc_hlix
+   179                          	EXTERN ____sdcc_store_debc_mhl
+   180                          	EXTERN ____sdcc_cpu_pop_ei
+   181                          	EXTERN ____sdcc_cpu_pop_ei_jp
+   182                          	EXTERN ____sdcc_cpu_push_di
+   183                          	EXTERN ____sdcc_outi
+   184                          	EXTERN ____sdcc_outi_128
+   185                          	EXTERN ____sdcc_outi_256
+   186                          	EXTERN ____sdcc_ldi
+   187                          	EXTERN ____sdcc_ldi_128
+   188                          	EXTERN ____sdcc_ldi_256
+   189                          	EXTERN ____sdcc_4_copy_srcd_hlix_dst_deix
+   190                          	EXTERN ____sdcc_4_and_src_mbc_mhl_dst_deix
+   191                          	EXTERN ____sdcc_4_or_src_mbc_mhl_dst_deix
+   192                          	EXTERN ____sdcc_4_xor_src_mbc_mhl_dst_deix
+   193                          	EXTERN ____sdcc_4_or_src_dehl_dst_bcix
+   194                          	EXTERN ____sdcc_4_xor_src_dehl_dst_bcix
+   195                          	EXTERN ____sdcc_4_and_src_dehl_dst_bcix
+   196                          	EXTERN ____sdcc_4_xor_src_mbc_mhl_dst_debc
+   197                          	EXTERN ____sdcc_4_or_src_mbc_mhl_dst_debc
+   198                          	EXTERN ____sdcc_4_and_src_mbc_mhl_dst_debc
+   199                          	EXTERN ____sdcc_4_cpl_src_mhl_dst_debc
+   200                          	EXTERN ____sdcc_4_xor_src_debc_mhl_dst_debc
+   201                          	EXTERN ____sdcc_4_or_src_debc_mhl_dst_debc
+   202                          	EXTERN ____sdcc_4_and_src_debc_mhl_dst_debc
+   203                          	EXTERN ____sdcc_4_and_src_debc_hlix_dst_debc
+   204                          	EXTERN ____sdcc_4_or_src_debc_hlix_dst_debc
+   205                          	EXTERN ____sdcc_4_xor_src_debc_hlix_dst_debc
+   206                          
+   207                          ;--------------------------------------------------------
+   208                          ; Public variables in this module
+   209                          ;--------------------------------------------------------
+   210                          	GLOBAL _trajectory_points
+   211                          	GLOBAL _add_trajectory_point
+   212                          	GLOBAL _will_ball_hit_ground
+   213                          	GLOBAL _point_at_time
+   214                          	GLOBAL _discrimant_for_height
+   215                          	GLOBAL _set_target_for_ball
+   216                          	GLOBAL _ball_trajectory
+   217                          	GLOBAL _ball_at_ground_hit
+   218                          	GLOBAL _set_ball_speed_at_drive
+   219                          	GLOBAL _ball_trajectory_points
+   220                          	GLOBAL _ball_trajectory_points_at_service
+   221                          ;--------------------------------------------------------
+   222                          ; Externals used
+   223                          ;--------------------------------------------------------
+   224                          	GLOBAL _update_messages
+   225                          	GLOBAL _send_message
+   226                          	GLOBAL _valid_area
+   227                          	GLOBAL _service_area
+   228                          	GLOBAL _get_serving_player
+   229                          	GLOBAL _is_ad_service
+   230                          	GLOBAL _start_match
+   231                          	GLOBAL _event_player_touch
+   232                          	GLOBAL _event_net_touched
+   233                          	GLOBAL _event_player_hit
+   234                          	GLOBAL _event_ball_bounced
+   235                          	GLOBAL _update_entities
+   236                          	GLOBAL _closest_type_of_hit
+   237                          	GLOBAL _ball_at_reach
+   238                          	GLOBAL _set_player_status
+   239                          	GLOBAL _get_player
+   240                          	GLOBAL _update_players
+   241                          	GLOBAL _init_controls
+   242                          	GLOBAL _diplay_profile
+   243                          	GLOBAL _in_mouse_kempston_wheel_delta
+   244                          	GLOBAL _in_mouse_kempston_wheel
+   245                          	GLOBAL _in_mouse_kempston_callee
+   246                          	GLOBAL _in_mouse_kempston
+   247                          	GLOBAL _in_mouse_kempston_setpos_callee
+   248                          	GLOBAL _in_mouse_kempston_setpos
+   249                          	GLOBAL _in_mouse_kempston_reset
+   250                          	GLOBAL _in_mouse_kempston_init
+   251                          	GLOBAL _in_mouse_amx_wheel_delta
+   252                          	GLOBAL _in_mouse_amx_wheel
+   253                          	GLOBAL _in_mouse_amx_callee
+   254                          	GLOBAL _in_mouse_amx
+   255                          	GLOBAL _in_mouse_amx_setpos_callee
+   256                          	GLOBAL _in_mouse_amx_setpos
+   257                          	GLOBAL _in_mouse_amx_reset
+   258                          	GLOBAL _in_mouse_amx_init_callee
+   259                          	GLOBAL _in_mouse_amx_init
+   260                          	GLOBAL _in_stick_sinclair2
+   261                          	GLOBAL _in_stick_sinclair1
+   262                          	GLOBAL _in_stick_kempston
+   263                          	GLOBAL _in_stick_fuller
+   264                          	GLOBAL _in_stick_cursor
+   265                          	GLOBAL _in_stick_keyboard_fastcall
+   266                          	GLOBAL _in_stick_keyboard
+   267                          	GLOBAL _in_wait_nokey
+   268                          	GLOBAL _in_wait_key
+   269                          	GLOBAL _in_test_key
+   270                          	GLOBAL _in_pause_fastcall
+   271                          	GLOBAL _in_pause
+   272                          	GLOBAL _in_key_scancode_fastcall
+   273                          	GLOBAL _in_key_scancode
+   274                          	GLOBAL _in_key_pressed_fastcall
+   275                          	GLOBAL _in_key_pressed
+   276                          	GLOBAL _in_inkey
+   277                          	GLOBAL _ball_future_x_and_height
+   278                          	GLOBAL _set_ball_velocity_net_height
+   279                          	GLOBAL _set_lob_ball_velocity
+   280                          	GLOBAL _update_ball
+   281                          	GLOBAL _float_to_string
+   282                          	GLOBAL _xy_in_boundary
+   283                          	GLOBAL _point_in_boundary
+   284                          	GLOBAL _x_projection
+   285                          	GLOBAL _env_getenv_callee
+   286                          	GLOBAL _env_getenv
+   287                          	GLOBAL _getenv_ex_callee
+   288                          	GLOBAL _getenv_ex
+   289                          	GLOBAL _getenv_fastcall
+   290                          	GLOBAL _getenv
+   291                          	GLOBAL _mkstemp_ex_fastcall
+   292                          	GLOBAL _mkstemp_ex
+   293                          	GLOBAL _ulltoa_callee
+   294                          	GLOBAL _ulltoa
+   295                          	GLOBAL _strtoull_callee
+   296                          	GLOBAL _strtoull
+   297                          	GLOBAL _strtoll_callee
+   298                          	GLOBAL _strtoll
+   299                          	GLOBAL _lltoa_callee
+   300                          	GLOBAL _lltoa
+   301                          	GLOBAL _llabs_callee
+   302                          	GLOBAL _llabs
+   303                          	GLOBAL __lldivu__callee
+   304                          	GLOBAL __lldivu_
+   305                          	GLOBAL __lldiv__callee
+   306                          	GLOBAL __lldiv_
+   307                          	GLOBAL _atoll_callee
+   308                          	GLOBAL _atoll
+   309                          	GLOBAL _realloc_unlocked_callee
+   310                          	GLOBAL _realloc_unlocked
+   311                          	GLOBAL _malloc_unlocked_fastcall
+   312                          	GLOBAL _malloc_unlocked
+   313                          	GLOBAL _free_unlocked_fastcall
+   314                          	GLOBAL _free_unlocked
+   315                          	GLOBAL _calloc_unlocked_callee
+   316                          	GLOBAL _calloc_unlocked
+   317                          	GLOBAL _aligned_alloc_unlocked_callee
+   318                          	GLOBAL _aligned_alloc_unlocked
+   319                          	GLOBAL _realloc_callee
+   320                          	GLOBAL _realloc
+   321                          	GLOBAL _malloc_fastcall
+   322                          	GLOBAL _malloc
+   323                          	GLOBAL _free_fastcall
+   324                          	GLOBAL _free
+   325                          	GLOBAL _calloc_callee
+   326                          	GLOBAL _calloc
+   327                          	GLOBAL _aligned_alloc_callee
+   328                          	GLOBAL _aligned_alloc
+   329                          	GLOBAL _utoa_callee
+   330                          	GLOBAL _utoa
+   331                          	GLOBAL _ultoa_callee
+   332                          	GLOBAL _ultoa
+   333                          	GLOBAL _system_fastcall
+   334                          	GLOBAL _system
+   335                          	GLOBAL _strtoul_callee
+   336                          	GLOBAL _strtoul
+   337                          	GLOBAL _strtol_callee
+   338                          	GLOBAL _strtol
+   339                          	GLOBAL _strtof_callee
+   340                          	GLOBAL _strtof
+   341                          	GLOBAL _strtod_callee
+   342                          	GLOBAL _strtod
+   343                          	GLOBAL _srand_fastcall
+   344                          	GLOBAL _srand
+   345                          	GLOBAL _rand
+   346                          	GLOBAL _quick_exit_fastcall
+   347                          	GLOBAL _quick_exit
+   348                          	GLOBAL _qsort_callee
+   349                          	GLOBAL _qsort
+   350                          	GLOBAL _ltoa_callee
+   351                          	GLOBAL _ltoa
+   352                          	GLOBAL _labs_fastcall
+   353                          	GLOBAL _labs
+   354                          	GLOBAL _itoa_callee
+   355                          	GLOBAL _itoa
+   356                          	GLOBAL _ftoh_callee
+   357                          	GLOBAL _ftoh
+   358                          	GLOBAL _ftog_callee
+   359                          	GLOBAL _ftog
+   360                          	GLOBAL _ftoe_callee
+   361                          	GLOBAL _ftoe
+   362                          	GLOBAL _ftoa_callee
+   363                          	GLOBAL _ftoa
+   364                          	GLOBAL _exit_fastcall
+   365                          	GLOBAL _exit
+   366                          	GLOBAL _dtoh_callee
+   367                          	GLOBAL _dtoh
+   368                          	GLOBAL _dtog_callee
+   369                          	GLOBAL _dtog
+   370                          	GLOBAL _dtoe_callee
+   371                          	GLOBAL _dtoe
+   372                          	GLOBAL _dtoa_callee
+   373                          	GLOBAL _dtoa
+   374                          	GLOBAL _bsearch_callee
+   375                          	GLOBAL _bsearch
+   376                          	GLOBAL _atol_fastcall
+   377                          	GLOBAL _atol
+   378                          	GLOBAL _atoi_fastcall
+   379                          	GLOBAL _atoi
+   380                          	GLOBAL _atof_fastcall
+   381                          	GLOBAL _atof
+   382                          	GLOBAL _atexit_fastcall
+   383                          	GLOBAL _atexit
+   384                          	GLOBAL _at_quick_exit_fastcall
+   385                          	GLOBAL _at_quick_exit
+   386                          	GLOBAL _abs_fastcall
+   387                          	GLOBAL _abs
+   388                          	GLOBAL _abort
+   389                          	GLOBAL __strtou__callee
+   390                          	GLOBAL __strtou_
+   391                          	GLOBAL __strtoi__callee
+   392                          	GLOBAL __strtoi_
+   393                          	GLOBAL __random_uniform_xor_8__fastcall
+   394                          	GLOBAL __random_uniform_xor_8_
+   395                          	GLOBAL __random_uniform_xor_32__fastcall
+   396                          	GLOBAL __random_uniform_xor_32_
+   397                          	GLOBAL __random_uniform_cmwc_8__fastcall
+   398                          	GLOBAL __random_uniform_cmwc_8_
+   399                          	GLOBAL __shellsort__callee
+   400                          	GLOBAL __shellsort_
+   401                          	GLOBAL __quicksort__callee
+   402                          	GLOBAL __quicksort_
+   403                          	GLOBAL __insertion_sort__callee
+   404                          	GLOBAL __insertion_sort_
+   405                          	GLOBAL __ldivu__callee
+   406                          	GLOBAL __ldivu_
+   407                          	GLOBAL __ldiv__callee
+   408                          	GLOBAL __ldiv_
+   409                          	GLOBAL __divu__callee
+   410                          	GLOBAL __divu_
+   411                          	GLOBAL __div__callee
+   412                          	GLOBAL __div_
+   413                          	GLOBAL _poly_callee
+   414                          	GLOBAL _poly
+   415                          	GLOBAL _exp10_fastcall
+   416                          	GLOBAL _exp10
+   417                          	GLOBAL _mul10u_fastcall
+   418                          	GLOBAL _mul10u
+   419                          	GLOBAL _mul2_fastcall
+   420                          	GLOBAL _mul2
+   421                          	GLOBAL _div2_fastcall
+   422                          	GLOBAL _div2
+   423                          	GLOBAL _invsqrt_fastcall
+   424                          	GLOBAL _invsqrt
+   425                          	GLOBAL _inv_fastcall
+   426                          	GLOBAL _inv
+   427                          	GLOBAL _sqr_fastcall
+   428                          	GLOBAL _sqr
+   429                          	GLOBAL _neg_fastcall
+   430                          	GLOBAL _neg
+   431                          	GLOBAL _isunordered_callee
+   432                          	GLOBAL _isunordered
+   433                          	GLOBAL _islessgreater_callee
+   434                          	GLOBAL _islessgreater
+   435                          	GLOBAL _islessequal_callee
+   436                          	GLOBAL _islessequal
+   437                          	GLOBAL _isless_callee
+   438                          	GLOBAL _isless
+   439                          	GLOBAL _isgreaterequal_callee
+   440                          	GLOBAL _isgreaterequal
+   441                          	GLOBAL _isgreater_callee
+   442                          	GLOBAL _isgreater
+   443                          	GLOBAL _fma_callee
+   444                          	GLOBAL _fma
+   445                          	GLOBAL _fmin_callee
+   446                          	GLOBAL _fmin
+   447                          	GLOBAL _fmax_callee
+   448                          	GLOBAL _fmax
+   449                          	GLOBAL _fdim_callee
+   450                          	GLOBAL _fdim
+   451                          	GLOBAL _nexttoward_callee
+   452                          	GLOBAL _nexttoward
+   453                          	GLOBAL _nextafter_callee
+   454                          	GLOBAL _nextafter
+   455                          	GLOBAL _nan_fastcall
+   456                          	GLOBAL _nan
+   457                          	GLOBAL _copysign_callee
+   458                          	GLOBAL _copysign
+   459                          	GLOBAL _remquo_callee
+   460                          	GLOBAL _remquo
+   461                          	GLOBAL _remainder_callee
+   462                          	GLOBAL _remainder
+   463                          	GLOBAL _fmod_callee
+   464                          	GLOBAL _fmod
+   465                          	GLOBAL _modf_callee
+   466                          	GLOBAL _modf
+   467                          	GLOBAL _trunc_fastcall
+   468                          	GLOBAL _trunc
+   469                          	GLOBAL _lround_fastcall
+   470                          	GLOBAL _lround
+   471                          	GLOBAL _round_fastcall
+   472                          	GLOBAL _round
+   473                          	GLOBAL _lrint_fastcall
+   474                          	GLOBAL _lrint
+   475                          	GLOBAL _rint_fastcall
+   476                          	GLOBAL _rint
+   477                          	GLOBAL _nearbyint_fastcall
+   478                          	GLOBAL _nearbyint
+   479                          	GLOBAL _floor_fastcall
+   480                          	GLOBAL _floor
+   481                          	GLOBAL _ceil_fastcall
+   482                          	GLOBAL _ceil
+   483                          	GLOBAL _tgamma_fastcall
+   484                          	GLOBAL _tgamma
+   485                          	GLOBAL _lgamma_fastcall
+   486                          	GLOBAL _lgamma
+   487                          	GLOBAL _erfc_fastcall
+   488                          	GLOBAL _erfc
+   489                          	GLOBAL _erf_fastcall
+   490                          	GLOBAL _erf
+   491                          	GLOBAL _cbrt_fastcall
+   492                          	GLOBAL _cbrt
+   493                          	GLOBAL _sqrt_fastcall
+   494                          	GLOBAL _sqrt
+   495                          	GLOBAL _pow_callee
+   496                          	GLOBAL _pow
+   497                          	GLOBAL _hypot_callee
+   498                          	GLOBAL _hypot
+   499                          	GLOBAL _fabs_fastcall
+   500                          	GLOBAL _fabs
+   501                          	GLOBAL _logb_fastcall
+   502                          	GLOBAL _logb
+   503                          	GLOBAL _log2_fastcall
+   504                          	GLOBAL _log2
+   505                          	GLOBAL _log1p_fastcall
+   506                          	GLOBAL _log1p
+   507                          	GLOBAL _log10_fastcall
+   508                          	GLOBAL _log10
+   509                          	GLOBAL _log_fastcall
+   510                          	GLOBAL _log
+   511                          	GLOBAL _ilogb_fastcall
+   512                          	GLOBAL _ilogb
+   513                          	GLOBAL _scalbln_callee
+   514                          	GLOBAL _scalbln
+   515                          	GLOBAL _scalbn_callee
+   516                          	GLOBAL _scalbn
+   517                          	GLOBAL _ldexp_callee
+   518                          	GLOBAL _ldexp
+   519                          	GLOBAL _frexp_callee
+   520                          	GLOBAL _frexp
+   521                          	GLOBAL _expm1_fastcall
+   522                          	GLOBAL _expm1
+   523                          	GLOBAL _exp2_fastcall
+   524                          	GLOBAL _exp2
+   525                          	GLOBAL _exp_fastcall
+   526                          	GLOBAL _exp
+   527                          	GLOBAL _tanh_fastcall
+   528                          	GLOBAL _tanh
+   529                          	GLOBAL _sinh_fastcall
+   530                          	GLOBAL _sinh
+   531                          	GLOBAL _cosh_fastcall
+   532                          	GLOBAL _cosh
+   533                          	GLOBAL _atanh_fastcall
+   534                          	GLOBAL _atanh
+   535                          	GLOBAL _asinh_fastcall
+   536                          	GLOBAL _asinh
+   537                          	GLOBAL _acosh_fastcall
+   538                          	GLOBAL _acosh
+   539                          	GLOBAL _tan_fastcall
+   540                          	GLOBAL _tan
+   541                          	GLOBAL _sin_fastcall
+   542                          	GLOBAL _sin
+   543                          	GLOBAL _cos_fastcall
+   544                          	GLOBAL _cos
+   545                          	GLOBAL _atan2_callee
+   546                          	GLOBAL _atan2
+   547                          	GLOBAL _atan_fastcall
+   548                          	GLOBAL _atan
+   549                          	GLOBAL _asin_fastcall
+   550                          	GLOBAL _asin
+   551                          	GLOBAL _acos_fastcall
+   552                          	GLOBAL _acos
+   553                          	GLOBAL _game_state
+   554                          	GLOBAL _match_type
+   555                          	GLOBAL _score
+   556                          	GLOBAL _player_bottom
+   557                          	GLOBAL _player_top
+   558                          	GLOBAL _game_settings
+   559                          	GLOBAL _ppponent_profile
+   560                          	GLOBAL _ball
+   561                          	GLOBAL _court_boundaries
+   562                          ;--------------------------------------------------------
+   563                          ; special function registers
+   564                          ;--------------------------------------------------------
+   565                          ;--------------------------------------------------------
+   566                          ; ram data
+   567                          ;--------------------------------------------------------
+   568                          	SECTION bss_compiler
+   569                          _ball_at_ground_hit:
+   570  0000  0000000000000000  	DEFS 25
+              0000000000000000  
+              0000000000000000  
+              00                
+   571                          _ball_trajectory:
+   572  0019  0000000000000000  	DEFS 34
+              0000000000000000  
+              0000000000000000  
+              0000000000000000  
+              0000              
+   573                          ;--------------------------------------------------------
+   574                          ; ram data
+   575                          ;--------------------------------------------------------
+   576                          
+   577                          IF 0
+   578                          
+   579                          ; .area _INITIALIZED removed by z88dk
+   580                          
+   581                          
+   582                          ENDIF
+   583                          
+   584                          ;--------------------------------------------------------
+   585                          ; absolute external ram data
+   586                          ;--------------------------------------------------------
+   587                          	SECTION IGNORE
+   588                          ;--------------------------------------------------------
+   589                          ; global & static initialisations
+   590                          ;--------------------------------------------------------
+   591                          	SECTION code_crt_init
+   592                          ;--------------------------------------------------------
+   593                          ; Home
+   594                          ;--------------------------------------------------------
+   595                          	SECTION IGNORE
+   596                          ;--------------------------------------------------------
+   597                          ; code
+   598                          ;--------------------------------------------------------
+   599                          	SECTION BANK_8
+   600                          ;physics.c:35: float distance2 = sq(ball.x - target_x) + sq(ball.y - target_y);
+   601                          ;	---------------------------------
+   602                          ; Function set_target_for_ball
+   603                          ; ---------------------------------
+   604                          _set_target_for_ball:
+   605  0000  cd0000            	call	___sdcc_enter_ix
+   606  0003  21f8ff            	ld	hl, -8
+   607  0006  39                	add	hl, sp
+   608  0007  f9                	ld	sp, hl
+   609                          ;physics.c:37: float t = distance / v_xy;
+   610  0008  ed4b0000          	ld	bc,(_ball)
+   611  000c  ed5b0200          	ld	de, (_ball + 2)
+   612  0010  210400            	ld	hl,4
+   613  0013  cd0000            	call	____sdcc_4_push_hlix
+   614  0016  d5                	push	de
+   615  0017  c5                	push	bc
+   616  0018  cd0000            	call	___fssub_callee
+   617  001b  d5                	push	de
+   618  001c  e5                	push	hl
+   619  001d  d5                	push	de
+   620  001e  e5                	push	hl
+   621  001f  cd0000            	call	___fsmul_callee
+   622  0022  01ffff            	ld	bc,-1
+   623  0025  cd0000            	call	____sdcc_store_dehl_bcix
+   624  0028  ed4b0400          	ld	bc,(_ball + 4)
+   625  002c  ed5b0600          	ld	de,(_ball + 4 + 2)
+   626  0030  210800            	ld	hl,8
+   627  0033  cd0000            	call	____sdcc_4_push_hlix
+   628  0036  d5                	push	de
+   629  0037  c5                	push	bc
+   630  0038  cd0000            	call	___fssub_callee
+   631  003b  d5                	push	de
+   632  003c  e5                	push	hl
+   633  003d  d5                	push	de
+   634  003e  e5                	push	hl
+   635  003f  cd0000            	call	___fsmul_callee
+   636  0042  d5                	push	de
+   637  0043  e5                	push	hl
+   638  0044  21fcff            	ld	hl,-4
+   639  0047  cd0000            	call	____sdcc_4_push_hlix
+   640  004a  cd0000            	call	___fsadd_callee
+   641                          ;physics.c:38: ball.v_x = (target_x - ball.x) / t;
+   642  004d  cd0000            	call	_sqrt_fastcall
+   643  0050  4d                	ld	c, l
+   644  0051  44                	ld	b, h
+   645                          ;physics.c:39: ball.v_y = (target_y - ball.y) / t;
+   646  0052  210c00            	ld	hl,12
+   647  0055  cd0000            	call	____sdcc_4_push_hlix
+   648  0058  d5                	push	de
+   649  0059  c5                	push	bc
+   650  005a  cd0000            	call	___fsdiv_callee
+   651  005d  e3                	ex	(sp), hl
+   652  005e  dd73fa            	ld	(ix-6),e
+   653  0061  dd72fb            	ld	(ix-5),d
+   654                          ;physics.c:40: ball.v_h = (ball.height / t - GRAVITY * t / 2);
+   655  0064  ed4b0000          	ld	bc,(_ball)
+   656  0068  2a0200            	ld	hl, (_ball + 2)
+   657  006b  e5                	push	hl
+   658  006c  c5                	push	bc
+   659  006d  210400            	ld	hl,4
+   660  0070  cd0000            	call	____sdcc_4_push_hlix
+   661  0073  cd0000            	call	___fssub_callee
+   662  0076  dd4efa            	ld	c,(ix-6)
+   663  0079  dd46fb            	ld	b,(ix-5)
+   664  007c  c5                	push	bc
+   665  007d  dd4ef8            	ld	c,(ix-8)
+   666  0080  dd46f9            	ld	b,(ix-7)
+   667  0083  c5                	push	bc
+   668  0084  d5                	push	de
+   669  0085  e5                	push	hl
+   670  0086  cd0000            	call	___fsdiv_callee
+   671  0089  221000            	ld	(_ball + 16),hl
+   672  008c  ed531200          	ld	(_ball + 16 + 2),de
+   673                          ;physics.c:41: }
+   674  0090  ed4b0400          	ld	bc,(_ball + 4)
+   675  0094  2a0600            	ld	hl,(_ball + 4 + 2)
+   676  0097  e5                	push	hl
+   677  0098  c5                	push	bc
+   678  0099  210800            	ld	hl,8
+   679  009c  cd0000            	call	____sdcc_4_push_hlix
+   680  009f  cd0000            	call	___fssub_callee
+   681  00a2  dd4efa            	ld	c,(ix-6)
+   682  00a5  dd46fb            	ld	b,(ix-5)
+   683  00a8  c5                	push	bc
+   684  00a9  dd4ef8            	ld	c,(ix-8)
+   685  00ac  dd46f9            	ld	b,(ix-7)
+   686  00af  c5                	push	bc
+   687  00b0  d5                	push	de
+   688  00b1  e5                	push	hl
+   689  00b2  cd0000            	call	___fsdiv_callee
+   690  00b5  221400            	ld	(_ball + 20),hl
+   691  00b8  ed531600          	ld	(_ball + 20 + 2),de
+   692                          ;physics.c:42:
+   693  00bc  ed4b0800          	ld	bc, (_ball + 8)
+   694  00c0  2a0a00            	ld	hl, (_ball + 10)
+   695  00c3  dd5efa            	ld	e,(ix-6)
+   696  00c6  dd56fb            	ld	d,(ix-5)
+   697  00c9  d5                	push	de
+   698  00ca  dd5ef8            	ld	e,(ix-8)
+   699  00cd  dd56f9            	ld	d,(ix-7)
+   700  00d0  d5                	push	de
+   701  00d1  e5                	push	hl
+   702  00d2  c5                	push	bc
+   703  00d3  cd0000            	call	___fsdiv_callee
+   704  00d6  01ffff            	ld	bc,-1
+   705  00d9  cd0000            	call	____sdcc_store_dehl_bcix
+   706  00dc  d1                	pop	de
+   707  00dd  e1                	pop	hl
+   708  00de  e5                	push	hl
+   709  00df  d5                	push	de
+   710  00e0  eb                	ex	de,hl
+   711  00e1  e1                	pop	hl
+   712  00e2  e5                	push	hl
+   713  00e3  d5                	push	de
+   714  00e4  e5                	push	hl
+   715  00e5  21193e            	ld	hl,0x3e19
+   716  00e8  e5                	push	hl
+   717  00e9  219a99            	ld	hl,0x999a
+   718  00ec  e5                	push	hl
+   719  00ed  cd0000            	call	___fsmul_callee
+   720  00f0  4d                	ld	c, l
+   721  00f1  44                	ld	b, h
+   722  00f2  210040            	ld	hl,0x4000
+   723  00f5  e5                	push	hl
+   724  00f6  65                	ld	h, l
+   725  00f7  e5                	push	hl
+   726  00f8  d5                	push	de
+   727  00f9  c5                	push	bc
+   728  00fa  cd0000            	call	___fsdiv_callee
+   729  00fd  d5                	push	de
+   730  00fe  e5                	push	hl
+   731  00ff  21fcff            	ld	hl,-4
+   732  0102  cd0000            	call	____sdcc_4_push_hlix
+   733  0105  cd0000            	call	___fssub_callee
+   734  0108  220c00            	ld	(_ball + 12),hl
+   735  010b  ed530e00          	ld	(_ball + 12 + 2),de
+   736                          ;physics.c:43: #define TARGET_AREA_HEIGHT (BASELINE_BOTTOM - SERVICE_BOX_BOTTOM)
+   737  010f  ddf9              	ld	sp, ix
+   738  0111  dde1              	pop	ix
+   739  0113  c9                	ret
+   740                          	SECTION BANK_8
+   741                          ;physics.c:47: int16_t deviation_y = TARGET_AREA_HEIGHT * precision / 100;
+   742                          ;	---------------------------------
+   743                          ; Function set_ball_speed_at_drive
+   744                          ; ---------------------------------
+   745                          _set_ball_speed_at_drive:
+   746  0114  cd0000            	call	___sdcc_enter_ix
+   747  0117  21f8ff            	ld	hl, -8
+   748  011a  39                	add	hl, sp
+   749  011b  f9                	ld	sp, hl
+   750                          ;physics.c:49: int16_t target_x = CENTER_LINE + ((rand() % 200) - 100) * SIDE_LINE_WIDTH / 200;
+   751  011c  dd5e06            	ld	e,(ix+6)
+   752  011f  161e              	ld	d,0x1e
+   753  0121  ed30              	mlt	de
+   754  0123  216400            	ld	hl,0x0064
+   755  0126  e5                	push	hl
+   756  0127  d5                	push	de
+   757  0128  cd0000            	call	__divsint_callee
+   758  012b  eb                	ex	de, hl
+   759                          ;physics.c:50:
+   760  012c  dd7e04            	ld	a,(ix+4)
+   761  012f  b7                	or	a, a
+   762  0130  2008              	jr	NZ,l_set_ball_speed_at_drive_00103
+   763  0132  af                	xor	a,a
+   764  0133  21dc00            	ld	hl,0x00dc
+   765  0136  ed52              	sbc	hl,de
+   766  0138  1804              	jr	l_set_ball_speed_at_drive_00104
+   767                          l_set_ball_speed_at_drive_00103:
+   768  013a  216400            	ld	hl,0x0064
+   769  013d  19                	add	hl, de
+   770                          l_set_ball_speed_at_drive_00104:
+   771  013e  dd75fe            	ld	(ix-2),l
+   772  0141  dd74ff            	ld	(ix-1),h
+   773                          ;physics.c:51: float v_xy = 2 + strength * 0.3;
+   774  0144  cd0000            	call	_rand
+   775  0147  11c800            	ld	de,0x00c8
+   776  014a  d5                	push	de
+   777  014b  e5                	push	hl
+   778  014c  cd0000            	call	__modsint_callee
+   779  014f  019cff            	ld	bc,0xff9c
+   780  0152  09                	add	hl,bc
+   781  0153  4d                	ld	c,l
+   782  0154  44                	ld	b,h
+   783  0155  29                	add	hl, hl
+   784  0156  09                	add	hl, bc
+   785  0157  29                	add	hl, hl
+   786  0158  29                	add	hl, hl
+   787  0159  29                	add	hl, hl
+   788  015a  09                	add	hl, bc
+   789  015b  29                	add	hl, hl
+   790  015c  29                	add	hl, hl
+   791  015d  09                	add	hl, bc
+   792  015e  29                	add	hl, hl
+   793  015f  09                	add	hl, bc
+   794  0160  11c800            	ld	de,0x00c8
+   795  0163  d5                	push	de
+   796  0164  e5                	push	hl
+   797  0165  cd0000            	call	__divsint_callee
+   798  0168  3ea1              	ld	a,0xa1
+   799  016a  4d                	ld	c,l
+   800  016b  44                	ld	b,h
+   801  016c  ed33              	add	bc, a
+   802                          ;physics.c:53: set_target_for_ball(target_x, target_y, v_xy);
+   803  016e  c5                	push	bc
+   804  016f  dd7e05            	ld	a,(ix+5)
+   805  0172  f5                	push	af
+   806  0173  33                	inc	sp
+   807  0174  cd0000            	call	___uchar2fs_callee
+   808  0177  d5                	push	de
+   809  0178  e5                	push	hl
+   810  0179  21993e            	ld	hl,0x3e99
+   811  017c  e5                	push	hl
+   812  017d  219a99            	ld	hl,0x999a
+   813  0180  e5                	push	hl
+   814  0181  cd0000            	call	___fsmul_callee
+   815  0184  ed8a4000          	push	+0x4000
+   816  0188  ed8a0000          	push	+0x0000
+   817  018c  d5                	push	de
+   818  018d  e5                	push	hl
+   819  018e  cd0000            	call	___fsadd_callee
+   820  0191  c1                	pop	bc
+   821  0192  e3                	ex	(sp), hl
+   822  0193  dd73fa            	ld	(ix-6),e
+   823  0196  dd72fb            	ld	(ix-5),d
+   824                          ;physics.c:55:
+   825  0199  c5                	push	bc
+   826  019a  dd6efe            	ld	l,(ix-2)
+   827  019d  dd66ff            	ld	h,(ix-1)
+   828  01a0  e5                	push	hl
+   829  01a1  cd0000            	call	___sint2fs_callee
+   830  01a4  01ffff            	ld	bc,-1
+   831  01a7  cd0000            	call	____sdcc_store_dehl_bcix
+   832  01aa  cd0000            	call	___sint2fs_callee
+   833  01ad  dd4efa            	ld	c,(ix-6)
+   834  01b0  dd46fb            	ld	b,(ix-5)
+   835  01b3  c5                	push	bc
+   836  01b4  dd4ef8            	ld	c,(ix-8)
+   837  01b7  dd46f9            	ld	b,(ix-7)
+   838  01ba  c5                	push	bc
+   839  01bb  dd4efe            	ld	c,(ix-2)
+   840  01be  dd46ff            	ld	b,(ix-1)
+   841  01c1  c5                	push	bc
+   842  01c2  dd4efc            	ld	c,(ix-4)
+   843  01c5  dd46fd            	ld	b,(ix-3)
+   844  01c8  c5                	push	bc
+   845  01c9  d5                	push	de
+   846  01ca  e5                	push	hl
+   847  01cb  cd0000            	call	_set_target_for_ball
+   848  01ce  210c00            	ld	hl,12
+   849  01d1  39                	add	hl, sp
+   850                          ;physics.c:56: /** Discriminant part of the ball quadratic equation for the ball to reach a certain height */
+   851  01d2  ddf9              	ld	sp, ix
+   852  01d4  dde1              	pop	ix
+   853  01d6  c9                	ret
+   854                          ;physics.c:59: float discriminant = sq(ball->v_h) - 2 * GRAVITY * (height - ball->height);
+   855                          ;	---------------------------------
+   856                          ; Function discrimant_for_height
+   857                          ; ---------------------------------
+   858                          _discrimant_for_height:
+   859  01d7  cd0000            	call	___sdcc_enter_ix
+   860  01da  f5                	push	af
+   861  01db  f5                	push	af
+   862                          ;physics.c:61: // if (discriminant < 0)
+   863  01dc  dd4e04            	ld	c,(ix+4)
+   864  01df  dd4605            	ld	b,(ix+5)
+   865  01e2  210c00            	ld	hl,12
+   866  01e5  09                	add	hl,bc
+   867  01e6  cd0000            	call	____sdcc_load_hlde_mhl
+   868  01e9  c5                	push	bc
+   869  01ea  e5                	push	hl
+   870  01eb  d5                	push	de
+   871  01ec  e5                	push	hl
+   872  01ed  d5                	push	de
+   873  01ee  cd0000            	call	___fsmul_callee
+   874  01f1  01ffff            	ld	bc,-1
+   875  01f4  cd0000            	call	____sdcc_store_dehl_bcix
+   876  01f7  c1                	pop	bc
+   877  01f8  210800            	ld	hl,8
+   878  01fb  09                	add	hl, bc
+   879  01fc  cd0000            	call	____sdcc_load_debc_mhl
+   880  01ff  d5                	push	de
+   881  0200  c5                	push	bc
+   882  0201  210600            	ld	hl,6
+   883  0204  cd0000            	call	____sdcc_4_push_hlix
+   884  0207  cd0000            	call	___fssub_callee
+   885  020a  d5                	push	de
+   886  020b  e5                	push	hl
+   887  020c  21993e            	ld	hl,0x3e99
+   888  020f  e5                	push	hl
+   889  0210  219a99            	ld	hl,0x999a
+   890  0213  e5                	push	hl
+   891  0214  cd0000            	call	___fsmul_callee
+   892  0217  d5                	push	de
+   893  0218  e5                	push	hl
+   894  0219  21fcff            	ld	hl,-4
+   895  021c  cd0000            	call	____sdcc_4_push_hlix
+   896  021f  cd0000            	call	___fssub
+   897                          ;physics.c:72:
+   898                          ;physics.c:73: void point_at_time(float time, Point *output)
+   899  0222  ddf9              	ld	sp,ix
+   900  0224  dde1              	pop	ix
+   901  0226  c9                	ret
+   902                          ;physics.c:75: output->x = ball.x + ball.v_x * time;
+   903                          ;	---------------------------------
+   904                          ; Function point_at_time
+   905                          ; ---------------------------------
+   906                          _point_at_time:
+   907  0227  cd0000            	call	___sdcc_enter_ix
+   908  022a  21faff            	ld	hl, -6
+   909  022d  39                	add	hl, sp
+   910  022e  f9                	ld	sp, hl
+   911                          ;physics.c:77: }
+   912  022f  dd7e08            	ld	a,(ix+8)
+   913  0232  dd77fe            	ld	(ix-2),a
+   914  0235  dd7e09            	ld	a,(ix+9)
+   915  0238  dd77ff            	ld	(ix-1),a
+   916  023b  110000            	ld	de,_ball
+   917  023e  210000            	ld	hl,0
+   918  0241  39                	add	hl, sp
+   919  0242  eb                	ex	de, hl
+   920  0243  cd0000            	call	____sdcc_4_ldi_nosave_bc
+   921  0246  ed4b1000          	ld	bc, (_ball + 16)
+   922  024a  ed5b1200          	ld	de, (_ball + 18)
+   923  024e  210400            	ld	hl,4
+   924  0251  cd0000            	call	____sdcc_4_push_hlix
+   925  0254  d5                	push	de
+   926  0255  c5                	push	bc
+   927  0256  cd0000            	call	___fsmul_callee
+   928  0259  d5                	push	de
+   929  025a  e5                	push	hl
+   930  025b  21faff            	ld	hl,-6
+   931  025e  cd0000            	call	____sdcc_4_push_hlix
+   932  0261  cd0000            	call	___fsadd_callee
+   933  0264  4d                	ld	c, l
+   934  0265  dd6efe            	ld	l,(ix-2)
+   935  0268  44                	ld	b,h
+   936  0269  dd66ff            	ld	h,(ix-1)
+   937  026c  cd0000            	call	____sdcc_store_debc_mhl
+   938                          ;physics.c:78:
+   939  026f  dd7efe            	ld	a,(ix-2)
+   940  0272  c604              	add	a,0x04
+   941  0274  dd77fa            	ld	(ix-6),a
+   942  0277  dd7eff            	ld	a,(ix-1)
+   943  027a  ce00              	adc	a,0x00
+   944  027c  dd77fb            	ld	(ix-5),a
+   945  027f  110400            	ld	de,_ball + 4
+   946  0282  210200            	ld	hl,2
+   947  0285  39                	add	hl, sp
+   948  0286  eb                	ex	de, hl
+   949  0287  cd0000            	call	____sdcc_4_ldi_nosave_bc
+   950  028a  ed4b1400          	ld	bc, (_ball + 20)
+   951  028e  ed5b1600          	ld	de, (_ball + 22)
+   952  0292  210400            	ld	hl,4
+   953  0295  cd0000            	call	____sdcc_4_push_hlix
+   954  0298  d5                	push	de
+   955  0299  c5                	push	bc
+   956  029a  cd0000            	call	___fsmul_callee
+   957  029d  d5                	push	de
+   958  029e  e5                	push	hl
+   959  029f  21fcff            	ld	hl,-4
+   960  02a2  cd0000            	call	____sdcc_4_push_hlix
+   961  02a5  cd0000            	call	___fsadd_callee
+   962  02a8  4d                	ld	c, l
+   963  02a9  44                	ld	b, h
+   964  02aa  e1                	pop	hl
+   965  02ab  e5                	push	hl
+   966  02ac  cd0000            	call	____sdcc_store_debc_mhl
+   967                          ;physics.c:79: /**
+   968  02af  ddf9              	ld	sp, ix
+   969  02b1  dde1              	pop	ix
+   970  02b3  c9                	ret
+   971                          ;physics.c:84: const Boundary *court_half = &court_boundaries[COURT_AREA_VALID_UPPER + game_state.ball_owner ^ 1];
+   972                          ;	---------------------------------
+   973                          ; Function will_ball_hit_ground
+   974                          ; ---------------------------------
+   975                          _will_ball_hit_ground:
+   976  02b4  cd0000            	call	___sdcc_enter_ix
+   977  02b7  21f6ff            	ld	hl, -10
+   978  02ba  39                	add	hl, sp
+   979  02bb  f9                	ld	sp, hl
+   980                          ;physics.c:86: assert(discriminant >= 0, "Neg SQ: No solution to hit ground");
+   981  02bc  3a0100            	ld	a,(_game_state + 1)
+   982  02bf  c602              	add	a,0x02
+   983  02c1  ee01              	xor	a,0x01
+   984  02c3  6f                	ld	l, a
+   985  02c4  07                	rlca
+   986  02c5  9f                	sbc	a, a
+   987  02c6  67                	ld	h, a
+   988  02c7  29                	add	hl, hl
+   989  02c8  29                	add	hl, hl
+   990  02c9  29                	add	hl, hl
+   991  02ca  110000            	ld	de,_court_boundaries
+   992  02cd  19                	add	hl, de
+   993  02ce  e3                	ex	(sp), hl
+   994                          ;physics.c:87: float t_ground = (-ball.v_h + sqrt(discriminant)) / GRAVITY;
+   995  02cf  210000            	ld	hl,0x0000
+   996  02d2  e5                	push	hl
+   997  02d3  e5                	push	hl
+   998  02d4  210000            	ld	hl,_ball
+   999  02d7  e5                	push	hl
+  1000  02d8  cdd701            	call	_discrimant_for_height
+  1001  02db  f1                	pop	af
+  1002  02dc  f1                	pop	af
+  1003  02dd  f1                	pop	af
+  1004  02de  01fbff            	ld	bc,-5
+  1005  02e1  cd0000            	call	____sdcc_store_dehl_bcix
+  1006                          ;physics.c:89: ball_at_ground_hit.y = ball.y + ball.v_y * t_ground;
+  1007  02e4  ed4b0c00          	ld	bc,(_ball + 12)
+  1008  02e8  2a0e00            	ld	hl,(_ball + 12 + 2)
+  1009  02eb  7c                	ld	a, h
+  1010  02ec  ee80              	xor	a,0x80
+  1011  02ee  dd77ff            	ld	(ix-1),a
+  1012  02f1  dd71fc            	ld	(ix-4),c
+  1013  02f4  dd70fd            	ld	(ix-3),b
+  1014  02f7  dd75fe            	ld	(ix-2),l
+  1015  02fa  d1                	pop	de
+  1016  02fb  e1                	pop	hl
+  1017  02fc  e5                	push	hl
+  1018  02fd  d5                	push	de
+  1019  02fe  dd5efa            	ld	e,(ix-6)
+  1020  0301  dd56fb            	ld	d,(ix-5)
+  1021  0304  cd0000            	call	_sqrt_fastcall
+  1022  0307  d5                	push	de
+  1023  0308  e5                	push	hl
+  1024  0309  21fcff            	ld	hl,-4
+  1025  030c  cd0000            	call	____sdcc_4_push_hlix
+  1026  030f  cd0000            	call	___fsadd_callee
+  1027  0312  01193e            	ld	bc,0x3e19
+  1028  0315  c5                	push	bc
+  1029  0316  019a99            	ld	bc,0x999a
+  1030  0319  c5                	push	bc
+  1031  031a  d5                	push	de
+  1032  031b  e5                	push	hl
+  1033  031c  cd0000            	call	___fsdiv_callee
+  1034  031f  01fbff            	ld	bc,-5
+  1035  0322  cd0000            	call	____sdcc_store_dehl_bcix
+  1036                          ;physics.c:90: ball_at_ground_hit.height = 0;
+  1037  0325  110000            	ld	de,_ball
+  1038  0328  210600            	ld	hl,6
+  1039  032b  39                	add	hl, sp
+  1040  032c  eb                	ex	de, hl
+  1041  032d  cd0000            	call	____sdcc_4_ldi_nosave_bc
+  1042  0330  ed4b1000          	ld	bc,(_ball + 16)
+  1043  0334  2a1200            	ld	hl,(_ball + 16 + 2)
+  1044  0337  dd5efa            	ld	e,(ix-6)
+  1045  033a  dd56fb            	ld	d,(ix-5)
+  1046  033d  d5                	push	de
+  1047  033e  dd5ef8            	ld	e,(ix-8)
+  1048  0341  dd56f9            	ld	d,(ix-7)
+  1049  0344  d5                	push	de
+  1050  0345  e5                	push	hl
+  1051  0346  c5                	push	bc
+  1052  0347  cd0000            	call	___fsmul_callee
+  1053  034a  d5                	push	de
+  1054  034b  e5                	push	hl
+  1055  034c  21fcff            	ld	hl,-4
+  1056  034f  cd0000            	call	____sdcc_4_push_hlix
+  1057  0352  cd0000            	call	___fsadd_callee
+  1058  0355  220000            	ld	(_ball_at_ground_hit),hl
+  1059  0358  ed530200          	ld	(_ball_at_ground_hit+2),de
+  1060                          ;physics.c:91: ball_at_ground_hit.v_h = -(ball.v_h + GRAVITY * t_ground) * GROUND_COEF_RESTITUTION;
+  1061  035c  110400            	ld	de,_ball + 4
+  1062  035f  210600            	ld	hl,6
+  1063  0362  39                	add	hl, sp
+  1064  0363  eb                	ex	de, hl
+  1065  0364  cd0000            	call	____sdcc_4_ldi_nosave_bc
+  1066  0367  ed4b1400          	ld	bc,(_ball + 20)
+  1067  036b  2a1600            	ld	hl,(_ball + 20 + 2)
+  1068  036e  dd5efa            	ld	e,(ix-6)
+  1069  0371  dd56fb            	ld	d,(ix-5)
+  1070  0374  d5                	push	de
+  1071  0375  dd5ef8            	ld	e,(ix-8)
+  1072  0378  dd56f9            	ld	d,(ix-7)
+  1073  037b  d5                	push	de
+  1074  037c  e5                	push	hl
+  1075  037d  c5                	push	bc
+  1076  037e  cd0000            	call	___fsmul_callee
+  1077  0381  d5                	push	de
+  1078  0382  e5                	push	hl
+  1079  0383  21fcff            	ld	hl,-4
+  1080  0386  cd0000            	call	____sdcc_4_push_hlix
+  1081  0389  cd0000            	call	___fsadd_callee
+  1082  038c  220400            	ld	(_ball_at_ground_hit + 4),hl
+  1083  038f  ed530600          	ld	(_ball_at_ground_hit + 4 + 2),de
+  1084  0393  44                	ld	b,h
+  1085                          ;physics.c:92: ball_at_ground_hit.v_x = ball.v_x;
+  1086  0394  210000            	ld	hl,0x0000
+  1087  0397  220800            	ld	(_ball_at_ground_hit + 8),hl
+  1088  039a  220a00            	ld	(_ball_at_ground_hit + 8 + 2),hl
+  1089                          ;physics.c:93: ball_at_ground_hit.v_y = ball.v_y;
+  1090  039d  110c00            	ld	de,+(_ball + 12)
+  1091  03a0  210600            	ld	hl,6
+  1092  03a3  39                	add	hl, sp
+  1093  03a4  eb                	ex	de, hl
+  1094  03a5  cd0000            	call	____sdcc_4_ldi_nosave_bc
+  1095  03a8  21f8ff            	ld	hl,-8
+  1096  03ab  cd0000            	call	____sdcc_4_push_hlix
+  1097  03ae  21193e            	ld	hl,0x3e19
+  1098  03b1  e5                	push	hl
+  1099  03b2  219a99            	ld	hl,0x999a
+  1100  03b5  e5                	push	hl
+  1101  03b6  cd0000            	call	___fsmul_callee
+  1102  03b9  d5                	push	de
+  1103  03ba  e5                	push	hl
+  1104  03bb  21fcff            	ld	hl,-4
+  1105  03be  cd0000            	call	____sdcc_4_push_hlix
+  1106  03c1  cd0000            	call	___fsadd_callee
+  1107  03c4  7a                	ld	a, d
+  1108  03c5  ee80              	xor	a,0x80
+  1109  03c7  57                	ld	d, a
+  1110  03c8  d5                	push	de
+  1111  03c9  e5                	push	hl
+  1112  03ca  21403f            	ld	hl,0x3f40
+  1113  03cd  e5                	push	hl
+  1114  03ce  210000            	ld	hl,0x0000
+  1115  03d1  e5                	push	hl
+  1116  03d2  cd0000            	call	___fsmul_callee
+  1117  03d5  220c00            	ld	(_ball_at_ground_hit + 12),hl
+  1118  03d8  ed530e00          	ld	(_ball_at_ground_hit + 12 + 2),de
+  1119                          ;physics.c:94:
+  1120  03dc  ed4b1000          	ld	bc,(_ball + 16)
+  1121  03e0  ed5b1200          	ld	de,(_ball + 16 + 2)
+  1122  03e4  ed431000          	ld	(_ball_at_ground_hit + 16),bc
+  1123  03e8  ed531200          	ld	(_ball_at_ground_hit + 16 + 2),de
+  1124                          ;physics.c:95: // debug_draw_projection(ball_at_ground_hit.x, ball_at_ground_hit.y, COLOR_GREEN);
+  1125  03ec  ed4b1400          	ld	bc,(_ball + 20)
+  1126  03f0  ed5b1600          	ld	de,(_ball + 20 + 2)
+  1127  03f4  ed431400          	ld	(_ball_at_ground_hit + 20),bc
+  1128  03f8  ed531600          	ld	(_ball_at_ground_hit + 20 + 2),de
+  1129                          ;physics.c:99: if (!hits_ground)
+  1130  03fc  ed4b0400          	ld	bc,(_ball_at_ground_hit + 4)
+  1131  0400  2a0600            	ld	hl,(_ball_at_ground_hit + 4 + 2)
+  1132  0403  e5                	push	hl
+  1133  0404  c5                	push	bc
+  1134  0405  cd0000            	call	___fs2sint_callee
+  1135  0408  eb                	ex	de, hl
+  1136  0409  ed4b0000          	ld	bc,(_ball_at_ground_hit)
+  1137  040d  2a0200            	ld	hl, (_ball_at_ground_hit + 2)
+  1138  0410  d5                	push	de
+  1139  0411  e5                	push	hl
+  1140  0412  c5                	push	bc
+  1141  0413  cd0000            	call	___fs2sint_callee
+  1142  0416  d1                	pop	de
+  1143  0417  c1                	pop	bc
+  1144  0418  c5                	push	bc
+  1145  0419  c5                	push	bc
+  1146  041a  d5                	push	de
+  1147  041b  e5                	push	hl
+  1148  041c  cd0000            	call	_xy_in_boundary
+  1149                          ;physics.c:107:
+  1150                          ;physics.c:108: void add_trajectory_point(Ball *ball, const Boundary *boundary, float time)
+  1151  041f  ddf9              	ld	sp,ix
+  1152  0421  dde1              	pop	ix
+  1153  0423  c9                	ret
+  1154                          ;physics.c:110: if (time > 0)
+  1155                          ;	---------------------------------
+  1156                          ; Function add_trajectory_point
+  1157                          ; ---------------------------------
+  1158                          _add_trajectory_point:
+  1159  0424  cd0000            	call	___sdcc_enter_ix
+  1160  0427  21f8ff            	ld	hl, -8
+  1161  042a  39                	add	hl, sp
+  1162  042b  f9                	ld	sp, hl
+  1163                          ;physics.c:112: const int16_t x = ball->x + ball->v_x * time;
+  1164  042c  210800            	ld	hl,8
+  1165  042f  cd0000            	call	____sdcc_4_push_hlix
+  1166  0432  210000            	ld	hl,0x0000
+  1167  0435  e5                	push	hl
+  1168  0436  e5                	push	hl
+  1169  0437  cd0000            	call	___fslt_callee
+  1170  043a  7d                	ld	a, l
+  1171  043b  b7                	or	a, a
+  1172  043c  ca1905            	jp	Z, l_add_trajectory_point_00105
+  1173                          ;physics.c:114: // debug_point("Point", x, y);
+  1174  043f  dd7e04            	ld	a,(ix+4)
+  1175  0442  dd77f8            	ld	(ix-8),a
+  1176  0445  dd7e05            	ld	a,(ix+5)
+  1177  0448  dd77f9            	ld	(ix-7),a
+  1178  044b  d1                	pop	de
+  1179  044c  d5                	push	de
+  1180  044d  210400            	ld	hl,4
+  1181  0450  39                	add	hl, sp
+  1182  0451  eb                	ex	de, hl
+  1183  0452  cd0000            	call	____sdcc_4_ldi_nosave_bc
+  1184  0455  c1                	pop	bc
+  1185  0456  c5                	push	bc
+  1186  0457  211000            	ld	hl,16
+  1187  045a  09                	add	hl, bc
+  1188  045b  cd0000            	call	____sdcc_load_debc_mhl
+  1189  045e  210800            	ld	hl,8
+  1190  0461  cd0000            	call	____sdcc_4_push_hlix
+  1191  0464  d5                	push	de
+  1192  0465  c5                	push	bc
+  1193  0466  cd0000            	call	___fsmul_callee
+  1194  0469  d5                	push	de
+  1195  046a  e5                	push	hl
+  1196  046b  21fcff            	ld	hl,-4
+  1197  046e  cd0000            	call	____sdcc_4_push_hlix
+  1198  0471  cd0000            	call	___fsadd_callee
+  1199  0474  d5                	push	de
+  1200  0475  e5                	push	hl
+  1201  0476  cd0000            	call	___fs2sint_callee
+  1202  0479  dd75fa            	ld	(ix-6),l
+  1203  047c  dd74fb            	ld	(ix-5),h
+  1204                          ;physics.c:115: // debug_draw_projection(x, y, COLOR_RED);
+  1205  047f  d1                	pop	de
+  1206  0480  d5                	push	de
+  1207  0481  210400            	ld	hl,4
+  1208  0484  39                	add	hl, sp
+  1209  0485  eb                	ex	de, hl
+  1210  0486  010400            	ld	bc,0x0004
+  1211  0489  09                	add	hl, bc
+  1212  048a  cd0000            	call	____sdcc_4_ldi_nosave_bc
+  1213  048d  c1                	pop	bc
+  1214  048e  c5                	push	bc
+  1215  048f  211400            	ld	hl,20
+  1216  0492  09                	add	hl, bc
+  1217  0493  cd0000            	call	____sdcc_load_debc_mhl
+  1218  0496  210800            	ld	hl,8
+  1219  0499  cd0000            	call	____sdcc_4_push_hlix
+  1220  049c  d5                	push	de
+  1221  049d  c5                	push	bc
+  1222  049e  cd0000            	call	___fsmul_callee
+  1223  04a1  d5                	push	de
+  1224  04a2  e5                	push	hl
+  1225  04a3  21fcff            	ld	hl,-4
+  1226  04a6  cd0000            	call	____sdcc_4_push_hlix
+  1227  04a9  cd0000            	call	___fsadd_callee
+  1228  04ac  d5                	push	de
+  1229  04ad  e5                	push	hl
+  1230  04ae  cd0000            	call	___fs2sint_callee
+  1231  04b1  dd75fe            	ld	(ix-2),l
+  1232  04b4  dd74ff            	ld	(ix-1),h
+  1233                          ;physics.c:118: // debug_draw_projection(x, y, COLOR_GREEN);
+  1234  04b7  dd6e06            	ld	l,(ix+6)
+  1235  04ba  dd6607            	ld	h,(ix+7)
+  1236  04bd  e5                	push	hl
+  1237  04be  dd6efe            	ld	l,(ix-2)
+  1238  04c1  dd66ff            	ld	h,(ix-1)
+  1239  04c4  e5                	push	hl
+  1240  04c5  dd6efa            	ld	l,(ix-6)
+  1241  04c8  dd66fb            	ld	h,(ix-5)
+  1242  04cb  e5                	push	hl
+  1243  04cc  cd0000            	call	_xy_in_boundary
+  1244  04cf  f1                	pop	af
+  1245  04d0  f1                	pop	af
+  1246  04d1  f1                	pop	af
+  1247  04d2  cb45              	bit	0, l
+  1248  04d4  2843              	jr	Z,l_add_trajectory_point_00105
+  1249                          ;physics.c:121: ball_trajectory.n_points++;
+  1250  04d6  2a1900            	ld	hl,(_ball_trajectory)
+  1251  04d9  29                	add	hl, hl
+  1252  04da  29                	add	hl, hl
+  1253  04db  29                	add	hl, hl
+  1254  04dc  111b00            	ld	de, +(_ball_trajectory + 2)
+  1255  04df  19                	add	hl, de
+  1256  04e0  e5                	push	hl
+  1257  04e1  dd5efa            	ld	e,(ix-6)
+  1258  04e4  dd56fb            	ld	d,(ix-5)
+  1259  04e7  d5                	push	de
+  1260  04e8  cd0000            	call	___sint2fs_callee
+  1261  04eb  4d                	ld	c, l
+  1262  04ec  44                	ld	b, h
+  1263  04ed  e1                	pop	hl
+  1264  04ee  cd0000            	call	____sdcc_store_debc_mhl
+  1265                          ;physics.c:122:
+  1266  04f1  2a1900            	ld	hl,(_ball_trajectory)
+  1267  04f4  29                	add	hl, hl
+  1268  04f5  29                	add	hl, hl
+  1269  04f6  29                	add	hl, hl
+  1270  04f7  111b00            	ld	de, +(_ball_trajectory + 2)
+  1271  04fa  19                	add	hl, de
+  1272  04fb  3e04              	ld	a,0x04
+  1273  04fd  ed31              	add	hl, a
+  1274  04ff  e5                	push	hl
+  1275  0500  dd5efe            	ld	e,(ix-2)
+  1276  0503  dd56ff            	ld	d,(ix-1)
+  1277  0506  d5                	push	de
+  1278  0507  cd0000            	call	___sint2fs_callee
+  1279  050a  4d                	ld	c, l
+  1280  050b  44                	ld	b, h
+  1281  050c  e1                	pop	hl
+  1282  050d  cd0000            	call	____sdcc_store_debc_mhl
+  1283                          ;physics.c:123: #ifdef DEBUG
+  1284  0510  ed4b1900          	ld	bc,(_ball_trajectory)
+  1285  0514  03                	inc	bc
+  1286  0515  ed431900          	ld	(_ball_trajectory), bc
+  1287                          l_add_trajectory_point_00105:
+  1288                          ;physics.c:135: /**
+  1289  0519  ddf9              	ld	sp, ix
+  1290  051b  dde1              	pop	ix
+  1291  051d  c9                	ret
+  1292                          ;physics.c:142: // debug_number("Target Height", height);
+  1293                          ;	---------------------------------
+  1294                          ; Function trajectory_points
+  1295                          ; ---------------------------------
+  1296                          _trajectory_points:
+  1297  051e  cd0000            	call	___sdcc_enter_ix
+  1298  0521  21faff            	ld	hl, -6
+  1299  0524  39                	add	hl, sp
+  1300  0525  f9                	ld	sp, hl
+  1301                          ;physics.c:145: if (discriminant >= 0)
+  1302  0526  dd7e08            	ld	a,(ix+8)
+  1303  0529  f5                	push	af
+  1304  052a  33                	inc	sp
+  1305  052b  cd0000            	call	___uchar2fs_callee
+  1306  052e  d5                	push	de
+  1307  052f  e5                	push	hl
+  1308  0530  dd6e04            	ld	l,(ix+4)
+  1309  0533  dd6605            	ld	h,(ix+5)
+  1310  0536  e5                	push	hl
+  1311  0537  cdd701            	call	_discrimant_for_height
+  1312  053a  f1                	pop	af
+  1313  053b  f1                	pop	af
+  1314  053c  f1                	pop	af
+  1315                          ;physics.c:147: // If the height is above the ball, it is possible to reach height twice (goind up and down)
+  1316  053d  e5                	push	hl
+  1317  053e  4d                	ld	c,l
+  1318  053f  44                	ld	b,h
+  1319  0540  d5                	push	de
+  1320  0541  210000            	ld	hl,0x0000
+  1321  0544  e5                	push	hl
+  1322  0545  e5                	push	hl
+  1323  0546  d5                	push	de
+  1324  0547  c5                	push	bc
+  1325  0548  cd0000            	call	___fslt_callee
+  1326  054b  d1                	pop	de
+  1327  054c  c1                	pop	bc
+  1328  054d  cb45              	bit	0, l
+  1329  054f  c2ee05            	jp	NZ, l_trajectory_points_00103
+  1330                          ;physics.c:150: add_trajectory_point(ball, boundary, (-ball->v_h + discriminant_sqrt) / GRAVITY);
+  1331  0552  69                	ld	l, c
+  1332  0553  60                	ld	h, b
+  1333  0554  cd0000            	call	_sqrt_fastcall
+  1334  0557  e3                	ex	(sp), hl
+  1335  0558  dd73fc            	ld	(ix-4),e
+  1336  055b  dd72fd            	ld	(ix-3),d
+  1337                          ;physics.c:151: }
+  1338  055e  dd4e04            	ld	c,(ix+4)
+  1339  0561  dd4605            	ld	b,(ix+5)
+  1340  0564  210c00            	ld	hl,0x000c
+  1341  0567  09                	add	hl, bc
+  1342  0568  dd75fe            	ld	(ix-2),l
+  1343  056b  dd74ff            	ld	(ix-1),h
+  1344  056e  cd0000            	call	____sdcc_load_hlde_mhl
+  1345  0571  7c                	ld	a,h
+  1346  0572  ee80              	xor	a,0x80
+  1347  0574  c5                	push	bc
+  1348  0575  e5                	push	hl
+  1349  0576  dd6efc            	ld	l,(ix-4)
+  1350  0579  dd66fd            	ld	h,(ix-3)
+  1351  057c  e3                	ex	(sp), hl
+  1352  057d  e5                	push	hl
+  1353  057e  dd6efa            	ld	l,(ix-6)
+  1354  0581  dd66fb            	ld	h,(ix-5)
+  1355  0584  e3                	ex	(sp), hl
+  1356  0585  67                	ld	h, a
+  1357  0586  e5                	push	hl
+  1358  0587  d5                	push	de
+  1359  0588  cd0000            	call	___fssub_callee
+  1360  058b  ed8a3e19          	push	+0x3e19
+  1361  058f  ed8a999a          	push	+0x999a
+  1362  0593  d5                	push	de
+  1363  0594  e5                	push	hl
+  1364  0595  cd0000            	call	___fsdiv_callee
+  1365  0598  c1                	pop	bc
+  1366  0599  c5                	push	bc
+  1367  059a  d5                	push	de
+  1368  059b  e5                	push	hl
+  1369  059c  dd6e06            	ld	l,(ix+6)
+  1370  059f  dd6607            	ld	h,(ix+7)
+  1371  05a2  e5                	push	hl
+  1372  05a3  c5                	push	bc
+  1373  05a4  cd2404            	call	_add_trajectory_point
+  1374  05a7  f1                	pop	af
+  1375  05a8  f1                	pop	af
+  1376  05a9  f1                	pop	af
+  1377  05aa  f1                	pop	af
+  1378  05ab  c1                	pop	bc
+  1379                          ;physics.c:152: }
+  1380  05ac  dd6efe            	ld	l,(ix-2)
+  1381  05af  dd66ff            	ld	h,(ix-1)
+  1382  05b2  cd0000            	call	____sdcc_load_hlde_mhl
+  1383  05b5  7c                	ld	a,h
+  1384  05b6  ee80              	xor	a,0x80
+  1385  05b8  c5                	push	bc
+  1386  05b9  e5                	push	hl
+  1387  05ba  dd6efc            	ld	l,(ix-4)
+  1388  05bd  dd66fd            	ld	h,(ix-3)
+  1389  05c0  e3                	ex	(sp), hl
+  1390  05c1  e5                	push	hl
+  1391  05c2  dd6efa            	ld	l,(ix-6)
+  1392  05c5  dd66fb            	ld	h,(ix-5)
+  1393  05c8  e3                	ex	(sp), hl
+  1394  05c9  67                	ld	h, a
+  1395  05ca  e5                	push	hl
+  1396  05cb  d5                	push	de
+  1397  05cc  cd0000            	call	___fsadd_callee
+  1398  05cf  ed8a3e19          	push	+0x3e19
+  1399  05d3  ed8a999a          	push	+0x999a
+  1400  05d7  d5                	push	de
+  1401  05d8  e5                	push	hl
+  1402  05d9  cd0000            	call	___fsdiv_callee
+  1403  05dc  c1                	pop	bc
+  1404  05dd  d5                	push	de
+  1405  05de  e5                	push	hl
+  1406  05df  dd6e06            	ld	l,(ix+6)
+  1407  05e2  dd6607            	ld	h,(ix+7)
+  1408  05e5  e5                	push	hl
+  1409  05e6  c5                	push	bc
+  1410  05e7  cd2404            	call	_add_trajectory_point
+  1411  05ea  f1                	pop	af
+  1412  05eb  f1                	pop	af
+  1413  05ec  f1                	pop	af
+  1414  05ed  f1                	pop	af
+  1415                          l_trajectory_points_00103:
+  1416                          ;physics.c:154: /**
+  1417  05ee  ddf9              	ld	sp, ix
+  1418  05f0  dde1              	pop	ix
+  1419  05f2  c9                	ret
+  1420                          ;physics.c:159: ball_trajectory.n_points = 0;
+  1421                          ;	---------------------------------
+  1422                          ; Function ball_trajectory_points
+  1423                          ; ---------------------------------
+  1424                          _ball_trajectory_points:
+  1425  05f3  cd0000            	call	___sdcc_enter_ix
+  1426                          ;physics.c:161: // debug_ball_trajectory.n_points = 0;
+  1427  05f6  210000            	ld	hl,0x0000
+  1428  05f9  221900            	ld	(_ball_trajectory), hl
+  1429                          ;physics.c:167: const Boundary *court_half = &court_boundaries[COURT_AREA_VALID_UPPER + game_state.ball_owner ^ 1];
+  1430  05fc  cdb402            	call	_will_ball_hit_ground
+  1431  05ff  cb45              	bit	0, l
+  1432  0601  2823              	jr	Z,l_ball_trajectory_points_00102
+  1433                          ;physics.c:169: }
+  1434  0603  010000            	ld	bc,_court_boundaries+0
+  1435  0606  3a0100            	ld	a,(_game_state + 1)
+  1436  0609  c602              	add	a,0x02
+  1437  060b  ee01              	xor	a,0x01
+  1438  060d  6f                	ld	l, a
+  1439  060e  07                	rlca
+  1440  060f  9f                	sbc	a, a
+  1441  0610  67                	ld	h, a
+  1442  0611  29                	add	hl, hl
+  1443  0612  29                	add	hl, hl
+  1444  0613  29                	add	hl, hl
+  1445  0614  09                	add	hl, bc
+  1446  0615  eb                	ex	de, hl
+  1447                          ;physics.c:170: const Boundary *full_court_half = &court_boundaries[COURT_AREA_UPPER + game_state.ball_owner ^ 1];
+  1448  0616  dd7e04            	ld	a,(ix+4)
+  1449  0619  f5                	push	af
+  1450  061a  33                	inc	sp
+  1451  061b  d5                	push	de
+  1452  061c  210000            	ld	hl,_ball
+  1453  061f  e5                	push	hl
+  1454  0620  cd1e05            	call	_trajectory_points
+  1455  0623  f1                	pop	af
+  1456  0624  f1                	pop	af
+  1457  0625  33                	inc	sp
+  1458                          l_ball_trajectory_points_00102:
+  1459                          ;physics.c:172:
+  1460  0626  010000            	ld	bc,_court_boundaries+0
+  1461  0629  3a0100            	ld	a,(_game_state + 1)
+  1462  062c  ee01              	xor	a,0x01
+  1463  062e  6f                	ld	l, a
+  1464  062f  07                	rlca
+  1465  0630  9f                	sbc	a, a
+  1466  0631  67                	ld	h, a
+  1467  0632  29                	add	hl, hl
+  1468  0633  29                	add	hl, hl
+  1469  0634  29                	add	hl, hl
+  1470  0635  09                	add	hl, bc
+  1471                          ;physics.c:173: if (ball_trajectory.n_points == 0)
+  1472  0636  e5                	push	hl
+  1473  0637  dd7e04            	ld	a,(ix+4)
+  1474  063a  f5                	push	af
+  1475  063b  33                	inc	sp
+  1476  063c  cd0000            	call	___uchar2fs_callee
+  1477  063f  d5                	push	de
+  1478  0640  e5                	push	hl
+  1479  0641  21403f            	ld	hl,0x3f40
+  1480  0644  e5                	push	hl
+  1481  0645  210000            	ld	hl,0x0000
+  1482  0648  e5                	push	hl
+  1483  0649  cd0000            	call	___fsmul_callee
+  1484  064c  d5                	push	de
+  1485  064d  e5                	push	hl
+  1486  064e  cd0000            	call	___fs2uchar_callee
+  1487  0651  55                	ld	d, l
+  1488  0652  c1                	pop	bc
+  1489  0653  d5                	push	de
+  1490  0654  33                	inc	sp
+  1491  0655  c5                	push	bc
+  1492  0656  210000            	ld	hl,_ball_at_ground_hit
+  1493  0659  e5                	push	hl
+  1494  065a  cd1e05            	call	_trajectory_points
+  1495  065d  f1                	pop	af
+  1496  065e  f1                	pop	af
+  1497  065f  33                	inc	sp
+  1498                          ;physics.c:183:
+  1499  0660  211900            	ld	hl,_ball_trajectory
+  1500                          ;physics.c:184: /**
+  1501  0663  dde1              	pop	ix
+  1502  0665  c9                	ret
+  1503                          ;physics.c:190: ball_trajectory.n_points = 0;
+  1504                          ;	---------------------------------
+  1505                          ; Function ball_trajectory_points_at_service
+  1506                          ; ---------------------------------
+  1507                          _ball_trajectory_points_at_service:
+  1508  0666  cd0000            	call	___sdcc_enter_ix
+  1509                          ;physics.c:192: // debug_ball_trajectory.n_points = 0;
+  1510  0669  210000            	ld	hl,0x0000
+  1511  066c  221900            	ld	(_ball_trajectory), hl
+  1512                          ;physics.c:197: // debug_point("Ground", ball_at_ground_hit.x, ball_at_ground_hit.y);
+  1513  066f  cdb402            	call	_will_ball_hit_ground
+  1514                          ;physics.c:203:
+  1515  0672  010000            	ld	bc,_court_boundaries+0
+  1516  0675  3a0100            	ld	a,(_game_state + 1)
+  1517  0678  ee01              	xor	a,0x01
+  1518  067a  6f                	ld	l, a
+  1519  067b  07                	rlca
+  1520  067c  9f                	sbc	a, a
+  1521  067d  67                	ld	h, a
+  1522  067e  29                	add	hl, hl
+  1523  067f  29                	add	hl, hl
+  1524  0680  29                	add	hl, hl
+  1525  0681  09                	add	hl, bc
+  1526                          ;physics.c:204: return &ball_trajectory;
+  1527  0682  e5                	push	hl
+  1528  0683  dd7e04            	ld	a,(ix+4)
+  1529  0686  f5                	push	af
+  1530  0687  33                	inc	sp
+  1531  0688  cd0000            	call	___uchar2fs_callee
+  1532  068b  d5                	push	de
+  1533  068c  e5                	push	hl
+  1534  068d  21403f            	ld	hl,0x3f40
+  1535  0690  e5                	push	hl
+  1536  0691  210000            	ld	hl,0x0000
+  1537  0694  e5                	push	hl
+  1538  0695  cd0000            	call	___fsmul_callee
+  1539  0698  d5                	push	de
+  1540  0699  e5                	push	hl
+  1541  069a  cd0000            	call	___fs2uchar_callee
+  1542  069d  55                	ld	d, l
+  1543  069e  c1                	pop	bc
+  1544  069f  d5                	push	de
+  1545  06a0  33                	inc	sp
+  1546  06a1  c5                	push	bc
+  1547  06a2  210000            	ld	hl,_ball_at_ground_hit
+  1548  06a5  e5                	push	hl
+  1549  06a6  cd1e05            	call	_trajectory_points
+  1550  06a9  f1                	pop	af
+  1551  06aa  f1                	pop	af
+  1552  06ab  33                	inc	sp
+  1553                          ;physics.c:206: ERROR: no line number 206 in file physics.c
+  1554  06ac  211900            	ld	hl,_ball_trajectory
+  1555                          ;physics.c:207: ERROR: no line number 207 in file physics.c
+  1556  06af  dde1              	pop	ix
+  1557  06b1  c9                	ret
+  1558                          	SECTION IGNORE
+  1559                          

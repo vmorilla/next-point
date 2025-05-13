@@ -1,0 +1,1115 @@
+/tmp/tmp4sf1Zahd.asm:
+     1                          MODULE unified_sprites_c
+     2                          LINE 0, "unified_sprites.c"
+unified_sprites.c:
+                                
+     1                          ;--------------------------------------------------------
+     2                          ; File Created by SDCC : free open source ISO C Compiler
+     3                          ; Version 4.3.0 #14210 (Mac OS X ppc)
+     4                          ;--------------------------------------------------------
+     5                          	.zxn
+     6                          ; Processed by Z88DK
+     7                          ;--------------------------------------------------------
+     8                          
+     9                          	EXTERN __divschar
+    10                          	EXTERN __divschar_callee
+    11                          	EXTERN __divsint
+    12                          	EXTERN __divsint_callee
+    13                          	EXTERN __divslong
+    14                          	EXTERN __divslong_callee
+    15                          	EXTERN __divslonglong
+    16                          	EXTERN __divslonglong_callee
+    17                          	EXTERN __divsuchar
+    18                          	EXTERN __divsuchar_callee
+    19                          	EXTERN __divuchar
+    20                          	EXTERN __divuchar_callee
+    21                          	EXTERN __divuint
+    22                          	EXTERN __divuint_callee
+    23                          	EXTERN __divulong
+    24                          	EXTERN __divulong_callee
+    25                          	EXTERN __divulonglong
+    26                          	EXTERN __divulonglong_callee
+    27                          	EXTERN __divuschar
+    28                          	EXTERN __divuschar_callee
+    29                          	EXTERN __modschar
+    30                          	EXTERN __modschar_callee
+    31                          	EXTERN __modsint
+    32                          	EXTERN __modsint_callee
+    33                          	EXTERN __modslong
+    34                          	EXTERN __modslong_callee
+    35                          	EXTERN __modslonglong
+    36                          	EXTERN __modslonglong_callee
+    37                          	EXTERN __modsuchar
+    38                          	EXTERN __modsuchar_callee
+    39                          	EXTERN __moduchar
+    40                          	EXTERN __moduchar_callee
+    41                          	EXTERN __moduint
+    42                          	EXTERN __moduint_callee
+    43                          	EXTERN __modulong
+    44                          	EXTERN __modulong_callee
+    45                          	EXTERN __modulonglong
+    46                          	EXTERN __modulonglong_callee
+    47                          	EXTERN __moduschar
+    48                          	EXTERN __moduschar_callee
+    49                          	EXTERN __mulint
+    50                          	EXTERN __mulint_callee
+    51                          	EXTERN __mullong
+    52                          	EXTERN __mullong_callee
+    53                          	EXTERN __mullonglong
+    54                          	EXTERN __mullonglong_callee
+    55                          	EXTERN __mulschar
+    56                          	EXTERN __mulschar_callee
+    57                          	EXTERN __mulsuchar
+    58                          	EXTERN __mulsuchar_callee
+    59                          	EXTERN __muluchar
+    60                          	EXTERN __muluchar_callee
+    61                          	EXTERN __muluschar
+    62                          	EXTERN __muluschar_callee
+    63                          	EXTERN __rlslonglong
+    64                          	EXTERN __rlslonglong_callee
+    65                          	EXTERN __rlulonglong
+    66                          	EXTERN __rlulonglong_callee
+    67                          	EXTERN __rrslonglong
+    68                          	EXTERN __rrslonglong_callee
+    69                          	EXTERN __rrulonglong
+    70                          	EXTERN __rrulonglong_callee
+    71                          	EXTERN ___mulsint2slong
+    72                          	EXTERN ___mulsint2slong_callee
+    73                          	EXTERN ___muluint2ulong
+    74                          	EXTERN ___muluint2ulong_callee
+    75                          	EXTERN ___sdcc_call_hl
+    76                          	EXTERN ___sdcc_call_iy
+    77                          	EXTERN ___sdcc_enter_ix
+    78                          	EXTERN banked_call
+    79                          	EXTERN _banked_ret
+    80                          	EXTERN ___fs2schar
+    81                          	EXTERN ___fs2schar_callee
+    82                          	EXTERN ___fs2sint
+    83                          	EXTERN ___fs2sint_callee
+    84                          	EXTERN ___fs2slong
+    85                          	EXTERN ___fs2slong_callee
+    86                          	EXTERN ___fs2slonglong
+    87                          	EXTERN ___fs2slonglong_callee
+    88                          	EXTERN ___fs2uchar
+    89                          	EXTERN ___fs2uchar_callee
+    90                          	EXTERN ___fs2uint
+    91                          	EXTERN ___fs2uint_callee
+    92                          	EXTERN ___fs2ulong
+    93                          	EXTERN ___fs2ulong_callee
+    94                          	EXTERN ___fs2ulonglong
+    95                          	EXTERN ___fs2ulonglong_callee
+    96                          	EXTERN ___fsadd
+    97                          	EXTERN ___fsadd_callee
+    98                          	EXTERN ___fsdiv
+    99                          	EXTERN ___fsdiv_callee
+   100                          	EXTERN ___fseq
+   101                          	EXTERN ___fseq_callee
+   102                          	EXTERN ___fsgt
+   103                          	EXTERN ___fsgt_callee
+   104                          	EXTERN ___fslt
+   105                          	EXTERN ___fslt_callee
+   106                          	EXTERN ___fsmul
+   107                          	EXTERN ___fsmul_callee
+   108                          	EXTERN ___fsneq
+   109                          	EXTERN ___fsneq_callee
+   110                          	EXTERN ___fssub
+   111                          	EXTERN ___fssub_callee
+   112                          	EXTERN ___schar2fs
+   113                          	EXTERN ___schar2fs_callee
+   114                          	EXTERN ___sint2fs
+   115                          	EXTERN ___sint2fs_callee
+   116                          	EXTERN ___slong2fs
+   117                          	EXTERN ___slong2fs_callee
+   118                          	EXTERN ___slonglong2fs
+   119                          	EXTERN ___slonglong2fs_callee
+   120                          	EXTERN ___uchar2fs
+   121                          	EXTERN ___uchar2fs_callee
+   122                          	EXTERN ___uint2fs
+   123                          	EXTERN ___uint2fs_callee
+   124                          	EXTERN ___ulong2fs
+   125                          	EXTERN ___ulong2fs_callee
+   126                          	EXTERN ___ulonglong2fs
+   127                          	EXTERN ___ulonglong2fs_callee
+   128                          	EXTERN ____sdcc_2_copy_src_mhl_dst_deix
+   129                          	EXTERN ____sdcc_2_copy_src_mhl_dst_bcix
+   130                          	EXTERN ____sdcc_4_copy_src_mhl_dst_deix
+   131                          	EXTERN ____sdcc_4_copy_src_mhl_dst_bcix
+   132                          	EXTERN ____sdcc_4_copy_src_mhl_dst_mbc
+   133                          	EXTERN ____sdcc_4_ldi_nosave_bc
+   134                          	EXTERN ____sdcc_4_ldi_save_bc
+   135                          	EXTERN ____sdcc_4_push_hlix
+   136                          	EXTERN ____sdcc_4_push_mhl
+   137                          	EXTERN ____sdcc_lib_setmem_hl
+   138                          	EXTERN ____sdcc_ll_add_de_bc_hl
+   139                          	EXTERN ____sdcc_ll_add_de_bc_hlix
+   140                          	EXTERN ____sdcc_ll_add_de_hlix_bc
+   141                          	EXTERN ____sdcc_ll_add_de_hlix_bcix
+   142                          	EXTERN ____sdcc_ll_add_deix_bc_hl
+   143                          	EXTERN ____sdcc_ll_add_deix_hlix
+   144                          	EXTERN ____sdcc_ll_add_hlix_bc_deix
+   145                          	EXTERN ____sdcc_ll_add_hlix_deix_bc
+   146                          	EXTERN ____sdcc_ll_add_hlix_deix_bcix
+   147                          	EXTERN ____sdcc_ll_asr_hlix_a
+   148                          	EXTERN ____sdcc_ll_asr_mbc_a
+   149                          	EXTERN ____sdcc_ll_copy_src_de_dst_hlix
+   150                          	EXTERN ____sdcc_ll_copy_src_de_dst_hlsp
+   151                          	EXTERN ____sdcc_ll_copy_src_deix_dst_hl
+   152                          	EXTERN ____sdcc_ll_copy_src_deix_dst_hlix
+   153                          	EXTERN ____sdcc_ll_copy_src_deixm_dst_hlsp
+   154                          	EXTERN ____sdcc_ll_copy_src_desp_dst_hlsp
+   155                          	EXTERN ____sdcc_ll_copy_src_hl_dst_de
+   156                          	EXTERN ____sdcc_ll_copy_src_hlsp_dst_de
+   157                          	EXTERN ____sdcc_ll_copy_src_hlsp_dst_deixm
+   158                          	EXTERN ____sdcc_ll_lsl_hlix_a
+   159                          	EXTERN ____sdcc_ll_lsl_mbc_a
+   160                          	EXTERN ____sdcc_ll_lsr_hlix_a
+   161                          	EXTERN ____sdcc_ll_lsr_mbc_a
+   162                          	EXTERN ____sdcc_ll_push_hlix
+   163                          	EXTERN ____sdcc_ll_push_mhl
+   164                          	EXTERN ____sdcc_ll_sub_de_bc_hl
+   165                          	EXTERN ____sdcc_ll_sub_de_bc_hlix
+   166                          	EXTERN ____sdcc_ll_sub_de_hlix_bc
+   167                          	EXTERN ____sdcc_ll_sub_de_hlix_bcix
+   168                          	EXTERN ____sdcc_ll_sub_deix_bc_hl
+   169                          	EXTERN ____sdcc_ll_sub_deix_hlix
+   170                          	EXTERN ____sdcc_ll_sub_hlix_bc_deix
+   171                          	EXTERN ____sdcc_ll_sub_hlix_deix_bc
+   172                          	EXTERN ____sdcc_ll_sub_hlix_deix_bcix
+   173                          	EXTERN ____sdcc_load_debc_deix
+   174                          	EXTERN ____sdcc_load_dehl_deix
+   175                          	EXTERN ____sdcc_load_debc_mhl
+   176                          	EXTERN ____sdcc_load_hlde_mhl
+   177                          	EXTERN ____sdcc_store_dehl_bcix
+   178                          	EXTERN ____sdcc_store_debc_hlix
+   179                          	EXTERN ____sdcc_store_debc_mhl
+   180                          	EXTERN ____sdcc_cpu_pop_ei
+   181                          	EXTERN ____sdcc_cpu_pop_ei_jp
+   182                          	EXTERN ____sdcc_cpu_push_di
+   183                          	EXTERN ____sdcc_outi
+   184                          	EXTERN ____sdcc_outi_128
+   185                          	EXTERN ____sdcc_outi_256
+   186                          	EXTERN ____sdcc_ldi
+   187                          	EXTERN ____sdcc_ldi_128
+   188                          	EXTERN ____sdcc_ldi_256
+   189                          	EXTERN ____sdcc_4_copy_srcd_hlix_dst_deix
+   190                          	EXTERN ____sdcc_4_and_src_mbc_mhl_dst_deix
+   191                          	EXTERN ____sdcc_4_or_src_mbc_mhl_dst_deix
+   192                          	EXTERN ____sdcc_4_xor_src_mbc_mhl_dst_deix
+   193                          	EXTERN ____sdcc_4_or_src_dehl_dst_bcix
+   194                          	EXTERN ____sdcc_4_xor_src_dehl_dst_bcix
+   195                          	EXTERN ____sdcc_4_and_src_dehl_dst_bcix
+   196                          	EXTERN ____sdcc_4_xor_src_mbc_mhl_dst_debc
+   197                          	EXTERN ____sdcc_4_or_src_mbc_mhl_dst_debc
+   198                          	EXTERN ____sdcc_4_and_src_mbc_mhl_dst_debc
+   199                          	EXTERN ____sdcc_4_cpl_src_mhl_dst_debc
+   200                          	EXTERN ____sdcc_4_xor_src_debc_mhl_dst_debc
+   201                          	EXTERN ____sdcc_4_or_src_debc_mhl_dst_debc
+   202                          	EXTERN ____sdcc_4_and_src_debc_mhl_dst_debc
+   203                          	EXTERN ____sdcc_4_and_src_debc_hlix_dst_debc
+   204                          	EXTERN ____sdcc_4_or_src_debc_hlix_dst_debc
+   205                          	EXTERN ____sdcc_4_xor_src_debc_hlix_dst_debc
+   206                          
+   207                          ;--------------------------------------------------------
+   208                          ; Public variables in this module
+   209                          ;--------------------------------------------------------
+   210                          	GLOBAL _init_sprite_slots
+   211                          	GLOBAL _move_sprite
+   212                          	GLOBAL _loadSpriteFrame
+   213                          	GLOBAL _hide_sprite
+   214                          	GLOBAL _show_sprite
+   215                          	GLOBAL _change_sprite_visibility
+   216                          ;--------------------------------------------------------
+   217                          ; Externals used
+   218                          ;--------------------------------------------------------
+   219                          	GLOBAL _float_to_string
+   220                          	GLOBAL _xy_in_boundary
+   221                          	GLOBAL _point_in_boundary
+   222                          	GLOBAL _x_projection
+   223                          	GLOBAL _clip_sprites_window
+   224                          	GLOBAL _setup_relative_sprite
+   225                          	GLOBAL _setup_unified_sprite
+   226                          	GLOBAL _set_sprite_index
+   227                          	GLOBAL _set_tilemap_offset
+   228                          	GLOBAL _clip_tilemap_window
+   229                          	GLOBAL _set_layer2_offset
+   230                          	GLOBAL _clip_layer2_window
+   231                          	GLOBAL _ZXN_NEXTREG_UPDATE
+   232                          	GLOBAL _zx_pattern_fill_callee
+   233                          	GLOBAL _zx_pattern_fill
+   234                          	GLOBAL _tshr_saddrpup_fastcall
+   235                          	GLOBAL _tshr_saddrpup
+   236                          	GLOBAL _tshr_saddrpright_callee
+   237                          	GLOBAL _tshr_saddrpright
+   238                          	GLOBAL _tshr_saddrpleft_callee
+   239                          	GLOBAL _tshr_saddrpleft
+   240                          	GLOBAL _tshr_saddrpdown_fastcall
+   241                          	GLOBAL _tshr_saddrpdown
+   242                          	GLOBAL _tshr_saddrcup_fastcall
+   243                          	GLOBAL _tshr_saddrcup
+   244                          	GLOBAL _tshr_saddrcright_fastcall
+   245                          	GLOBAL _tshr_saddrcright
+   246                          	GLOBAL _tshr_saddrcleft_fastcall
+   247                          	GLOBAL _tshr_saddrcleft
+   248                          	GLOBAL _tshr_saddrcdown_fastcall
+   249                          	GLOBAL _tshr_saddrcdown
+   250                          	GLOBAL _tshr_saddr2py_fastcall
+   251                          	GLOBAL _tshr_saddr2py
+   252                          	GLOBAL _tshr_saddr2px_fastcall
+   253                          	GLOBAL _tshr_saddr2px
+   254                          	GLOBAL _tshr_saddr2cy_fastcall
+   255                          	GLOBAL _tshr_saddr2cy
+   256                          	GLOBAL _tshr_saddr2cx_fastcall
+   257                          	GLOBAL _tshr_saddr2cx
+   258                          	GLOBAL _tshr_py2saddr_fastcall
+   259                          	GLOBAL _tshr_py2saddr
+   260                          	GLOBAL _tshr_pxy2saddr_callee
+   261                          	GLOBAL _tshr_pxy2saddr
+   262                          	GLOBAL _tshr_px2bitmask_fastcall
+   263                          	GLOBAL _tshr_px2bitmask
+   264                          	GLOBAL _tshr_cy2saddr_fastcall
+   265                          	GLOBAL _tshr_cy2saddr
+   266                          	GLOBAL _tshr_cxy2saddr_callee
+   267                          	GLOBAL _tshr_cxy2saddr
+   268                          	GLOBAL _tshr_bitmask2px_fastcall
+   269                          	GLOBAL _tshr_bitmask2px
+   270                          	GLOBAL _tshc_saddrpup_fastcall
+   271                          	GLOBAL _tshc_saddrpup
+   272                          	GLOBAL _tshc_saddrpright_callee
+   273                          	GLOBAL _tshc_saddrpright
+   274                          	GLOBAL _tshc_saddrpleft_callee
+   275                          	GLOBAL _tshc_saddrpleft
+   276                          	GLOBAL _tshc_saddrpdown_fastcall
+   277                          	GLOBAL _tshc_saddrpdown
+   278                          	GLOBAL _tshc_saddrcup_fastcall
+   279                          	GLOBAL _tshc_saddrcup
+   280                          	GLOBAL _tshc_saddrcright_fastcall
+   281                          	GLOBAL _tshc_saddrcright
+   282                          	GLOBAL _tshc_saddrcleft_fastcall
+   283                          	GLOBAL _tshc_saddrcleft
+   284                          	GLOBAL _tshc_saddrcdown_fastcall
+   285                          	GLOBAL _tshc_saddrcdown
+   286                          	GLOBAL _tshc_saddr2py_fastcall
+   287                          	GLOBAL _tshc_saddr2py
+   288                          	GLOBAL _tshc_saddr2px_fastcall
+   289                          	GLOBAL _tshc_saddr2px
+   290                          	GLOBAL _tshc_saddr2cy_fastcall
+   291                          	GLOBAL _tshc_saddr2cy
+   292                          	GLOBAL _tshc_saddr2cx_fastcall
+   293                          	GLOBAL _tshc_saddr2cx
+   294                          	GLOBAL _tshc_saddr2aaddr_fastcall
+   295                          	GLOBAL _tshc_saddr2aaddr
+   296                          	GLOBAL _tshc_py2saddr_fastcall
+   297                          	GLOBAL _tshc_py2saddr
+   298                          	GLOBAL _tshc_py2aaddr_fastcall
+   299                          	GLOBAL _tshc_py2aaddr
+   300                          	GLOBAL _tshc_pxy2saddr_callee
+   301                          	GLOBAL _tshc_pxy2saddr
+   302                          	GLOBAL _tshc_pxy2aaddr_callee
+   303                          	GLOBAL _tshc_pxy2aaddr
+   304                          	GLOBAL _tshc_px2bitmask_fastcall
+   305                          	GLOBAL _tshc_px2bitmask
+   306                          	GLOBAL _tshc_cy2saddr_fastcall
+   307                          	GLOBAL _tshc_cy2saddr
+   308                          	GLOBAL _tshc_cy2aaddr_fastcall
+   309                          	GLOBAL _tshc_cy2aaddr
+   310                          	GLOBAL _tshc_cxy2saddr_callee
+   311                          	GLOBAL _tshc_cxy2saddr
+   312                          	GLOBAL _tshc_cxy2aaddr_callee
+   313                          	GLOBAL _tshc_cxy2aaddr
+   314                          	GLOBAL _tshc_bitmask2px_fastcall
+   315                          	GLOBAL _tshc_bitmask2px
+   316                          	GLOBAL _tshc_aaddrpup_fastcall
+   317                          	GLOBAL _tshc_aaddrpup
+   318                          	GLOBAL _tshc_aaddrpright_callee
+   319                          	GLOBAL _tshc_aaddrpright
+   320                          	GLOBAL _tshc_aaddrpleft_callee
+   321                          	GLOBAL _tshc_aaddrpleft
+   322                          	GLOBAL _tshc_aaddrpdown_fastcall
+   323                          	GLOBAL _tshc_aaddrpdown
+   324                          	GLOBAL _tshc_aaddrcup_fastcall
+   325                          	GLOBAL _tshc_aaddrcup
+   326                          	GLOBAL _tshc_aaddrcright_fastcall
+   327                          	GLOBAL _tshc_aaddrcright
+   328                          	GLOBAL _tshc_aaddrcleft_fastcall
+   329                          	GLOBAL _tshc_aaddrcleft
+   330                          	GLOBAL _tshc_aaddrcdown_fastcall
+   331                          	GLOBAL _tshc_aaddrcdown
+   332                          	GLOBAL _tshc_aaddr2saddr_fastcall
+   333                          	GLOBAL _tshc_aaddr2saddr
+   334                          	GLOBAL _tshc_aaddr2py_fastcall
+   335                          	GLOBAL _tshc_aaddr2py
+   336                          	GLOBAL _tshc_aaddr2px_fastcall
+   337                          	GLOBAL _tshc_aaddr2px
+   338                          	GLOBAL _tshc_aaddr2cy_fastcall
+   339                          	GLOBAL _tshc_aaddr2cy
+   340                          	GLOBAL _tshc_aaddr2cx_fastcall
+   341                          	GLOBAL _tshc_aaddr2cx
+   342                          	GLOBAL _zx_saddrpup_fastcall
+   343                          	GLOBAL _zx_saddrpup
+   344                          	GLOBAL _zx_saddrpright_callee
+   345                          	GLOBAL _zx_saddrpright
+   346                          	GLOBAL _zx_saddrpleft_callee
+   347                          	GLOBAL _zx_saddrpleft
+   348                          	GLOBAL _zx_saddrpdown_fastcall
+   349                          	GLOBAL _zx_saddrpdown
+   350                          	GLOBAL _zx_saddrcup_fastcall
+   351                          	GLOBAL _zx_saddrcup
+   352                          	GLOBAL _zx_saddrcright_fastcall
+   353                          	GLOBAL _zx_saddrcright
+   354                          	GLOBAL _zx_saddrcleft_fastcall
+   355                          	GLOBAL _zx_saddrcleft
+   356                          	GLOBAL _zx_saddrcdown_fastcall
+   357                          	GLOBAL _zx_saddrcdown
+   358                          	GLOBAL _zx_saddr2py_fastcall
+   359                          	GLOBAL _zx_saddr2py
+   360                          	GLOBAL _zx_saddr2px_fastcall
+   361                          	GLOBAL _zx_saddr2px
+   362                          	GLOBAL _zx_saddr2cy_fastcall
+   363                          	GLOBAL _zx_saddr2cy
+   364                          	GLOBAL _zx_saddr2cx_fastcall
+   365                          	GLOBAL _zx_saddr2cx
+   366                          	GLOBAL _zx_saddr2aaddr_fastcall
+   367                          	GLOBAL _zx_saddr2aaddr
+   368                          	GLOBAL _zx_py2saddr_fastcall
+   369                          	GLOBAL _zx_py2saddr
+   370                          	GLOBAL _zx_py2aaddr_fastcall
+   371                          	GLOBAL _zx_py2aaddr
+   372                          	GLOBAL _zx_pxy2saddr_callee
+   373                          	GLOBAL _zx_pxy2saddr
+   374                          	GLOBAL _zx_pxy2aaddr_callee
+   375                          	GLOBAL _zx_pxy2aaddr
+   376                          	GLOBAL _zx_px2bitmask_fastcall
+   377                          	GLOBAL _zx_px2bitmask
+   378                          	GLOBAL _zx_cy2saddr_fastcall
+   379                          	GLOBAL _zx_cy2saddr
+   380                          	GLOBAL _zx_cy2aaddr_fastcall
+   381                          	GLOBAL _zx_cy2aaddr
+   382                          	GLOBAL _zx_cxy2saddr_callee
+   383                          	GLOBAL _zx_cxy2saddr
+   384                          	GLOBAL _zx_cxy2aaddr_callee
+   385                          	GLOBAL _zx_cxy2aaddr
+   386                          	GLOBAL _zx_bitmask2px_fastcall
+   387                          	GLOBAL _zx_bitmask2px
+   388                          	GLOBAL _zx_aaddrcup_fastcall
+   389                          	GLOBAL _zx_aaddrcup
+   390                          	GLOBAL _zx_aaddrcright_fastcall
+   391                          	GLOBAL _zx_aaddrcright
+   392                          	GLOBAL _zx_aaddrcleft_fastcall
+   393                          	GLOBAL _zx_aaddrcleft
+   394                          	GLOBAL _zx_aaddrcdown_fastcall
+   395                          	GLOBAL _zx_aaddrcdown
+   396                          	GLOBAL _zx_aaddr2saddr_fastcall
+   397                          	GLOBAL _zx_aaddr2saddr
+   398                          	GLOBAL _zx_aaddr2py_fastcall
+   399                          	GLOBAL _zx_aaddr2py
+   400                          	GLOBAL _zx_aaddr2px_fastcall
+   401                          	GLOBAL _zx_aaddr2px
+   402                          	GLOBAL _zx_aaddr2cy_fastcall
+   403                          	GLOBAL _zx_aaddr2cy
+   404                          	GLOBAL _zx_aaddr2cx_fastcall
+   405                          	GLOBAL _zx_aaddr2cx
+   406                          	GLOBAL _tshr_visit_wc_pix_callee
+   407                          	GLOBAL _tshr_visit_wc_pix
+   408                          	GLOBAL _tshr_scroll_wc_up_pix_callee
+   409                          	GLOBAL _tshr_scroll_wc_up_pix
+   410                          	GLOBAL _tshr_scroll_up_pix_callee
+   411                          	GLOBAL _tshr_scroll_up_pix
+   412                          	GLOBAL _tshr_scroll_up_callee
+   413                          	GLOBAL _tshr_scroll_up
+   414                          	GLOBAL _tshr_cls_wc_pix_callee
+   415                          	GLOBAL _tshr_cls_wc_pix
+   416                          	GLOBAL _tshr_cls_pix_fastcall
+   417                          	GLOBAL _tshr_cls_pix
+   418                          	GLOBAL _tshr_cls_attr_fastcall
+   419                          	GLOBAL _tshr_cls_attr
+   420                          	GLOBAL _tshr_cls_fastcall
+   421                          	GLOBAL _tshr_cls
+   422                          	GLOBAL _tshc_visit_wc_pix_callee
+   423                          	GLOBAL _tshc_visit_wc_pix
+   424                          	GLOBAL _tshc_visit_wc_attr_callee
+   425                          	GLOBAL _tshc_visit_wc_attr
+   426                          	GLOBAL _tshc_scroll_wc_up_pix_callee
+   427                          	GLOBAL _tshc_scroll_wc_up_pix
+   428                          	GLOBAL _tshc_scroll_wc_up_attr_callee
+   429                          	GLOBAL _tshc_scroll_wc_up_attr
+   430                          	GLOBAL _tshc_scroll_wc_up_callee
+   431                          	GLOBAL _tshc_scroll_wc_up
+   432                          	GLOBAL _tshc_scroll_up_pix_callee
+   433                          	GLOBAL _tshc_scroll_up_pix
+   434                          	GLOBAL _tshc_scroll_up_attr_callee
+   435                          	GLOBAL _tshc_scroll_up_attr
+   436                          	GLOBAL _tshc_scroll_up_callee
+   437                          	GLOBAL _tshc_scroll_up
+   438                          	GLOBAL _tshc_cls_wc_pix_callee
+   439                          	GLOBAL _tshc_cls_wc_pix
+   440                          	GLOBAL _tshc_cls_wc_attr_callee
+   441                          	GLOBAL _tshc_cls_wc_attr
+   442                          	GLOBAL _tshc_cls_wc_callee
+   443                          	GLOBAL _tshc_cls_wc
+   444                          	GLOBAL _tshc_cls_pix_fastcall
+   445                          	GLOBAL _tshc_cls_pix
+   446                          	GLOBAL _tshc_cls_attr_fastcall
+   447                          	GLOBAL _tshc_cls_attr
+   448                          	GLOBAL _tshc_cls_fastcall
+   449                          	GLOBAL _tshc_cls
+   450                          	GLOBAL _zx_visit_wc_pix_callee
+   451                          	GLOBAL _zx_visit_wc_pix
+   452                          	GLOBAL _zx_visit_wc_attr_callee
+   453                          	GLOBAL _zx_visit_wc_attr
+   454                          	GLOBAL _zx_scroll_wc_up_pix_callee
+   455                          	GLOBAL _zx_scroll_wc_up_pix
+   456                          	GLOBAL _zx_scroll_wc_up_attr_callee
+   457                          	GLOBAL _zx_scroll_wc_up_attr
+   458                          	GLOBAL _zx_scroll_wc_up_callee
+   459                          	GLOBAL _zx_scroll_wc_up
+   460                          	GLOBAL _zx_scroll_up_pix_callee
+   461                          	GLOBAL _zx_scroll_up_pix
+   462                          	GLOBAL _zx_scroll_up_attr_callee
+   463                          	GLOBAL _zx_scroll_up_attr
+   464                          	GLOBAL _zx_scroll_up_callee
+   465                          	GLOBAL _zx_scroll_up
+   466                          	GLOBAL _zx_cls_wc_pix_callee
+   467                          	GLOBAL _zx_cls_wc_pix
+   468                          	GLOBAL _zx_cls_wc_attr_callee
+   469                          	GLOBAL _zx_cls_wc_attr
+   470                          	GLOBAL _zx_cls_wc_callee
+   471                          	GLOBAL _zx_cls_wc
+   472                          	GLOBAL _zx_cls_pix_fastcall
+   473                          	GLOBAL _zx_cls_pix
+   474                          	GLOBAL _zx_cls_attr_fastcall
+   475                          	GLOBAL _zx_cls_attr
+   476                          	GLOBAL _zx_cls_fastcall
+   477                          	GLOBAL _zx_cls
+   478                          	GLOBAL _zx_border_fastcall
+   479                          	GLOBAL _zx_border
+   480                          	GLOBAL _ts_vmod_fastcall
+   481                          	GLOBAL _ts_vmod
+   482                          	GLOBAL _zx_tape_verify_block_callee
+   483                          	GLOBAL _zx_tape_verify_block
+   484                          	GLOBAL _zx_tape_save_block_callee
+   485                          	GLOBAL _zx_tape_save_block
+   486                          	GLOBAL _zx_tape_load_block_callee
+   487                          	GLOBAL _zx_tape_load_block
+   488                          	GLOBAL _check_version_nextzxos_fastcall
+   489                          	GLOBAL _check_version_nextzxos
+   490                          	GLOBAL _check_version_esxdos_fastcall
+   491                          	GLOBAL _check_version_esxdos
+   492                          	GLOBAL _check_version_core_fastcall
+   493                          	GLOBAL _check_version_core
+   494                          	GLOBAL _zxn_mangle_bank_state_fastcall
+   495                          	GLOBAL _zxn_mangle_bank_state
+   496                          	GLOBAL _zxn_write_sysvar_bank_state_fastcall
+   497                          	GLOBAL _zxn_write_sysvar_bank_state
+   498                          	GLOBAL _zxn_read_sysvar_bank_state
+   499                          	GLOBAL _zxn_write_bank_state_fastcall
+   500                          	GLOBAL _zxn_write_bank_state
+   501                          	GLOBAL _zxn_write_mmu_state_fastcall
+   502                          	GLOBAL _zxn_write_mmu_state
+   503                          	GLOBAL _zxn_read_mmu_state_fastcall
+   504                          	GLOBAL _zxn_read_mmu_state
+   505                          	GLOBAL _zxn_page_from_addr_fastcall
+   506                          	GLOBAL _zxn_page_from_addr
+   507                          	GLOBAL _zxn_addr_from_page_fastcall
+   508                          	GLOBAL _zxn_addr_from_page
+   509                          	GLOBAL _zxn_addr_in_mmu_callee
+   510                          	GLOBAL _zxn_addr_in_mmu
+   511                          	GLOBAL _zxn_mmu_from_addr_fastcall
+   512                          	GLOBAL _zxn_mmu_from_addr
+   513                          	GLOBAL _zxn_addr_from_mmu_fastcall
+   514                          	GLOBAL _zxn_addr_from_mmu
+   515                          	GLOBAL _ZXN_WRITE_MMU7_fastcall
+   516                          	GLOBAL _ZXN_WRITE_MMU7
+   517                          	GLOBAL _ZXN_WRITE_MMU6_fastcall
+   518                          	GLOBAL _ZXN_WRITE_MMU6
+   519                          	GLOBAL _ZXN_WRITE_MMU5_fastcall
+   520                          	GLOBAL _ZXN_WRITE_MMU5
+   521                          	GLOBAL _ZXN_WRITE_MMU4_fastcall
+   522                          	GLOBAL _ZXN_WRITE_MMU4
+   523                          	GLOBAL _ZXN_WRITE_MMU3_fastcall
+   524                          	GLOBAL _ZXN_WRITE_MMU3
+   525                          	GLOBAL _ZXN_WRITE_MMU2_fastcall
+   526                          	GLOBAL _ZXN_WRITE_MMU2
+   527                          	GLOBAL _ZXN_WRITE_MMU1_fastcall
+   528                          	GLOBAL _ZXN_WRITE_MMU1
+   529                          	GLOBAL _ZXN_WRITE_MMU0_fastcall
+   530                          	GLOBAL _ZXN_WRITE_MMU0
+   531                          	GLOBAL _ZXN_READ_MMU7
+   532                          	GLOBAL _ZXN_READ_MMU6
+   533                          	GLOBAL _ZXN_READ_MMU5
+   534                          	GLOBAL _ZXN_READ_MMU4
+   535                          	GLOBAL _ZXN_READ_MMU3
+   536                          	GLOBAL _ZXN_READ_MMU2
+   537                          	GLOBAL _ZXN_READ_MMU1
+   538                          	GLOBAL _ZXN_READ_MMU0
+   539                          	GLOBAL _ZXN_WRITE_REG_callee
+   540                          	GLOBAL _ZXN_WRITE_REG
+   541                          	GLOBAL _ZXN_READ_REG_fastcall
+   542                          	GLOBAL _ZXN_READ_REG
+   543                          	GLOBAL _loadAttrsAndPatterns
+   544                          	GLOBAL _GLOBAL_ZXN_PORT_DFFD
+   545                          	GLOBAL _GLOBAL_ZXN_PORT_7FFD
+   546                          	GLOBAL _GLOBAL_ZXN_PORT_1FFD
+   547                          	GLOBAL _GLOBAL_ZXN_PORT_FE
+   548                          	GLOBAL _GLOBAL_TS_PORT_FE
+   549                          	GLOBAL _GLOBAL_ZX_PORT_7FFD
+   550                          	GLOBAL _GLOBAL_ZX_PORT_1FFD
+   551                          	GLOBAL _GLOBAL_ZX_PORT_FE
+   552                          	GLOBAL _court_boundaries
+   553                          ;--------------------------------------------------------
+   554                          ; special function registers
+   555                          ;--------------------------------------------------------
+   556                          defc _IO_FE	=	0x00fe
+   557                          defc _IO_FF	=	0x00ff
+   558                          defc _IO_TIMEX_VIDEO_MODE	=	0x00ff
+   559                          defc _IO_1FFD	=	0x1ffd
+   560                          defc _IO_7FFD	=	0x7ffd
+   561                          defc _IO_DFFD	=	0xdffd
+   562                          defc _IO_0F	=	0x000f
+   563                          defc _IO_DAC_L0	=	0x000f
+   564                          defc _IO_1F	=	0x001f
+   565                          defc _IO_DAC_L1	=	0x001f
+   566                          defc _IO_4F	=	0x004f
+   567                          defc _IO_DAC_R0	=	0x004f
+   568                          defc _IO_5F	=	0x005f
+   569                          defc _IO_DAC_R1	=	0x005f
+   570                          defc _IO_DF	=	0x00df
+   571                          defc _IO_DAC_M0	=	0x00df
+   572                          defc _IO_FFFD	=	0xfffd
+   573                          defc _IO_TURBOSOUND	=	0xfffd
+   574                          defc _IO_AY_REG	=	0xfffd
+   575                          defc _IO_BFFD	=	0xbffd
+   576                          defc _IO_AY_DAT	=	0xbffd
+   577                          defc _IO_123B	=	0x123b
+   578                          defc _IO_LAYER_2_CONFIG	=	0x123b
+   579                          defc _IO_303B	=	0x303b
+   580                          defc _IO_SPRITE_SLOT	=	0x303b
+   581                          defc _IO_SPRITE_FLAGS	=	0x303b
+   582                          defc _IO_57	=	0x0057
+   583                          defc _IO_SPRITE_ATTRIBUTE	=	0x0057
+   584                          defc _IO_5B	=	0x005b
+   585                          defc _IO_SPRITE_PATTERN	=	0x005b
+   586                          defc _IO_143B	=	0x143b
+   587                          defc _IO_UART_RX	=	0x143b
+   588                          defc _IO_UART_BAUD_RATE	=	0x143b
+   589                          defc _IO_133B	=	0x133b
+   590                          defc _IO_UART_TX	=	0x133b
+   591                          defc _IO_UART_STATUS	=	0x133b
+   592                          defc _IO_6B	=	0x006b
+   593                          defc _IO_DMA	=	0x006b
+   594                          defc _IO_E3	=	0x00e3
+   595                          defc _IO_DIVIDE_CONTROL	=	0x00e3
+   596                          defc _IO_E7	=	0x00e7
+   597                          defc _IO_SPI_CONTROL	=	0x00e7
+   598                          defc _IO_SPI_STATUS	=	0x00e7
+   599                          defc _IO_EB	=	0x00eb
+   600                          defc _IO_SPI_DATA	=	0x00eb
+   601                          defc _IO_103B	=	0x103b
+   602                          defc _IO_I2C_SCL	=	0x103b
+   603                          defc _IO_113B	=	0x113b
+   604                          defc _IO_I2C_SDA	=	0x113b
+   605                          defc _IO_LED_L	=	0x103b
+   606                          defc _IO_243B	=	0x243b
+   607                          defc _IO_NEXTREG_REG	=	0x243b
+   608                          defc _IO_253B	=	0x253b
+   609                          defc _IO_NEXTREG_DAT	=	0x253b
+   610                          ;--------------------------------------------------------
+   611                          ; ram data
+   612                          ;--------------------------------------------------------
+   613                          	SECTION bss_compiler
+   614                          ;--------------------------------------------------------
+   615                          ; ram data
+   616                          ;--------------------------------------------------------
+   617                          
+   618                          IF 0
+   619                          
+   620                          ; .area _INITIALIZED removed by z88dk
+   621                          
+   622                          
+   623                          ENDIF
+   624                          
+   625                          ;--------------------------------------------------------
+   626                          ; absolute external ram data
+   627                          ;--------------------------------------------------------
+   628                          	SECTION IGNORE
+   629                          ;--------------------------------------------------------
+   630                          ; global & static initialisations
+   631                          ;--------------------------------------------------------
+   632                          	SECTION code_crt_init
+   633                          ;--------------------------------------------------------
+   634                          ; Home
+   635                          ;--------------------------------------------------------
+   636                          	SECTION IGNORE
+   637                          ;--------------------------------------------------------
+   638                          ; code
+   639                          ;--------------------------------------------------------
+   640                          	SECTION code_compiler
+   641                          ;unified_sprites.c:11: void init_sprite_slots(UnifiedSpriteSlot (*spriteSlots)[], SkinDefinition *(*skinDefinitions)[], uint8_t nSlots)
+   642                          ;	---------------------------------
+   643                          ; Function init_sprite_slots
+   644                          ; ---------------------------------
+   645                          _init_sprite_slots:
+   646  0000  cd0000            	call	___sdcc_enter_ix
+   647  0003  21f9ff            	ld	hl, -7
+   648  0006  39                	add	hl, sp
+   649  0007  f9                	ld	sp, hl
+   650                          ;unified_sprites.c:15: for (char i = 0; i < nSlots; i++)
+   651  0008  dd5e06            	ld	e,(ix+6)
+   652  000b  dd5607            	ld	d,(ix+7)
+   653  000e  0e00              	ld	c,0x00
+   654                          l_init_sprite_slots_00106:
+   655  0010  79                	ld	a, c
+   656  0011  dd9608            	sub	a,(ix+8)
+   657  0014  300e              	jr	NC,l_init_sprite_slots_00101
+   658                          ;unified_sprites.c:16: (*skinDefinitions)[i]->currentPatternIndex = UNDEFINED_PATTERN_INDEX;
+   659  0016  69                	ld	l, c
+   660  0017  2600              	ld	h,0x00
+   661  0019  29                	add	hl, hl
+   662  001a  19                	add	hl, de
+   663  001b  7e                	ld	a, (hl)
+   664  001c  23                	inc	hl
+   665  001d  66                	ld	h, (hl)
+   666  001e  6f                	ld	l, a
+   667  001f  36ff              	ld	(hl),0xff
+   668                          ;unified_sprites.c:15: for (char i = 0; i < nSlots; i++)
+   669  0021  0c                	inc	c
+   670  0022  18ec              	jr	l_init_sprite_slots_00106
+   671                          l_init_sprite_slots_00101:
+   672                          ;unified_sprites.c:18: uint8_t attributeOffset = 0;
+   673  0024  0e00              	ld	c,0x00
+   674                          ;unified_sprites.c:19: uint8_t patternIndex = 0;
+   675  0026  dd36ff00          	ld	(ix-1),0x00
+   676                          ;unified_sprites.c:21: for (char i = 0; i < nSlots; i++)
+   677  002a  dd7e04            	ld	a,(ix+4)
+   678  002d  dd77f9            	ld	(ix-7),a
+   679  0030  dd7e05            	ld	a,(ix+5)
+   680  0033  dd77fa            	ld	(ix-6),a
+   681  0036  dd73fb            	ld	(ix-5),e
+   682  0039  dd72fc            	ld	(ix-4),d
+   683  003c  0600              	ld	b,0x00
+   684                          l_init_sprite_slots_00109:
+   685  003e  78                	ld	a, b
+   686  003f  dd9608            	sub	a,(ix+8)
+   687  0042  3057              	jr	NC,l_init_sprite_slots_00111
+   688                          ;unified_sprites.c:23: UnifiedSpriteSlot *slot = &(*spriteSlots)[i];
+   689  0044  58                	ld	e, b
+   690  0045  1606              	ld	d,0x06
+   691  0047  ed30              	mlt	de
+   692  0049  e1                	pop	hl
+   693  004a  e5                	push	hl
+   694  004b  19                	add	hl, de
+   695  004c  dd75fd            	ld	(ix-3),l
+   696  004f  dd74fe            	ld	(ix-2),h
+   697                          ;unified_sprites.c:24: SkinDefinition *skin = (*skinDefinitions)[i];
+   698  0052  68                	ld	l, b
+   699  0053  2600              	ld	h,0x00
+   700  0055  29                	add	hl, hl
+   701  0056  dd5efb            	ld	e,(ix-5)
+   702  0059  dd56fc            	ld	d,(ix-4)
+   703  005c  19                	add	hl, de
+   704  005d  5e                	ld	e, (hl)
+   705  005e  23                	inc	hl
+   706  005f  56                	ld	d, (hl)
+   707                          ;unified_sprites.c:25: slot->skinDefinition = skin;
+   708  0060  dd7efd            	ld	a,(ix-3)
+   709  0063  c604              	add	a,0x04
+   710  0065  6f                	ld	l, a
+   711  0066  dd7efe            	ld	a,(ix-2)
+   712  0069  ce00              	adc	a,0x00
+   713  006b  67                	ld	h, a
+   714  006c  73                	ld	(hl), e
+   715  006d  23                	inc	hl
+   716  006e  72                	ld	(hl), d
+   717                          ;unified_sprites.c:26: slot->attributesIndex = attributeOffset;
+   718  006f  dd6efd            	ld	l,(ix-3)
+   719  0072  dd66fe            	ld	h,(ix-2)
+   720  0075  23                	inc	hl
+   721  0076  23                	inc	hl
+   722  0077  23                	inc	hl
+   723  0078  71                	ld	(hl), c
+   724                          ;unified_sprites.c:28: slot->currentFrame = UNDEFINED_FRAME_INDEX;
+   725  0079  dd6efd            	ld	l,(ix-3)
+   726  007c  dd66fe            	ld	h,(ix-2)
+   727  007f  36ff              	ld	(hl),0xff
+   728                          ;unified_sprites.c:29: attributeOffset += skin->nSprites;
+   729  0081  6b                	ld	l, e
+   730  0082  62                	ld	h, d
+   731  0083  23                	inc	hl
+   732  0084  7e                	ld	a, (hl)
+   733  0085  81                	add	a, c
+   734  0086  4f                	ld	c, a
+   735                          ;unified_sprites.c:31: if (skin->currentPatternIndex == UNDEFINED_PATTERN_INDEX)
+   736  0087  1a                	ld	a, (de)
+   737  0088  3c                	inc	a
+   738  0089  200d              	jr	NZ,l_init_sprite_slots_00110
+   739                          ;unified_sprites.c:33: skin->currentPatternIndex = patternIndex;
+   740  008b  dd7eff            	ld	a,(ix-1)
+   741  008e  12                	ld	(de), a
+   742                          ;unified_sprites.c:34: patternIndex += skin->maxPatterns;
+   743  008f  13                	inc	de
+   744  0090  13                	inc	de
+   745  0091  1a                	ld	a, (de)
+   746  0092  dd86ff            	add	a,(ix-1)
+   747  0095  dd77ff            	ld	(ix-1),a
+   748                          l_init_sprite_slots_00110:
+   749                          ;unified_sprites.c:21: for (char i = 0; i < nSlots; i++)
+   750  0098  04                	inc	b
+   751  0099  18a3              	jr	l_init_sprite_slots_00109
+   752                          l_init_sprite_slots_00111:
+   753                          ;unified_sprites.c:37: }
+   754  009b  ddf9              	ld	sp, ix
+   755  009d  dde1              	pop	ix
+   756  009f  c9                	ret
+   757                          	SECTION code_compiler
+   758                          ;unified_sprites.c:39: void move_sprite(UnifiedSpriteSlot *slot, uint16_t x, uint16_t y, uint8_t frame)
+   759                          ;	---------------------------------
+   760                          ; Function move_sprite
+   761                          ; ---------------------------------
+   762                          _move_sprite:
+   763  00a0  cd0000            	call	___sdcc_enter_ix
+   764  00a3  f5                	push	af
+   765                          ;unified_sprites.c:41: if (slot->currentFrame != frame)
+   766  00a4  dd4e04            	ld	c,(ix+4)
+   767  00a7  dd4605            	ld	b,(ix+5)
+   768  00aa  0a                	ld	a, (bc)
+   769  00ab  5f                	ld	e, a
+   770  00ac  dd7e0a            	ld	a,(ix+10)
+   771  00af  93                	sub	a, e
+   772  00b0  2840              	jr	Z,l_move_sprite_00102
+   773                          ;unified_sprites.c:43: slot->currentFrame = frame;
+   774  00b2  dd7e0a            	ld	a,(ix+10)
+   775  00b5  02                	ld	(bc), a
+   776                          ;unified_sprites.c:44: const FrameAddress *frameAddress = &(slot->skinDefinition->frameAddresses)[frame];
+   777  00b6  210400            	ld	hl,4
+   778  00b9  09                	add	hl,bc
+   779  00ba  5e                	ld	e, (hl)
+   780  00bb  23                	inc	hl
+   781  00bc  56                	ld	d, (hl)
+   782  00bd  210400            	ld	hl,0x0004
+   783  00c0  19                	add	hl, de
+   784  00c1  e3                	ex	(sp), hl
+   785  00c2  dd5e0a            	ld	e,(ix+10)
+   786  00c5  1603              	ld	d,0x03
+   787  00c7  ed30              	mlt	de
+   788  00c9  e1                	pop	hl
+   789  00ca  e5                	push	hl
+   790  00cb  19                	add	hl, de
+   791                          ;unified_sprites.c:45: loadSpriteFrame(slot, frameAddress->frameDefinition, frameAddress->memoryPage, x, y, true);
+   792  00cc  56                	ld	d, (hl)
+   793  00cd  23                	inc	hl
+   794  00ce  5e                	ld	e, (hl)
+   795  00cf  23                	inc	hl
+   796  00d0  7e                	ld	a, (hl)
+   797  00d1  2601              	ld	h,0x01
+   798  00d3  e5                	push	hl
+   799  00d4  33                	inc	sp
+   800  00d5  dd6e08            	ld	l,(ix+8)
+   801  00d8  dd6609            	ld	h,(ix+9)
+   802  00db  e5                	push	hl
+   803  00dc  dd6e06            	ld	l,(ix+6)
+   804  00df  dd6607            	ld	h,(ix+7)
+   805  00e2  e5                	push	hl
+   806  00e3  d5                	push	de
+   807  00e4  33                	inc	sp
+   808  00e5  57                	ld	d, a
+   809  00e6  d5                	push	de
+   810  00e7  c5                	push	bc
+   811  00e8  cd4e01            	call	_loadSpriteFrame
+   812  00eb  210a00            	ld	hl,10
+   813  00ee  39                	add	hl, sp
+   814  00ef  f9                	ld	sp, hl
+   815  00f0  1858              	jr	l_move_sprite_00104
+   816                          l_move_sprite_00102:
+   817                          ;unified_sprites.c:49: x += slot->offsetX;
+   818  00f2  59                	ld	e, c
+   819  00f3  50                	ld	d, b
+   820  00f4  13                	inc	de
+   821  00f5  1a                	ld	a, (de)
+   822  00f6  5f                	ld	e, a
+   823  00f7  07                	rlca
+   824  00f8  9f                	sbc	a, a
+   825  00f9  57                	ld	d, a
+   826  00fa  dd7e06            	ld	a,(ix+6)
+   827  00fd  83                	add	a, e
+   828  00fe  dd7706            	ld	(ix+6),a
+   829  0101  dd7e07            	ld	a,(ix+7)
+   830  0104  8a                	adc	a, d
+   831  0105  dd7707            	ld	(ix+7),a
+   832                          ;unified_sprites.c:50: y += slot->offsetY;
+   833  0108  59                	ld	e, c
+   834  0109  50                	ld	d, b
+   835  010a  13                	inc	de
+   836  010b  13                	inc	de
+   837  010c  1a                	ld	a, (de)
+   838  010d  5f                	ld	e, a
+   839  010e  07                	rlca
+   840  010f  9f                	sbc	a, a
+   841  0110  57                	ld	d, a
+   842  0111  dd7e08            	ld	a,(ix+8)
+   843  0114  83                	add	a, e
+   844  0115  dd7708            	ld	(ix+8),a
+   845  0118  dd7e09            	ld	a,(ix+9)
+   846  011b  8a                	adc	a, d
+   847  011c  dd7709            	ld	(ix+9),a
+   848                          ;unified_sprites.c:51: ZXN_NEXTREGA(REG_SPRITE_INDEX, slot->attributesIndex);
+   849  011f  210300            	ld	hl,3
+   850  0122  09                	add	hl, bc
+   851  0123  6e                	ld	l, (hl)
+   852  0124  7d                	ld	a,l
+   853  0125  ed9234            	nextreg	0x34,a
+   854                          ;unified_sprites.c:52: ZXN_NEXTREGA(REG_SPRITE_X, x & 0xff);
+   855  0128  dd6e06            	ld	l,(ix+6)
+   856  012b  7d                	ld	a,l
+   857  012c  ed9235            	nextreg	0x35,a
+   858                          ;unified_sprites.c:53: ZXN_NEXTREGA(REG_SPRITE_Y, y & 0xff);
+   859  012f  dd6e08            	ld	l,(ix+8)
+   860  0132  7d                	ld	a,l
+   861  0133  ed9236            	nextreg	0x36,a
+   862                          ;unified_sprites.c:54: ZXN_NEXTREGA(REG_SPRITE_ATTR2, (x & 0x100) >> 8); // Should be fine unless there is a rotation or mirroring
+   863  0136  dd7e07            	ld	a,(ix+7)
+   864  0139  e601              	and	a,0x01
+   865  013b  6f                	ld	l, a
+   866  013c  7d                	ld	a,l
+   867  013d  ed9237            	nextreg	0x37,a
+   868                          ;unified_sprites.c:56: ZXN_NEXTREGA(REG_SPRITE_ATTR4, (y & 0x100) >> 8); // Should be fine unless there scaling
+   869  0140  dd7e09            	ld	a,(ix+9)
+   870  0143  e601              	and	a,0x01
+   871  0145  6f                	ld	l, a
+   872  0146  7d                	ld	a,l
+   873  0147  ed9239            	nextreg	0x39,a
+   874                          l_move_sprite_00104:
+   875                          ;unified_sprites.c:58: }
+   876  014a  f1                	pop	af
+   877  014b  dde1              	pop	ix
+   878  014d  c9                	ret
+   879                          ;unified_sprites.c:66: void loadSpriteFrame(UnifiedSpriteSlot *slot, FrameDefinition *frame, uint8_t memoryPage, uint16_t x, uint16_t y, bool visible)
+   880                          ;	---------------------------------
+   881                          ; Function loadSpriteFrame
+   882                          ; ---------------------------------
+   883                          _loadSpriteFrame:
+   884  014e  cd0000            	call	___sdcc_enter_ix
+   885  0151  21f8ff            	ld	hl, -8
+   886  0154  39                	add	hl, sp
+   887  0155  f9                	ld	sp, hl
+   888                          ;unified_sprites.c:71: uint8_t currentMemoryPage = ZXN_READ_MMU6();
+   889  0156  013b24            	ld	bc,0x243b
+   890  0159  3e56              	ld	a,0x50+6
+   891  015b  ed79              	out	(c),a
+   892  015d  04                	inc	b
+   893  015e  ed68              	in	l,(c)
+   894  0160  dd75f8            	ld	(ix-8),l
+   895                          ;unified_sprites.c:72: ZXN_WRITE_MMU6(memoryPage);
+   896  0163  dd6e08            	ld	l,(ix+8)
+   897  0166  7d                	ld	a,l
+   898  0167  ed9256            	mmu6	a
+   899                          ;unified_sprites.c:74: slot->offsetX = frame->offsetX;
+   900  016a  dd7e04            	ld	a,(ix+4)
+   901  016d  dd77f9            	ld	(ix-7),a
+   902  0170  5f                	ld	e, a
+   903  0171  dd7e05            	ld	a,(ix+5)
+   904  0174  dd77fa            	ld	(ix-6),a
+   905  0177  57                	ld	d,a
+   906  0178  13                	inc	de
+   907  0179  dd4e06            	ld	c,(ix+6)
+   908  017c  dd4607            	ld	b,(ix+7)
+   909  017f  210100            	ld	hl,0x0001
+   910  0182  09                	add	hl, bc
+   911  0183  dd75fe            	ld	(ix-2),l
+   912  0186  dd74ff            	ld	(ix-1),h
+   913  0189  7e                	ld	a, (hl)
+   914  018a  12                	ld	(de), a
+   915                          ;unified_sprites.c:75: slot->offsetY = frame->offsetY;
+   916  018b  dd6ef9            	ld	l,(ix-7)
+   917  018e  dd66fa            	ld	h,(ix-6)
+   918  0191  23                	inc	hl
+   919  0192  23                	inc	hl
+   920  0193  59                	ld	e, c
+   921  0194  50                	ld	d, b
+   922  0195  13                	inc	de
+   923  0196  13                	inc	de
+   924  0197  1a                	ld	a, (de)
+   925  0198  77                	ld	(hl), a
+   926                          ;unified_sprites.c:77: frame->content[0] = (x + frame->offsetX) & 0xff;
+   927  0199  210300            	ld	hl,0x0003
+   928  019c  09                	add	hl, bc
+   929  019d  dd75fb            	ld	(ix-5),l
+   930  01a0  dd74fc            	ld	(ix-4),h
+   931  01a3  dd6efe            	ld	l,(ix-2)
+   932  01a6  dd66ff            	ld	h,(ix-1)
+   933  01a9  dd7e09            	ld	a,(ix+9)
+   934  01ac  6e                	ld	l, (hl)
+   935  01ad  85                	add	a, l
+   936  01ae  dd6efb            	ld	l,(ix-5)
+   937  01b1  dd66fc            	ld	h,(ix-4)
+   938  01b4  77                	ld	(hl), a
+   939                          ;unified_sprites.c:78: frame->content[1] = (y + frame->offsetY) & 0xff;
+   940  01b5  210400            	ld	hl,0x0004
+   941  01b8  09                	add	hl, bc
+   942  01b9  dd75fe            	ld	(ix-2),l
+   943  01bc  dd74ff            	ld	(ix-1),h
+   944  01bf  dd7e0b            	ld	a,(ix+11)
+   945  01c2  f5                	push	af
+   946  01c3  1a                	ld	a, (de)
+   947  01c4  5f                	ld	e, a
+   948  01c5  f1                	pop	af
+   949  01c6  83                	add	a, e
+   950  01c7  dd6efe            	ld	l,(ix-2)
+   951  01ca  dd66ff            	ld	h,(ix-1)
+   952  01cd  77                	ld	(hl), a
+   953                          ;unified_sprites.c:79: frame->content[2] = (x & 0x100) >> 8;                                                  // Should be fine unless there is a rotation or mirroring
+   954  01ce  210500            	ld	hl,0x0005
+   955  01d1  09                	add	hl, bc
+   956  01d2  1e00              	ld	e,0x00
+   957  01d4  dd7e0a            	ld	a,(ix+10)
+   958  01d7  e601              	and	a,0x01
+   959  01d9  77                	ld	(hl), a
+   960                          ;unified_sprites.c:80: frame->content[3] = slot->skinDefinition->currentPatternIndex | 0x40 | (visible << 7); // 0x40 = use byte 4, 0x80 = visible
+   961  01da  210600            	ld	hl,0x0006
+   962  01dd  09                	add	hl, bc
+   963  01de  eb                	ex	de, hl
+   964  01df  dd7ef9            	ld	a,(ix-7)
+   965  01e2  c604              	add	a,0x04
+   966  01e4  dd77fd            	ld	(ix-3),a
+   967  01e7  6f                	ld	l,a
+   968  01e8  dd7efa            	ld	a,(ix-6)
+   969  01eb  ce00              	adc	a,0x00
+   970  01ed  dd77fe            	ld	(ix-2),a
+   971  01f0  67                	ld	h,a
+   972  01f1  7e                	ld	a, (hl)
+   973  01f2  23                	inc	hl
+   974  01f3  66                	ld	h, (hl)
+   975  01f4  6f                	ld	l, a
+   976  01f5  7e                	ld	a, (hl)
+   977  01f6  f640              	or	a,0x40
+   978  01f8  dd77ff            	ld	(ix-1),a
+   979  01fb  dd7e0d            	ld	a,(ix+13)
+   980  01fe  0f                	rrca
+   981  01ff  e680              	and	a,0x80
+   982  0201  ddb6ff            	or	a,(ix-1)
+   983  0204  12                	ld	(de), a
+   984                          ;unified_sprites.c:82: frame->content[4] = (y & 0x100) >> 8; // Should be fine unless there scaling
+   985  0205  210700            	ld	hl,0x0007
+   986  0208  09                	add	hl, bc
+   987  0209  dd7e0c            	ld	a,(ix+12)
+   988  020c  e601              	and	a,0x01
+   989  020e  77                	ld	(hl), a
+   990                          ;unified_sprites.c:83: loadAttrsAndPatterns(frame->content, slot->attributesIndex, slot->skinDefinition->nSprites, slot->skinDefinition->currentPatternIndex, frame->nPatterns);
+   991  020f  0a                	ld	a, (bc)
+   992  0210  57                	ld	d, a
+   993                          ;unified_sprites.c:80: frame->content[3] = slot->skinDefinition->currentPatternIndex | 0x40 | (visible << 7); // 0x40 = use byte 4, 0x80 = visible
+   994  0211  dd6efd            	ld	l,(ix-3)
+   995  0214  dd66fe            	ld	h,(ix-2)
+   996  0217  7e                	ld	a, (hl)
+   997  0218  23                	inc	hl
+   998  0219  66                	ld	h, (hl)
+   999  021a  6f                	ld	l, a
+  1000                          ;unified_sprites.c:83: loadAttrsAndPatterns(frame->content, slot->attributesIndex, slot->skinDefinition->nSprites, slot->skinDefinition->currentPatternIndex, frame->nPatterns);
+  1001  021b  46                	ld	b, (hl)
+  1002  021c  23                	inc	hl
+  1003  021d  7e                	ld	a, (hl)
+  1004  021e  dd6ef9            	ld	l,(ix-7)
+  1005  0221  dd66fa            	ld	h,(ix-6)
+  1006  0224  23                	inc	hl
+  1007  0225  23                	inc	hl
+  1008  0226  23                	inc	hl
+  1009  0227  66                	ld	h, (hl)
+  1010  0228  58                	ld	e,b
+  1011  0229  d5                	push	de
+  1012  022a  6c                	ld	l,h
+  1013  022b  67                	ld	h,a
+  1014  022c  e5                	push	hl
+  1015  022d  dd6efb            	ld	l,(ix-5)
+  1016  0230  dd66fc            	ld	h,(ix-4)
+  1017  0233  e5                	push	hl
+  1018  0234  cd0000            	call	_loadAttrsAndPatterns
+  1019  0237  f1                	pop	af
+  1020  0238  f1                	pop	af
+  1021  0239  f1                	pop	af
+  1022                          ;unified_sprites.c:85: ZXN_WRITE_MMU6(currentMemoryPage);
+  1023  023a  dd6ef8            	ld	l,(ix-8)
+  1024  023d  7d                	ld	a,l
+  1025  023e  ed9256            	mmu6	a
+  1026                          ;unified_sprites.c:86: }
+  1027  0241  ddf9              	ld	sp, ix
+  1028  0243  dde1              	pop	ix
+  1029  0245  c9                	ret
+  1030                          ;unified_sprites.c:88: void hide_sprite(UnifiedSpriteSlot *slot)
+  1031                          ;	---------------------------------
+  1032                          ; Function hide_sprite
+  1033                          ; ---------------------------------
+  1034                          _hide_sprite:
+  1035  0246  cd0000            	call	___sdcc_enter_ix
+  1036                          ;unified_sprites.c:90: ZXN_NEXTREGA(REG_SPRITE_INDEX, slot->attributesIndex);
+  1037  0249  dd4e04            	ld	c,(ix+4)
+  1038  024c  dd4605            	ld	b,(ix+5)
+  1039  024f  210300            	ld	hl,3
+  1040  0252  09                	add	hl, bc
+  1041  0253  6e                	ld	l, (hl)
+  1042  0254  7d                	ld	a,l
+  1043  0255  ed9234            	nextreg	0x34,a
+  1044                          ;unified_sprites.c:91: ZXN_NEXTREGA(REG_SPRITE_ATTR3, 0b01000000);
+  1045  0258  2e40              	ld	l,0x40
+  1046                          ;unified_sprites.c:92: }
+  1047  025a  dde1              	pop	ix
+  1048  025c  7d                	ld	a,l
+  1049  025d  ed9238            	nextreg	0x38,a
+  1050  0260  c9                	ret
+  1051                          ;unified_sprites.c:94: void show_sprite(UnifiedSpriteSlot *slot)
+  1052                          ;	---------------------------------
+  1053                          ; Function show_sprite
+  1054                          ; ---------------------------------
+  1055                          _show_sprite:
+  1056  0261  cd0000            	call	___sdcc_enter_ix
+  1057                          ;unified_sprites.c:96: ZXN_NEXTREGA(REG_SPRITE_INDEX, slot->attributesIndex);
+  1058  0264  dd6e04            	ld	l,(ix+4)
+  1059  0267  dd6605            	ld	h,(ix+5)
+  1060  026a  4d                	ld	c,l
+  1061  026b  44                	ld	b,h
+  1062  026c  23                	inc	hl
+  1063  026d  23                	inc	hl
+  1064  026e  23                	inc	hl
+  1065  026f  6e                	ld	l, (hl)
+  1066  0270  7d                	ld	a,l
+  1067  0271  ed9234            	nextreg	0x34,a
+  1068                          ;unified_sprites.c:97: ZXN_NEXTREGA(REG_SPRITE_ATTR3, slot->skinDefinition->currentPatternIndex | 0xc0);
+  1069  0274  210400            	ld	hl,4
+  1070  0277  09                	add	hl, bc
+  1071  0278  4e                	ld	c, (hl)
+  1072  0279  23                	inc	hl
+  1073  027a  46                	ld	b, (hl)
+  1074  027b  0a                	ld	a, (bc)
+  1075  027c  f6c0              	or	a,0xc0
+  1076  027e  6f                	ld	l, a
+  1077                          ;unified_sprites.c:98: }
+  1078  027f  dde1              	pop	ix
+  1079  0281  7d                	ld	a,l
+  1080  0282  ed9238            	nextreg	0x38,a
+  1081  0285  c9                	ret
+  1082                          ;unified_sprites.c:100: void change_sprite_visibility(UnifiedSpriteSlot *slot, bool visible)
+  1083                          ;	---------------------------------
+  1084                          ; Function change_sprite_visibility
+  1085                          ; ---------------------------------
+  1086                          _change_sprite_visibility:
+  1087  0286  cd0000            	call	___sdcc_enter_ix
+  1088                          ;unified_sprites.c:102: if (visible)
+  1089  0289  ddcb0646          	bit	0,(ix+6)
+  1090  028d  280d              	jr	Z,l_change_sprite_visibility_00102
+  1091                          ;unified_sprites.c:103: show_sprite(slot);
+  1092  028f  dd6e04            	ld	l,(ix+4)
+  1093  0292  dd6605            	ld	h,(ix+5)
+  1094  0295  e5                	push	hl
+  1095  0296  cd6102            	call	_show_sprite
+  1096  0299  f1                	pop	af
+  1097  029a  180b              	jr	l_change_sprite_visibility_00104
+  1098                          l_change_sprite_visibility_00102:
+  1099                          ;unified_sprites.c:105: hide_sprite(slot);
+  1100  029c  dd6e04            	ld	l,(ix+4)
+  1101  029f  dd6605            	ld	h,(ix+5)
+  1102  02a2  e5                	push	hl
+  1103  02a3  cd4602            	call	_hide_sprite
+  1104  02a6  f1                	pop	af
+  1105                          l_change_sprite_visibility_00104:
+  1106                          ;unified_sprites.c:106: }
+  1107  02a7  dde1              	pop	ix
+  1108  02a9  c9                	ret
+  1109                          	SECTION IGNORE
+  1110                          

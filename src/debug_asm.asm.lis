@@ -1,0 +1,24 @@
+/tmp/tmp6D8u6PFV.asm:
+     1                          MODULE debug_asm_asm
+     2                          LINE 0, "debug_asm.asm"
+debug_asm.asm:
+                                
+     1                          SECTION code_user
+     2                          
+     3                          PUBLIC __console_message
+     4                          
+     5                          ; --------------------------------------------------------------
+     6                          ; void _console_message(const char *message) __z88dk_fastcall;
+     7                          ; hl = pointer to message
+     8                          ; --------------------------------------------------------------
+     9                          __console_message:
+    10  0000  018080                ld bc, $8080
+    11                          __console_message_loop:
+    12  0003  7e                    ld a, (hl)
+    13  0004  ed79                  out (c), a
+    14  0006  a7                    and a
+    15  0007  c8                    ret z
+    16  0008  23                    inc hl
+    17  0009  18f8                  jr __console_message_loop
+    18                          ; --------------------------------------------------------------
+    19                          

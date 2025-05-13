@@ -1,0 +1,114 @@
+/tmp/tmp1uDLhVLT.asm:
+     1                          MODULE interrupts_asm
+     2                          LINE 0, "interrupts.asm"
+interrupts.asm:
+                                
+     1                          SECTION code_user
+     2                          
+     3                          EXTERN _interrupt_vector_table
+     4                          
+     5                          PUBLIC _hardware_interrupt_mode, _default_interrupt_handler
+     6                          
+     7                          defc REG_INTERRUPT_CONTROL = 0xC0
+     8                          
+     9                          defc REG_INTERRUPT_ENABLE_0 = 0xC4
+    10                          defc REG_INTERRUPT_ENABLE_1 = 0xC5
+    11                          defc REG_INTERRUPT_ENABLE_2 = 0xC6
+    12                          
+    13                          defc REG_INTERRUPT_STATUS_0 = 0xC8
+    14                          defc REG_INTERRUPT_STATUS_1 = 0xC9
+    15                          defc REG_INTERRUPT_STATUS_2 = 0xCA
+    16                          
+    17                          defc REG_DMA_INTERRUPT_ENABLE_0 = 0xCC
+    18                          defc REG_DMA_INTERRUPT_ENABLE_1 = 0xCD
+    19                          defc REG_DMA_INTERRUPT_ENABLE_2 = 0xCE
+    20                          
+    21                          include "macros.inc"
+macros.inc:
+     1                          #define READ_NEXTREG(REG) \
+     2                              push bc : \
+     3                              ld a, REG :\
+     4                              ld bc, $243b :\
+     5                              out (c), a :\
+     6                              inc b :\
+     7                              in a, (c) :\
+     8                              pop bc
+     9                          
+    10                          
+    11                          defc CTC0 = 0x183B ; CTC channel 0 port
+    12                          defc CTC1 = 0x193B ; CTC channel 1 port
+    13                          defc CTC2 = 0x1A3B ; CTC channel 2 port
+    14                          defc CTC3 = 0x1B3B ; CTC channel 3 port
+    15                          
+    16                          defc IO_DAC_L0 = 0x0f
+    17                          defc IO_DAC_L1 = 0x1f
+    18                          defc IO_DAC_R0 = 0x4f
+    19                          defc IO_DAC_R1 = 0x5f
+    20                          defc IO_DAC_M0 = 0xdf
+    21                          
+    22                          defc INTERRUPT_STATUS_CTC = $C9
+    23                          
+    24                          defc REG_MMU6 = 0x56
+    25                          
+    26                          defc AY_REG = 0xFFFD ;   // AY register select port
+    27                          defc AY_DATA = 0xBFFD ; // AY register data port
+    28                          
+    29                          defc AY_TONE_A_LO = 0x00 ; // R0 fine tune A
+    30                          defc AY_TONE_A_HI = 0x01 ; // R1 coarse tune A
+    31                          defc AY_TONE_B_LO = 0x02 ; // R2 fine tune B
+    32                          defc AY_TONE_B_HI = 0x03 ; // R3 coarse tune B
+    33                          defc AY_TONE_C_LO = 0x04 ; // R4 fine tune C
+    34                          defc AY_TONE_C_HI = 0x05 ; // R5 coarse tune C
+    35                          defc AY_NOISE = 0x06 ; // R6 noise period
+    36                          defc AY_MIXER = 0x07 ; // R7 mixer register
+    37                          defc AY_VOLUME_A = 0x08 ; // R8 volume A
+    38                          defc AY_VOLUME_B = 0x09 ; // R9 volume B
+    39                          defc AY_VOLUME_C = 0x0A ; // R10 volume C
+    40                          defc AY_ENV_LO = 0x0B ; // R11 envelope low
+    41                          defc AY_ENV_HI = 0x0C ; // R12 envelope high
+    42                          defc AY_ENV_SHAPE = 0x0D ; // R13 envelope shape
+    43                          
+interrupts.asm:
+    22                          
+    23                          ; Important.... init sound must be called after setting the hardware interrupt mode...
+    24                          ; CTC interruptions are happending despite the corresponding register is set to 0
+    25                          
+    26                          _hardware_interrupt_mode:
+    27  0000  f3                    di ; disable interrupts
+    28                          
+    29                              ; ** Quite important is that you should be changing nextreg 0xc0 with a read-modify-write operation.
+    30                              ; That's because starting in nextzxos versions for core 3.01.10, nextzxos operates in the stackless nmi mode
+    31                              ; which is controlled by bit 3. (see https://discord.com/channels/556228195767156758/692885312296190102/894284968614854749)
+    32                          
+    33  0001  c53ec0013b24ed79      READ_NEXTREG(REG_INTERRUPT_CONTROL)
+              04ed78c1          
+    34  000d  e61e                  and %00011110
+    35  000f  f601                  or (_interrupt_vector_table & %11100000) | %00000001
+    36  0011  ed92c0                nextreg REG_INTERRUPT_CONTROL, a
+    37                              ;nextreg REG_INTERRUPT_CONTROL, (_interrupt_vector_table & %11100000) | %00000001
+    38                              ; nextreg REG_INTERRUPT_ENABLE_0, 1  ; Enable ULA interrupts
+    39  0014  ed91c481              nextreg REG_INTERRUPT_ENABLE_0, %10000001 ; Enable ULA and expansion bus interrupts
+    40  0018  ed91c500              nextreg REG_INTERRUPT_ENABLE_1, 0 ; enable CTC channel 0 interrupt
+    41  001c  ed91c600              nextreg REG_INTERRUPT_ENABLE_2, 0
+    42                          
+    43  0020  ed91c8ff          	nextreg REG_INTERRUPT_STATUS_0, $FF ;
+    44  0024  ed91c9ff          	nextreg REG_INTERRUPT_STATUS_1, $FF ; Set status bits to clear
+    45  0028  ed91caff          	nextreg REG_INTERRUPT_STATUS_2, $FF ;
+    46                          
+    47  002c  ed91cc00              nextreg REG_DMA_INTERRUPT_ENABLE_0,0
+    48                              ; Enabling DMA interrupts does not seem to cause any harm
+    49  0030  ed91cd00          	nextreg REG_DMA_INTERRUPT_ENABLE_1,0
+    50                          	;nextreg REG_DMA_INTERRUPT_ENABLE_1,0xff
+    51  0034  ed91ce00          	nextreg REG_DMA_INTERRUPT_ENABLE_2,0
+    52                          
+    53  0038  3e00                  ld a, _interrupt_vector_table >> 8
+    54  003a  ed47                  ld i, a
+    55  003c  ed5e                  im 2 ; enable HW Interrupt Mode 2
+    56  003e  fb                    ei
+    57  003f  c9                    ret
+    58                          
+    59                          _default_interrupt_handler:
+    60  0040  fb                    ei
+    61  0041  ed4d                  reti
+    62                          
+    63                          

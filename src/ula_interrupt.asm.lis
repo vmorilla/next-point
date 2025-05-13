@@ -1,0 +1,32 @@
+/tmp/tmpRo99Vgru.asm:
+     1                          MODULE ula_interrupt_asm
+     2                          LINE 0, "ula_interrupt.asm"
+ula_interrupt.asm:
+                                
+     1                          SECTION code_user
+     2                          
+     3                          PUBLIC _ula_interrupt_handler, _frame_counter
+     4                          
+     5                          EXTERN _remaining_effect_length, _effects_handler, _sfx_effects_handler
+     6                          
+     7                          
+     8                          _ula_interrupt_handler:
+     9                              ; Does not seem to be needed
+    10  0000  ed91c801          	NEXTREG $C8, %00000001
+    11                          
+    12                              ; interruptions should be enabled asap to enable CTC interruptions in the middle
+    13  0004  fb                    ei
+    14  0005  f5                    push af
+    15  0006  e5                    push hl
+    16  0007  211200                ld hl, _frame_counter
+    17  000a  34                    inc (hl)
+    18                          
+    19  000b  cd0000                call _sfx_effects_handler
+    20                          
+    21  000e  e1                    pop hl
+    22  000f  f1                    pop af
+    23  0010  ed4d                  reti
+    24                          
+    25                          _frame_counter:
+    26  0012  00                    defb 0
+    27                          

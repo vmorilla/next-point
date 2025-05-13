@@ -1,0 +1,1577 @@
+/tmp/tmpNTWR6RrS.asm:
+     1                          MODULE player_c
+     2                          LINE 0, "player.c"
+player.c:
+                                
+     1                          ;--------------------------------------------------------
+     2                          ; File Created by SDCC : free open source ISO C Compiler
+     3                          ; Version 4.3.0 #14210 (Mac OS X ppc)
+     4                          ;--------------------------------------------------------
+     5                          	.zxn
+     6                          ; Processed by Z88DK
+     7                          ;--------------------------------------------------------
+     8                          
+     9                          	EXTERN __divschar
+    10                          	EXTERN __divschar_callee
+    11                          	EXTERN __divsint
+    12                          	EXTERN __divsint_callee
+    13                          	EXTERN __divslong
+    14                          	EXTERN __divslong_callee
+    15                          	EXTERN __divslonglong
+    16                          	EXTERN __divslonglong_callee
+    17                          	EXTERN __divsuchar
+    18                          	EXTERN __divsuchar_callee
+    19                          	EXTERN __divuchar
+    20                          	EXTERN __divuchar_callee
+    21                          	EXTERN __divuint
+    22                          	EXTERN __divuint_callee
+    23                          	EXTERN __divulong
+    24                          	EXTERN __divulong_callee
+    25                          	EXTERN __divulonglong
+    26                          	EXTERN __divulonglong_callee
+    27                          	EXTERN __divuschar
+    28                          	EXTERN __divuschar_callee
+    29                          	EXTERN __modschar
+    30                          	EXTERN __modschar_callee
+    31                          	EXTERN __modsint
+    32                          	EXTERN __modsint_callee
+    33                          	EXTERN __modslong
+    34                          	EXTERN __modslong_callee
+    35                          	EXTERN __modslonglong
+    36                          	EXTERN __modslonglong_callee
+    37                          	EXTERN __modsuchar
+    38                          	EXTERN __modsuchar_callee
+    39                          	EXTERN __moduchar
+    40                          	EXTERN __moduchar_callee
+    41                          	EXTERN __moduint
+    42                          	EXTERN __moduint_callee
+    43                          	EXTERN __modulong
+    44                          	EXTERN __modulong_callee
+    45                          	EXTERN __modulonglong
+    46                          	EXTERN __modulonglong_callee
+    47                          	EXTERN __moduschar
+    48                          	EXTERN __moduschar_callee
+    49                          	EXTERN __mulint
+    50                          	EXTERN __mulint_callee
+    51                          	EXTERN __mullong
+    52                          	EXTERN __mullong_callee
+    53                          	EXTERN __mullonglong
+    54                          	EXTERN __mullonglong_callee
+    55                          	EXTERN __mulschar
+    56                          	EXTERN __mulschar_callee
+    57                          	EXTERN __mulsuchar
+    58                          	EXTERN __mulsuchar_callee
+    59                          	EXTERN __muluchar
+    60                          	EXTERN __muluchar_callee
+    61                          	EXTERN __muluschar
+    62                          	EXTERN __muluschar_callee
+    63                          	EXTERN __rlslonglong
+    64                          	EXTERN __rlslonglong_callee
+    65                          	EXTERN __rlulonglong
+    66                          	EXTERN __rlulonglong_callee
+    67                          	EXTERN __rrslonglong
+    68                          	EXTERN __rrslonglong_callee
+    69                          	EXTERN __rrulonglong
+    70                          	EXTERN __rrulonglong_callee
+    71                          	EXTERN ___mulsint2slong
+    72                          	EXTERN ___mulsint2slong_callee
+    73                          	EXTERN ___muluint2ulong
+    74                          	EXTERN ___muluint2ulong_callee
+    75                          	EXTERN ___sdcc_call_hl
+    76                          	EXTERN ___sdcc_call_iy
+    77                          	EXTERN ___sdcc_enter_ix
+    78                          	EXTERN banked_call
+    79                          	EXTERN _banked_ret
+    80                          	EXTERN ___fs2schar
+    81                          	EXTERN ___fs2schar_callee
+    82                          	EXTERN ___fs2sint
+    83                          	EXTERN ___fs2sint_callee
+    84                          	EXTERN ___fs2slong
+    85                          	EXTERN ___fs2slong_callee
+    86                          	EXTERN ___fs2slonglong
+    87                          	EXTERN ___fs2slonglong_callee
+    88                          	EXTERN ___fs2uchar
+    89                          	EXTERN ___fs2uchar_callee
+    90                          	EXTERN ___fs2uint
+    91                          	EXTERN ___fs2uint_callee
+    92                          	EXTERN ___fs2ulong
+    93                          	EXTERN ___fs2ulong_callee
+    94                          	EXTERN ___fs2ulonglong
+    95                          	EXTERN ___fs2ulonglong_callee
+    96                          	EXTERN ___fsadd
+    97                          	EXTERN ___fsadd_callee
+    98                          	EXTERN ___fsdiv
+    99                          	EXTERN ___fsdiv_callee
+   100                          	EXTERN ___fseq
+   101                          	EXTERN ___fseq_callee
+   102                          	EXTERN ___fsgt
+   103                          	EXTERN ___fsgt_callee
+   104                          	EXTERN ___fslt
+   105                          	EXTERN ___fslt_callee
+   106                          	EXTERN ___fsmul
+   107                          	EXTERN ___fsmul_callee
+   108                          	EXTERN ___fsneq
+   109                          	EXTERN ___fsneq_callee
+   110                          	EXTERN ___fssub
+   111                          	EXTERN ___fssub_callee
+   112                          	EXTERN ___schar2fs
+   113                          	EXTERN ___schar2fs_callee
+   114                          	EXTERN ___sint2fs
+   115                          	EXTERN ___sint2fs_callee
+   116                          	EXTERN ___slong2fs
+   117                          	EXTERN ___slong2fs_callee
+   118                          	EXTERN ___slonglong2fs
+   119                          	EXTERN ___slonglong2fs_callee
+   120                          	EXTERN ___uchar2fs
+   121                          	EXTERN ___uchar2fs_callee
+   122                          	EXTERN ___uint2fs
+   123                          	EXTERN ___uint2fs_callee
+   124                          	EXTERN ___ulong2fs
+   125                          	EXTERN ___ulong2fs_callee
+   126                          	EXTERN ___ulonglong2fs
+   127                          	EXTERN ___ulonglong2fs_callee
+   128                          	EXTERN ____sdcc_2_copy_src_mhl_dst_deix
+   129                          	EXTERN ____sdcc_2_copy_src_mhl_dst_bcix
+   130                          	EXTERN ____sdcc_4_copy_src_mhl_dst_deix
+   131                          	EXTERN ____sdcc_4_copy_src_mhl_dst_bcix
+   132                          	EXTERN ____sdcc_4_copy_src_mhl_dst_mbc
+   133                          	EXTERN ____sdcc_4_ldi_nosave_bc
+   134                          	EXTERN ____sdcc_4_ldi_save_bc
+   135                          	EXTERN ____sdcc_4_push_hlix
+   136                          	EXTERN ____sdcc_4_push_mhl
+   137                          	EXTERN ____sdcc_lib_setmem_hl
+   138                          	EXTERN ____sdcc_ll_add_de_bc_hl
+   139                          	EXTERN ____sdcc_ll_add_de_bc_hlix
+   140                          	EXTERN ____sdcc_ll_add_de_hlix_bc
+   141                          	EXTERN ____sdcc_ll_add_de_hlix_bcix
+   142                          	EXTERN ____sdcc_ll_add_deix_bc_hl
+   143                          	EXTERN ____sdcc_ll_add_deix_hlix
+   144                          	EXTERN ____sdcc_ll_add_hlix_bc_deix
+   145                          	EXTERN ____sdcc_ll_add_hlix_deix_bc
+   146                          	EXTERN ____sdcc_ll_add_hlix_deix_bcix
+   147                          	EXTERN ____sdcc_ll_asr_hlix_a
+   148                          	EXTERN ____sdcc_ll_asr_mbc_a
+   149                          	EXTERN ____sdcc_ll_copy_src_de_dst_hlix
+   150                          	EXTERN ____sdcc_ll_copy_src_de_dst_hlsp
+   151                          	EXTERN ____sdcc_ll_copy_src_deix_dst_hl
+   152                          	EXTERN ____sdcc_ll_copy_src_deix_dst_hlix
+   153                          	EXTERN ____sdcc_ll_copy_src_deixm_dst_hlsp
+   154                          	EXTERN ____sdcc_ll_copy_src_desp_dst_hlsp
+   155                          	EXTERN ____sdcc_ll_copy_src_hl_dst_de
+   156                          	EXTERN ____sdcc_ll_copy_src_hlsp_dst_de
+   157                          	EXTERN ____sdcc_ll_copy_src_hlsp_dst_deixm
+   158                          	EXTERN ____sdcc_ll_lsl_hlix_a
+   159                          	EXTERN ____sdcc_ll_lsl_mbc_a
+   160                          	EXTERN ____sdcc_ll_lsr_hlix_a
+   161                          	EXTERN ____sdcc_ll_lsr_mbc_a
+   162                          	EXTERN ____sdcc_ll_push_hlix
+   163                          	EXTERN ____sdcc_ll_push_mhl
+   164                          	EXTERN ____sdcc_ll_sub_de_bc_hl
+   165                          	EXTERN ____sdcc_ll_sub_de_bc_hlix
+   166                          	EXTERN ____sdcc_ll_sub_de_hlix_bc
+   167                          	EXTERN ____sdcc_ll_sub_de_hlix_bcix
+   168                          	EXTERN ____sdcc_ll_sub_deix_bc_hl
+   169                          	EXTERN ____sdcc_ll_sub_deix_hlix
+   170                          	EXTERN ____sdcc_ll_sub_hlix_bc_deix
+   171                          	EXTERN ____sdcc_ll_sub_hlix_deix_bc
+   172                          	EXTERN ____sdcc_ll_sub_hlix_deix_bcix
+   173                          	EXTERN ____sdcc_load_debc_deix
+   174                          	EXTERN ____sdcc_load_dehl_deix
+   175                          	EXTERN ____sdcc_load_debc_mhl
+   176                          	EXTERN ____sdcc_load_hlde_mhl
+   177                          	EXTERN ____sdcc_store_dehl_bcix
+   178                          	EXTERN ____sdcc_store_debc_hlix
+   179                          	EXTERN ____sdcc_store_debc_mhl
+   180                          	EXTERN ____sdcc_cpu_pop_ei
+   181                          	EXTERN ____sdcc_cpu_pop_ei_jp
+   182                          	EXTERN ____sdcc_cpu_push_di
+   183                          	EXTERN ____sdcc_outi
+   184                          	EXTERN ____sdcc_outi_128
+   185                          	EXTERN ____sdcc_outi_256
+   186                          	EXTERN ____sdcc_ldi
+   187                          	EXTERN ____sdcc_ldi_128
+   188                          	EXTERN ____sdcc_ldi_256
+   189                          	EXTERN ____sdcc_4_copy_srcd_hlix_dst_deix
+   190                          	EXTERN ____sdcc_4_and_src_mbc_mhl_dst_deix
+   191                          	EXTERN ____sdcc_4_or_src_mbc_mhl_dst_deix
+   192                          	EXTERN ____sdcc_4_xor_src_mbc_mhl_dst_deix
+   193                          	EXTERN ____sdcc_4_or_src_dehl_dst_bcix
+   194                          	EXTERN ____sdcc_4_xor_src_dehl_dst_bcix
+   195                          	EXTERN ____sdcc_4_and_src_dehl_dst_bcix
+   196                          	EXTERN ____sdcc_4_xor_src_mbc_mhl_dst_debc
+   197                          	EXTERN ____sdcc_4_or_src_mbc_mhl_dst_debc
+   198                          	EXTERN ____sdcc_4_and_src_mbc_mhl_dst_debc
+   199                          	EXTERN ____sdcc_4_cpl_src_mhl_dst_debc
+   200                          	EXTERN ____sdcc_4_xor_src_debc_mhl_dst_debc
+   201                          	EXTERN ____sdcc_4_or_src_debc_mhl_dst_debc
+   202                          	EXTERN ____sdcc_4_and_src_debc_mhl_dst_debc
+   203                          	EXTERN ____sdcc_4_and_src_debc_hlix_dst_debc
+   204                          	EXTERN ____sdcc_4_or_src_debc_hlix_dst_debc
+   205                          	EXTERN ____sdcc_4_xor_src_debc_hlix_dst_debc
+   206                          
+   207                          ;--------------------------------------------------------
+   208                          ; Public variables in this module
+   209                          ;--------------------------------------------------------
+   210                          	GLOBAL _simple_hit_reponse
+   211                          	GLOBAL _update_player
+   212                          	GLOBAL _read_player_controls
+   213                          	GLOBAL _update_player_frame
+   214                          	GLOBAL _player_next_frame
+   215                          	GLOBAL _player_bottom
+   216                          	GLOBAL _player_top
+   217                          	GLOBAL _stateMachine
+   218                          	GLOBAL _animations
+   219                          	GLOBAL _touched_animation
+   220                          	GLOBAL _smash_events
+   221                          	GLOBAL _smash_animation
+   222                          	GLOBAL _walk_animation
+   223                          	GLOBAL _backhand_events
+   224                          	GLOBAL _backhand_animation
+   225                          	GLOBAL _drive_events
+   226                          	GLOBAL _drive_animation
+   227                          	GLOBAL _service_hit_events
+   228                          	GLOBAL _service_hit_animation
+   229                          	GLOBAL _service_ball_up_events
+   230                          	GLOBAL _service_ball_up_animation
+   231                          	GLOBAL _service_wait_animation
+   232                          	GLOBAL _idle_animation
+   233                          	GLOBAL _set_player_status
+   234                          	GLOBAL _update_players
+   235                          	GLOBAL _get_player
+   236                          	GLOBAL _closest_type_of_hit
+   237                          	GLOBAL _ball_at_reach
+   238                          ;--------------------------------------------------------
+   239                          ; Externals used
+   240                          ;--------------------------------------------------------
+   241                          	GLOBAL _float_to_string
+   242                          	GLOBAL _event_hit_ball
+   243                          	GLOBAL _event_serve_hit_end_animation
+   244                          	GLOBAL _event_serve_hit_ball
+   245                          	GLOBAL _event_serve_ball_up
+   246                          	GLOBAL _transition_touch
+   247                          	GLOBAL _transition_front_walk
+   248                          	GLOBAL _transition_hit_ball
+   249                          	GLOBAL _transition_lateral_move
+   250                          	GLOBAL _transition_serve_hit_ball
+   251                          	GLOBAL _transition_receive_serve
+   252                          	GLOBAL _transition_serve_ball_up
+   253                          	GLOBAL _transition_serve_ready
+   254                          	GLOBAL _transition_idle
+   255                          	GLOBAL _player_walk
+   256                          	GLOBAL _player_no_action
+   257                          	GLOBAL _player_service_ball_hit
+   258                          	GLOBAL _player_service_ball_up
+   259                          	GLOBAL _player_service_ready
+   260                          	GLOBAL _player_idle
+   261                          	GLOBAL _hide_score_board
+   262                          	GLOBAL _show_score_board
+   263                          	GLOBAL _init_score_board
+   264                          	GLOBAL _ball_trajectory_points_at_service
+   265                          	GLOBAL _ball_trajectory_points
+   266                          	GLOBAL _set_ball_speed_at_drive
+   267                          	GLOBAL _valid_area
+   268                          	GLOBAL _service_area
+   269                          	GLOBAL _get_serving_player
+   270                          	GLOBAL _is_ad_service
+   271                          	GLOBAL _start_match
+   272                          	GLOBAL _event_player_touch
+   273                          	GLOBAL _event_net_touched
+   274                          	GLOBAL _event_player_hit
+   275                          	GLOBAL _event_ball_bounced
+   276                          	GLOBAL _update_entities
+   277                          	GLOBAL _game_loop
+   278                          	GLOBAL _xy_in_boundary
+   279                          	GLOBAL _point_in_boundary
+   280                          	GLOBAL _x_projection
+   281                          	GLOBAL _ball_future_x_and_height
+   282                          	GLOBAL _set_ball_velocity_net_height
+   283                          	GLOBAL _set_lob_ball_velocity
+   284                          	GLOBAL _update_ball
+   285                          	GLOBAL _init_controls
+   286                          	GLOBAL _diplay_profile
+   287                          	GLOBAL _in_mouse_kempston_wheel_delta
+   288                          	GLOBAL _in_mouse_kempston_wheel
+   289                          	GLOBAL _in_mouse_kempston_callee
+   290                          	GLOBAL _in_mouse_kempston
+   291                          	GLOBAL _in_mouse_kempston_setpos_callee
+   292                          	GLOBAL _in_mouse_kempston_setpos
+   293                          	GLOBAL _in_mouse_kempston_reset
+   294                          	GLOBAL _in_mouse_kempston_init
+   295                          	GLOBAL _in_mouse_amx_wheel_delta
+   296                          	GLOBAL _in_mouse_amx_wheel
+   297                          	GLOBAL _in_mouse_amx_callee
+   298                          	GLOBAL _in_mouse_amx
+   299                          	GLOBAL _in_mouse_amx_setpos_callee
+   300                          	GLOBAL _in_mouse_amx_setpos
+   301                          	GLOBAL _in_mouse_amx_reset
+   302                          	GLOBAL _in_mouse_amx_init_callee
+   303                          	GLOBAL _in_mouse_amx_init
+   304                          	GLOBAL _in_stick_sinclair2
+   305                          	GLOBAL _in_stick_sinclair1
+   306                          	GLOBAL _in_stick_kempston
+   307                          	GLOBAL _in_stick_fuller
+   308                          	GLOBAL _in_stick_cursor
+   309                          	GLOBAL _in_stick_keyboard_fastcall
+   310                          	GLOBAL _in_stick_keyboard
+   311                          	GLOBAL _in_wait_nokey
+   312                          	GLOBAL _in_wait_key
+   313                          	GLOBAL _in_test_key
+   314                          	GLOBAL _in_pause_fastcall
+   315                          	GLOBAL _in_pause
+   316                          	GLOBAL _in_key_scancode_fastcall
+   317                          	GLOBAL _in_key_scancode
+   318                          	GLOBAL _in_key_pressed_fastcall
+   319                          	GLOBAL _in_key_pressed
+   320                          	GLOBAL _in_inkey
+   321                          	GLOBAL _poly_callee
+   322                          	GLOBAL _poly
+   323                          	GLOBAL _exp10_fastcall
+   324                          	GLOBAL _exp10
+   325                          	GLOBAL _mul10u_fastcall
+   326                          	GLOBAL _mul10u
+   327                          	GLOBAL _mul2_fastcall
+   328                          	GLOBAL _mul2
+   329                          	GLOBAL _div2_fastcall
+   330                          	GLOBAL _div2
+   331                          	GLOBAL _invsqrt_fastcall
+   332                          	GLOBAL _invsqrt
+   333                          	GLOBAL _inv_fastcall
+   334                          	GLOBAL _inv
+   335                          	GLOBAL _sqr_fastcall
+   336                          	GLOBAL _sqr
+   337                          	GLOBAL _neg_fastcall
+   338                          	GLOBAL _neg
+   339                          	GLOBAL _isunordered_callee
+   340                          	GLOBAL _isunordered
+   341                          	GLOBAL _islessgreater_callee
+   342                          	GLOBAL _islessgreater
+   343                          	GLOBAL _islessequal_callee
+   344                          	GLOBAL _islessequal
+   345                          	GLOBAL _isless_callee
+   346                          	GLOBAL _isless
+   347                          	GLOBAL _isgreaterequal_callee
+   348                          	GLOBAL _isgreaterequal
+   349                          	GLOBAL _isgreater_callee
+   350                          	GLOBAL _isgreater
+   351                          	GLOBAL _fma_callee
+   352                          	GLOBAL _fma
+   353                          	GLOBAL _fmin_callee
+   354                          	GLOBAL _fmin
+   355                          	GLOBAL _fmax_callee
+   356                          	GLOBAL _fmax
+   357                          	GLOBAL _fdim_callee
+   358                          	GLOBAL _fdim
+   359                          	GLOBAL _nexttoward_callee
+   360                          	GLOBAL _nexttoward
+   361                          	GLOBAL _nextafter_callee
+   362                          	GLOBAL _nextafter
+   363                          	GLOBAL _nan_fastcall
+   364                          	GLOBAL _nan
+   365                          	GLOBAL _copysign_callee
+   366                          	GLOBAL _copysign
+   367                          	GLOBAL _remquo_callee
+   368                          	GLOBAL _remquo
+   369                          	GLOBAL _remainder_callee
+   370                          	GLOBAL _remainder
+   371                          	GLOBAL _fmod_callee
+   372                          	GLOBAL _fmod
+   373                          	GLOBAL _modf_callee
+   374                          	GLOBAL _modf
+   375                          	GLOBAL _trunc_fastcall
+   376                          	GLOBAL _trunc
+   377                          	GLOBAL _lround_fastcall
+   378                          	GLOBAL _lround
+   379                          	GLOBAL _round_fastcall
+   380                          	GLOBAL _round
+   381                          	GLOBAL _lrint_fastcall
+   382                          	GLOBAL _lrint
+   383                          	GLOBAL _rint_fastcall
+   384                          	GLOBAL _rint
+   385                          	GLOBAL _nearbyint_fastcall
+   386                          	GLOBAL _nearbyint
+   387                          	GLOBAL _floor_fastcall
+   388                          	GLOBAL _floor
+   389                          	GLOBAL _ceil_fastcall
+   390                          	GLOBAL _ceil
+   391                          	GLOBAL _tgamma_fastcall
+   392                          	GLOBAL _tgamma
+   393                          	GLOBAL _lgamma_fastcall
+   394                          	GLOBAL _lgamma
+   395                          	GLOBAL _erfc_fastcall
+   396                          	GLOBAL _erfc
+   397                          	GLOBAL _erf_fastcall
+   398                          	GLOBAL _erf
+   399                          	GLOBAL _cbrt_fastcall
+   400                          	GLOBAL _cbrt
+   401                          	GLOBAL _sqrt_fastcall
+   402                          	GLOBAL _sqrt
+   403                          	GLOBAL _pow_callee
+   404                          	GLOBAL _pow
+   405                          	GLOBAL _hypot_callee
+   406                          	GLOBAL _hypot
+   407                          	GLOBAL _fabs_fastcall
+   408                          	GLOBAL _fabs
+   409                          	GLOBAL _logb_fastcall
+   410                          	GLOBAL _logb
+   411                          	GLOBAL _log2_fastcall
+   412                          	GLOBAL _log2
+   413                          	GLOBAL _log1p_fastcall
+   414                          	GLOBAL _log1p
+   415                          	GLOBAL _log10_fastcall
+   416                          	GLOBAL _log10
+   417                          	GLOBAL _log_fastcall
+   418                          	GLOBAL _log
+   419                          	GLOBAL _ilogb_fastcall
+   420                          	GLOBAL _ilogb
+   421                          	GLOBAL _scalbln_callee
+   422                          	GLOBAL _scalbln
+   423                          	GLOBAL _scalbn_callee
+   424                          	GLOBAL _scalbn
+   425                          	GLOBAL _ldexp_callee
+   426                          	GLOBAL _ldexp
+   427                          	GLOBAL _frexp_callee
+   428                          	GLOBAL _frexp
+   429                          	GLOBAL _expm1_fastcall
+   430                          	GLOBAL _expm1
+   431                          	GLOBAL _exp2_fastcall
+   432                          	GLOBAL _exp2
+   433                          	GLOBAL _exp_fastcall
+   434                          	GLOBAL _exp
+   435                          	GLOBAL _tanh_fastcall
+   436                          	GLOBAL _tanh
+   437                          	GLOBAL _sinh_fastcall
+   438                          	GLOBAL _sinh
+   439                          	GLOBAL _cosh_fastcall
+   440                          	GLOBAL _cosh
+   441                          	GLOBAL _atanh_fastcall
+   442                          	GLOBAL _atanh
+   443                          	GLOBAL _asinh_fastcall
+   444                          	GLOBAL _asinh
+   445                          	GLOBAL _acosh_fastcall
+   446                          	GLOBAL _acosh
+   447                          	GLOBAL _tan_fastcall
+   448                          	GLOBAL _tan
+   449                          	GLOBAL _sin_fastcall
+   450                          	GLOBAL _sin
+   451                          	GLOBAL _cos_fastcall
+   452                          	GLOBAL _cos
+   453                          	GLOBAL _atan2_callee
+   454                          	GLOBAL _atan2
+   455                          	GLOBAL _atan_fastcall
+   456                          	GLOBAL _atan
+   457                          	GLOBAL _asin_fastcall
+   458                          	GLOBAL _asin
+   459                          	GLOBAL _acos_fastcall
+   460                          	GLOBAL _acos
+   461                          	GLOBAL _game_state
+   462                          	GLOBAL _match_type
+   463                          	GLOBAL _score
+   464                          	GLOBAL _game_frame_speed
+   465                          	GLOBAL _next_iteration_delta
+   466                          	GLOBAL _ball
+   467                          	GLOBAL _game_settings
+   468                          	GLOBAL _ppponent_profile
+   469                          	GLOBAL _court_boundaries
+   470                          ;--------------------------------------------------------
+   471                          ; special function registers
+   472                          ;--------------------------------------------------------
+   473                          ;--------------------------------------------------------
+   474                          ; ram data
+   475                          ;--------------------------------------------------------
+   476                          	SECTION bss_compiler
+   477                          ;--------------------------------------------------------
+   478                          ; ram data
+   479                          ;--------------------------------------------------------
+   480                          
+   481                          IF 0
+   482                          
+   483                          ; .area _INITIALIZED removed by z88dk
+   484                          
+   485                          _idle_animation:
+   486                          	DEFS 2
+   487                          _service_wait_animation:
+   488                          	DEFS 2
+   489                          _service_ball_up_animation:
+   490                          	DEFS 4
+   491                          _service_ball_up_events:
+   492                          	DEFS 4
+   493                          _service_hit_animation:
+   494                          	DEFS 8
+   495                          _service_hit_events:
+   496                          	DEFS 8
+   497                          _drive_animation:
+   498                          	DEFS 10
+   499                          _drive_events:
+   500                          	DEFS 10
+   501                          _backhand_animation:
+   502                          	DEFS 10
+   503                          _backhand_events:
+   504                          	DEFS 10
+   505                          _walk_animation:
+   506                          	DEFS 8
+   507                          _smash_animation:
+   508                          	DEFS 8
+   509                          _smash_events:
+   510                          	DEFS 8
+   511                          _touched_animation:
+   512                          	DEFS 2
+   513                          _animations:
+   514                          	DEFS 45
+   515                          _stateMachine:
+   516                          	DEFS 18
+   517                          _player_top:
+   518                          	DEFS 20
+   519                          _player_bottom:
+   520                          	DEFS 20
+   521                          
+   522                          ENDIF
+   523                          
+   524                          ;--------------------------------------------------------
+   525                          ; absolute external ram data
+   526                          ;--------------------------------------------------------
+   527                          	SECTION IGNORE
+   528                          ;--------------------------------------------------------
+   529                          ; global & static initialisations
+   530                          ;--------------------------------------------------------
+   531                          	SECTION code_crt_init
+   532                          ;--------------------------------------------------------
+   533                          ; Home
+   534                          ;--------------------------------------------------------
+   535                          	SECTION IGNORE
+   536                          ;--------------------------------------------------------
+   537                          ; code
+   538                          ;--------------------------------------------------------
+   539                          	SECTION BANK_8
+   540                          ;player.c:198: PlayerAnimation *animation = &animations[player->state];
+   541                          ;	---------------------------------
+   542                          ; Function player_next_frame
+   543                          ; ---------------------------------
+   544                          _player_next_frame:
+   545  0000  cd0000            	call	___sdcc_enter_ix
+   546  0003  210000            	ld	hl, -7
+   547  0006  39                	add	hl, sp
+   548  0007  f9                	ld	sp, hl
+   549                          ;player.c:200: PlayerFunc frameEndEvent = NULL;
+   550  0008  dd7e00            	ld	a,(ix+4)
+   551  000b  dd7700            	ld	(ix-7),a
+   552  000e  dd7e00            	ld	a,(ix+5)
+   553  0011  dd7700            	ld	(ix-6),a
+   554  0014  e1                	pop	hl
+   555  0015  e5                	push	hl
+   556  0016  23                	inc	hl
+   557  0017  23                	inc	hl
+   558  0018  23                	inc	hl
+   559  0019  5e                	ld	e, (hl)
+   560  001a  1600              	ld	d,0x05
+   561  001c  ed30              	mlt	de
+   562  001e  210000            	ld	hl,_animations
+   563  0021  19                	add	hl, de
+   564  0022  dd7500            	ld	(ix-5),l
+   565  0025  dd7400            	ld	(ix-4),h
+   566                          ;player.c:202: frameEndEvent = (*animation->events)[player->frame_offset];
+   567  0028  af                	xor	a, a
+   568  0029  dd7700            	ld	(ix-3),a
+   569  002c  dd7700            	ld	(ix-2),a
+   570                          ;player.c:203:
+   571  002f  d1                	pop	de
+   572  0030  e1                	pop	hl
+   573  0031  e5                	push	hl
+   574  0032  d5                	push	de
+   575  0033  23                	inc	hl
+   576  0034  23                	inc	hl
+   577  0035  23                	inc	hl
+   578  0036  4e                	ld	c, (hl)
+   579  0037  23                	inc	hl
+   580  0038  46                	ld	b, (hl)
+   581  0039  2b                	dec	hl
+   582                          ;player.c:204: player->frame_offset++;
+   583  003a  dd7e00            	ld	a,(ix-7)
+   584  003d  c600              	add	a,0x04
+   585  003f  5f                	ld	e, a
+   586  0040  dd7e00            	ld	a,(ix-6)
+   587  0043  ce00              	adc	a,0x00
+   588  0045  57                	ld	d, a
+   589                          ;player.c:206: player->frame_offset = 0;
+   590  0046  1a                	ld	a, (de)
+   591  0047  dd7700            	ld	(ix-1),a
+   592                          ;player.c:203:
+   593  004a  78                	ld	a, b
+   594  004b  b1                	or	a, c
+   595  004c  2800              	jr	Z,l_player_next_frame_00102
+   596                          ;player.c:204: player->frame_offset++;
+   597  004e  4e                	ld	c, (hl)
+   598  004f  23                	inc	hl
+   599  0050  46                	ld	b, (hl)
+   600  0051  dd6e00            	ld	l,(ix-1)
+   601  0054  2600              	ld	h,0x00
+   602  0056  29                	add	hl, hl
+   603  0057  09                	add	hl, bc
+   604  0058  010000            	ld	bc,-3
+   605  005b  cd0000            	call	____sdcc_2_copy_src_mhl_dst_bcix
+   606                          l_player_next_frame_00102:
+   607                          ;player.c:206: player->frame_offset = 0;
+   608  005e  dd7e00            	ld	a,(ix-1)
+   609  0061  3c                	inc	a
+   610  0062  12                	ld	(de), a
+   611                          ;player.c:207:
+   612  0063  dd6e00            	ld	l,(ix-5)
+   613  0066  dd6600            	ld	h,(ix-4)
+   614  0069  4e                	ld	c, (hl)
+   615  006a  91                	sub	a, c
+   616  006b  3800              	jr	C,l_player_next_frame_00104
+   617                          ;player.c:208: AnimationFrame *frame = &(*animation->frames)[player->frame_offset];
+   618  006d  af                	xor	a, a
+   619  006e  12                	ld	(de), a
+   620                          l_player_next_frame_00104:
+   621                          ;player.c:210: player->frame_index = frame->index;
+   622  006f  dd6e00            	ld	l,(ix-5)
+   623  0072  dd6600            	ld	h,(ix-4)
+   624  0075  23                	inc	hl
+   625  0076  4e                	ld	c, (hl)
+   626  0077  23                	inc	hl
+   627  0078  46                	ld	b, (hl)
+   628  0079  1a                	ld	a, (de)
+   629  007a  2600              	ld	h,0x00
+   630  007c  6f                	ld	l, a
+   631  007d  29                	add	hl, hl
+   632  007e  09                	add	hl, bc
+   633  007f  eb                	ex	de, hl
+   634                          ;player.c:211:
+   635  0080  dd7e00            	ld	a,(ix-7)
+   636  0083  c600              	add	a,0x05
+   637  0085  4f                	ld	c, a
+   638  0086  dd7e00            	ld	a,(ix-6)
+   639  0089  ce00              	adc	a,0x00
+   640  008b  47                	ld	b, a
+   641  008c  6b                	ld	l, e
+   642  008d  62                	ld	h, d
+   643  008e  23                	inc	hl
+   644  008f  7e                	ld	a, (hl)
+   645  0090  02                	ld	(bc), a
+   646                          ;player.c:212: // If there is an event associated with the transition to the new frame, we call it
+   647  0091  e1                	pop	hl
+   648  0092  e5                	push	hl
+   649  0093  010000            	ld	bc,0x0006
+   650  0096  09                	add	hl, bc
+   651  0097  1a                	ld	a, (de)
+   652  0098  77                	ld	(hl), a
+   653                          ;player.c:215: }
+   654  0099  dd7e00            	ld	a,(ix-2)
+   655  009c  ddb600            	or	a,(ix-3)
+   656  009f  2800              	jr	Z,l_player_next_frame_00107
+   657                          ;player.c:216:
+   658  00a1  e1                	pop	hl
+   659  00a2  e5                	push	hl
+   660  00a3  e5                	push	hl
+   661  00a4  dd6e00            	ld	l,(ix-3)
+   662  00a7  dd6600            	ld	h,(ix-2)
+   663  00aa  cd0000            	call	___sdcc_call_hl
+   664  00ad  f1                	pop	af
+   665                          l_player_next_frame_00107:
+   666                          ;player.c:217: /**
+   667  00ae  ddf9              	ld	sp, ix
+   668  00b0  dde1              	pop	ix
+   669  00b2  c9                	ret
+   670                          	SECTION BANK_8
+   671                          ;player.c:222: // If frame_timer is 0, there is nothing to do...
+   672                          ;	---------------------------------
+   673                          ; Function update_player_frame
+   674                          ; ---------------------------------
+   675                          _update_player_frame:
+   676  00b3  cd0000            	call	___sdcc_enter_ix
+   677                          ;player.c:226: player_next_frame(player);
+   678  00b6  dd4e00            	ld	c,(ix+4)
+   679  00b9  dd4600            	ld	b,(ix+5)
+   680  00bc  210000            	ld	hl,0x0005
+   681  00bf  09                	add	hl, bc
+   682  00c0  7e                	ld	a, (hl)
+   683  00c1  b7                	or	a, a
+   684  00c2  2800              	jr	Z,l_update_player_frame_00104
+   685  00c4  3d                	dec	a
+   686  00c5  77                	ld	(hl), a
+   687  00c6  b7                	or	a, a
+   688  00c7  2005              	jr	NZ,l_update_player_frame_00104
+   689                          ;player.c:228: }
+   690  00c9  c5                	push	bc
+   691  00ca  cd0000            	call	_player_next_frame
+   692  00cd  f1                	pop	af
+   693                          l_update_player_frame_00104:
+   694                          ;player.c:230: /**
+   695  00ce  dde1              	pop	ix
+   696  00d0  c9                	ret
+   697                          ;player.c:235: AnimationFrame *frame = &(*animations[state].frames)[0];
+   698                          ;	---------------------------------
+   699                          ; Function set_player_status
+   700                          ; ---------------------------------
+   701                          _set_player_status:
+   702  00d1  cd0000            	call	___sdcc_enter_ix
+   703  00d4  f5                	push	af
+   704                          ;player.c:237: player->frame_offset = 0;
+   705  00d5  dd5e06            	ld	e,(ix+6)
+   706  00d8  1605              	ld	d,0x05
+   707  00da  ed30              	mlt	de
+   708  00dc  215f00            	ld	hl,_animations+1
+   709  00df  19                	add	hl,de
+   710  00e0  11feff            	ld	de,-2
+   711  00e3  cd0000            	call	____sdcc_2_copy_src_mhl_dst_deix
+   712                          ;player.c:238: player->frame_timer = frame->duration;
+   713  00e6  dd4e04            	ld	c,(ix+4)
+   714  00e9  dd4605            	ld	b,(ix+5)
+   715  00ec  59                	ld	e, c
+   716  00ed  50                	ld	d, b
+   717  00ee  13                	inc	de
+   718  00ef  13                	inc	de
+   719  00f0  13                	inc	de
+   720  00f1  dd7e06            	ld	a,(ix+6)
+   721  00f4  12                	ld	(de), a
+   722                          ;player.c:239: player->frame_index = frame->index;
+   723  00f5  210400            	ld	hl,0x0004
+   724  00f8  09                	add	hl, bc
+   725  00f9  3600              	ld	(hl),0x00
+   726                          ;player.c:240: }
+   727  00fb  210500            	ld	hl,0x0005
+   728  00fe  09                	add	hl, bc
+   729  00ff  eb                	ex	de, hl
+   730  0100  e1                	pop	hl
+   731  0101  e5                	push	hl
+   732  0102  23                	inc	hl
+   733  0103  7e                	ld	a, (hl)
+   734  0104  12                	ld	(de), a
+   735                          ;player.c:241:
+   736  0105  3e06              	ld	a,0x06
+   737  0107  ed33              	add	bc, a
+   738  0109  e1                	pop	hl
+   739  010a  7e                	ld	a,(hl)
+   740  010b  e5                	push	hl
+   741  010c  02                	ld	(bc), a
+   742                          ;player.c:242: void read_player_controls(Player *player)
+   743  010d  f1                	pop	af
+   744  010e  dde1              	pop	ix
+   745  0110  c9                	ret
+   746                          ;player.c:244: ControlInput control = player->control_fn(player->id);
+   747                          ;	---------------------------------
+   748                          ; Function read_player_controls
+   749                          ; ---------------------------------
+   750                          _read_player_controls:
+   751  0111  cd0000            	call	___sdcc_enter_ix
+   752                          ;player.c:246: if (fire_on)
+   753  0114  dd5e04            	ld	e,(ix+4)
+   754  0117  dd5605            	ld	d,(ix+5)
+   755  011a  210700            	ld	hl,7
+   756  011d  19                	add	hl,de
+   757  011e  4e                	ld	c, (hl)
+   758  011f  23                	inc	hl
+   759  0120  66                	ld	h, (hl)
+   760  0121  1a                	ld	a, (de)
+   761  0122  d5                	push	de
+   762  0123  f5                	push	af
+   763  0124  33                	inc	sp
+   764  0125  69                	ld	l, c
+   765  0126  cd0000            	call	___sdcc_call_hl
+   766  0129  33                	inc	sp
+   767  012a  7d                	ld	a, l
+   768  012b  d1                	pop	de
+   769                          ;player.c:250:
+   770  012c  eb                	ex	de, hl
+   771  012d  23                	inc	hl
+   772                          ;player.c:247: {
+   773  012e  ed27e0            	tst	a,0xe0
+   774  0131  2810              	jr	Z,l_read_player_controls_00105
+   775                          ;player.c:248: if (player->control & CONTROL_FIRE)
+   776                          ;player.c:250:
+   777  0133  cb66              	bit	4,(hl)
+   778  0135  2807              	jr	Z,l_read_player_controls_00102
+   779                          ;player.c:254: else
+   780  0137  e60f              	and	a,0x0f
+   781  0139  f610              	or	a,0x10
+   782  013b  77                	ld	(hl), a
+   783  013c  1806              	jr	l_read_player_controls_00107
+   784                          l_read_player_controls_00102:
+   785                          ;player.c:259: }
+   786  013e  f610              	or	a,0x10
+   787  0140  77                	ld	(hl), a
+   788  0141  1801              	jr	l_read_player_controls_00107
+   789                          l_read_player_controls_00105:
+   790                          ;player.c:265: }
+   791  0143  77                	ld	(hl), a
+   792                          l_read_player_controls_00107:
+   793                          ;player.c:267: // ---------------------------------------------------------
+   794  0144  dde1              	pop	ix
+   795  0146  c9                	ret
+   796                          ;player.c:276: PlayerFunc func = stateMachine[player->state];
+   797                          ;	---------------------------------
+   798                          ; Function update_player
+   799                          ; ---------------------------------
+   800                          _update_player:
+   801  0147  cd0000            	call	___sdcc_enter_ix
+   802                          ;player.c:278: func(player);
+   803  014a  118b00            	ld	de,_stateMachine+0
+   804  014d  dd6e04            	ld	l,(ix+4)
+   805  0150  dd6605            	ld	h,(ix+5)
+   806  0153  4d                	ld	c,l
+   807  0154  44                	ld	b,h
+   808  0155  23                	inc	hl
+   809  0156  23                	inc	hl
+   810  0157  23                	inc	hl
+   811  0158  6e                	ld	l, (hl)
+   812  0159  2600              	ld	h,0x00
+   813  015b  29                	add	hl, hl
+   814  015c  19                	add	hl, de
+   815  015d  5e                	ld	e, (hl)
+   816  015e  23                	inc	hl
+   817  015f  56                	ld	d, (hl)
+   818                          ;player.c:279: update_player_frame(player);
+   819  0160  d5                	push	de
+   820  0161  c5                	push	bc
+   821  0162  cd1101            	call	_read_player_controls
+   822  0165  f1                	pop	af
+   823  0166  d1                	pop	de
+   824                          ;player.c:280: }
+   825  0167  dd6e04            	ld	l,(ix+4)
+   826  016a  dd6605            	ld	h,(ix+5)
+   827  016d  e5                	push	hl
+   828  016e  eb                	ex	de, hl
+   829  016f  cd0000            	call	___sdcc_call_hl
+   830  0172  f1                	pop	af
+   831                          ;player.c:281:
+   832  0173  dd6e04            	ld	l,(ix+4)
+   833  0176  dd6605            	ld	h,(ix+5)
+   834  0179  e5                	push	hl
+   835  017a  cdb300            	call	_update_player_frame
+   836  017d  f1                	pop	af
+   837                          ;player.c:282: /**
+   838  017e  dde1              	pop	ix
+   839  0180  c9                	ret
+   840                          ;player.c:287: update_player(&player_top);
+   841                          ;	---------------------------------
+   842                          ; Function update_players
+   843                          ; ---------------------------------
+   844                          _update_players:
+   845                          ;player.c:289: }
+   846  0181  219d00            	ld	hl,_player_top
+   847  0184  e5                	push	hl
+   848  0185  cd4701            	call	_update_player
+   849                          ;player.c:290:
+   850  0188  21b100            	ld	hl,_player_bottom
+   851  018b  e3                	ex	(sp),hl
+   852  018c  cd4701            	call	_update_player
+   853  018f  f1                	pop	af
+   854                          ;player.c:291: Player *get_player(PlayerId player_id)
+   855  0190  c9                	ret
+   856                          ;player.c:293: return player_id == PLAYER_TOP ? &player_top : &player_bottom;
+   857                          ;	---------------------------------
+   858                          ; Function get_player
+   859                          ; ---------------------------------
+   860                          _get_player:
+   861  0191  cd0000            	call	___sdcc_enter_ix
+   862                          ;player.c:295:
+   863  0194  ddcb0446          	bit	0,(ix+4)
+   864  0198  2005              	jr	NZ,l_get_player_00103
+   865  019a  119d00            	ld	de,_player_top+0
+   866  019d  1803              	jr	l_get_player_00104
+   867                          l_get_player_00103:
+   868  019f  11b100            	ld	de,_player_bottom+0
+   869                          l_get_player_00104:
+   870  01a2  eb                	ex	de, hl
+   871                          ;player.c:296: // ------------------------------------------------------------------------------
+   872  01a3  dde1              	pop	ix
+   873  01a5  c9                	ret
+   874                          ;player.c:369: int8_t sign = player->id == PLAYER_BOTTOM ? 1 : -1;
+   875                          ;	---------------------------------
+   876                          ; Function simple_hit_reponse
+   877                          ; ---------------------------------
+   878                          _simple_hit_reponse:
+   879  01a6  cd0000            	call	___sdcc_enter_ix
+   880                          ;player.c:371: return x_from_center * sign > 0 ? PS_DRIVE : PS_BACKHAND;
+   881  01a9  dd5e04            	ld	e,(ix+4)
+   882  01ac  dd5605            	ld	d,(ix+5)
+   883  01af  1a                	ld	a, (de)
+   884  01b0  cb47              	bit	0,a
+   885  01b2  2805              	jr	Z,l_simple_hit_reponse_00103
+   886  01b4  010100            	ld	bc,0x0001
+   887  01b7  1803              	jr	l_simple_hit_reponse_00104
+   888                          l_simple_hit_reponse_00103:
+   889  01b9  01ffff            	ld	bc,0xffff
+   890                          l_simple_hit_reponse_00104:
+   891                          ;player.c:372: }
+   892  01bc  210a00            	ld	hl,10
+   893  01bf  19                	add	hl, de
+   894  01c0  5e                	ld	e, (hl)
+   895  01c1  23                	inc	hl
+   896  01c2  56                	ld	d, (hl)
+   897  01c3  23                	inc	hl
+   898  01c4  46                	ld	b, (hl)
+   899  01c5  23                	inc	hl
+   900  01c6  66                	ld	h, (hl)
+   901  01c7  c5                	push	bc
+   902  01c8  ed8a4321          	push	+0x4321
+   903  01cc  ed8a0000          	push	+0x0000
+   904  01d0  68                	ld	l, b
+   905  01d1  e5                	push	hl
+   906  01d2  d5                	push	de
+   907  01d3  cd0000            	call	___fssub_callee
+   908  01d6  d5                	push	de
+   909  01d7  e5                	push	hl
+   910  01d8  cd0000            	call	___fs2sint_callee
+   911  01db  c1                	pop	bc
+   912                          ;player.c:373:
+   913  01dc  79                	ld	a, c
+   914  01dd  07                	rlca
+   915  01de  9f                	sbc	a, a
+   916  01df  47                	ld	b, a
+   917  01e0  c5                	push	bc
+   918  01e1  e5                	push	hl
+   919  01e2  cd0000            	call	__mulint_callee
+   920  01e5  af                	xor	a, a
+   921  01e6  bd                	cp	a, l
+   922  01e7  9c                	sbc	a, h
+   923  01e8  e2ed01            	jp	PO, l_simple_hit_reponse_00117
+   924  01eb  ee80              	xor	a,0x80
+   925                          l_simple_hit_reponse_00117:
+   926  01ed  f2f401            	jp	P, l_simple_hit_reponse_00105
+   927  01f0  2e04              	ld	l,0x04
+   928  01f2  1802              	jr	l_simple_hit_reponse_00106
+   929                          l_simple_hit_reponse_00105:
+   930  01f4  2e05              	ld	l,0x05
+   931                          l_simple_hit_reponse_00106:
+   932                          ;player.c:374: /** Identifies the closes type of hit given the position of the ball in relation to the player */
+   933  01f6  dde1              	pop	ix
+   934  01f8  c9                	ret
+   935                          ;player.c:377: int8_t sign = player->id == PLAYER_BOTTOM ? 1 : -1;
+   936                          ;	---------------------------------
+   937                          ; Function closest_type_of_hit
+   938                          ; ---------------------------------
+   939                          _closest_type_of_hit:
+   940  01f9  cd0000            	call	___sdcc_enter_ix
+   941  01fc  21f2ff            	ld	hl, -14
+   942  01ff  39                	add	hl, sp
+   943  0200  f9                	ld	sp, hl
+   944                          ;player.c:379: // debug_number("Dist to ball", player_distance_to_ball);
+   945  0201  dd7e04            	ld	a,(ix+4)
+   946  0204  dd77fa            	ld	(ix-6),a
+   947  0207  6f                	ld	l, a
+   948  0208  dd7e05            	ld	a,(ix+5)
+   949  020b  dd77fb            	ld	(ix-5),a
+   950  020e  67                	ld	h,a
+   951  020f  cb46              	bit	0,(hl)
+   952  0211  2805              	jr	Z,l_closest_type_of_hit_00108
+   953  0213  010100            	ld	bc,0x0001
+   954  0216  1803              	jr	l_closest_type_of_hit_00109
+   955                          l_closest_type_of_hit_00108:
+   956  0218  01ffff            	ld	bc,0xffff
+   957                          l_closest_type_of_hit_00109:
+   958                          ;player.c:380:
+   959  021b  dd5efa            	ld	e,(ix-6)
+   960  021e  dd56fb            	ld	d,(ix-5)
+   961  0221  c5                	push	bc
+   962  0222  210c00            	ld	hl,12
+   963  0225  39                	add	hl, sp
+   964  0226  eb                	ex	de, hl
+   965  0227  010e00            	ld	bc,0x000e
+   966  022a  09                	add	hl, bc
+   967  022b  cd0000            	call	____sdcc_4_ldi_nosave_bc
+   968  022e  c1                	pop	bc
+   969  022f  ed5b0400          	ld	de, (_ball + 4)
+   970  0233  2a0600            	ld	hl, (_ball + 6)
+   971  0236  c5                	push	bc
+   972  0237  e5                	push	hl
+   973  0238  d5                	push	de
+   974  0239  21fcff            	ld	hl,-4
+   975  023c  cd0000            	call	____sdcc_4_push_hlix
+   976  023f  cd0000            	call	___fssub_callee
+   977  0242  c1                	pop	bc
+   978  0243  e5                	push	hl
+   979  0244  d5                	push	de
+   980  0245  79                	ld	a, c
+   981  0246  f5                	push	af
+   982  0247  33                	inc	sp
+   983  0248  cd0000            	call	___schar2fs_callee
+   984  024b  01ffff            	ld	bc,-1
+   985  024e  cd0000            	call	____sdcc_store_dehl_bcix
+   986  0251  d1                	pop	de
+   987  0252  e1                	pop	hl
+   988  0253  dd4efe            	ld	c,(ix-2)
+   989  0256  dd46ff            	ld	b,(ix-1)
+   990  0259  c5                	push	bc
+   991  025a  dd4efc            	ld	c,(ix-4)
+   992  025d  dd46fd            	ld	b,(ix-3)
+   993  0260  c5                	push	bc
+   994  0261  d5                	push	de
+   995  0262  e5                	push	hl
+   996  0263  cd0000            	call	___fsmul_callee
+   997                          ;player.c:384:
+   998  0266  01a0c0            	ld	bc,0xc0a0
+   999  0269  c5                	push	bc
+  1000  026a  010000            	ld	bc,0x0000
+  1001  026d  c5                	push	bc
+  1002  026e  d5                	push	de
+  1003  026f  e5                	push	hl
+  1004  0270  cd0000            	call	___fslt_callee
+  1005  0273  7d                	ld	a, l
+  1006  0274  b7                	or	a, a
+  1007  0275  202a              	jr	NZ,l_closest_type_of_hit_00101
+  1008  0277  ed4b1400          	ld	bc, (_ball + 20)
+  1009  027b  2a1600            	ld	hl, (_ball + 22)
+  1010  027e  dd5efe            	ld	e,(ix-2)
+  1011  0281  dd56ff            	ld	d,(ix-1)
+  1012  0284  d5                	push	de
+  1013  0285  dd5efc            	ld	e,(ix-4)
+  1014  0288  dd56fd            	ld	d,(ix-3)
+  1015  028b  d5                	push	de
+  1016  028c  e5                	push	hl
+  1017  028d  c5                	push	bc
+  1018  028e  cd0000            	call	___fsmul_callee
+  1019  0291  4d                	ld	c, l
+  1020  0292  44                	ld	b, h
+  1021  0293  210000            	ld	hl,0x0000
+  1022  0296  e5                	push	hl
+  1023  0297  e5                	push	hl
+  1024  0298  d5                	push	de
+  1025  0299  c5                	push	bc
+  1026  029a  cd0000            	call	___fslt_callee
+  1027  029d  7d                	ld	a, l
+  1028  029e  b7                	or	a, a
+  1029  029f  280e              	jr	Z,l_closest_type_of_hit_00102
+  1030                          l_closest_type_of_hit_00101:
+  1031                          ;player.c:385: // Now, we obtain its position in the next frame
+  1032  02a1  dd6efa            	ld	l,(ix-6)
+  1033  02a4  dd66fb            	ld	h,(ix-5)
+  1034  02a7  e5                	push	hl
+  1035  02a8  cda601            	call	_simple_hit_reponse
+  1036  02ab  f1                	pop	af
+  1037  02ac  c32f03            	jp	l_closest_type_of_hit_00106
+  1038                          l_closest_type_of_hit_00102:
+  1039                          ;player.c:388: ball_future_x_and_height(time_to_hit, &ball_future_x, &ball_future_height);
+  1040  02af  2a0200            	ld	hl, (_game_frame_speed + 2)
+  1041  02b2  e5                	push	hl
+  1042  02b3  2a0000            	ld	hl, (_game_frame_speed)
+  1043  02b6  e5                	push	hl
+  1044  02b7  21a040            	ld	hl,0x40a0
+  1045  02ba  e5                	push	hl
+  1046  02bb  210000            	ld	hl,0x0000
+  1047  02be  e5                	push	hl
+  1048  02bf  cd0000            	call	___fsmul_callee
+  1049  02c2  4d                	ld	c, l
+  1050  02c3  44                	ld	b, h
+  1051                          ;player.c:390: // debug_point("Future_x_h", ball_future_x, ball_future_height);
+  1052  02c4  210400            	ld	hl,4
+  1053  02c7  39                	add	hl, sp
+  1054  02c8  e5                	push	hl
+  1055  02c9  210200            	ld	hl,2
+  1056  02cc  39                	add	hl, sp
+  1057  02cd  e5                	push	hl
+  1058  02ce  d5                	push	de
+  1059  02cf  c5                	push	bc
+  1060  02d0  cd0000            	call	_ball_future_x_and_height
+  1061  02d3  f1                	pop	af
+  1062  02d4  f1                	pop	af
+  1063  02d5  f1                	pop	af
+  1064  02d6  f1                	pop	af
+  1065                          ;player.c:395:
+  1066  02d7  21f6ff            	ld	hl,-10
+  1067  02da  cd0000            	call	____sdcc_4_push_hlix
+  1068  02dd  213442            	ld	hl,0x4234
+  1069  02e0  e5                	push	hl
+  1070  02e1  210000            	ld	hl,0x0000
+  1071  02e4  e5                	push	hl
+  1072  02e5  cd0000            	call	___fslt_callee
+  1073  02e8  7d                	ld	a, l
+  1074  02e9  b7                	or	a, a
+  1075  02ea  2804              	jr	Z,l_closest_type_of_hit_00105
+  1076                          ;player.c:396: // Checks on x range
+  1077  02ec  2e07              	ld	l,0x07
+  1078  02ee  183f              	jr	l_closest_type_of_hit_00106
+  1079                          l_closest_type_of_hit_00105:
+  1080                          ;player.c:399: }
+  1081  02f0  dd4efa            	ld	c,(ix-6)
+  1082  02f3  dd46fb            	ld	b,(ix-5)
+  1083  02f6  210a00            	ld	hl,10
+  1084  02f9  09                	add	hl, bc
+  1085  02fa  cd0000            	call	____sdcc_load_debc_mhl
+  1086  02fd  d5                	push	de
+  1087  02fe  c5                	push	bc
+  1088  02ff  21f2ff            	ld	hl,-14
+  1089  0302  cd0000            	call	____sdcc_4_push_hlix
+  1090  0305  cd0000            	call	___fssub_callee
+  1091                          ;player.c:400:
+  1092  0308  dd4efe            	ld	c,(ix-2)
+  1093  030b  dd46ff            	ld	b,(ix-1)
+  1094  030e  c5                	push	bc
+  1095  030f  dd4efc            	ld	c,(ix-4)
+  1096  0312  dd46fd            	ld	b,(ix-3)
+  1097  0315  c5                	push	bc
+  1098  0316  d5                	push	de
+  1099  0317  e5                	push	hl
+  1100  0318  cd0000            	call	___fsmul_callee
+  1101  031b  d5                	push	de
+  1102  031c  e5                	push	hl
+  1103  031d  210000            	ld	hl,0x0000
+  1104  0320  e5                	push	hl
+  1105  0321  e5                	push	hl
+  1106  0322  cd0000            	call	___fslt_callee
+  1107  0325  7d                	ld	a, l
+  1108  0326  b7                	or	a, a
+  1109  0327  2804              	jr	Z,l_closest_type_of_hit_00110
+  1110  0329  2e04              	ld	l,0x04
+  1111  032b  1802              	jr	l_closest_type_of_hit_00111
+  1112                          l_closest_type_of_hit_00110:
+  1113  032d  2e05              	ld	l,0x05
+  1114                          l_closest_type_of_hit_00111:
+  1115                          l_closest_type_of_hit_00106:
+  1116                          ;player.c:401: /** Checks whether the ball is at reach for the player. To be used at the moment of hitting the ball */
+  1117  032f  ddf9              	ld	sp, ix
+  1118  0331  dde1              	pop	ix
+  1119  0333  c9                	ret
+  1120                          ;player.c:404: int8_t sign = player->id == PLAYER_BOTTOM ? 1 : -1;
+  1121                          ;	---------------------------------
+  1122                          ; Function ball_at_reach
+  1123                          ; ---------------------------------
+  1124                          _ball_at_reach:
+  1125  0334  cd0000            	call	___sdcc_enter_ix
+  1126  0337  21f3ff            	ld	hl, -13
+  1127  033a  39                	add	hl, sp
+  1128  033b  f9                	ld	sp, hl
+  1129                          ;player.c:406: // Ball is still not on our side of the court
+  1130  033c  dd4e04            	ld	c,(ix+4)
+  1131  033f  dd4605            	ld	b,(ix+5)
+  1132  0342  0a                	ld	a, (bc)
+  1133  0343  cb47              	bit	0,a
+  1134  0345  2805              	jr	Z,l_ball_at_reach_00115
+  1135  0347  110100            	ld	de,0x0001
+  1136  034a  1803              	jr	l_ball_at_reach_00116
+  1137                          l_ball_at_reach_00115:
+  1138  034c  11ffff            	ld	de,0xffff
+  1139                          l_ball_at_reach_00116:
+  1140  034f  dd73fb            	ld	(ix-5),e
+  1141                          ;player.c:407: if (distance_to_net < -Y_RANGE_SLACK_AT_NET)
+  1142  0352  c5                	push	bc
+  1143  0353  110400            	ld	de,_ball + 4
+  1144  0356  210b00            	ld	hl,11
+  1145  0359  39                	add	hl, sp
+  1146  035a  eb                	ex	de, hl
+  1147  035b  cd0000            	call	____sdcc_4_ldi_nosave_bc
+  1148  035e  21fcff            	ld	hl,-4
+  1149  0361  cd0000            	call	____sdcc_4_push_hlix
+  1150  0364  cd0000            	call	___fs2sint_callee
+  1151  0367  c1                	pop	bc
+  1152  0368  1160ff            	ld	de,0xff60
+  1153  036b  19                	add	hl, de
+  1154  036c  eb                	ex	de,hl
+  1155  036d  dd7efb            	ld	a,(ix-5)
+  1156  0370  6f                	ld	l, a
+  1157  0371  07                	rlca
+  1158  0372  9f                	sbc	a, a
+  1159  0373  c5                	push	bc
+  1160  0374  67                	ld	h, a
+  1161  0375  e5                	push	hl
+  1162  0376  d5                	push	de
+  1163  0377  cd0000            	call	__mulint_callee
+  1164  037a  c1                	pop	bc
+  1165                          ;player.c:409:
+  1166  037b  11fb7f            	ld	de,0x7ffb
+  1167  037e  29                	add	hl, hl
+  1168  037f  3f                	ccf
+  1169  0380  cb1c              	rr	h
+  1170  0382  cb1d              	rr	l
+  1171  0384  ed52              	sbc	hl, de
+  1172  0386  3005              	jr	NC,l_ball_at_reach_00102
+  1173                          ;player.c:410: float player_distance_to_ball = (player->y - ball.y) * sign; // Positive if the ball has not reached the player yet
+  1174  0388  2e00              	ld	l,0x00
+  1175  038a  c30c05            	jp	l_ball_at_reach_00113
+  1176                          l_ball_at_reach_00102:
+  1177                          ;player.c:412: return false; // Either the ball has passed the player or not close enough
+  1178  038d  210e00            	ld	hl,14
+  1179  0390  09                	add	hl,bc
+  1180  0391  cd0000            	call	____sdcc_load_hlde_mhl
+  1181  0394  c5                	push	bc
+  1182  0395  e5                	push	hl
+  1183  0396  dd6efe            	ld	l,(ix-2)
+  1184  0399  dd66ff            	ld	h,(ix-1)
+  1185  039c  e3                	ex	(sp), hl
+  1186  039d  e5                	push	hl
+  1187  039e  dd6efc            	ld	l,(ix-4)
+  1188  03a1  dd66fd            	ld	h,(ix-3)
+  1189  03a4  e3                	ex	(sp), hl
+  1190  03a5  e5                	push	hl
+  1191  03a6  d5                	push	de
+  1192  03a7  cd0000            	call	___fssub_callee
+  1193  03aa  c1                	pop	bc
+  1194  03ab  e5                	push	hl
+  1195  03ac  c5                	push	bc
+  1196  03ad  d5                	push	de
+  1197  03ae  dd7efb            	ld	a,(ix-5)
+  1198  03b1  f5                	push	af
+  1199  03b2  33                	inc	sp
+  1200  03b3  cd0000            	call	___schar2fs_callee
+  1201  03b6  01f6ff            	ld	bc,-10
+  1202  03b9  cd0000            	call	____sdcc_store_dehl_bcix
+  1203  03bc  d1                	pop	de
+  1204  03bd  c1                	pop	bc
+  1205  03be  e1                	pop	hl
+  1206  03bf  c5                	push	bc
+  1207  03c0  e5                	push	hl
+  1208  03c1  dd6ef5            	ld	l,(ix-11)
+  1209  03c4  dd66f6            	ld	h,(ix-10)
+  1210  03c7  e3                	ex	(sp), hl
+  1211  03c8  e5                	push	hl
+  1212  03c9  dd6ef3            	ld	l,(ix-13)
+  1213  03cc  dd66f4            	ld	h,(ix-12)
+  1214  03cf  e3                	ex	(sp), hl
+  1215  03d0  d5                	push	de
+  1216  03d1  e5                	push	hl
+  1217  03d2  cd0000            	call	___fsmul_callee
+  1218  03d5  c1                	pop	bc
+  1219                          ;player.c:413:
+  1220  03d6  e5                	push	hl
+  1221  03d7  c5                	push	bc
+  1222  03d8  d5                	push	de
+  1223  03d9  ed8ac0a0          	push	+0xc0a0
+  1224  03dd  ed8a0000          	push	+0x0000
+  1225  03e1  d5                	push	de
+  1226  03e2  e5                	push	hl
+  1227  03e3  cd0000            	call	___fslt_callee
+  1228  03e6  7d                	ld	a, l
+  1229  03e7  d1                	pop	de
+  1230  03e8  c1                	pop	bc
+  1231  03e9  e1                	pop	hl
+  1232  03ea  b7                	or	a, a
+  1233  03eb  2013              	jr	NZ,l_ball_at_reach_00103
+  1234  03ed  c5                	push	bc
+  1235  03ee  d5                	push	de
+  1236  03ef  e5                	push	hl
+  1237  03f0  21a041            	ld	hl,0x41a0
+  1238  03f3  e5                	push	hl
+  1239  03f4  210000            	ld	hl,0x0000
+  1240  03f7  e5                	push	hl
+  1241  03f8  cd0000            	call	___fslt_callee
+  1242  03fb  7d                	ld	a, l
+  1243  03fc  c1                	pop	bc
+  1244  03fd  b7                	or	a, a
+  1245  03fe  2805              	jr	Z,l_ball_at_reach_00104
+  1246                          l_ball_at_reach_00103:
+  1247                          ;player.c:414: // Checks on x range
+  1248  0400  2e00              	ld	l,0x00
+  1249  0402  c30c05            	jp	l_ball_at_reach_00113
+  1250                          l_ball_at_reach_00104:
+  1251                          ;player.c:417:
+  1252  0405  c5                	push	bc
+  1253  0406  110000            	ld	de,_ball
+  1254  0409  210b00            	ld	hl,11
+  1255  040c  39                	add	hl, sp
+  1256  040d  eb                	ex	de, hl
+  1257  040e  cd0000            	call	____sdcc_4_ldi_nosave_bc
+  1258  0411  c1                	pop	bc
+  1259  0412  210a00            	ld	hl,10
+  1260  0415  09                	add	hl,bc
+  1261  0416  cd0000            	call	____sdcc_load_hlde_mhl
+  1262  0419  c5                	push	bc
+  1263  041a  e5                	push	hl
+  1264  041b  d5                	push	de
+  1265  041c  21fcff            	ld	hl,-4
+  1266  041f  cd0000            	call	____sdcc_4_push_hlix
+  1267  0422  cd0000            	call	___fssub_callee
+  1268  0425  01faff            	ld	bc,-6
+  1269  0428  cd0000            	call	____sdcc_store_dehl_bcix
+  1270  042b  11faff            	ld	de,-6
+  1271  042e  cd0000            	call	____sdcc_load_dehl_deix
+  1272  0431  cd0000            	call	_fabs_fastcall
+  1273  0434  01feff            	ld	bc,-2
+  1274  0437  cd0000            	call	____sdcc_store_dehl_bcix
+  1275  043a  c1                	pop	bc
+  1276                          ;player.c:421: return ball.height >= MINIMUM_HEIGHT_TO_SMASH && ball.height <= MAXIMUM_HEIGHT_TO_SMASH &&
+  1277  043b  210300            	ld	hl,3
+  1278  043e  09                	add	hl, bc
+  1279  043f  7e                	ld	a, (hl)
+  1280  0440  dd77ff            	ld	(ix-1),a
+  1281                          ;player.c:423: }
+  1282  0443  ed4b0800          	ld	bc, (_ball + 8)
+  1283  0447  ed5b0a00          	ld	de, (_ball + 10)
+  1284                          ;player.c:421: return ball.height >= MINIMUM_HEIGHT_TO_SMASH && ball.height <= MAXIMUM_HEIGHT_TO_SMASH &&
+  1285  044b  dd7eff            	ld	a,(ix-1)
+  1286  044e  d607              	sub	a,0x07
+  1287  0450  2044              	jr	NZ,l_ball_at_reach_00111
+  1288                          ;player.c:423: }
+  1289  0452  c5                	push	bc
+  1290  0453  d5                	push	de
+  1291  0454  21f041            	ld	hl,0x41f0
+  1292  0457  e5                	push	hl
+  1293  0458  210000            	ld	hl,0x0000
+  1294  045b  e5                	push	hl
+  1295  045c  d5                	push	de
+  1296  045d  c5                	push	bc
+  1297  045e  cd0000            	call	___fslt_callee
+  1298  0461  d1                	pop	de
+  1299  0462  c1                	pop	bc
+  1300  0463  cb45              	bit	0, l
+  1301  0465  2026              	jr	NZ,l_ball_at_reach_00117
+  1302  0467  d5                	push	de
+  1303  0468  c5                	push	bc
+  1304  0469  21b442            	ld	hl,0x42b4
+  1305  046c  e5                	push	hl
+  1306  046d  210000            	ld	hl,0x0000
+  1307  0470  e5                	push	hl
+  1308  0471  cd0000            	call	___fslt_callee
+  1309  0474  cb45              	bit	0, l
+  1310  0476  2015              	jr	NZ,l_ball_at_reach_00117
+  1311                          ;player.c:424: else if (ball.height >= MINIMUM_HEIGHT_TO_DRIVE_HIT && ball.height <= MAXIMUM_HEIGHT_TO_DRIVE_HIT &&
+  1312  0478  21fbff            	ld	hl,-5
+  1313  047b  cd0000            	call	____sdcc_4_push_hlix
+  1314  047e  21c841            	ld	hl,0x41c8
+  1315  0481  e5                	push	hl
+  1316  0482  210000            	ld	hl,0x0000
+  1317  0485  e5                	push	hl
+  1318  0486  cd0000            	call	___fslt_callee
+  1319  0489  cb45              	bit	0, l
+  1320  048b  2804              	jr	Z,l_ball_at_reach_00118
+  1321                          l_ball_at_reach_00117:
+  1322  048d  2e00              	ld	l,0x00
+  1323  048f  1802              	jr	l_ball_at_reach_00119
+  1324                          l_ball_at_reach_00118:
+  1325  0491  2e01              	ld	l,0x01
+  1326                          l_ball_at_reach_00119:
+  1327  0493  c30c05            	jp	l_ball_at_reach_00113
+  1328                          l_ball_at_reach_00111:
+  1329                          ;player.c:426: {
+  1330  0496  c5                	push	bc
+  1331  0497  d5                	push	de
+  1332  0498  210040            	ld	hl,0x4000
+  1333  049b  e5                	push	hl
+  1334  049c  65                	ld	h, l
+  1335  049d  e5                	push	hl
+  1336  049e  d5                	push	de
+  1337  049f  c5                	push	bc
+  1338  04a0  cd0000            	call	___fslt_callee
+  1339  04a3  d1                	pop	de
+  1340  04a4  c1                	pop	bc
+  1341  04a5  cb45              	bit	0, l
+  1342  04a7  2061              	jr	NZ,l_ball_at_reach_00112
+  1343  04a9  d5                	push	de
+  1344  04aa  c5                	push	bc
+  1345  04ab  213442            	ld	hl,0x4234
+  1346  04ae  e5                	push	hl
+  1347  04af  210000            	ld	hl,0x0000
+  1348  04b2  e5                	push	hl
+  1349  04b3  cd0000            	call	___fslt_callee
+  1350  04b6  cb45              	bit	0, l
+  1351  04b8  2050              	jr	NZ,l_ball_at_reach_00112
+  1352                          ;player.c:427: // TODO: add some slack
+  1353  04ba  21fbff            	ld	hl,-5
+  1354  04bd  cd0000            	call	____sdcc_4_push_hlix
+  1355  04c0  212042            	ld	hl,0x4220
+  1356  04c3  e5                	push	hl
+  1357  04c4  210000            	ld	hl,0x0000
+  1358  04c7  e5                	push	hl
+  1359  04c8  cd0000            	call	___fslt_callee
+  1360  04cb  cb45              	bit	0, l
+  1361  04cd  203b              	jr	NZ,l_ball_at_reach_00112
+  1362                          ;player.c:430: }
+  1363  04cf  d1                	pop	de
+  1364  04d0  e1                	pop	hl
+  1365  04d1  e5                	push	hl
+  1366  04d2  d5                	push	de
+  1367  04d3  eb                	ex	de,hl
+  1368  04d4  e1                	pop	hl
+  1369  04d5  e5                	push	hl
+  1370  04d6  d5                	push	de
+  1371  04d7  e5                	push	hl
+  1372  04d8  21f7ff            	ld	hl,-9
+  1373  04db  cd0000            	call	____sdcc_4_push_hlix
+  1374  04de  cd0000            	call	___fsmul_callee
+  1375  04e1  dd7eff            	ld	a,(ix-1)
+  1376  04e4  d604              	sub	a,0x04
+  1377  04e6  200f              	jr	NZ,l_ball_at_reach_00123
+  1378  04e8  d5                	push	de
+  1379  04e9  e5                	push	hl
+  1380  04ea  21a0c0            	ld	hl,0xc0a0
+  1381  04ed  e5                	push	hl
+  1382  04ee  210000            	ld	hl,0x0000
+  1383  04f1  e5                	push	hl
+  1384  04f2  cd0000            	call	___fslt_callee
+  1385  04f5  180d              	jr	l_ball_at_reach_00124
+  1386                          l_ball_at_reach_00123:
+  1387                          ;player.c:431:
+  1388  04f7  01a040            	ld	bc,0x40a0
+  1389  04fa  c5                	push	bc
+  1390  04fb  010000            	ld	bc,0x0000
+  1391  04fe  c5                	push	bc
+  1392  04ff  d5                	push	de
+  1393  0500  e5                	push	hl
+  1394  0501  cd0000            	call	___fslt_callee
+  1395                          l_ball_at_reach_00124:
+  1396  0504  af                	xor	a, a
+  1397  0505  bd                	cp	a, l
+  1398  0506  17                	rla
+  1399  0507  6f                	ld	l, a
+  1400  0508  1802              	jr	l_ball_at_reach_00113
+  1401                          l_ball_at_reach_00112:
+  1402                          ;player.c:434: ERROR: no line number 434 in file player.c
+  1403  050a  2e00              	ld	l,0x00
+  1404                          l_ball_at_reach_00113:
+  1405                          ;player.c:435: ERROR: no line number 435 in file player.c
+  1406  050c  ddf9              	ld	sp, ix
+  1407  050e  dde1              	pop	ix
+  1408  0510  c9                	ret
+  1409                          	SECTION rodata_compiler
+  1410                          ___str_0:
+  1411  0000  4665644578707265  	DEFM "FedExpress"
+              7373              
+  1412  000a  00                	DEFB 0x00
+  1413                          	SECTION rodata_compiler
+  1414                          ___str_1:
+  1415  000b  504c415945522031  	DEFM "PLAYER 1"
+  1416  0013  00                	DEFB 0x00
+  1417                          	SECTION data_compiler
+  1418                          _idle_animation:
+  1419  0000  00                	DEFB +0x00
+  1420  0001  00                	DEFB +0x00
+  1421                          _service_wait_animation:
+  1422  0002  01                	DEFB +0x01
+  1423  0003  00                	DEFB +0x00
+  1424                          _service_ball_up_animation:
+  1425  0004  02                	DEFB +0x02
+  1426  0005  0a                	DEFB +0x0a
+  1427  0006  03                	DEFB +0x03
+  1428  0007  00                	DEFB +0x00
+  1429                          _service_ball_up_events:
+  1430  0008  0000              	DEFW _event_serve_ball_up
+  1431  000a  0000              	DEFW +0x0000
+  1432                          _service_hit_animation:
+  1433  000c  04                	DEFB +0x04
+  1434  000d  05                	DEFB +0x05
+  1435  000e  05                	DEFB +0x05
+  1436  000f  03                	DEFB +0x03
+  1437  0010  06                	DEFB +0x06
+  1438  0011  04                	DEFB +0x04
+  1439  0012  07                	DEFB +0x07
+  1440  0013  05                	DEFB +0x05
+  1441                          _service_hit_events:
+  1442  0014  0000              	DEFW _event_serve_hit_ball
+  1443  0016  0000              	DEFW +0x0000
+  1444  0018  0000              	DEFW +0x0000
+  1445  001a  0000              	DEFW _event_serve_hit_end_animation
+  1446                          _drive_animation:
+  1447  001c  08                	DEFB +0x08
+  1448  001d  05                	DEFB +0x05
+  1449  001e  09                	DEFB +0x09
+  1450  001f  05                	DEFB +0x05
+  1451  0020  0a                	DEFB +0x0a
+  1452  0021  05                	DEFB +0x05
+  1453  0022  0b                	DEFB +0x0b
+  1454  0023  0a                	DEFB +0x0a
+  1455  0024  0a                	DEFB +0x0a
+  1456  0025  05                	DEFB +0x05
+  1457                          _drive_events:
+  1458  0026  0000              	DEFW _event_hit_ball
+  1459  0028  0000              	DEFW +0x0000
+  1460  002a  0000              	DEFW +0x0000
+  1461  002c  0000              	DEFW +0x0000
+  1462  002e  0000              	DEFW _transition_idle
+  1463                          _backhand_animation:
+  1464  0030  0c                	DEFB +0x0c
+  1465  0031  05                	DEFB +0x05
+  1466  0032  0d                	DEFB +0x0d
+  1467  0033  05                	DEFB +0x05
+  1468  0034  0e                	DEFB +0x0e
+  1469  0035  05                	DEFB +0x05
+  1470  0036  0f                	DEFB +0x0f
+  1471  0037  0a                	DEFB +0x0a
+  1472  0038  0e                	DEFB +0x0e
+  1473  0039  05                	DEFB +0x05
+  1474                          _backhand_events:
+  1475  003a  0000              	DEFW _event_hit_ball
+  1476  003c  0000              	DEFW +0x0000
+  1477  003e  0000              	DEFW +0x0000
+  1478  0040  0000              	DEFW +0x0000
+  1479  0042  0000              	DEFW _transition_idle
+  1480                          _walk_animation:
+  1481  0044  10                	DEFB +0x10
+  1482  0045  0a                	DEFB +0x0a
+  1483  0046  11                	DEFB +0x11
+  1484  0047  0a                	DEFB +0x0a
+  1485  0048  12                	DEFB +0x12
+  1486  0049  0a                	DEFB +0x0a
+  1487  004a  13                	DEFB +0x13
+  1488  004b  0a                	DEFB +0x0a
+  1489                          _smash_animation:
+  1490  004c  04                	DEFB +0x04
+  1491  004d  05                	DEFB +0x05
+  1492  004e  05                	DEFB +0x05
+  1493  004f  05                	DEFB +0x05
+  1494  0050  06                	DEFB +0x06
+  1495  0051  05                	DEFB +0x05
+  1496  0052  07                	DEFB +0x07
+  1497  0053  0a                	DEFB +0x0a
+  1498                          _smash_events:
+  1499  0054  0000              	DEFW _event_hit_ball
+  1500  0056  0000              	DEFW +0x0000
+  1501  0058  0000              	DEFW +0x0000
+  1502  005a  0000              	DEFW _transition_idle
+  1503                          _touched_animation:
+  1504  005c  14                	DEFB +0x14
+  1505  005d  00                	DEFB +0x00
+  1506                          _animations:
+  1507  005e  01                	DEFB +0x01
+  1508  005f  0000              	DEFW _idle_animation
+  1509  0061  0000              	DEFW +0x0000
+  1510  0063  01                	DEFB +0x01
+  1511  0064  0200              	DEFW _service_wait_animation
+  1512  0066  0000              	DEFW +0x0000
+  1513  0068  02                	DEFB +0x02
+  1514  0069  0400              	DEFW _service_ball_up_animation
+  1515  006b  0800              	DEFW _service_ball_up_events
+  1516  006d  04                	DEFB +0x04
+  1517  006e  0c00              	DEFW _service_hit_animation
+  1518  0070  1400              	DEFW _service_hit_events
+  1519  0072  05                	DEFB +0x05
+  1520  0073  1c00              	DEFW _drive_animation
+  1521  0075  2600              	DEFW _drive_events
+  1522  0077  05                	DEFB +0x05
+  1523  0078  3000              	DEFW _backhand_animation
+  1524  007a  3a00              	DEFW _backhand_events
+  1525  007c  04                	DEFB +0x04
+  1526  007d  4400              	DEFW _walk_animation
+  1527  007f  0000              	DEFW +0x0000
+  1528  0081  04                	DEFB +0x04
+  1529  0082  4c00              	DEFW _smash_animation
+  1530  0084  5400              	DEFW _smash_events
+  1531  0086  01                	DEFB +0x01
+  1532  0087  5c00              	DEFW _touched_animation
+  1533  0089  0000              	DEFW +0x0000
+  1534                          _stateMachine:
+  1535  008b  0000              	DEFW _player_idle
+  1536  008d  0000              	DEFW _player_service_ready
+  1537  008f  0000              	DEFW _player_service_ball_up
+  1538  0091  0000              	DEFW _player_service_ball_hit
+  1539  0093  0000              	DEFW _player_no_action
+  1540  0095  0000              	DEFW _player_no_action
+  1541  0097  0000              	DEFW _player_walk
+  1542  0099  0000              	DEFW _player_no_action
+  1543  009b  0000              	DEFW _player_no_action
+  1544                          _player_top:
+  1545  009d  00                	DEFB +0x00
+  1546  009e  00                	DEFB +0x00
+  1547  009f  00                	DEFB +0x00
+  1548  00a0  00                	DEFB +0x00
+  1549  00a1  00                	DEFB +0x00
+  1550  00a2  00                	DEFB +0x00
+  1551  00a3  00                	DEFB +0x00
+  1552  00a4  0000              	DEFW +0x0000
+  1553  00a6  00                	DEFB +0x00
+  1554  00a7  00000f43          	DEFB +0x00,0x00, +0x0f, +0x43
+  1555  00ab  0000c642          	DEFB +0x00,0x00, +0xc6, +0x42
+  1556  00af  0000              	DEFW ___str_0
+  1557                          _player_bottom:
+  1558  00b1  01                	DEFB +0x01
+  1559  00b2  00                	DEFB +0x00
+  1560  00b3  00                	DEFB +0x00
+  1561  00b4  00                	DEFB +0x00
+  1562  00b5  00                	DEFB +0x00
+  1563  00b6  00                	DEFB +0x00
+  1564  00b7  00                	DEFB +0x00
+  1565  00b8  0000              	DEFW +0x0000
+  1566  00ba  00                	DEFB +0x00
+  1567  00bb  00003343          	DEFB +0x00,0x00, +0x33, +0x43
+  1568  00bf  00005d43          	DEFB +0x00,0x00, +0x5d, +0x43
+  1569  00c3  0b00              	DEFW ___str_1
+  1570                          	SECTION IGNORE
+  1571                          

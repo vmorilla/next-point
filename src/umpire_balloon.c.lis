@@ -1,0 +1,730 @@
+/tmp/tmpEKqx8ynF.asm:
+     1                          MODULE umpire_balloon_c
+     2                          LINE 0, "umpire_balloon.c"
+umpire_balloon.c:
+                                
+     1                          ;--------------------------------------------------------
+     2                          ; File Created by SDCC : free open source ISO C Compiler
+     3                          ; Version 4.3.0 #14210 (Mac OS X ppc)
+     4                          ;--------------------------------------------------------
+     5                          	.zxn
+     6                          ; Processed by Z88DK
+     7                          ;--------------------------------------------------------
+     8                          
+     9                          	EXTERN __divschar
+    10                          	EXTERN __divschar_callee
+    11                          	EXTERN __divsint
+    12                          	EXTERN __divsint_callee
+    13                          	EXTERN __divslong
+    14                          	EXTERN __divslong_callee
+    15                          	EXTERN __divslonglong
+    16                          	EXTERN __divslonglong_callee
+    17                          	EXTERN __divsuchar
+    18                          	EXTERN __divsuchar_callee
+    19                          	EXTERN __divuchar
+    20                          	EXTERN __divuchar_callee
+    21                          	EXTERN __divuint
+    22                          	EXTERN __divuint_callee
+    23                          	EXTERN __divulong
+    24                          	EXTERN __divulong_callee
+    25                          	EXTERN __divulonglong
+    26                          	EXTERN __divulonglong_callee
+    27                          	EXTERN __divuschar
+    28                          	EXTERN __divuschar_callee
+    29                          	EXTERN __modschar
+    30                          	EXTERN __modschar_callee
+    31                          	EXTERN __modsint
+    32                          	EXTERN __modsint_callee
+    33                          	EXTERN __modslong
+    34                          	EXTERN __modslong_callee
+    35                          	EXTERN __modslonglong
+    36                          	EXTERN __modslonglong_callee
+    37                          	EXTERN __modsuchar
+    38                          	EXTERN __modsuchar_callee
+    39                          	EXTERN __moduchar
+    40                          	EXTERN __moduchar_callee
+    41                          	EXTERN __moduint
+    42                          	EXTERN __moduint_callee
+    43                          	EXTERN __modulong
+    44                          	EXTERN __modulong_callee
+    45                          	EXTERN __modulonglong
+    46                          	EXTERN __modulonglong_callee
+    47                          	EXTERN __moduschar
+    48                          	EXTERN __moduschar_callee
+    49                          	EXTERN __mulint
+    50                          	EXTERN __mulint_callee
+    51                          	EXTERN __mullong
+    52                          	EXTERN __mullong_callee
+    53                          	EXTERN __mullonglong
+    54                          	EXTERN __mullonglong_callee
+    55                          	EXTERN __mulschar
+    56                          	EXTERN __mulschar_callee
+    57                          	EXTERN __mulsuchar
+    58                          	EXTERN __mulsuchar_callee
+    59                          	EXTERN __muluchar
+    60                          	EXTERN __muluchar_callee
+    61                          	EXTERN __muluschar
+    62                          	EXTERN __muluschar_callee
+    63                          	EXTERN __rlslonglong
+    64                          	EXTERN __rlslonglong_callee
+    65                          	EXTERN __rlulonglong
+    66                          	EXTERN __rlulonglong_callee
+    67                          	EXTERN __rrslonglong
+    68                          	EXTERN __rrslonglong_callee
+    69                          	EXTERN __rrulonglong
+    70                          	EXTERN __rrulonglong_callee
+    71                          	EXTERN ___mulsint2slong
+    72                          	EXTERN ___mulsint2slong_callee
+    73                          	EXTERN ___muluint2ulong
+    74                          	EXTERN ___muluint2ulong_callee
+    75                          	EXTERN ___sdcc_call_hl
+    76                          	EXTERN ___sdcc_call_iy
+    77                          	EXTERN ___sdcc_enter_ix
+    78                          	EXTERN banked_call
+    79                          	EXTERN _banked_ret
+    80                          	EXTERN ___fs2schar
+    81                          	EXTERN ___fs2schar_callee
+    82                          	EXTERN ___fs2sint
+    83                          	EXTERN ___fs2sint_callee
+    84                          	EXTERN ___fs2slong
+    85                          	EXTERN ___fs2slong_callee
+    86                          	EXTERN ___fs2slonglong
+    87                          	EXTERN ___fs2slonglong_callee
+    88                          	EXTERN ___fs2uchar
+    89                          	EXTERN ___fs2uchar_callee
+    90                          	EXTERN ___fs2uint
+    91                          	EXTERN ___fs2uint_callee
+    92                          	EXTERN ___fs2ulong
+    93                          	EXTERN ___fs2ulong_callee
+    94                          	EXTERN ___fs2ulonglong
+    95                          	EXTERN ___fs2ulonglong_callee
+    96                          	EXTERN ___fsadd
+    97                          	EXTERN ___fsadd_callee
+    98                          	EXTERN ___fsdiv
+    99                          	EXTERN ___fsdiv_callee
+   100                          	EXTERN ___fseq
+   101                          	EXTERN ___fseq_callee
+   102                          	EXTERN ___fsgt
+   103                          	EXTERN ___fsgt_callee
+   104                          	EXTERN ___fslt
+   105                          	EXTERN ___fslt_callee
+   106                          	EXTERN ___fsmul
+   107                          	EXTERN ___fsmul_callee
+   108                          	EXTERN ___fsneq
+   109                          	EXTERN ___fsneq_callee
+   110                          	EXTERN ___fssub
+   111                          	EXTERN ___fssub_callee
+   112                          	EXTERN ___schar2fs
+   113                          	EXTERN ___schar2fs_callee
+   114                          	EXTERN ___sint2fs
+   115                          	EXTERN ___sint2fs_callee
+   116                          	EXTERN ___slong2fs
+   117                          	EXTERN ___slong2fs_callee
+   118                          	EXTERN ___slonglong2fs
+   119                          	EXTERN ___slonglong2fs_callee
+   120                          	EXTERN ___uchar2fs
+   121                          	EXTERN ___uchar2fs_callee
+   122                          	EXTERN ___uint2fs
+   123                          	EXTERN ___uint2fs_callee
+   124                          	EXTERN ___ulong2fs
+   125                          	EXTERN ___ulong2fs_callee
+   126                          	EXTERN ___ulonglong2fs
+   127                          	EXTERN ___ulonglong2fs_callee
+   128                          	EXTERN ____sdcc_2_copy_src_mhl_dst_deix
+   129                          	EXTERN ____sdcc_2_copy_src_mhl_dst_bcix
+   130                          	EXTERN ____sdcc_4_copy_src_mhl_dst_deix
+   131                          	EXTERN ____sdcc_4_copy_src_mhl_dst_bcix
+   132                          	EXTERN ____sdcc_4_copy_src_mhl_dst_mbc
+   133                          	EXTERN ____sdcc_4_ldi_nosave_bc
+   134                          	EXTERN ____sdcc_4_ldi_save_bc
+   135                          	EXTERN ____sdcc_4_push_hlix
+   136                          	EXTERN ____sdcc_4_push_mhl
+   137                          	EXTERN ____sdcc_lib_setmem_hl
+   138                          	EXTERN ____sdcc_ll_add_de_bc_hl
+   139                          	EXTERN ____sdcc_ll_add_de_bc_hlix
+   140                          	EXTERN ____sdcc_ll_add_de_hlix_bc
+   141                          	EXTERN ____sdcc_ll_add_de_hlix_bcix
+   142                          	EXTERN ____sdcc_ll_add_deix_bc_hl
+   143                          	EXTERN ____sdcc_ll_add_deix_hlix
+   144                          	EXTERN ____sdcc_ll_add_hlix_bc_deix
+   145                          	EXTERN ____sdcc_ll_add_hlix_deix_bc
+   146                          	EXTERN ____sdcc_ll_add_hlix_deix_bcix
+   147                          	EXTERN ____sdcc_ll_asr_hlix_a
+   148                          	EXTERN ____sdcc_ll_asr_mbc_a
+   149                          	EXTERN ____sdcc_ll_copy_src_de_dst_hlix
+   150                          	EXTERN ____sdcc_ll_copy_src_de_dst_hlsp
+   151                          	EXTERN ____sdcc_ll_copy_src_deix_dst_hl
+   152                          	EXTERN ____sdcc_ll_copy_src_deix_dst_hlix
+   153                          	EXTERN ____sdcc_ll_copy_src_deixm_dst_hlsp
+   154                          	EXTERN ____sdcc_ll_copy_src_desp_dst_hlsp
+   155                          	EXTERN ____sdcc_ll_copy_src_hl_dst_de
+   156                          	EXTERN ____sdcc_ll_copy_src_hlsp_dst_de
+   157                          	EXTERN ____sdcc_ll_copy_src_hlsp_dst_deixm
+   158                          	EXTERN ____sdcc_ll_lsl_hlix_a
+   159                          	EXTERN ____sdcc_ll_lsl_mbc_a
+   160                          	EXTERN ____sdcc_ll_lsr_hlix_a
+   161                          	EXTERN ____sdcc_ll_lsr_mbc_a
+   162                          	EXTERN ____sdcc_ll_push_hlix
+   163                          	EXTERN ____sdcc_ll_push_mhl
+   164                          	EXTERN ____sdcc_ll_sub_de_bc_hl
+   165                          	EXTERN ____sdcc_ll_sub_de_bc_hlix
+   166                          	EXTERN ____sdcc_ll_sub_de_hlix_bc
+   167                          	EXTERN ____sdcc_ll_sub_de_hlix_bcix
+   168                          	EXTERN ____sdcc_ll_sub_deix_bc_hl
+   169                          	EXTERN ____sdcc_ll_sub_deix_hlix
+   170                          	EXTERN ____sdcc_ll_sub_hlix_bc_deix
+   171                          	EXTERN ____sdcc_ll_sub_hlix_deix_bc
+   172                          	EXTERN ____sdcc_ll_sub_hlix_deix_bcix
+   173                          	EXTERN ____sdcc_load_debc_deix
+   174                          	EXTERN ____sdcc_load_dehl_deix
+   175                          	EXTERN ____sdcc_load_debc_mhl
+   176                          	EXTERN ____sdcc_load_hlde_mhl
+   177                          	EXTERN ____sdcc_store_dehl_bcix
+   178                          	EXTERN ____sdcc_store_debc_hlix
+   179                          	EXTERN ____sdcc_store_debc_mhl
+   180                          	EXTERN ____sdcc_cpu_pop_ei
+   181                          	EXTERN ____sdcc_cpu_pop_ei_jp
+   182                          	EXTERN ____sdcc_cpu_push_di
+   183                          	EXTERN ____sdcc_outi
+   184                          	EXTERN ____sdcc_outi_128
+   185                          	EXTERN ____sdcc_outi_256
+   186                          	EXTERN ____sdcc_ldi
+   187                          	EXTERN ____sdcc_ldi_128
+   188                          	EXTERN ____sdcc_ldi_256
+   189                          	EXTERN ____sdcc_4_copy_srcd_hlix_dst_deix
+   190                          	EXTERN ____sdcc_4_and_src_mbc_mhl_dst_deix
+   191                          	EXTERN ____sdcc_4_or_src_mbc_mhl_dst_deix
+   192                          	EXTERN ____sdcc_4_xor_src_mbc_mhl_dst_deix
+   193                          	EXTERN ____sdcc_4_or_src_dehl_dst_bcix
+   194                          	EXTERN ____sdcc_4_xor_src_dehl_dst_bcix
+   195                          	EXTERN ____sdcc_4_and_src_dehl_dst_bcix
+   196                          	EXTERN ____sdcc_4_xor_src_mbc_mhl_dst_debc
+   197                          	EXTERN ____sdcc_4_or_src_mbc_mhl_dst_debc
+   198                          	EXTERN ____sdcc_4_and_src_mbc_mhl_dst_debc
+   199                          	EXTERN ____sdcc_4_cpl_src_mhl_dst_debc
+   200                          	EXTERN ____sdcc_4_xor_src_debc_mhl_dst_debc
+   201                          	EXTERN ____sdcc_4_or_src_debc_mhl_dst_debc
+   202                          	EXTERN ____sdcc_4_and_src_debc_mhl_dst_debc
+   203                          	EXTERN ____sdcc_4_and_src_debc_hlix_dst_debc
+   204                          	EXTERN ____sdcc_4_or_src_debc_hlix_dst_debc
+   205                          	EXTERN ____sdcc_4_xor_src_debc_hlix_dst_debc
+   206                          
+   207                          ;--------------------------------------------------------
+   208                          ; Public variables in this module
+   209                          ;--------------------------------------------------------
+   210                          	GLOBAL _hide_balloon
+   211                          	GLOBAL _draw_balloon_with_text
+   212                          	GLOBAL _draw_text_in_balloon
+   213                          	GLOBAL _draw_balloon
+   214                          	GLOBAL _draw_balloon_column
+   215                          ;--------------------------------------------------------
+   216                          ; Externals used
+   217                          ;--------------------------------------------------------
+   218                          	GLOBAL _clear_tilemap
+   219                          	GLOBAL _select_tilemap
+   220                          	GLOBAL _ffsll_callee
+   221                          	GLOBAL _ffsll
+   222                          	GLOBAL _strxfrm_callee
+   223                          	GLOBAL _strxfrm
+   224                          	GLOBAL _strupr_fastcall
+   225                          	GLOBAL _strupr
+   226                          	GLOBAL _strtok_r_callee
+   227                          	GLOBAL _strtok_r
+   228                          	GLOBAL _strtok_callee
+   229                          	GLOBAL _strtok
+   230                          	GLOBAL _strstrip_fastcall
+   231                          	GLOBAL _strstrip
+   232                          	GLOBAL _strstr_callee
+   233                          	GLOBAL _strstr
+   234                          	GLOBAL _strspn_callee
+   235                          	GLOBAL _strspn
+   236                          	GLOBAL _strsep_callee
+   237                          	GLOBAL _strsep
+   238                          	GLOBAL _strrstrip_fastcall
+   239                          	GLOBAL _strrstrip
+   240                          	GLOBAL _strrstr_callee
+   241                          	GLOBAL _strrstr
+   242                          	GLOBAL _strrspn_callee
+   243                          	GLOBAL _strrspn
+   244                          	GLOBAL _strrev_fastcall
+   245                          	GLOBAL _strrev
+   246                          	GLOBAL _strrcspn_callee
+   247                          	GLOBAL _strrcspn
+   248                          	GLOBAL _strrchr_callee
+   249                          	GLOBAL _strrchr
+   250                          	GLOBAL _strpbrk_callee
+   251                          	GLOBAL _strpbrk
+   252                          	GLOBAL _strnlen_callee
+   253                          	GLOBAL _strnlen
+   254                          	GLOBAL _strnicmp_callee
+   255                          	GLOBAL _strnicmp
+   256                          	GLOBAL _strndup_callee
+   257                          	GLOBAL _strndup
+   258                          	GLOBAL _strncpy_callee
+   259                          	GLOBAL _strncpy
+   260                          	GLOBAL _strncmp_callee
+   261                          	GLOBAL _strncmp
+   262                          	GLOBAL _strnchr_callee
+   263                          	GLOBAL _strnchr
+   264                          	GLOBAL _strncat_callee
+   265                          	GLOBAL _strncat
+   266                          	GLOBAL _strncasecmp_callee
+   267                          	GLOBAL _strncasecmp
+   268                          	GLOBAL _strlwr_fastcall
+   269                          	GLOBAL _strlwr
+   270                          	GLOBAL _strlen_fastcall
+   271                          	GLOBAL _strlen
+   272                          	GLOBAL _strlcpy_callee
+   273                          	GLOBAL _strlcpy
+   274                          	GLOBAL _strlcat_callee
+   275                          	GLOBAL _strlcat
+   276                          	GLOBAL _stricmp_callee
+   277                          	GLOBAL _stricmp
+   278                          	GLOBAL _strerror_fastcall
+   279                          	GLOBAL _strerror
+   280                          	GLOBAL _strdup_fastcall
+   281                          	GLOBAL _strdup
+   282                          	GLOBAL _strcspn_callee
+   283                          	GLOBAL _strcspn
+   284                          	GLOBAL _strcpy_callee
+   285                          	GLOBAL _strcpy
+   286                          	GLOBAL _strcoll_callee
+   287                          	GLOBAL _strcoll
+   288                          	GLOBAL _strcmp_callee
+   289                          	GLOBAL _strcmp
+   290                          	GLOBAL _strchrnul_callee
+   291                          	GLOBAL _strchrnul
+   292                          	GLOBAL _strchr_callee
+   293                          	GLOBAL _strchr
+   294                          	GLOBAL _strcat_callee
+   295                          	GLOBAL _strcat
+   296                          	GLOBAL _strcasecmp_callee
+   297                          	GLOBAL _strcasecmp
+   298                          	GLOBAL _stpncpy_callee
+   299                          	GLOBAL _stpncpy
+   300                          	GLOBAL _stpcpy_callee
+   301                          	GLOBAL _stpcpy
+   302                          	GLOBAL _memswap_callee
+   303                          	GLOBAL _memswap
+   304                          	GLOBAL _memset_wr_callee
+   305                          	GLOBAL _memset_wr
+   306                          	GLOBAL _memset_callee
+   307                          	GLOBAL _memset
+   308                          	GLOBAL _memrchr_callee
+   309                          	GLOBAL _memrchr
+   310                          	GLOBAL _memmove_callee
+   311                          	GLOBAL _memmove
+   312                          	GLOBAL _memmem_callee
+   313                          	GLOBAL _memmem
+   314                          	GLOBAL _memcpy_callee
+   315                          	GLOBAL _memcpy
+   316                          	GLOBAL _memcmp_callee
+   317                          	GLOBAL _memcmp
+   318                          	GLOBAL _memchr_callee
+   319                          	GLOBAL _memchr
+   320                          	GLOBAL _memccpy_callee
+   321                          	GLOBAL _memccpy
+   322                          	GLOBAL _ffsl_fastcall
+   323                          	GLOBAL _ffsl
+   324                          	GLOBAL _ffs_fastcall
+   325                          	GLOBAL _ffs
+   326                          	GLOBAL __strrstrip__fastcall
+   327                          	GLOBAL __strrstrip_
+   328                          	GLOBAL __memupr__callee
+   329                          	GLOBAL __memupr_
+   330                          	GLOBAL __memstrcpy__callee
+   331                          	GLOBAL __memstrcpy_
+   332                          	GLOBAL __memlwr__callee
+   333                          	GLOBAL __memlwr_
+   334                          	GLOBAL _rawmemchr_callee
+   335                          	GLOBAL _rawmemchr
+   336                          	GLOBAL _strnset_callee
+   337                          	GLOBAL _strnset
+   338                          	GLOBAL _strset_callee
+   339                          	GLOBAL _strset
+   340                          	GLOBAL _rindex_callee
+   341                          	GLOBAL _rindex
+   342                          	GLOBAL _index_callee
+   343                          	GLOBAL _index
+   344                          	GLOBAL _bzero_callee
+   345                          	GLOBAL _bzero
+   346                          	GLOBAL _bcopy_callee
+   347                          	GLOBAL _bcopy
+   348                          	GLOBAL _bcmp_callee
+   349                          	GLOBAL _bcmp
+   350                          	GLOBAL _tilemap
+   351                          	GLOBAL _balloon_tilemap
+   352                          	GLOBAL _menu_palette_end
+   353                          	GLOBAL _menu_palette
+   354                          	GLOBAL _menu_patterns
+   355                          	GLOBAL _game_palette_end
+   356                          	GLOBAL _game_palette
+   357                          	GLOBAL _game_patterns
+   358                          	GLOBAL _tiles
+   359                          ;--------------------------------------------------------
+   360                          ; special function registers
+   361                          ;--------------------------------------------------------
+   362                          ;--------------------------------------------------------
+   363                          ; ram data
+   364                          ;--------------------------------------------------------
+   365                          	SECTION bss_compiler
+   366                          ;--------------------------------------------------------
+   367                          ; ram data
+   368                          ;--------------------------------------------------------
+   369                          
+   370                          IF 0
+   371                          
+   372                          ; .area _INITIALIZED removed by z88dk
+   373                          
+   374                          
+   375                          ENDIF
+   376                          
+   377                          ;--------------------------------------------------------
+   378                          ; absolute external ram data
+   379                          ;--------------------------------------------------------
+   380                          	SECTION IGNORE
+   381                          ;--------------------------------------------------------
+   382                          ; global & static initialisations
+   383                          ;--------------------------------------------------------
+   384                          	SECTION code_crt_init
+   385                          ;--------------------------------------------------------
+   386                          ; Home
+   387                          ;--------------------------------------------------------
+   388                          	SECTION IGNORE
+   389                          ;--------------------------------------------------------
+   390                          ; code
+   391                          ;--------------------------------------------------------
+   392                          	SECTION code_compiler
+   393                          ;umpire_balloon.c:11: void draw_balloon_column(uint8_t screen_col, uint8_t balloon_col)
+   394                          ;	---------------------------------
+   395                          ; Function draw_balloon_column
+   396                          ; ---------------------------------
+   397                          _draw_balloon_column:
+   398  0000  cd0000            	call	___sdcc_enter_ix
+   399  0003  3b                	dec	sp
+   400                          ;umpire_balloon.c:13: for (uint8_t row = 0; row < BALLOON_HEIGHT; row++)
+   401  0004  dd36ff00          	ld	(ix-1),0x00
+   402                          l_draw_balloon_column_00103:
+   403  0008  dd7eff            	ld	a,(ix-1)
+   404  000b  d604              	sub	a,0x04
+   405  000d  3046              	jr	NC,l_draw_balloon_column_00105
+   406                          ;umpire_balloon.c:15: TileMapEntry *screen_tile = &tilemap[BALLOON_COORD_Y + row][BALLOON_COORD_X + screen_col];
+   407  000f  dd4eff            	ld	c,(ix-1)
+   408  0012  0600              	ld	b,0x00
+   409  0014  3e08              	ld	a,0x08
+   410  0016  ed33              	add	bc, a
+   411  0018  69                	ld	l, c
+   412  0019  60                	ld	h, b
+   413  001a  29                	add	hl, hl
+   414  001b  29                	add	hl, hl
+   415  001c  09                	add	hl, bc
+   416  001d  29                	add	hl, hl
+   417  001e  29                	add	hl, hl
+   418  001f  29                	add	hl, hl
+   419  0020  29                	add	hl, hl
+   420  0021  29                	add	hl, hl
+   421  0022  110000            	ld	de,_tilemap
+   422  0025  19                	add	hl,de
+   423  0026  eb                	ex	de,hl
+   424  0027  dd4e04            	ld	c,(ix+4)
+   425  002a  0600              	ld	b,0x00
+   426  002c  210a00            	ld	hl,0x000a
+   427  002f  09                	add	hl, bc
+   428  0030  29                	add	hl, hl
+   429  0031  19                	add	hl, de
+   430  0032  4d                	ld	c, l
+   431                          ;umpire_balloon.c:16: TileMapEntry *balloon_tile = &balloon_tilemap[balloon_col][row];
+   432  0033  dd6e05            	ld	l,(ix+5)
+   433  0036  44                	ld	b,h
+   434  0037  2600              	ld	h,0x00
+   435  0039  29                	add	hl, hl
+   436  003a  29                	add	hl, hl
+   437  003b  29                	add	hl, hl
+   438  003c  110000            	ld	de,_balloon_tilemap
+   439  003f  19                	add	hl, de
+   440  0040  dd7eff            	ld	a,(ix-1)
+   441  0043  87                	add	a, a
+   442  0044  5f                	ld	e, a
+   443  0045  1600              	ld	d,0x00
+   444  0047  19                	add	hl, de
+   445                          ;umpire_balloon.c:17: screen_tile->character = balloon_tile->character;
+   446  0048  7e                	ld	a,(hl)
+   447  0049  eb                	ex	de,hl
+   448  004a  02                	ld	(bc), a
+   449                          ;umpire_balloon.c:18: screen_tile->attr = balloon_tile->attr;
+   450  004b  03                	inc	bc
+   451  004c  13                	inc	de
+   452  004d  1a                	ld	a, (de)
+   453  004e  02                	ld	(bc), a
+   454                          ;umpire_balloon.c:13: for (uint8_t row = 0; row < BALLOON_HEIGHT; row++)
+   455  004f  dd34ff            	inc	(ix-1)
+   456  0052  c30800            	jp	l_draw_balloon_column_00103
+   457                          l_draw_balloon_column_00105:
+   458                          ;umpire_balloon.c:20: }
+   459  0055  33                	inc	sp
+   460  0056  dde1              	pop	ix
+   461  0058  c9                	ret
+   462                          ;umpire_balloon.c:25: uint8_t draw_balloon(uint8_t text_length)
+   463                          ;	---------------------------------
+   464                          ; Function draw_balloon
+   465                          ; ---------------------------------
+   466                          _draw_balloon:
+   467  0059  cd0000            	call	___sdcc_enter_ix
+   468  005c  21f9ff            	ld	hl, -7
+   469  005f  39                	add	hl, sp
+   470  0060  f9                	ld	sp, hl
+   471                          ;umpire_balloon.c:30: for (balloon_col = 0; balloon_col < BALLOON_CENTER; balloon_col++)
+   472  0061  010000            	ld	bc,0x0000
+   473                          l_draw_balloon_00104:
+   474                          ;umpire_balloon.c:32: draw_balloon_column(screen_col++, balloon_col);
+   475  0064  79                	ld	a, c
+   476  0065  0c                	inc	c
+   477  0066  c5                	push	bc
+   478  0067  4f                	ld	c,a
+   479  0068  c5                	push	bc
+   480  0069  cd0000            	call	_draw_balloon_column
+   481  006c  f1                	pop	af
+   482  006d  c1                	pop	bc
+   483                          ;umpire_balloon.c:30: for (balloon_col = 0; balloon_col < BALLOON_CENTER; balloon_col++)
+   484  006e  04                	inc	b
+   485  006f  78                	ld	a, b
+   486  0070  d607              	sub	a,0x07
+   487  0072  38f0              	jr	C,l_draw_balloon_00104
+   488                          ;umpire_balloon.c:36: uint8_t text_area_length = text_length < MIN_BALLOON_TEXT_LENGTH ? MIN_BALLOON_TEXT_LENGTH + (text_length + 1) % 2 : text_length;
+   489  0074  dd70f9            	ld	(ix-7),b
+   490  0077  dd7e04            	ld	a,(ix+4)
+   491  007a  d609              	sub	a,0x09
+   492  007c  3e00              	ld	a,0x00
+   493  007e  17                	rla
+   494  007f  47                	ld	b, a
+   495  0080  dd7e04            	ld	a,(ix+4)
+   496  0083  dd77fa            	ld	(ix-6),a
+   497  0086  dd36fb00          	ld	(ix-5),0x00
+   498  008a  78                	ld	a, b
+   499  008b  b7                	or	a, a
+   500  008c  2816              	jr	Z,l_draw_balloon_00114
+   501  008e  dd5efa            	ld	e,(ix-6)
+   502  0091  dd56fb            	ld	d,(ix-5)
+   503  0094  13                	inc	de
+   504  0095  c5                	push	bc
+   505  0096  210200            	ld	hl,0x0002
+   506  0099  e5                	push	hl
+   507  009a  d5                	push	de
+   508  009b  cd0000            	call	__modsint_callee
+   509  009e  c1                	pop	bc
+   510  009f  7d                	ld	a, l
+   511  00a0  c609              	add	a,0x09
+   512  00a2  1803              	jr	l_draw_balloon_00115
+   513                          l_draw_balloon_00114:
+   514  00a4  dd7e04            	ld	a,(ix+4)
+   515                          l_draw_balloon_00115:
+   516  00a7  dd77fc            	ld	(ix-4),a
+   517                          ;umpire_balloon.c:37: for (uint8_t extra_col = 0; extra_col < text_area_length - MIN_BALLOON_TEXT_LENGTH; extra_col++)
+   518  00aa  dd36ff00          	ld	(ix-1),0x00
+   519                          l_draw_balloon_00107:
+   520  00ae  dd5efc            	ld	e,(ix-4)
+   521  00b1  1600              	ld	d,0x00
+   522  00b3  21f7ff            	ld	hl,0xfff7
+   523  00b6  19                	add	hl,de
+   524  00b7  dd75fd            	ld	(ix-3),l
+   525  00ba  dd74fe            	ld	(ix-2),h
+   526  00bd  dd6eff            	ld	l,(ix-1)
+   527  00c0  2600              	ld	h,0x00
+   528  00c2  7d                	ld	a, l
+   529  00c3  dd96fd            	sub	a,(ix-3)
+   530  00c6  7c                	ld	a, h
+   531  00c7  dd9efe            	sbc	a,(ix-2)
+   532  00ca  e2cf00            	jp	PO, l_draw_balloon_00167
+   533  00cd  ee80              	xor	a,0x80
+   534                          l_draw_balloon_00167:
+   535  00cf  f2e300            	jp	P, l_draw_balloon_00125
+   536                          ;umpire_balloon.c:39: draw_balloon_column(screen_col++, BALLOON_CENTER - 1);
+   537  00d2  79                	ld	a, c
+   538  00d3  0c                	inc	c
+   539  00d4  c5                	push	bc
+   540  00d5  2606              	ld	h,0x06
+   541  00d7  6f                	ld	l,a
+   542  00d8  e5                	push	hl
+   543  00d9  cd0000            	call	_draw_balloon_column
+   544  00dc  f1                	pop	af
+   545  00dd  c1                	pop	bc
+   546                          ;umpire_balloon.c:37: for (uint8_t extra_col = 0; extra_col < text_area_length - MIN_BALLOON_TEXT_LENGTH; extra_col++)
+   547  00de  dd34ff            	inc	(ix-1)
+   548  00e1  18cb              	jr	l_draw_balloon_00107
+   549                          l_draw_balloon_00125:
+   550  00e3  dd66f9            	ld	h,(ix-7)
+   551                          l_draw_balloon_00110:
+   552                          ;umpire_balloon.c:42: for (; balloon_col < BALLOON_WIDTH; balloon_col++)
+   553  00e6  7c                	ld	a, h
+   554  00e7  d60d              	sub	a,0x0d
+   555  00e9  3011              	jr	NC,l_draw_balloon_00103
+   556                          ;umpire_balloon.c:44: draw_balloon_column(screen_col++, balloon_col);
+   557  00eb  79                	ld	a, c
+   558  00ec  0c                	inc	c
+   559  00ed  e5                	push	hl
+   560  00ee  c5                	push	bc
+   561  00ef  d5                	push	de
+   562  00f0  6f                	ld	l,a
+   563  00f1  e5                	push	hl
+   564  00f2  cd0000            	call	_draw_balloon_column
+   565  00f5  f1                	pop	af
+   566  00f6  d1                	pop	de
+   567  00f7  c1                	pop	bc
+   568  00f8  e1                	pop	hl
+   569                          ;umpire_balloon.c:42: for (; balloon_col < BALLOON_WIDTH; balloon_col++)
+   570  00f9  24                	inc	h
+   571  00fa  18ea              	jr	l_draw_balloon_00110
+   572                          l_draw_balloon_00103:
+   573                          ;umpire_balloon.c:47: return text_length >= MIN_BALLOON_TEXT_LENGTH ? 0 : (text_area_length - text_length) / 2;
+   574  00fc  cb40              	bit	0, b
+   575  00fe  2005              	jr	NZ,l_draw_balloon_00116
+   576  0100  110000            	ld	de,0x0000
+   577  0103  1817              	jr	l_draw_balloon_00117
+   578                          l_draw_balloon_00116:
+   579  0105  7b                	ld	a, e
+   580  0106  dd96fa            	sub	a,(ix-6)
+   581  0109  4f                	ld	c, a
+   582  010a  7a                	ld	a, d
+   583  010b  dd9efb            	sbc	a,(ix-5)
+   584  010e  47                	ld	b, a
+   585  010f  59                	ld	e, c
+   586  0110  50                	ld	d, b
+   587  0111  cb78              	bit	7, b
+   588  0113  2803              	jr	Z,l_draw_balloon_00118
+   589  0115  59                	ld	e, c
+   590  0116  50                	ld	d, b
+   591  0117  13                	inc	de
+   592                          l_draw_balloon_00118:
+   593  0118  0601              	ld	b,0x01
+   594  011a  ed29              	bsra	de, b
+   595                          l_draw_balloon_00117:
+   596  011c  6b                	ld	l, e
+   597                          ;umpire_balloon.c:48: }
+   598  011d  ddf9              	ld	sp, ix
+   599  011f  dde1              	pop	ix
+   600  0121  c9                	ret
+   601                          ;umpire_balloon.c:53: void draw_text_in_balloon(uint8_t column, const char *text)
+   602                          ;	---------------------------------
+   603                          ; Function draw_text_in_balloon
+   604                          ; ---------------------------------
+   605                          _draw_text_in_balloon:
+   606  0122  cd0000            	call	___sdcc_enter_ix
+   607  0125  3b                	dec	sp
+   608                          ;umpire_balloon.c:55: uint8_t screen_col = BALLOON_FIRST_TEXT_COL + column;
+   609  0126  dd7e04            	ld	a,(ix+4)
+   610  0129  c60c              	add	a,0x0c
+   611  012b  dd77ff            	ld	(ix-1),a
+   612                          ;umpire_balloon.c:56: for (uint8_t i = 0; text[i] != '\0'; i++)
+   613  012e  0e00              	ld	c,0x00
+   614                          l_draw_text_in_balloon_00103:
+   615  0130  dd7e05            	ld	a,(ix+5)
+   616  0133  81                	add	a, c
+   617  0134  6f                	ld	l, a
+   618  0135  dd7e06            	ld	a,(ix+6)
+   619  0138  ce00              	adc	a,0x00
+   620  013a  67                	ld	h, a
+   621  013b  7e                	ld	a,(hl)
+   622  013c  47                	ld	b,a
+   623  013d  b7                	or	a, a
+   624  013e  2811              	jr	Z,l_draw_text_in_balloon_00105
+   625                          ;umpire_balloon.c:58: tilemap[BALLOON_COORD_Y + 1][screen_col + i].character = text[i];
+   626  0140  dd5eff            	ld	e,(ix-1)
+   627  0143  1600              	ld	d,0x00
+   628  0145  69                	ld	l,c
+   629  0146  62                	ld	h,d
+   630  0147  19                	add	hl, de
+   631  0148  29                	add	hl, hl
+   632  0149  11a005            	ld	de, +(_tilemap + 1440)
+   633  014c  19                	add	hl, de
+   634  014d  70                	ld	(hl), b
+   635                          ;umpire_balloon.c:56: for (uint8_t i = 0; text[i] != '\0'; i++)
+   636  014e  0c                	inc	c
+   637  014f  18df              	jr	l_draw_text_in_balloon_00103
+   638                          l_draw_text_in_balloon_00105:
+   639                          ;umpire_balloon.c:60: }
+   640  0151  33                	inc	sp
+   641  0152  dde1              	pop	ix
+   642  0154  c9                	ret
+   643                          ;umpire_balloon.c:66: void draw_balloon_with_text(const char *text)
+   644                          ;	---------------------------------
+   645                          ; Function draw_balloon_with_text
+   646                          ; ---------------------------------
+   647                          _draw_balloon_with_text:
+   648  0155  cd0000            	call	___sdcc_enter_ix
+   649                          ;umpire_balloon.c:68: uint8_t text_length = strlen(text);
+   650  0158  dd6e04            	ld	l,(ix+4)
+   651  015b  dd6605            	ld	h,(ix+5)
+   652  015e  cd0000            	call	_strlen_fastcall
+   653  0161  45                	ld	b, l
+   654                          ;umpire_balloon.c:69: uint8_t column = draw_balloon(text_length);
+   655  0162  c5                	push	bc
+   656  0163  33                	inc	sp
+   657  0164  cd5900            	call	_draw_balloon
+   658  0167  33                	inc	sp
+   659  0168  7d                	ld	a, l
+   660                          ;umpire_balloon.c:70: draw_text_in_balloon(column, text);
+   661  0169  dd6e04            	ld	l,(ix+4)
+   662  016c  dd6605            	ld	h,(ix+5)
+   663  016f  e5                	push	hl
+   664  0170  f5                	push	af
+   665  0171  33                	inc	sp
+   666  0172  cd2201            	call	_draw_text_in_balloon
+   667  0175  f1                	pop	af
+   668  0176  33                	inc	sp
+   669                          ;umpire_balloon.c:71: }
+   670  0177  dde1              	pop	ix
+   671  0179  c9                	ret
+   672                          ;umpire_balloon.c:76: void hide_balloon(void)
+   673                          ;	---------------------------------
+   674                          ; Function hide_balloon
+   675                          ; ---------------------------------
+   676                          _hide_balloon:
+   677                          ;umpire_balloon.c:78: for (uint8_t row = 0; row < BALLOON_HEIGHT; row++)
+   678  017a  0e00              	ld	c,0x00
+   679                          l_hide_balloon_00107:
+   680  017c  79                	ld	a, c
+   681  017d  d604              	sub	a,0x04
+   682  017f  302e              	jr	NC,l_hide_balloon_00109
+   683                          ;umpire_balloon.c:80: for (uint8_t col = 0; col < BALLOON_MAX_WIDTH; col++)
+   684  0181  0600              	ld	b,0x00
+   685                          l_hide_balloon_00104:
+   686  0183  78                	ld	a, b
+   687  0184  d623              	sub	a,0x23
+   688  0186  3024              	jr	NC,l_hide_balloon_00108
+   689                          ;umpire_balloon.c:82: tilemap[BALLOON_COORD_Y + row][BALLOON_COORD_X + col].character = 0;
+   690  0188  59                	ld	e, c
+   691  0189  1600              	ld	d,0x00
+   692  018b  3e08              	ld	a,0x08
+   693  018d  ed32              	add	de, a
+   694  018f  6b                	ld	l, e
+   695  0190  62                	ld	h, d
+   696  0191  29                	add	hl, hl
+   697  0192  29                	add	hl, hl
+   698  0193  19                	add	hl, de
+   699  0194  29                	add	hl, hl
+   700  0195  29                	add	hl, hl
+   701  0196  29                	add	hl, hl
+   702  0197  29                	add	hl, hl
+   703  0198  29                	add	hl, hl
+   704  0199  110000            	ld	de,_tilemap
+   705  019c  19                	add	hl,de
+   706  019d  58                	ld	e,b
+   707  019e  1600              	ld	d,0x00
+   708  01a0  3e0a              	ld	a,0x0a
+   709  01a2  eb                	ex	de,hl
+   710  01a3  ed31              	add	hl, a
+   711  01a5  29                	add	hl, hl
+   712  01a6  19                	add	hl, de
+   713  01a7  3600              	ld	(hl),0x00
+   714                          ;umpire_balloon.c:80: for (uint8_t col = 0; col < BALLOON_MAX_WIDTH; col++)
+   715  01a9  04                	inc	b
+   716  01aa  18d7              	jr	l_hide_balloon_00104
+   717                          l_hide_balloon_00108:
+   718                          ;umpire_balloon.c:78: for (uint8_t row = 0; row < BALLOON_HEIGHT; row++)
+   719  01ac  0c                	inc	c
+   720  01ad  18cd              	jr	l_hide_balloon_00107
+   721                          l_hide_balloon_00109:
+   722                          ;umpire_balloon.c:85: }
+   723  01af  c9                	ret
+   724                          	SECTION IGNORE
+   725                          

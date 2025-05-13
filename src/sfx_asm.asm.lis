@@ -1,0 +1,239 @@
+/tmp/tmp5NR6Bi2v.asm:
+     1                          MODULE sfx_asm_asm
+     2                          LINE 0, "sfx_asm.asm"
+sfx_asm.asm:
+                                
+     1                          SECTION code_user
+     2                          
+     3                          include "macros.inc"
+macros.inc:
+     1                          #define READ_NEXTREG(REG) \
+     2                              push bc : \
+     3                              ld a, REG :\
+     4                              ld bc, $243b :\
+     5                              out (c), a :\
+     6                              inc b :\
+     7                              in a, (c) :\
+     8                              pop bc
+     9                          
+    10                          
+    11                          defc CTC0 = 0x183B ; CTC channel 0 port
+    12                          defc CTC1 = 0x193B ; CTC channel 1 port
+    13                          defc CTC2 = 0x1A3B ; CTC channel 2 port
+    14                          defc CTC3 = 0x1B3B ; CTC channel 3 port
+    15                          
+    16                          defc IO_DAC_L0 = 0x0f
+    17                          defc IO_DAC_L1 = 0x1f
+    18                          defc IO_DAC_R0 = 0x4f
+    19                          defc IO_DAC_R1 = 0x5f
+    20                          defc IO_DAC_M0 = 0xdf
+    21                          
+    22                          defc INTERRUPT_STATUS_CTC = $C9
+    23                          
+    24                          defc REG_MMU6 = 0x56
+    25                          
+    26                          defc AY_REG = 0xFFFD ;   // AY register select port
+    27                          defc AY_DATA = 0xBFFD ; // AY register data port
+    28                          
+    29                          defc AY_TONE_A_LO = 0x00 ; // R0 fine tune A
+    30                          defc AY_TONE_A_HI = 0x01 ; // R1 coarse tune A
+    31                          defc AY_TONE_B_LO = 0x02 ; // R2 fine tune B
+    32                          defc AY_TONE_B_HI = 0x03 ; // R3 coarse tune B
+    33                          defc AY_TONE_C_LO = 0x04 ; // R4 fine tune C
+    34                          defc AY_TONE_C_HI = 0x05 ; // R5 coarse tune C
+    35                          defc AY_NOISE = 0x06 ; // R6 noise period
+    36                          defc AY_MIXER = 0x07 ; // R7 mixer register
+    37                          defc AY_VOLUME_A = 0x08 ; // R8 volume A
+    38                          defc AY_VOLUME_B = 0x09 ; // R9 volume B
+    39                          defc AY_VOLUME_C = 0x0A ; // R10 volume C
+    40                          defc AY_ENV_LO = 0x0B ; // R11 envelope low
+    41                          defc AY_ENV_HI = 0x0C ; // R12 envelope high
+    42                          defc AY_ENV_SHAPE = 0x0D ; // R13 envelope shape
+    43                          
+sfx_asm.asm:
+     4                          
+     5                          PUBLIC _sfx_effects_handler, _sfx_play_sound, _sfx_sounds_table, _sfx_init
+     6                          
+     7                          ; #define AY_WRITE(register) \
+     8                          ;     ld d, register : \
+     9                          ;     ld bc, AY_REG : \
+    10                          ;     out (c), d : \
+    11                          ;     ld b, AY_DATA >> 8 : \
+    12                          ;     out (c), a
+    13                          
+    14                          ; 	•	Bits 0–3: Volume level (0–15)
+    15                          ; 	•	Bit 4: Disable Tone (T) flag
+    16                          ; 	•	Bit 5: Change Tone Period
+    17                          ; 	•	Bit 6: Change Noise Period
+    18                          ; 	•	Bit 7: Disable Noise (N) flag ￼
+    19                          
+    20                          ; If Bit 5 is set, two bytes representing the new tone period (in little-endian format) follow. ￼
+    21                          
+    22                          ; If Bit 6 is set, one byte representing the new noise period follows.
+    23                          
+    24                          ; The end of an effect is indicated by the byte sequence 0xD0, 0x20. The player detects this sequence by checking for a noise period value equal to 0x20, signaling the end of the effect. ￼
+    25                          
+    26                          
+    27                             ; Mute all channels first
+    28                              ; ay_write(7, 0x3F);      // R7 mixer: 0x3F = disable all tone/noise (silence) [oai_citation:21‡chuntey.wordpress.com](https://chuntey.wordpress.com/tag/ay-chip/#:~:text=paired%20in%20the%20little,volume%20for%20that%20channel%20directly)
+    29                          
+    30                              ; // Set channel A tone frequency (e.g., period = 0x0100)
+    31                              ; ay_write(0, 0x00);      // R0: fine tune A (low 8 bits)
+    32                              ; ay_write(1, 0x01);      // R1: coarse tune A (high 4 bits, here 0x1<<8 -> period=0x0100)
+    33                          
+    34                              ; // Enable channel A tone, disable noise on A (and keep B,C disabled)
+    35                              ; ay_write(7, 0x3E);      // R7 mixer: 0x3E = 0b111110: enable tone A, no noise A, mute B/C [oai_citation:22‡chuntey.wordpress.com](https://chuntey.wordpress.com/tag/ay-chip/#:~:text=paired%20in%20the%20little,volume%20for%20that%20channel%20directly)
+    36                          
+    37                              ; // Set volume of channel A
+    38                              ; ay_write(8, 0x0F);      // R8: volume A = 15 (maximum volume, no envelope) [oai_citation:23‡chuntey.wordpress.com](https://chuntey.wordpress.com/tag/ay-chip/#:~:text=from%20all%20three%20channels%2C%2063,volume%20for%20that%20channel%20directly)
+    39                          
+    40                              ; // (Optional) brief delay loop to let tone play for some time
+    41                              ; for (volatile unsigned long i = 0; i < 100000UL; ++i) { /* simple delay */ }
+    42                          
+    43                              ; // Turn off sound (mute channel A)
+    44                              ; ay_write(8, 0x00);      // R8: volume A = 0 (silent)
+    45                              ; ay_write(7, 0x3F);      // R7: mute all channels again [oai_citation:24‡chuntey.wordpress.com](https://chuntey.wordpress.com/tag/ay-chip/#:~:text=paired%20in%20the%20little,volume%20for%20that%20channel%20directly)
+    46                          
+    47                          
+    48                          ; Modifies af, hl
+    49                          _sfx_effects_handler:
+    50  0000  2a6300                ld hl, (current_sound_address)
+    51  0003  7c                    ld a, h
+    52  0004  a7                    and a
+    53  0005  c8                    ret z           ; no sound effect
+    54                          
+    55  0006  c5                    push bc
+    56  0007  d5                    push de
+    57                          
+    58  0008  cd1100                call sfx_play_frame
+    59  000b  226300                ld (current_sound_address), hl
+    60                          
+    61  000e  d1                    pop de
+    62  000f  c1                    pop bc
+    63  0010  c9                    ret
+    64                          
+    65                              ; HL has the address of the sound effect pointer
+    66                          sfx_play_frame:
+    67  0011  5e                    ld e, (hl)
+    68  0012  23                    inc hl
+    69  0013  3ed0                  ld a, 0xd0
+    70  0015  bb                    cp e
+    71  0016  2005                  jr nz, no_end
+    72  0018  3e20                  ld a, 0x20
+    73  001a  be                    cp (hl)
+    74  001b  2830                  jr z, end
+    75                          no_end:
+    76  001d  7b                    ld a, e
+    77  001e  e60f                  and 0xf
+    78  0020  160a                  ld d, AY_VOLUME_C      ; Channel C volume
+    79  0022  cd6500                call ay_write
+    80  0025  7b                    ld a, e
+    81  0026  e690                  and %10010000  ; Tone and noise channel C enable disable
+    82  0028  1f                    rra
+    83  0029  1f                    rra
+    84  002a  f61b                  or %00011011
+    85  002c  1607                  ld d, AY_MIXER
+    86  002e  cd6500                call ay_write
+    87  0031  cb6b                  bit 5, e
+    88  0033  280e                  jr z, no_tone
+    89                          
+    90                              ; Writes the tone period (lo part)
+    91  0035  7e                    ld a, (hl)
+    92  0036  23                    inc hl
+    93  0037  1604                  ld d, AY_TONE_C_LO
+    94  0039  cd6500                call ay_write
+    95                              ; Writes the tone period (hi part)
+    96  003c  7e                    ld a, (hl)
+    97  003d  23                    inc hl
+    98  003e  1605                  ld d, AY_TONE_C_HI
+    99  0040  cd6500                call ay_write
+   100                          
+   101                          no_tone:
+   102  0043  cb73                  bit 6, e
+   103  0045  c8                    ret z
+   104  0046  7e                    ld a, (hl)
+   105  0047  23                    inc hl
+   106  0048  1606                  ld d, AY_NOISE
+   107  004a  c36500                jp ay_write
+   108                          end:
+   109  004d  3e3f                  ld a, 0x3f ; R7 disable all channels
+   110  004f  1607                  ld d, AY_MIXER
+   111  0051  cd6500                call ay_write
+   112  0054  210000                ld hl, 0 ; We end the sound effect
+   113                          
+   114  0057  c9                    ret
+   115                          
+   116                          ; ---------------------------------------------------------
+   117                          ; sfx_play_sound(sound_address) __z88dk_fastcall;
+   118                          ; hl = sound_address
+   119                          ; ---------------------------------------------------------
+   120                          _sfx_play_sound:
+   121                          
+   122  0058  1607                  ld d, 0x7  ; R7 mixer
+   123  005a  3e3f                  ld a, 0x3f  ; R7 disable all channels
+   124  005c  cd6500                call ay_write
+   125  005f  226300                ld (current_sound_address), hl
+   126                          
+   127  0062  c9                    ret
+   128                          
+   129                          current_sound_address:
+   130  0063  0000                  defw 0
+   131                          
+   132                          
+   133                          ; d = register
+   134                          ; a = value
+   135                          ay_write:
+   136  0065  01fdff                ld bc, AY_REG
+   137  0068  ed51                  out (c), d
+   138  006a  06bf                  ld b, AY_DATA >> 8
+   139  006c  ed79                  out (c), a
+   140  006e  c9                    ret
+   141                          
+   142                          ; ------------------------------------------------------------
+   143                          ; TurboSound init
+   144                          ; ------------------------------------------------------------
+   145                          _sfx_init:
+   146  006f  01fdff                ld bc, AY_REG
+   147  0072  3eff                  ld a, %11111111  ; ; Enable left+right audio, select AY1
+   148  0074  ed79                  out (c), a
+   149                          
+   150                              ; Setup mapping of chip channels to stereo channels
+   151  0076  ed91081a              nextreg $08, %00011010 ; Use ABC, enable internal speaker $turbosound, enable DAC
+   152  007a  ed9109e0              nextreg $09, %11100000 ; Enable mono for AY1-3
+   153                          
+   154                              ; Resets of AY-3 registers
+   155  007e  af                    xor a
+   156  007f  160f                  ld d,0x0f
+   157                          _sfx_init_loop:
+   158  0081  15                    dec d
+   159  0082  cd6500                call ay_write
+   160  0085  20fa                  jr nz, _sfx_init_loop
+   161                          
+   162  0087  c9                    ret
+   163                          
+   164                          ;------------------------------------------------------------
+   165                          ; Sound effects table and data
+   166                          ; ------------------------------------------------------------
+   167                          
+   168                          _sfx_sounds_table:
+   169  0088  8c00                  dw _cursor_sound
+   170  008a  d300                  dw _select_sound
+   171                          
+   172                          
+   173                          _cursor_sound:
+   174  008c  eb100000aa1500a7      incbin "../assets/sfx/cursor.afx"
+              1000ac1a00aa0000  
+              8a8a898989888888  
+              8888878787878787  
+              8787868686868686  
+              8686858585858585  
+              8585848484848484  
+              8484838383838383  
+              8383a80100d020    
+   175                          _select_sound:
+   176  00d3  6d32000e6d3f0000      incbin "../assets/sfx/select.afx"
+              ad3200ad3f00ac00  
+              00ac2600ab00008b  
+              8a8a898988888787  
+              8686d020          
+   177                          

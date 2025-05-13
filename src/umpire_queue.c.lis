@@ -1,0 +1,539 @@
+/tmp/tmpLDuQjrYp.asm:
+     1                          MODULE umpire_queue_c
+     2                          LINE 0, "umpire_queue.c"
+umpire_queue.c:
+                                
+     1                          ;--------------------------------------------------------
+     2                          ; File Created by SDCC : free open source ISO C Compiler
+     3                          ; Version 4.3.0 #14210 (Mac OS X ppc)
+     4                          ;--------------------------------------------------------
+     5                          	.zxn
+     6                          ; Processed by Z88DK
+     7                          ;--------------------------------------------------------
+     8                          
+     9                          	EXTERN __divschar
+    10                          	EXTERN __divschar_callee
+    11                          	EXTERN __divsint
+    12                          	EXTERN __divsint_callee
+    13                          	EXTERN __divslong
+    14                          	EXTERN __divslong_callee
+    15                          	EXTERN __divslonglong
+    16                          	EXTERN __divslonglong_callee
+    17                          	EXTERN __divsuchar
+    18                          	EXTERN __divsuchar_callee
+    19                          	EXTERN __divuchar
+    20                          	EXTERN __divuchar_callee
+    21                          	EXTERN __divuint
+    22                          	EXTERN __divuint_callee
+    23                          	EXTERN __divulong
+    24                          	EXTERN __divulong_callee
+    25                          	EXTERN __divulonglong
+    26                          	EXTERN __divulonglong_callee
+    27                          	EXTERN __divuschar
+    28                          	EXTERN __divuschar_callee
+    29                          	EXTERN __modschar
+    30                          	EXTERN __modschar_callee
+    31                          	EXTERN __modsint
+    32                          	EXTERN __modsint_callee
+    33                          	EXTERN __modslong
+    34                          	EXTERN __modslong_callee
+    35                          	EXTERN __modslonglong
+    36                          	EXTERN __modslonglong_callee
+    37                          	EXTERN __modsuchar
+    38                          	EXTERN __modsuchar_callee
+    39                          	EXTERN __moduchar
+    40                          	EXTERN __moduchar_callee
+    41                          	EXTERN __moduint
+    42                          	EXTERN __moduint_callee
+    43                          	EXTERN __modulong
+    44                          	EXTERN __modulong_callee
+    45                          	EXTERN __modulonglong
+    46                          	EXTERN __modulonglong_callee
+    47                          	EXTERN __moduschar
+    48                          	EXTERN __moduschar_callee
+    49                          	EXTERN __mulint
+    50                          	EXTERN __mulint_callee
+    51                          	EXTERN __mullong
+    52                          	EXTERN __mullong_callee
+    53                          	EXTERN __mullonglong
+    54                          	EXTERN __mullonglong_callee
+    55                          	EXTERN __mulschar
+    56                          	EXTERN __mulschar_callee
+    57                          	EXTERN __mulsuchar
+    58                          	EXTERN __mulsuchar_callee
+    59                          	EXTERN __muluchar
+    60                          	EXTERN __muluchar_callee
+    61                          	EXTERN __muluschar
+    62                          	EXTERN __muluschar_callee
+    63                          	EXTERN __rlslonglong
+    64                          	EXTERN __rlslonglong_callee
+    65                          	EXTERN __rlulonglong
+    66                          	EXTERN __rlulonglong_callee
+    67                          	EXTERN __rrslonglong
+    68                          	EXTERN __rrslonglong_callee
+    69                          	EXTERN __rrulonglong
+    70                          	EXTERN __rrulonglong_callee
+    71                          	EXTERN ___mulsint2slong
+    72                          	EXTERN ___mulsint2slong_callee
+    73                          	EXTERN ___muluint2ulong
+    74                          	EXTERN ___muluint2ulong_callee
+    75                          	EXTERN ___sdcc_call_hl
+    76                          	EXTERN ___sdcc_call_iy
+    77                          	EXTERN ___sdcc_enter_ix
+    78                          	EXTERN banked_call
+    79                          	EXTERN _banked_ret
+    80                          	EXTERN ___fs2schar
+    81                          	EXTERN ___fs2schar_callee
+    82                          	EXTERN ___fs2sint
+    83                          	EXTERN ___fs2sint_callee
+    84                          	EXTERN ___fs2slong
+    85                          	EXTERN ___fs2slong_callee
+    86                          	EXTERN ___fs2slonglong
+    87                          	EXTERN ___fs2slonglong_callee
+    88                          	EXTERN ___fs2uchar
+    89                          	EXTERN ___fs2uchar_callee
+    90                          	EXTERN ___fs2uint
+    91                          	EXTERN ___fs2uint_callee
+    92                          	EXTERN ___fs2ulong
+    93                          	EXTERN ___fs2ulong_callee
+    94                          	EXTERN ___fs2ulonglong
+    95                          	EXTERN ___fs2ulonglong_callee
+    96                          	EXTERN ___fsadd
+    97                          	EXTERN ___fsadd_callee
+    98                          	EXTERN ___fsdiv
+    99                          	EXTERN ___fsdiv_callee
+   100                          	EXTERN ___fseq
+   101                          	EXTERN ___fseq_callee
+   102                          	EXTERN ___fsgt
+   103                          	EXTERN ___fsgt_callee
+   104                          	EXTERN ___fslt
+   105                          	EXTERN ___fslt_callee
+   106                          	EXTERN ___fsmul
+   107                          	EXTERN ___fsmul_callee
+   108                          	EXTERN ___fsneq
+   109                          	EXTERN ___fsneq_callee
+   110                          	EXTERN ___fssub
+   111                          	EXTERN ___fssub_callee
+   112                          	EXTERN ___schar2fs
+   113                          	EXTERN ___schar2fs_callee
+   114                          	EXTERN ___sint2fs
+   115                          	EXTERN ___sint2fs_callee
+   116                          	EXTERN ___slong2fs
+   117                          	EXTERN ___slong2fs_callee
+   118                          	EXTERN ___slonglong2fs
+   119                          	EXTERN ___slonglong2fs_callee
+   120                          	EXTERN ___uchar2fs
+   121                          	EXTERN ___uchar2fs_callee
+   122                          	EXTERN ___uint2fs
+   123                          	EXTERN ___uint2fs_callee
+   124                          	EXTERN ___ulong2fs
+   125                          	EXTERN ___ulong2fs_callee
+   126                          	EXTERN ___ulonglong2fs
+   127                          	EXTERN ___ulonglong2fs_callee
+   128                          	EXTERN ____sdcc_2_copy_src_mhl_dst_deix
+   129                          	EXTERN ____sdcc_2_copy_src_mhl_dst_bcix
+   130                          	EXTERN ____sdcc_4_copy_src_mhl_dst_deix
+   131                          	EXTERN ____sdcc_4_copy_src_mhl_dst_bcix
+   132                          	EXTERN ____sdcc_4_copy_src_mhl_dst_mbc
+   133                          	EXTERN ____sdcc_4_ldi_nosave_bc
+   134                          	EXTERN ____sdcc_4_ldi_save_bc
+   135                          	EXTERN ____sdcc_4_push_hlix
+   136                          	EXTERN ____sdcc_4_push_mhl
+   137                          	EXTERN ____sdcc_lib_setmem_hl
+   138                          	EXTERN ____sdcc_ll_add_de_bc_hl
+   139                          	EXTERN ____sdcc_ll_add_de_bc_hlix
+   140                          	EXTERN ____sdcc_ll_add_de_hlix_bc
+   141                          	EXTERN ____sdcc_ll_add_de_hlix_bcix
+   142                          	EXTERN ____sdcc_ll_add_deix_bc_hl
+   143                          	EXTERN ____sdcc_ll_add_deix_hlix
+   144                          	EXTERN ____sdcc_ll_add_hlix_bc_deix
+   145                          	EXTERN ____sdcc_ll_add_hlix_deix_bc
+   146                          	EXTERN ____sdcc_ll_add_hlix_deix_bcix
+   147                          	EXTERN ____sdcc_ll_asr_hlix_a
+   148                          	EXTERN ____sdcc_ll_asr_mbc_a
+   149                          	EXTERN ____sdcc_ll_copy_src_de_dst_hlix
+   150                          	EXTERN ____sdcc_ll_copy_src_de_dst_hlsp
+   151                          	EXTERN ____sdcc_ll_copy_src_deix_dst_hl
+   152                          	EXTERN ____sdcc_ll_copy_src_deix_dst_hlix
+   153                          	EXTERN ____sdcc_ll_copy_src_deixm_dst_hlsp
+   154                          	EXTERN ____sdcc_ll_copy_src_desp_dst_hlsp
+   155                          	EXTERN ____sdcc_ll_copy_src_hl_dst_de
+   156                          	EXTERN ____sdcc_ll_copy_src_hlsp_dst_de
+   157                          	EXTERN ____sdcc_ll_copy_src_hlsp_dst_deixm
+   158                          	EXTERN ____sdcc_ll_lsl_hlix_a
+   159                          	EXTERN ____sdcc_ll_lsl_mbc_a
+   160                          	EXTERN ____sdcc_ll_lsr_hlix_a
+   161                          	EXTERN ____sdcc_ll_lsr_mbc_a
+   162                          	EXTERN ____sdcc_ll_push_hlix
+   163                          	EXTERN ____sdcc_ll_push_mhl
+   164                          	EXTERN ____sdcc_ll_sub_de_bc_hl
+   165                          	EXTERN ____sdcc_ll_sub_de_bc_hlix
+   166                          	EXTERN ____sdcc_ll_sub_de_hlix_bc
+   167                          	EXTERN ____sdcc_ll_sub_de_hlix_bcix
+   168                          	EXTERN ____sdcc_ll_sub_deix_bc_hl
+   169                          	EXTERN ____sdcc_ll_sub_deix_hlix
+   170                          	EXTERN ____sdcc_ll_sub_hlix_bc_deix
+   171                          	EXTERN ____sdcc_ll_sub_hlix_deix_bc
+   172                          	EXTERN ____sdcc_ll_sub_hlix_deix_bcix
+   173                          	EXTERN ____sdcc_load_debc_deix
+   174                          	EXTERN ____sdcc_load_dehl_deix
+   175                          	EXTERN ____sdcc_load_debc_mhl
+   176                          	EXTERN ____sdcc_load_hlde_mhl
+   177                          	EXTERN ____sdcc_store_dehl_bcix
+   178                          	EXTERN ____sdcc_store_debc_hlix
+   179                          	EXTERN ____sdcc_store_debc_mhl
+   180                          	EXTERN ____sdcc_cpu_pop_ei
+   181                          	EXTERN ____sdcc_cpu_pop_ei_jp
+   182                          	EXTERN ____sdcc_cpu_push_di
+   183                          	EXTERN ____sdcc_outi
+   184                          	EXTERN ____sdcc_outi_128
+   185                          	EXTERN ____sdcc_outi_256
+   186                          	EXTERN ____sdcc_ldi
+   187                          	EXTERN ____sdcc_ldi_128
+   188                          	EXTERN ____sdcc_ldi_256
+   189                          	EXTERN ____sdcc_4_copy_srcd_hlix_dst_deix
+   190                          	EXTERN ____sdcc_4_and_src_mbc_mhl_dst_deix
+   191                          	EXTERN ____sdcc_4_or_src_mbc_mhl_dst_deix
+   192                          	EXTERN ____sdcc_4_xor_src_mbc_mhl_dst_deix
+   193                          	EXTERN ____sdcc_4_or_src_dehl_dst_bcix
+   194                          	EXTERN ____sdcc_4_xor_src_dehl_dst_bcix
+   195                          	EXTERN ____sdcc_4_and_src_dehl_dst_bcix
+   196                          	EXTERN ____sdcc_4_xor_src_mbc_mhl_dst_debc
+   197                          	EXTERN ____sdcc_4_or_src_mbc_mhl_dst_debc
+   198                          	EXTERN ____sdcc_4_and_src_mbc_mhl_dst_debc
+   199                          	EXTERN ____sdcc_4_cpl_src_mhl_dst_debc
+   200                          	EXTERN ____sdcc_4_xor_src_debc_mhl_dst_debc
+   201                          	EXTERN ____sdcc_4_or_src_debc_mhl_dst_debc
+   202                          	EXTERN ____sdcc_4_and_src_debc_mhl_dst_debc
+   203                          	EXTERN ____sdcc_4_and_src_debc_hlix_dst_debc
+   204                          	EXTERN ____sdcc_4_or_src_debc_hlix_dst_debc
+   205                          	EXTERN ____sdcc_4_xor_src_debc_hlix_dst_debc
+   206                          
+   207                          ;--------------------------------------------------------
+   208                          ; Public variables in this module
+   209                          ;--------------------------------------------------------
+   210                          	GLOBAL _umpire_message_queue_tail
+   211                          	GLOBAL _umpire_message_queue_head
+   212                          	GLOBAL _umpire_message_queue
+   213                          	GLOBAL _add_message_to_queue
+   214                          	GLOBAL _get_message_from_queue
+   215                          	GLOBAL _clear_queue
+   216                          ;--------------------------------------------------------
+   217                          ; Externals used
+   218                          ;--------------------------------------------------------
+   219                          	GLOBAL _hide_balloon
+   220                          	GLOBAL _draw_balloon_with_text
+   221                          	GLOBAL _channel_b_remaining_length
+   222                          	GLOBAL _is_sound_playing_channel_b
+   223                          	GLOBAL _is_sound_playing
+   224                          	GLOBAL _play_sound_channel_b
+   225                          	GLOBAL _play_sound
+   226                          	GLOBAL _sound_interrupt_handler
+   227                          	GLOBAL _init_sound
+   228                          	GLOBAL _ffsll_callee
+   229                          	GLOBAL _ffsll
+   230                          	GLOBAL _strxfrm_callee
+   231                          	GLOBAL _strxfrm
+   232                          	GLOBAL _strupr_fastcall
+   233                          	GLOBAL _strupr
+   234                          	GLOBAL _strtok_r_callee
+   235                          	GLOBAL _strtok_r
+   236                          	GLOBAL _strtok_callee
+   237                          	GLOBAL _strtok
+   238                          	GLOBAL _strstrip_fastcall
+   239                          	GLOBAL _strstrip
+   240                          	GLOBAL _strstr_callee
+   241                          	GLOBAL _strstr
+   242                          	GLOBAL _strspn_callee
+   243                          	GLOBAL _strspn
+   244                          	GLOBAL _strsep_callee
+   245                          	GLOBAL _strsep
+   246                          	GLOBAL _strrstrip_fastcall
+   247                          	GLOBAL _strrstrip
+   248                          	GLOBAL _strrstr_callee
+   249                          	GLOBAL _strrstr
+   250                          	GLOBAL _strrspn_callee
+   251                          	GLOBAL _strrspn
+   252                          	GLOBAL _strrev_fastcall
+   253                          	GLOBAL _strrev
+   254                          	GLOBAL _strrcspn_callee
+   255                          	GLOBAL _strrcspn
+   256                          	GLOBAL _strrchr_callee
+   257                          	GLOBAL _strrchr
+   258                          	GLOBAL _strpbrk_callee
+   259                          	GLOBAL _strpbrk
+   260                          	GLOBAL _strnlen_callee
+   261                          	GLOBAL _strnlen
+   262                          	GLOBAL _strnicmp_callee
+   263                          	GLOBAL _strnicmp
+   264                          	GLOBAL _strndup_callee
+   265                          	GLOBAL _strndup
+   266                          	GLOBAL _strncpy_callee
+   267                          	GLOBAL _strncpy
+   268                          	GLOBAL _strncmp_callee
+   269                          	GLOBAL _strncmp
+   270                          	GLOBAL _strnchr_callee
+   271                          	GLOBAL _strnchr
+   272                          	GLOBAL _strncat_callee
+   273                          	GLOBAL _strncat
+   274                          	GLOBAL _strncasecmp_callee
+   275                          	GLOBAL _strncasecmp
+   276                          	GLOBAL _strlwr_fastcall
+   277                          	GLOBAL _strlwr
+   278                          	GLOBAL _strlen_fastcall
+   279                          	GLOBAL _strlen
+   280                          	GLOBAL _strlcpy_callee
+   281                          	GLOBAL _strlcpy
+   282                          	GLOBAL _strlcat_callee
+   283                          	GLOBAL _strlcat
+   284                          	GLOBAL _stricmp_callee
+   285                          	GLOBAL _stricmp
+   286                          	GLOBAL _strerror_fastcall
+   287                          	GLOBAL _strerror
+   288                          	GLOBAL _strdup_fastcall
+   289                          	GLOBAL _strdup
+   290                          	GLOBAL _strcspn_callee
+   291                          	GLOBAL _strcspn
+   292                          	GLOBAL _strcpy_callee
+   293                          	GLOBAL _strcpy
+   294                          	GLOBAL _strcoll_callee
+   295                          	GLOBAL _strcoll
+   296                          	GLOBAL _strcmp_callee
+   297                          	GLOBAL _strcmp
+   298                          	GLOBAL _strchrnul_callee
+   299                          	GLOBAL _strchrnul
+   300                          	GLOBAL _strchr_callee
+   301                          	GLOBAL _strchr
+   302                          	GLOBAL _strcat_callee
+   303                          	GLOBAL _strcat
+   304                          	GLOBAL _strcasecmp_callee
+   305                          	GLOBAL _strcasecmp
+   306                          	GLOBAL _stpncpy_callee
+   307                          	GLOBAL _stpncpy
+   308                          	GLOBAL _stpcpy_callee
+   309                          	GLOBAL _stpcpy
+   310                          	GLOBAL _memswap_callee
+   311                          	GLOBAL _memswap
+   312                          	GLOBAL _memset_wr_callee
+   313                          	GLOBAL _memset_wr
+   314                          	GLOBAL _memset_callee
+   315                          	GLOBAL _memset
+   316                          	GLOBAL _memrchr_callee
+   317                          	GLOBAL _memrchr
+   318                          	GLOBAL _memmove_callee
+   319                          	GLOBAL _memmove
+   320                          	GLOBAL _memmem_callee
+   321                          	GLOBAL _memmem
+   322                          	GLOBAL _memcpy_callee
+   323                          	GLOBAL _memcpy
+   324                          	GLOBAL _memcmp_callee
+   325                          	GLOBAL _memcmp
+   326                          	GLOBAL _memchr_callee
+   327                          	GLOBAL _memchr
+   328                          	GLOBAL _memccpy_callee
+   329                          	GLOBAL _memccpy
+   330                          	GLOBAL _ffsl_fastcall
+   331                          	GLOBAL _ffsl
+   332                          	GLOBAL _ffs_fastcall
+   333                          	GLOBAL _ffs
+   334                          	GLOBAL __strrstrip__fastcall
+   335                          	GLOBAL __strrstrip_
+   336                          	GLOBAL __memupr__callee
+   337                          	GLOBAL __memupr_
+   338                          	GLOBAL __memstrcpy__callee
+   339                          	GLOBAL __memstrcpy_
+   340                          	GLOBAL __memlwr__callee
+   341                          	GLOBAL __memlwr_
+   342                          	GLOBAL _rawmemchr_callee
+   343                          	GLOBAL _rawmemchr
+   344                          	GLOBAL _strnset_callee
+   345                          	GLOBAL _strnset
+   346                          	GLOBAL _strset_callee
+   347                          	GLOBAL _strset
+   348                          	GLOBAL _rindex_callee
+   349                          	GLOBAL _rindex
+   350                          	GLOBAL _index_callee
+   351                          	GLOBAL _index
+   352                          	GLOBAL _bzero_callee
+   353                          	GLOBAL _bzero
+   354                          	GLOBAL _bcopy_callee
+   355                          	GLOBAL _bcopy
+   356                          	GLOBAL _bcmp_callee
+   357                          	GLOBAL _bcmp
+   358                          ;--------------------------------------------------------
+   359                          ; special function registers
+   360                          ;--------------------------------------------------------
+   361                          ;--------------------------------------------------------
+   362                          ; ram data
+   363                          ;--------------------------------------------------------
+   364                          	SECTION bss_compiler
+   365                          _umpire_message_queue:
+   366  0000  0000000000000000  	DEFS 123
+              0000000000000000  
+              0000000000000000  
+              0000000000000000  
+              0000000000000000  
+              0000000000000000  
+              0000000000000000  
+              0000000000000000  
+              0000000000000000  
+              0000000000000000  
+              0000000000000000  
+              0000000000000000  
+              0000000000000000  
+              0000000000000000  
+              0000000000000000  
+              000000            
+   367                          ;--------------------------------------------------------
+   368                          ; ram data
+   369                          ;--------------------------------------------------------
+   370                          
+   371                          IF 0
+   372                          
+   373                          ; .area _INITIALIZED removed by z88dk
+   374                          
+   375                          _umpire_message_queue_head:
+   376                          	DEFS 1
+   377                          _umpire_message_queue_tail:
+   378                          	DEFS 1
+   379                          
+   380                          ENDIF
+   381                          
+   382                          ;--------------------------------------------------------
+   383                          ; absolute external ram data
+   384                          ;--------------------------------------------------------
+   385                          	SECTION IGNORE
+   386                          ;--------------------------------------------------------
+   387                          ; global & static initialisations
+   388                          ;--------------------------------------------------------
+   389                          	SECTION code_crt_init
+   390                          ;--------------------------------------------------------
+   391                          ; Home
+   392                          ;--------------------------------------------------------
+   393                          	SECTION IGNORE
+   394                          ;--------------------------------------------------------
+   395                          ; code
+   396                          ;--------------------------------------------------------
+   397                          	SECTION code_compiler
+   398                          ;umpire_queue.c:11: bool add_message_to_queue(SoundSampleEnum sound, const char *text)
+   399                          ;	---------------------------------
+   400                          ; Function add_message_to_queue
+   401                          ; ---------------------------------
+   402                          _add_message_to_queue:
+   403  0000  cd0000            	call	___sdcc_enter_ix
+   404                          ;umpire_queue.c:13: if (umpire_message_queue_head == (umpire_message_queue_tail + 1) % UMPIRE_MESSAGE_QUEUE_SIZE)
+   405  0003  3a0100            	ld	a,(_umpire_message_queue_tail)
+   406  0006  4f                	ld	c,a
+   407  0007  0600              	ld	b,0x00
+   408  0009  03                	inc	bc
+   409  000a  210300            	ld	hl,0x0003
+   410  000d  e5                	push	hl
+   411  000e  c5                	push	bc
+   412  000f  cd0000            	call	__modsint_callee
+   413  0012  eb                	ex	de, hl
+   414  0013  2a0000            	ld	hl,(_umpire_message_queue_head)
+   415  0016  af                	xor	a,a
+   416  0017  67                	ld	h,a
+   417  0018  ed52              	sbc	hl,de
+   418  001a  2004              	jr	NZ,l_add_message_to_queue_00102
+   419                          ;umpire_queue.c:16: return false;
+   420  001c  2e00              	ld	l,0x00
+   421  001e  1833              	jr	l_add_message_to_queue_00104
+   422                          l_add_message_to_queue_00102:
+   423                          ;umpire_queue.c:20: UmpireMessage *message = &umpire_message_queue[umpire_message_queue_tail];
+   424  0020  3a0100            	ld	a,(_umpire_message_queue_tail)
+   425  0023  5f                	ld	e,a
+   426  0024  1629              	ld	d,0x29
+   427  0026  ed30              	mlt	de
+   428  0028  210000            	ld	hl,_umpire_message_queue
+   429  002b  19                	add	hl, de
+   430  002c  eb                	ex	de, hl
+   431                          ;umpire_queue.c:21: message->sound = sound;
+   432  002d  dd7e04            	ld	a,(ix+4)
+   433  0030  12                	ld	(de), a
+   434                          ;umpire_queue.c:22: strcpy(message->text, text);
+   435  0031  13                	inc	de
+   436  0032  dd6e05            	ld	l,(ix+5)
+   437  0035  dd6606            	ld	h,(ix+6)
+   438  0038  af                	xor	a, a
+   439                          l_add_message_to_queue_00113:
+   440  0039  be                	cp	a, (hl)
+   441  003a  eda0              	ldi
+   442  003c  20fb              	jr	NZ, l_add_message_to_queue_00113
+   443                          ;umpire_queue.c:23: umpire_message_queue_tail = (umpire_message_queue_tail + 1) % UMPIRE_MESSAGE_QUEUE_SIZE;
+   444  003e  3a0100            	ld	a,(_umpire_message_queue_tail)
+   445  0041  4f                	ld	c,a
+   446  0042  0600              	ld	b,0x00
+   447  0044  03                	inc	bc
+   448  0045  210300            	ld	hl,0x0003
+   449  0048  e5                	push	hl
+   450  0049  c5                	push	bc
+   451  004a  cd0000            	call	__modsint_callee
+   452  004d  7d                	ld	a, l
+   453  004e  320100            	ld	(_umpire_message_queue_tail), a
+   454                          ;umpire_queue.c:24: return true;
+   455  0051  2e01              	ld	l,0x01
+   456                          l_add_message_to_queue_00104:
+   457                          ;umpire_queue.c:26: }
+   458  0053  dde1              	pop	ix
+   459  0055  c9                	ret
+   460                          ;umpire_queue.c:28: UmpireMessage *get_message_from_queue(void)
+   461                          ;	---------------------------------
+   462                          ; Function get_message_from_queue
+   463                          ; ---------------------------------
+   464                          _get_message_from_queue:
+   465                          ;umpire_queue.c:30: if (umpire_message_queue_head == umpire_message_queue_tail)
+   466  0056  3a0000            	ld	a,(_umpire_message_queue_head)
+   467  0059  210100            	ld	hl,_umpire_message_queue_tail
+   468  005c  96                	sub	a, (hl)
+   469  005d  2005              	jr	NZ,l_get_message_from_queue_00102
+   470                          ;umpire_queue.c:33: return NULL;
+   471  005f  210000            	ld	hl,0x0000
+   472  0062  1823              	jr	l_get_message_from_queue_00104
+   473                          l_get_message_from_queue_00102:
+   474                          ;umpire_queue.c:37: UmpireMessage *message = &umpire_message_queue[umpire_message_queue_head];
+   475  0064  3a0000            	ld	a,(_umpire_message_queue_head)
+   476  0067  5f                	ld	e,a
+   477  0068  1629              	ld	d,0x29
+   478  006a  ed30              	mlt	de
+   479  006c  210000            	ld	hl,_umpire_message_queue
+   480  006f  19                	add	hl, de
+   481                          ;umpire_queue.c:38: umpire_message_queue_head = (umpire_message_queue_head + 1) % UMPIRE_MESSAGE_QUEUE_SIZE;
+   482  0070  3a0000            	ld	a,(_umpire_message_queue_head)
+   483  0073  eb                	ex	de,hl
+   484  0074  4f                	ld	c,a
+   485  0075  0600              	ld	b,0x00
+   486  0077  03                	inc	bc
+   487  0078  d5                	push	de
+   488  0079  210300            	ld	hl,0x0003
+   489  007c  e5                	push	hl
+   490  007d  c5                	push	bc
+   491  007e  cd0000            	call	__modsint_callee
+   492  0081  d1                	pop	de
+   493  0082  7d                	ld	a, l
+   494  0083  320000            	ld	(_umpire_message_queue_head), a
+   495                          ;umpire_queue.c:39: return message;
+   496  0086  eb                	ex	de, hl
+   497                          l_get_message_from_queue_00104:
+   498                          ;umpire_queue.c:41: }
+   499  0087  c9                	ret
+   500                          ;umpire_queue.c:53: void clear_queue(void)
+   501                          ;	---------------------------------
+   502                          ; Function clear_queue
+   503                          ; ---------------------------------
+   504                          _clear_queue:
+   505                          ;umpire_queue.c:55: umpire_message_queue_head = 0;
+   506  0088  210000            	ld	hl,_umpire_message_queue_head
+   507  008b  3600              	ld	(hl),0x00
+   508                          ;umpire_queue.c:56: umpire_message_queue_tail = 0;
+   509  008d  210100            	ld	hl,_umpire_message_queue_tail
+   510  0090  3600              	ld	(hl),0x00
+   511                          ;umpire_queue.c:57: }
+   512  0092  c9                	ret
+   513                          	SECTION data_compiler
+   514                          _umpire_message_queue_head:
+   515  0000  00                	DEFB +0x00
+   516                          _umpire_message_queue_tail:
+   517  0001  00                	DEFB +0x00
+   518                          	SECTION IGNORE
+   519                          

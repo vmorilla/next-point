@@ -1,0 +1,32 @@
+/tmp/tmpBie3SMp1.asm:
+     1                          MODULE interrupt_table_asm
+     2                          LINE 0, "interrupt_table.asm"
+interrupt_table.asm:
+                                
+     1                              SECTION code_crt_interrupt_vector_table
+     2                          
+     3                              EXTERN _default_interrupt_handler, _sound_interrupt_handler, _ula_interrupt_handler, _effects_handler
+     4                          
+     5                              PUBLIC _interrupt_vector_table
+     6                          
+     7                              ORG $FC00
+     8                          _interrupt_vector_table:
+     9  0000  0000                  defw _default_interrupt_handler ; 0: line interrupt
+    10  0002  0000                  defw _default_interrupt_handler ; 1: UART0 RX
+    11  0004  0000                  defw _default_interrupt_handler ; 2: UART1 RX
+    12  0006  0000                  defw _sound_interrupt_handler   ; 3: CTC channel 0
+    13  0008  0000                  defw _effects_handler ; 4: CTC channel 1
+    14  000a  0000                  defw _default_interrupt_handler ; 5: CTC channel 2
+    15  000c  0000                  defw _default_interrupt_handler ; 6: CTC channel 3
+    16  000e  0000                  defw _default_interrupt_handler ; 7: CTC channel 4
+    17  0010  0000                  defw _default_interrupt_handler ; 8: CTC channel 5
+    18  0012  0000                  defw _default_interrupt_handler ; 9: CTC channel 6
+    19  0014  0000                  defw _default_interrupt_handler ; 10: CTC channel 7
+    20  0016  0000                  defw _ula_interrupt_handler     ; 11: ULA interrupt
+    21  0018  0000                  defw _default_interrupt_handler ; 12: UART0 TX
+    22  001a  0000                  defw _default_interrupt_handler ; 13: UART1 TX
+    23  001c  0000                  defw _default_interrupt_handler ; 14: Not documented
+    24  001e  0000                  defw _default_interrupt_handler ; 15: Not documented
+    25                          
+    26                          
+    27                          

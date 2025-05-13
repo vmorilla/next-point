@@ -1,0 +1,79 @@
+/tmp/tmpD2uoavo9.asm:
+     1                          MODULE unified_sprites_asm_asm
+     2                          LINE 0, "unified_sprites_asm.asm"
+unified_sprites_asm.asm:
+                                
+     1                          SECTION code_user
+     2                          
+     3                          PUBLIC _loadAttrsAndPatterns
+     4                          
+     5                          
+     6                          
+     7                              defc SPRITE_SLOT_SELECT_PORT = 0x303B
+     8                              defc SPRITE_ATTRIBUTE_UPLOAD_PORT = 0x57
+     9                          
+    10                              ;void loadAttrsAndPatterns(uint8_t *content, uint8_t attrOffset, uint8_t nSprites, uint8_t patternIndex, uint8_t nPatterns);
+    11                              ; ix + 0: content address
+    12                              ; ix + 2: attrOffset
+    13                              ; ix + 3: nSprites of the skin
+    14                              ; ix + 4: patternIndex
+    15                              ; ix + 5: nPatterns of the frame
+    16                          
+    17                          _loadAttrsAndPatterns:
+    18  0000  dde5                  push ix
+    19  0002  dd210400              ld ix, 4
+    20  0006  dd39                  add ix, sp
+    21                          
+    22                              ; Upload sprite attributes
+    23  0008  dd6e00                ld l, (ix + 0)
+    24  000b  dd6601                ld h, (ix + 1)  ; content address
+    25  000e  013b30                ld bc, SPRITE_SLOT_SELECT_PORT ; prepare port for sprite slot index
+    26  0011  dd5e02                ld e, (ix + 2) ; attr index
+    27  0014  f3                    di
+    28  0015  ed59                  out (c), e     ; sets the sprite attribute index
+    29                              ; Upload port
+    30  0017  0e57                  ld c, SPRITE_ATTRIBUTE_UPLOAD_PORT
+    31  0019  dd5e03                ld e, (ix + 3) ; nSprites
+    32                          
+    33  001c  1605                  ld d, 5
+    34  001e  ed30                  mul d, e ; nSprites * 5
+    35  0020  43                    ld b, e
+    36  0021  edb3                  otir
+    37                          
+    38                              ; TODO: hide sprites not used (nSprites to nMaxSprites)
+    39                          
+    40                              ; Upload sprite patterns
+    41  0023  224500                ld (dmaSource), hl ; Copy sprite sheet address from HL
+    42                              ; The pattern index
+    43  0026  dd6605                ld h, (ix + 5) ; nPatterns
+    44  0029  2e00                  ld l, 0
+    45  002b  224700                ld (dmaLength), hl ; Copy length in bytes from BC
+    46                          
+    47  002e  013b30                ld bc, $303b ; prepare port for sprite index
+    48  0031  dd7e04                ld a, (ix + 4) ; pattern index
+    49  0034  ed79                  out (c), a
+    50  0036  214300                ld hl, dmaProgram ; setup source for otir
+    51  0039  0610                  ld b, dmaProgramLength ; setup length for otir
+    52  003b  0e6b                  ld c, $6b ; setup dma port
+    53  003d  edb3                  otir ; invoke dma code
+    54  003f  fb                    ei
+    55  0040  dde1                  pop ix
+    56  0042  c9                    ret
+    57                          dmaProgram:
+    58  0043  83                    db %10000011 ; R6 - Disable DMA
+    59  0044  7d                    db %01111101 ; R0 - append length + port A address, A->B
+    60                          dmaSource:
+    61  0045  0000                  dw 0         ; R0 par 1&2 - port A start address
+    62                          dmaLength:
+    63  0047  0000                  dw 0 ; R0 par 3&4 - transfer length
+    64  0049  54                    db %01010100 ; R1 - A incr., A=memory
+    65  004a  02                    db %00000010 ; R1-Cycle length port A
+    66  004b  68                    db %01101000 ; R2 - B fixed, B=I/O
+    67  004c  02                    db %00000010 ; R2-Cycle length port B
+    68  004d  ad                    db %10101101 ; R4 - continuous, append port B address
+    69  004e  5b00                  dw $005B     ; R4 par 1&2 - port B address
+    70  0050  82                    db %10000010 ; R5 - stop on end of block, CE only
+    71  0051  cf                    db %11001111 ; R6 - load addresses into DMA counters
+    72  0052  87                    db %10000111 ; R6 - enable DMA
+    73                          dmaProgramLength = $ - dmaProgram
+    74                          

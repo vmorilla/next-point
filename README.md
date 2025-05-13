@@ -53,3 +53,6 @@ This game is dedicated to the *memory of my father* who bought my first computer
 ## Known issues
 - Tie breaks are not yet implemented
 - Only one opponent implemented... these pretty sprites don't come for free ;)
+
+## Author
+Created by Victor Morilla and licensed under the terms of the [GNU General Public License v3.0 (GPL-3.0)](LICENSE).

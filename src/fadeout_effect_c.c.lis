@@ -1,0 +1,332 @@
+/tmp/tmpiX1qlnKt.asm:
+     1                          MODULE fadeout_effect_c_c
+     2                          LINE 0, "fadeout_effect_c.c"
+fadeout_effect_c.c:
+                                
+     1                          ;--------------------------------------------------------
+     2                          ; File Created by SDCC : free open source ISO C Compiler
+     3                          ; Version 4.3.0 #14210 (Mac OS X ppc)
+     4                          ;--------------------------------------------------------
+     5                          	.zxn
+     6                          ; Processed by Z88DK
+     7                          ;--------------------------------------------------------
+     8                          
+     9                          	EXTERN __divschar
+    10                          	EXTERN __divschar_callee
+    11                          	EXTERN __divsint
+    12                          	EXTERN __divsint_callee
+    13                          	EXTERN __divslong
+    14                          	EXTERN __divslong_callee
+    15                          	EXTERN __divslonglong
+    16                          	EXTERN __divslonglong_callee
+    17                          	EXTERN __divsuchar
+    18                          	EXTERN __divsuchar_callee
+    19                          	EXTERN __divuchar
+    20                          	EXTERN __divuchar_callee
+    21                          	EXTERN __divuint
+    22                          	EXTERN __divuint_callee
+    23                          	EXTERN __divulong
+    24                          	EXTERN __divulong_callee
+    25                          	EXTERN __divulonglong
+    26                          	EXTERN __divulonglong_callee
+    27                          	EXTERN __divuschar
+    28                          	EXTERN __divuschar_callee
+    29                          	EXTERN __modschar
+    30                          	EXTERN __modschar_callee
+    31                          	EXTERN __modsint
+    32                          	EXTERN __modsint_callee
+    33                          	EXTERN __modslong
+    34                          	EXTERN __modslong_callee
+    35                          	EXTERN __modslonglong
+    36                          	EXTERN __modslonglong_callee
+    37                          	EXTERN __modsuchar
+    38                          	EXTERN __modsuchar_callee
+    39                          	EXTERN __moduchar
+    40                          	EXTERN __moduchar_callee
+    41                          	EXTERN __moduint
+    42                          	EXTERN __moduint_callee
+    43                          	EXTERN __modulong
+    44                          	EXTERN __modulong_callee
+    45                          	EXTERN __modulonglong
+    46                          	EXTERN __modulonglong_callee
+    47                          	EXTERN __moduschar
+    48                          	EXTERN __moduschar_callee
+    49                          	EXTERN __mulint
+    50                          	EXTERN __mulint_callee
+    51                          	EXTERN __mullong
+    52                          	EXTERN __mullong_callee
+    53                          	EXTERN __mullonglong
+    54                          	EXTERN __mullonglong_callee
+    55                          	EXTERN __mulschar
+    56                          	EXTERN __mulschar_callee
+    57                          	EXTERN __mulsuchar
+    58                          	EXTERN __mulsuchar_callee
+    59                          	EXTERN __muluchar
+    60                          	EXTERN __muluchar_callee
+    61                          	EXTERN __muluschar
+    62                          	EXTERN __muluschar_callee
+    63                          	EXTERN __rlslonglong
+    64                          	EXTERN __rlslonglong_callee
+    65                          	EXTERN __rlulonglong
+    66                          	EXTERN __rlulonglong_callee
+    67                          	EXTERN __rrslonglong
+    68                          	EXTERN __rrslonglong_callee
+    69                          	EXTERN __rrulonglong
+    70                          	EXTERN __rrulonglong_callee
+    71                          	EXTERN ___mulsint2slong
+    72                          	EXTERN ___mulsint2slong_callee
+    73                          	EXTERN ___muluint2ulong
+    74                          	EXTERN ___muluint2ulong_callee
+    75                          	EXTERN ___sdcc_call_hl
+    76                          	EXTERN ___sdcc_call_iy
+    77                          	EXTERN ___sdcc_enter_ix
+    78                          	EXTERN banked_call
+    79                          	EXTERN _banked_ret
+    80                          	EXTERN ___fs2schar
+    81                          	EXTERN ___fs2schar_callee
+    82                          	EXTERN ___fs2sint
+    83                          	EXTERN ___fs2sint_callee
+    84                          	EXTERN ___fs2slong
+    85                          	EXTERN ___fs2slong_callee
+    86                          	EXTERN ___fs2slonglong
+    87                          	EXTERN ___fs2slonglong_callee
+    88                          	EXTERN ___fs2uchar
+    89                          	EXTERN ___fs2uchar_callee
+    90                          	EXTERN ___fs2uint
+    91                          	EXTERN ___fs2uint_callee
+    92                          	EXTERN ___fs2ulong
+    93                          	EXTERN ___fs2ulong_callee
+    94                          	EXTERN ___fs2ulonglong
+    95                          	EXTERN ___fs2ulonglong_callee
+    96                          	EXTERN ___fsadd
+    97                          	EXTERN ___fsadd_callee
+    98                          	EXTERN ___fsdiv
+    99                          	EXTERN ___fsdiv_callee
+   100                          	EXTERN ___fseq
+   101                          	EXTERN ___fseq_callee
+   102                          	EXTERN ___fsgt
+   103                          	EXTERN ___fsgt_callee
+   104                          	EXTERN ___fslt
+   105                          	EXTERN ___fslt_callee
+   106                          	EXTERN ___fsmul
+   107                          	EXTERN ___fsmul_callee
+   108                          	EXTERN ___fsneq
+   109                          	EXTERN ___fsneq_callee
+   110                          	EXTERN ___fssub
+   111                          	EXTERN ___fssub_callee
+   112                          	EXTERN ___schar2fs
+   113                          	EXTERN ___schar2fs_callee
+   114                          	EXTERN ___sint2fs
+   115                          	EXTERN ___sint2fs_callee
+   116                          	EXTERN ___slong2fs
+   117                          	EXTERN ___slong2fs_callee
+   118                          	EXTERN ___slonglong2fs
+   119                          	EXTERN ___slonglong2fs_callee
+   120                          	EXTERN ___uchar2fs
+   121                          	EXTERN ___uchar2fs_callee
+   122                          	EXTERN ___uint2fs
+   123                          	EXTERN ___uint2fs_callee
+   124                          	EXTERN ___ulong2fs
+   125                          	EXTERN ___ulong2fs_callee
+   126                          	EXTERN ___ulonglong2fs
+   127                          	EXTERN ___ulonglong2fs_callee
+   128                          	EXTERN ____sdcc_2_copy_src_mhl_dst_deix
+   129                          	EXTERN ____sdcc_2_copy_src_mhl_dst_bcix
+   130                          	EXTERN ____sdcc_4_copy_src_mhl_dst_deix
+   131                          	EXTERN ____sdcc_4_copy_src_mhl_dst_bcix
+   132                          	EXTERN ____sdcc_4_copy_src_mhl_dst_mbc
+   133                          	EXTERN ____sdcc_4_ldi_nosave_bc
+   134                          	EXTERN ____sdcc_4_ldi_save_bc
+   135                          	EXTERN ____sdcc_4_push_hlix
+   136                          	EXTERN ____sdcc_4_push_mhl
+   137                          	EXTERN ____sdcc_lib_setmem_hl
+   138                          	EXTERN ____sdcc_ll_add_de_bc_hl
+   139                          	EXTERN ____sdcc_ll_add_de_bc_hlix
+   140                          	EXTERN ____sdcc_ll_add_de_hlix_bc
+   141                          	EXTERN ____sdcc_ll_add_de_hlix_bcix
+   142                          	EXTERN ____sdcc_ll_add_deix_bc_hl
+   143                          	EXTERN ____sdcc_ll_add_deix_hlix
+   144                          	EXTERN ____sdcc_ll_add_hlix_bc_deix
+   145                          	EXTERN ____sdcc_ll_add_hlix_deix_bc
+   146                          	EXTERN ____sdcc_ll_add_hlix_deix_bcix
+   147                          	EXTERN ____sdcc_ll_asr_hlix_a
+   148                          	EXTERN ____sdcc_ll_asr_mbc_a
+   149                          	EXTERN ____sdcc_ll_copy_src_de_dst_hlix
+   150                          	EXTERN ____sdcc_ll_copy_src_de_dst_hlsp
+   151                          	EXTERN ____sdcc_ll_copy_src_deix_dst_hl
+   152                          	EXTERN ____sdcc_ll_copy_src_deix_dst_hlix
+   153                          	EXTERN ____sdcc_ll_copy_src_deixm_dst_hlsp
+   154                          	EXTERN ____sdcc_ll_copy_src_desp_dst_hlsp
+   155                          	EXTERN ____sdcc_ll_copy_src_hl_dst_de
+   156                          	EXTERN ____sdcc_ll_copy_src_hlsp_dst_de
+   157                          	EXTERN ____sdcc_ll_copy_src_hlsp_dst_deixm
+   158                          	EXTERN ____sdcc_ll_lsl_hlix_a
+   159                          	EXTERN ____sdcc_ll_lsl_mbc_a
+   160                          	EXTERN ____sdcc_ll_lsr_hlix_a
+   161                          	EXTERN ____sdcc_ll_lsr_mbc_a
+   162                          	EXTERN ____sdcc_ll_push_hlix
+   163                          	EXTERN ____sdcc_ll_push_mhl
+   164                          	EXTERN ____sdcc_ll_sub_de_bc_hl
+   165                          	EXTERN ____sdcc_ll_sub_de_bc_hlix
+   166                          	EXTERN ____sdcc_ll_sub_de_hlix_bc
+   167                          	EXTERN ____sdcc_ll_sub_de_hlix_bcix
+   168                          	EXTERN ____sdcc_ll_sub_deix_bc_hl
+   169                          	EXTERN ____sdcc_ll_sub_deix_hlix
+   170                          	EXTERN ____sdcc_ll_sub_hlix_bc_deix
+   171                          	EXTERN ____sdcc_ll_sub_hlix_deix_bc
+   172                          	EXTERN ____sdcc_ll_sub_hlix_deix_bcix
+   173                          	EXTERN ____sdcc_load_debc_deix
+   174                          	EXTERN ____sdcc_load_dehl_deix
+   175                          	EXTERN ____sdcc_load_debc_mhl
+   176                          	EXTERN ____sdcc_load_hlde_mhl
+   177                          	EXTERN ____sdcc_store_dehl_bcix
+   178                          	EXTERN ____sdcc_store_debc_hlix
+   179                          	EXTERN ____sdcc_store_debc_mhl
+   180                          	EXTERN ____sdcc_cpu_pop_ei
+   181                          	EXTERN ____sdcc_cpu_pop_ei_jp
+   182                          	EXTERN ____sdcc_cpu_push_di
+   183                          	EXTERN ____sdcc_outi
+   184                          	EXTERN ____sdcc_outi_128
+   185                          	EXTERN ____sdcc_outi_256
+   186                          	EXTERN ____sdcc_ldi
+   187                          	EXTERN ____sdcc_ldi_128
+   188                          	EXTERN ____sdcc_ldi_256
+   189                          	EXTERN ____sdcc_4_copy_srcd_hlix_dst_deix
+   190                          	EXTERN ____sdcc_4_and_src_mbc_mhl_dst_deix
+   191                          	EXTERN ____sdcc_4_or_src_mbc_mhl_dst_deix
+   192                          	EXTERN ____sdcc_4_xor_src_mbc_mhl_dst_deix
+   193                          	EXTERN ____sdcc_4_or_src_dehl_dst_bcix
+   194                          	EXTERN ____sdcc_4_xor_src_dehl_dst_bcix
+   195                          	EXTERN ____sdcc_4_and_src_dehl_dst_bcix
+   196                          	EXTERN ____sdcc_4_xor_src_mbc_mhl_dst_debc
+   197                          	EXTERN ____sdcc_4_or_src_mbc_mhl_dst_debc
+   198                          	EXTERN ____sdcc_4_and_src_mbc_mhl_dst_debc
+   199                          	EXTERN ____sdcc_4_cpl_src_mhl_dst_debc
+   200                          	EXTERN ____sdcc_4_xor_src_debc_mhl_dst_debc
+   201                          	EXTERN ____sdcc_4_or_src_debc_mhl_dst_debc
+   202                          	EXTERN ____sdcc_4_and_src_debc_mhl_dst_debc
+   203                          	EXTERN ____sdcc_4_and_src_debc_hlix_dst_debc
+   204                          	EXTERN ____sdcc_4_or_src_debc_hlix_dst_debc
+   205                          	EXTERN ____sdcc_4_xor_src_debc_hlix_dst_debc
+   206                          
+   207                          ;--------------------------------------------------------
+   208                          ; Public variables in this module
+   209                          ;--------------------------------------------------------
+   210                          	GLOBAL _fadeout_effect
+   211                          	GLOBAL _fadein_effect
+   212                          	GLOBAL _wait_for_effect
+   213                          ;--------------------------------------------------------
+   214                          ; Externals used
+   215                          ;--------------------------------------------------------
+   216                          	GLOBAL _start_effect
+   217                          	GLOBAL _intrinsic_swap_word_32_fastcall
+   218                          	GLOBAL _intrinsic_swap_word_32
+   219                          	GLOBAL _intrinsic_swap_endian_32_fastcall
+   220                          	GLOBAL _intrinsic_swap_endian_32
+   221                          	GLOBAL _intrinsic_swap_endian_16_fastcall
+   222                          	GLOBAL _intrinsic_swap_endian_16
+   223                          	GLOBAL _intrinsic_return_de
+   224                          	GLOBAL _intrinsic_return_bc
+   225                          	GLOBAL _intrinsic_exx
+   226                          	GLOBAL _intrinsic_ex_de_hl
+   227                          	GLOBAL _intrinsic_nop
+   228                          	GLOBAL _intrinsic_im_2
+   229                          	GLOBAL _intrinsic_im_1
+   230                          	GLOBAL _intrinsic_im_0
+   231                          	GLOBAL _intrinsic_retn
+   232                          	GLOBAL _intrinsic_reti
+   233                          	GLOBAL _intrinsic_halt
+   234                          	GLOBAL _intrinsic_ei
+   235                          	GLOBAL _intrinsic_di
+   236                          	GLOBAL _intrinsic_stub
+   237                          	GLOBAL _intrinsic_ini
+   238                          	GLOBAL _intrinsic_outi
+   239                          	GLOBAL _intrinsic_ldi
+   240                          	GLOBAL _clear_tilemap
+   241                          	GLOBAL _select_tilemap
+   242                          	GLOBAL _init_effects
+   243                          	GLOBAL _remaining_effect_length
+   244                          	GLOBAL _tilemap
+   245                          	GLOBAL _balloon_tilemap
+   246                          	GLOBAL _menu_palette_end
+   247                          	GLOBAL _menu_palette
+   248                          	GLOBAL _menu_patterns
+   249                          	GLOBAL _game_palette_end
+   250                          	GLOBAL _game_palette
+   251                          	GLOBAL _game_patterns
+   252                          	GLOBAL _tiles
+   253                          ;--------------------------------------------------------
+   254                          ; special function registers
+   255                          ;--------------------------------------------------------
+   256                          ;--------------------------------------------------------
+   257                          ; ram data
+   258                          ;--------------------------------------------------------
+   259                          	SECTION bss_compiler
+   260                          ;--------------------------------------------------------
+   261                          ; ram data
+   262                          ;--------------------------------------------------------
+   263                          
+   264                          IF 0
+   265                          
+   266                          ; .area _INITIALIZED removed by z88dk
+   267                          
+   268                          
+   269                          ENDIF
+   270                          
+   271                          ;--------------------------------------------------------
+   272                          ; absolute external ram data
+   273                          ;--------------------------------------------------------
+   274                          	SECTION IGNORE
+   275                          ;--------------------------------------------------------
+   276                          ; global & static initialisations
+   277                          ;--------------------------------------------------------
+   278                          	SECTION code_crt_init
+   279                          ;--------------------------------------------------------
+   280                          ; Home
+   281                          ;--------------------------------------------------------
+   282                          	SECTION IGNORE
+   283                          ;--------------------------------------------------------
+   284                          ; code
+   285                          ;--------------------------------------------------------
+   286                          	SECTION code_compiler
+   287                          ;fadeout_effect_c.c:11: void fadeout_effect(void)
+   288                          ;	---------------------------------
+   289                          ; Function fadeout_effect
+   290                          ; ---------------------------------
+   291                          _fadeout_effect:
+   292                          ;fadeout_effect_c.c:13: select_tilemap(TILEMAP_GAME);
+   293  0000  af                	xor	a, a
+   294  0001  f5                	push	af
+   295  0002  33                	inc	sp
+   296  0003  cd0000            	call	_select_tilemap
+   297  0006  33                	inc	sp
+   298                          ;fadeout_effect_c.c:15: start_effect(0x3020);
+   299  0007  212030            	ld	hl,0x3020
+   300                          ;fadeout_effect_c.c:17: }
+   301  000a  c30000            	jp	_start_effect
+   302                          ;fadeout_effect_c.c:19: void fadein_effect(void)
+   303                          ;	---------------------------------
+   304                          ; Function fadein_effect
+   305                          ; ---------------------------------
+   306                          _fadein_effect:
+   307                          ;fadeout_effect_c.c:22: start_effect(0x0);
+   308  000d  210000            	ld	hl,0x0000
+   309                          ;fadeout_effect_c.c:24: }
+   310  0010  c30000            	jp	_start_effect
+   311                          ;fadeout_effect_c.c:26: void wait_for_effect(void)
+   312                          ;	---------------------------------
+   313                          ; Function wait_for_effect
+   314                          ; ---------------------------------
+   315                          _wait_for_effect:
+   316                          ;fadeout_effect_c.c:29: while (remaining_effect_length != 0)
+   317                          l_wait_for_effect_00101:
+   318  0013  2a0000            	ld	hl,(_remaining_effect_length)
+   319  0016  7c                	ld	a,h
+   320  0017  b5                	or	a,l
+   321  0018  c8                	ret	Z
+   322                          ;fadeout_effect_c.c:31: intrinsic_halt();
+   323  0019  76                	halt
+   324                          ;fadeout_effect_c.c:34: }
+   325  001a  18f7              	jr	l_wait_for_effect_00101
+   326                          	SECTION IGNORE
+   327                          
